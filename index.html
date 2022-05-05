@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>I'm the new Kirin of the New World of the Stronghold Devestation!</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut dolore, temporibus nobis id aspernatur omnis expedita adipisci maiores, numquam repellendus qui saepe cupiditate repellat ratione deserunt. Qui eum ex animi?</p>
+    <h1>We are parents of the below elements</h1>
+    <p>Why not click on my parents above????</p>
 
     <table>
         <thead>
@@ -29,10 +29,15 @@
         const h1 = document.querySelector('h1');
         h1.addEventListener('click', () => {
             let para = document.querySelector('p');
-            para.textContent = 'Sorry for clicking my parent!'
-            para.style.backgroundColor = 'green';
-            para.classList.add('active');
-            // if ()
+            if (para.className !== 'active'){
+                para.textContent = 'Sorry for clicking my parent!'
+                para.style.backgroundColor = 'green';
+                para.classList.add('active');
+            } else {
+                para.textContent = 'Click my parent(h1) to make me green';
+                para.style.backgroundColor = 'brown';
+                para.classList.remove('active');
+            }
         });
     </script>
 </body>
