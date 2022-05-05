@@ -11,3 +11,19 @@ body{
     background-color: green;
     color:white;
 }
+
+p
+{
+    background-color: brown;
+    color: blue;
+}
+
+table
+{
+    visibility: hidden;
+}
+
+.show
+{
+    visibility: visible;
+}

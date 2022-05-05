@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>We are parents of the below elements</h1>
+    <button>Click me</button>
     <p>Why not click on my parents above????</p>
 
     <table>
@@ -25,20 +25,6 @@
             </tr>
         </tbody>
     </table>
-    <script>
-        const h1 = document.querySelector('h1');
-        h1.addEventListener('click', () => {
-            let para = document.querySelector('p');
-            if (para.className !== 'active'){
-                para.textContent = 'Sorry for clicking my parent!'
-                para.style.backgroundColor = 'green';
-                para.classList.add('active');
-            } else {
-                para.textContent = 'Click my parent(h1) to make me green';
-                para.style.backgroundColor = 'brown';
-                para.classList.remove('active');
-            }
-        });
-    </script>
+    <script src="./main.js"></script>
 </body>
 </html>
