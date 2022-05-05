@@ -1,0 +1,24 @@
+body{
+    width: 50%;
+    margin: auto;
+    font-size: larger;
+}
+
+table, tr, td, th{
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: none;
+    margin: 50px auto;
+    width: auto;
+}
+
+td, th{
+    padding: 5px;
+}
+
+.center
+{
+    text-align: center;
+}
