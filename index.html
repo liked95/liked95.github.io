@@ -25,5 +25,15 @@
             </tr>
         </tbody>
     </table>
+    <script>
+        const h1 = document.querySelector('h1');
+        h1.addEventListener('click', () => {
+            let para = document.querySelector('p');
+            para.textContent = 'Sorry for clicking my parent!'
+            para.style.backgroundColor = 'green';
+            para.classList.add('active');
+            // if ()
+        });
+    </script>
 </body>
 </html>
