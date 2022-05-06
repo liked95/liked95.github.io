@@ -1,0 +1,40 @@
+:root{
+    --color-text: #ff7675;
+    --color-heading: #6c5ce7;
+    --background-color-heading: #badc58;
+    --width: 100px;
+    --height: 150px;
+
+}
+
+.text{
+    --color-text: white;
+    font-size: 2rem;
+    color: var(--color-text);
+    background-color: var(--color-heading);
+
+}
+.box{
+    font-size: 10px;
+}
+.box h1{
+    font-size: 4rem;
+    color: var(--color-heading);
+    background-color: var(--background-color-heading);
+
+
+}
+.box p{
+    font-size:1.5em;
+}
+
+.parent{
+    width: calc(8*var(--width));
+    height: calc(4*var(--height));
+    background-color: red;
+}
+.child{
+    width: 80%;
+    height: 100%;
+    background-color: blueviolet;
+}
