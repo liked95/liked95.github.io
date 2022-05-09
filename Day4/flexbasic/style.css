@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: cornflowerblue;
+    display: flex;
+    flex-direction: row;
+    height: 700px;
+    flex-wrap: wrap;
+    
+    
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    background: tomato;
+    color: white;
+    font-size: 32px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item:nth-child(4){
+    background-color: green;
+}
