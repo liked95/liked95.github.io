@@ -41,12 +41,12 @@ function autoSlideShow() {
         dots[i].classList.remove("active")
     }
     dots[counter].classList.add("active")
-    console.log(counter)
+
     changeBannerBackgroundColor()
 
 
     counter++;
-    myTimeout = setTimeout(autoSlideShow, 3000); // Change image every ... seconds
+    myTimeout = setTimeout(autoSlideShow, 2000); // Change image every ... seconds
 }
 
 // for (let i = 0; i < slides.length; i++) {
@@ -67,8 +67,32 @@ function changeBannerBackgroundColor() {
     else if (counter === 3) banner.style.backgroundColor = 'rgb(86, 0, 1)'
     else if (counter === 4) banner.style.backgroundColor = 'rgb(80, 81, 174)'
     else if (counter === 5) banner.style.backgroundColor = 'rgb(69, 0, 169)'
+    else if (counter === 6) banner.style.backgroundColor = 'rgb(92, 30, 255)'
+    else if (counter === 7) banner.style.backgroundColor = 'rgb(0, 178, 152)'
+    else if (counter === 8) banner.style.backgroundColor = 'rgb(136, 5, 10)'
+    else if (counter === 9) banner.style.backgroundColor = 'rgb(134, 218, 255)'
+    else if (counter === 10) banner.style.backgroundColor = 'rgb(126, 0, 1)'
+    else if (counter === 11) banner.style.backgroundColor = 'rgb(45, 83, 230)'
 }
 
+
+Array.from(slides).forEach((slide, index)=>{
+    slide.addEventListener('mouseover', ()=> {
+        stopSlide()
+    })
+    slide.addEventListener('mouseout', ()=> {
+        autoSlideShow()
+    })
+})
+
+Array.from(dots).forEach((dot, index)=>{
+    dot.addEventListener('mouseover', ()=> {
+        currentSlide(index)
+    })
+    dot.addEventListener('mouseout', ()=> {
+        autoSlideShow()
+    })
+})
 
 autoSlideShow()
 
