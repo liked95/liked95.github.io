@@ -20,7 +20,7 @@
     position: relative;
     height: 100%;
     width: 1188px;
-    background-color: aquamarine;
+    background-color: white;
     display: flex;
 
 }
@@ -39,7 +39,7 @@
     z-index: 100;
 }
 
-.sidenav-menu ul{
+.sidenav-menu ul {
     list-style-type: none;
 }
 
@@ -52,21 +52,22 @@
     margin-left: 8px;
 }
 
-.menu-item span:nth-child(2){
+.menu-item span:nth-child(2) {
     margin-right: 8px;
 }
 
-.menu-item .menu-icon, .menu-item .sub-menu{
+.menu-item .menu-icon,
+.menu-item .sub-menu {
     visibility: hidden;
 }
 
-.menu-item:hover
-{
+.menu-item:hover {
     color: #f36f00;
     background: #eceff1;
 }
 
-.menu-item:hover .menu-icon, .menu-item:hover .sub-menu {
+.menu-item:hover .menu-icon,
+.menu-item:hover .sub-menu {
     visibility: visible
 }
 
@@ -102,7 +103,7 @@
     margin-right: 8px;
 }
 
-.sub-menu-item .menu-icon2{
+.sub-menu-item .menu-icon2 {
     visibility: hidden;
 }
 
@@ -110,6 +111,7 @@
     color: #f36f00;
     background: #eceff1;
 }
+
 .sub-menu-item:hover .menu-icon2 {
     visibility: visible
 }
@@ -150,12 +152,12 @@
 
 .slider-img {
     width: 988px;
-
-    
+    cursor: pointer;
 }
 
 .slider-img img {
     width: 100%;
+    
 }
 
 .slider-btn {
@@ -169,25 +171,27 @@
 
 .dot-btn {
     font-size: 10px;
-    color: #ddd;
+    color: rgb(109, 104, 104);
     margin: 0 1px;
-    transition: background-color 0.6s ease;
-}
-
-.dot-btn:hover {
-    color: #fff;
+    transition: color 0.6s ease;
 }
 
 .active {
-    display: inline;
+    color: white;
+}
+
+@keyframes fadingImg {
+    from {
+        opacity: .6
+    }
+
+    to {
+        opacity: 1
+    }
 }
 
 .fade {
-    animation-name: fade;
+    animation-name: fadingImg;
     animation-duration: 1.5s;
 }
-  
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
+
