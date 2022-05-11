@@ -35,6 +35,7 @@
     color: #757575;
     cursor: pointer;
     padding: 8px 0 12px 0;
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 25%);
 }
 
 .sidenav-menu ul{
@@ -50,11 +51,11 @@
     margin-left: 8px;
 }
 
-.menu-item span:last-child {
+.menu-item span:nth-child(2){
     margin-right: 8px;
 }
 
-.menu-item i, .menu-item .sub-menu{
+.menu-item .menu-icon, .menu-item .sub-menu{
     visibility: hidden;
 }
 
@@ -64,9 +65,11 @@
     background: #eceff1;
 }
 
-.menu-item:hover i, .menu-item:hover .sub-menu {
+.menu-item:hover .menu-icon, .menu-item:hover .sub-menu {
     visibility: visible
 }
+
+/* sub menu 1 */
 
 .sub-menu {
     position: absolute;
@@ -82,6 +85,7 @@
     color: #757575;
     cursor: pointer;
     padding: 8px 0 12px 0;
+    box-shadow: 0 0 4px 0 rgb(0 0 0 / 25%);
 }
 
 .sub-menu-item {
@@ -93,11 +97,11 @@
     margin-left: 8px;
 }
 
-.sub-item span:last-child {
+.sub-item span:nth-child(2) {
     margin-right: 8px;
 }
 
-.sub-item i{
+.sub-menu-item .menu-icon2{
     visibility: hidden;
 }
 
@@ -105,7 +109,41 @@
     color: #f36f00;
     background: #eceff1;
 }
+.sub-menu-item:hover .menu-icon2 {
+    visibility: visible
+}
 
+
+/* sub menu 2 */
+
+.sub-menu2 {
+    position: absolute;
+    top: 0;
+    left: 200px;
+    background-color: white;
+    width: 200px;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    line-height: 27px;
+    color: #757575;
+    cursor: pointer;
+    padding: 8px 0 12px 0;
+    box-shadow: 0 0 4px 0 rgb(0 0 0 / 25%);
+}
+
+.sub-menu-item:hover .sub-menu2 {
+    visibility: visible;
+}
+
+.sub-menu2 {
+    visibility: hidden;
+}
+
+.sub-menu-item2:hover {
+    color: #f36f00;
+    background: #eceff1;
+}
 
 
 
