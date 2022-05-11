@@ -46,7 +46,7 @@ function autoSlideShow() {
 
 
     counter++;
-    myTimeout = setTimeout(autoSlideShow, 2000); // Change image every ... seconds
+    myTimeout = setTimeout(autoSlideShow, 3000); // Change image every ... seconds
 }
 
 // for (let i = 0; i < slides.length; i++) {
