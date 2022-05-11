@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto,sans-serif;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.menu {
+    display: flex;
+}
+
+header {
+    background-color: #30598c;
+    height: 60px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+
+}
+
+.sidebar {
+    display: flex;
+    align-items: center;
+}
+
+.menu > ul {
+    display: flex;
+}
+
+.menu-item {
+    font-size: 15px;
+    color: white;
+    text-transform: uppercase;
+    margin: 0 15px;
+    cursor: pointer;
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item > span {
+    margin-left: 3px;
+}
+
+.sub-menu {
+    position: absolute;
+    width: 200px;
+    background-color: white;
+    color: black;
+    top: 100%;
+    left: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
+    display: none;
+    
+}
+
+.menu-item:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu-item {
+    font-size: 15px;
+    color: #464646;
+    padding: 12px 16px;
+    text-align: center;
+    text-transform: none;
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sub-menu-item:hover{
+    background-color:  #a19e9e;
+    color: #FFF;
+}
+
+.sub2-menu-item:hover {
+    background-color:  #555050;
+    color: #FFF;
+}
+
+.sub2-menu {
+    position: absolute;
+    width: 200px;
+    background-color: white;
+    color: black;
+    top: 0%;
+    left: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
+    display: none;
+    
+}
+
+.sub2-menu-item {
+    font-size: 15px;
+    color: #464646;
+    padding: 12px 16px;
+    text-align: center;
+    text-transform: none;
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-menu-item:hover .sub2-menu {
+    display: block;
+}
+.sidebar > * {
+    margin: 0 15px;
+}
+
+.cart {
+    color: #FFF;
+    font-size: 25px;
+    position: relative;
+}
+
+.cart-count {
+    font-size: 15px;
+    position: absolute;
+    top: -10px;
+    left: 19px;
+    background-color: #26a69a;
+    color: white;
+    width: 18px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+.logo img {
+    width: 150px;
+}
+
+.avatar img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
