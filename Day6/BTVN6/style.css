@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --card-transition: all 0.5s;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 515px;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 50%);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.image {
+    height: 300px;
+    overflow: hidden;
+}
+
+
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: var(--card-transition);
+}
+
+.card:hover img {
+    transform: scale(1.2);
+    filter: brightness(70%)
+}
+
+
+
+.content {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    padding: 1.5rem;
+    transition: var(--card-transition);
+}
+
+.card:hover .content {
+    /* position: absolute;
+    top: 300px;
+    left: 0 */
+    transform: translateY(-103px);
+}
+
+.content::before {
+    content: "PHOTO";
+    position: absolute;
+    top: 0;
+    transform: translateY(-100%);
+    left: 0;
+    color: white;
+    background: tomato;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+}
+
+.content h2 {
+    font-weight: 800;
+}
+.content h3 {
+    color: rgb(255, 168, 87);
+    padding: 10px 0 20px 0;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.content p {
+    font-size: 14px;
+    padding-right: 30px;
+    line-height: 1.8;
+    letter-spacing: 1.1px;
+    color: #504c4c;;
+
+}
+
+
+.status {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    background-color: white;
+    height: 93px;
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.status p {
+    margin-right: 15px;
+    color: #504c4c;
+}
+.date {
+    color: white;
+    background: tomato;
+    padding: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    width: 50px;
+    border-radius: 100%;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.date p:last-child {
+    font-size: 12px;
+    font-weight: 800;
+}

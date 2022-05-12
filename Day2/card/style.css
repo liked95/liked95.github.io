@@ -1,3 +1,7 @@
+:root {
+    --my-transition: all 0.5s 0.2s;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -7,18 +11,38 @@ body {
     box-shadow: 0 2px 4px rgb(0 0 0 / 15%);
     border-radius: 5px;
     overflow: hidden;
-    
+    margin: auto;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: space-between  ;
+}
+
+.image {
+    height: 180px;
+    overflow: hidden;
 }
 
 img {
     max-width: 100%;
     display: block;
-    margin: auto;
-    
+    margin: auto;  
+    transition: var(--my-transition)
+}
+
+.card:hover img{
+    transform: rotate(360deg) scale(1.5)
 }
 
 .content {
     padding: 20px;
+    transform: translateY(200px);
+    transition: var(--my-transition)
+}
+
+.card:hover .content{
+    transform: translateY(0) rotate(-360deg)
 }
 
 .content h2 {

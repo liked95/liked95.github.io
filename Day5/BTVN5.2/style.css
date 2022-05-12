@@ -195,3 +195,32 @@
     animation-duration: 1.5s;
 }
 
+body {
+    height: 2000px;
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: #f36f00;
+}
+
+.sticky {
+    position: sticky;
+    top: 0px;
+    z-index: 150;
+}
+
+.link-lists {
+    height: 25px;
+    background-color: #757575;
+}
+
+.lazy-header {
+    width: 100%;
+    height: 100px;
+    background-color: #33eb0e;
+    
+}
+
