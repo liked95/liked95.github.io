@@ -1,0 +1,6 @@
+h2.animate__animated {
+    animation-name: fadeInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
