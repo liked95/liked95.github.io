@@ -28,9 +28,10 @@ body {
         font-size: 200px;
     }
 
-    /* 10% {
-        font-size: 200px;
-    } */
+    40% {
+        font-size: 300px;
+    }
+
 
     50% {
         font-size: 300px;
@@ -39,6 +40,11 @@ body {
     /* 85% {
         font-size: 200px;
     } */
+    
+
+    70% {
+        font-size: 200px;
+    }
 
     100% {
         font-size: 200px;
@@ -46,9 +52,10 @@ body {
 }
 
 #heart-shadow {
-    font-size: 400px;
+    font-size: 200px;
     color: white;
     animation: shadow-zoom 1.2s infinite;
+    animation-fill-mode: forwards;
     position: absolute;
     opacity: 0;
     
@@ -56,33 +63,38 @@ body {
 
 @keyframes shadow-zoom {
     0% {
-        font-size: 300px;
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.2);
         opacity: 0.1;
     }
 
-    3% {
-        font-size: 320px;
+    73% {
+        transform: scale(1.4);
         opacity: 0.08;
     }
 
-    6% {
-        font-size: 340px;
+    76% {
+        transform: scale(1.6);
         opacity: 0.06;
     }
 
-    9% {
-        font-size: 360px;
+    79% {
+        transform: scale(1.8);
         opacity: 0.04;
     }
 
-    12% {
-        font-size: 380px;
+    82% {
+        transform: scale(2);
         opacity: 0.02;
     }
 
-    15% {
-        font-size: 400px;
-        opacity: 0;
+    85% {
+        transform: scale(2.2);
+        opacity: 0.01;
     }
 
   
