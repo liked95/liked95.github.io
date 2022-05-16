@@ -19,7 +19,7 @@ body {
 #heart {
     font-size: 200px;
     color: white;
-    animation: zoom 1.2s infinite;
+    animation: zoom 1.5s infinite;
     z-index: 1;
 }
 
@@ -54,7 +54,7 @@ body {
 #heart-shadow {
     font-size: 200px;
     color: white;
-    animation: shadow-zoom 1.2s infinite;
+    animation: shadow-zoom 1.5s infinite;
     animation-fill-mode: forwards;
     position: absolute;
     opacity: 0;
@@ -68,7 +68,7 @@ body {
     }
 
     70% {
-        transform: scale(1.2);
+        transform: scale(1.0);
         opacity: 0.1;
     }
 

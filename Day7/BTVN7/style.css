@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,700;0,800;0,900;1,600&family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --all-transition: all 0.5s;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    position: relative;
+    height: 1600px;
+    
+}
+
+.header-container {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top {
+    background-color: #ffd400;
+    border-bottom: 1px solid gray;
+}
+
+.header-top .logo {
+    width: 70px;
+}
+
+.logo img {
+    max-width: 100%;
+}
+
+.brand-description {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.header-main {
+    position: sticky;
+    background-color: #ffd400;
+    width: 100%;
+    top: 0;
+}
+
+.header-main-container {
+    width: 70%;
+    margin: auto;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav li{
+    list-style-type: none;
+    font-size: 1.1rem;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.sub-menu {
+    background-color: #000;
+    width: 170px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+
+.sub-menu::before {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 40px;
+    border-bottom: 10px solid #d9d9d9;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom-color: #000;
+    transition: var(--all-transition)
+}
+
+.sub-menu-item {
+    font-size: 14px !important;
+    padding: 12px 10px !important;
+    color: #fff;
+
+}
+
+.menu-item:hover {
+    color: rgb(85, 85, 85);
+}
+
+.menu-item:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu-item:hover {
+    color: green;
+}
+
+
+
