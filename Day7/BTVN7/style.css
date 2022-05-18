@@ -16,12 +16,12 @@
 body {
     position: relative;
     /* height: 1600px; */
-    /* background-color: #417a9b; */
+    background: linear-gradient( to bottom, rgba(42,71,94,1.0) 5%, rgba(42,71,94,0.0) 70%);
     
 }
 
 .header-container {
-    width: 56%;
+    width: 80%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -30,7 +30,7 @@ body {
 
 .header-top {
     background: rgb(89,79,250);
-background: linear-gradient(90deg, rgba(89,79,250,1) 0%, rgba(75,200,81,0.7231267507002801) 49%, rgba(188,0,255,1) 100%);
+    background: linear-gradient(90deg, rgba(89,79,250,1) 0%, rgba(75,200,81,0.7231267507002801) 49%, rgba(188,0,255,1) 100%);
     /* border-bottom: 1px solid gray; */
 }
 
@@ -78,7 +78,7 @@ background: linear-gradient(90deg, rgba(89,79,250,1) 0%, rgba(75,200,81,0.723126
 }
 
 .header-main-container {
-    width: 56%;
+    width: 80%;
     margin: auto;
 }
 
@@ -154,7 +154,7 @@ background: linear-gradient(90deg, rgba(89,79,250,1) 0%, rgba(75,200,81,0.723126
 
 
 .main-container {
-    width: 56%;
+    width: 80%;
     min-width: 375px;
     margin: 100px auto;
     /* margin-top: 50px; */
@@ -197,11 +197,11 @@ h1 {
 }
 
 .card {
-    flex-basis: 25%;
+    flex-basis: 23%;
     position: relative;
     min-width: 310px;
     height: 350px;
-    background: #fff;
+    /* background: #fff; */
     border-radius: 10px;
     box-shadow: 0 35px 80px rgba(0, 0, 0, .15);
     transition: 0.5s;
@@ -211,6 +211,7 @@ h1 {
 
 .initial-card {
     height: 100%;
+    width: 100%;
     position: absolute;
     top: 0;
     transition: var(--card-transition);
@@ -221,7 +222,7 @@ h1 {
 }
 
 .hover-card {
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     height: 100%;
     padding: 20px;
     position: absolute;
@@ -240,6 +241,7 @@ h1 {
 
 .game-image {
     height: 150px;
+    width: 100%;
 }
 
 .game-image img {
@@ -251,7 +253,7 @@ h1 {
 .game-info {
     padding: 16px;
     height: 158px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -380,7 +382,7 @@ footer h4 {
 }
 
 .footer-container {
-    width: 56%;
+    width: 80%;
     margin: auto;
     /* background: #c47602; */
     display: flex;
