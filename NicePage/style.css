@@ -22,8 +22,22 @@ p {
     color: rgb(57, 20, 64);
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
+}
 
+header {
+    background-color: #f2f2f2;
+    border: none;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+}
 
+header a {
+    margin-left: 10px;
 }
 
 .online-training {
@@ -32,6 +46,7 @@ p {
     min-height: 607px;
     height: 607px;
     color: #312933;
+    margin-top: 70px;
 }
 
 .online-training .wrapper {
