@@ -57,3 +57,7 @@ mobileVertiBtn.addEventListener('click', (e) => {
 
 // 768px
 
+// const menuButton = document.querySelector('i.fa-solod.fa-bars')
+// menuButton.addEventListener('click', (e) => {
+//     window.alert('hh')
+// })
