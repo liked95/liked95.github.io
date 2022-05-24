@@ -14,6 +14,7 @@ body {
 p {
     font-family: 'Open Sans', sans-serif;
 }
+
 /* a:active {
     color: initial;
 } */
@@ -40,6 +41,10 @@ header a {
     margin-left: 10px;
 }
 
+/* header .width-btn {
+    margin-left: 100px;
+} */
+
 .online-training {
     background: url(./img/PA7BIF1x.jpg);
     background-position: 50% 50%;
@@ -50,7 +55,8 @@ header a {
 }
 
 .online-training .wrapper {
-    width: calc(((100% - 1140px) / 2) + 1140px);
+    --wrapper-width: calc(((100% - 1140px) / 2) + 1140px);
+    width: var(--wrapper-width);
     height: 100%;
     margin: 0 0 0 auto;
     /* border: 1px black solid; */
@@ -95,6 +101,10 @@ header a {
     font-family: 'Open Sans', sans-serif;
 }
 
+.text p a {
+    text-decoration: underline;
+}
+
 .text a#logo {
     position: absolute;
     top: 22px;
@@ -123,21 +133,21 @@ header a {
 }
 
 .image-wrapper a {
-    color: #1a1a1a;
+    color: #999999;
     text-decoration: none;
     padding: 10px 20px;
     font-weight: 700;
     font-family: 'Open Sans', sans-serif;
     position: absolute;
     top: 21px;
-    right: 118px;
+    right: calc(var(--wrapper-width)/6);
     line-height: 16px;
 
 }
 
-/* .image-wrapper a:hover {
+.image-wrapper a:hover {
     color: #4d4d4d;
-} */
+}
 
 
 
@@ -528,6 +538,7 @@ header a {
     flex: 0 0 66.6666666%;
     max-width: 66.6666666%;
 }
+
 .user-form {
     display: flex;
     flex-direction: column;
@@ -537,7 +548,9 @@ header a {
     padding: 40px;
 }
 
-.user-form .name, .user-form .address, .user-form textarea  {
+.user-form .name,
+.user-form .address,
+.user-form textarea {
     margin-bottom: 19px;
     width: 100%;
     padding: 10px 12px;
@@ -546,6 +559,7 @@ header a {
     font-size: 1rem;
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
+    color: #fff;
 }
 
 .name::placeholder,
@@ -597,8 +611,9 @@ textarea::placeholder {
 
 .footer {
     background-color: #333333;
-    color:#fff;
+    color: #fff;
 }
+
 .footer-wrapper {
     width: 1140px;
     margin: 0 auto;
@@ -618,7 +633,7 @@ textarea::placeholder {
 
 .web-credit {
     background-color: #333333;
-    color:#fff;
+    color: #fff;
     padding: 1em;
     position: relative;
 }
