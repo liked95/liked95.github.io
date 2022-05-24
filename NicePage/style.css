@@ -9,6 +9,7 @@
 body {
     width: 100%;
     font-family: "Roboto", "sans-serif";
+    overflow-x: hidden;
 }
 
 p {
@@ -76,6 +77,10 @@ header a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.text .fa-bars {
+    display: none;
 }
 
 .text h3 {
@@ -298,6 +303,7 @@ header a {
     height: 100%;
     flex: 0 0 53.33333333%;
     max-width: 53.33333333%;
+    overflow: hidden;
 }
 
 .life-image img {
@@ -441,6 +447,7 @@ header a {
     max-width: 20%;
     display: flex;
     justify-content: center;
+    align-items: center;
     min-height: 153px;
 }
 
@@ -771,5 +778,637 @@ textarea::placeholder {
     .footer-wrapper {
         width: 940px;
         min-height: 99px;
+    }
+}
+
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .online-training .wrapper,
+    .wrapper-3 {
+        width: calc(((100% - 720px) / 2) + 720px);
+        max-height: 360px;
+        min-height: initial;
+    }
+
+    .online-training,
+    .text,
+    .image-wrapper {
+        max-height: 360px;
+        min-height: initial;
+    }
+
+    .online-training .text,
+    .online-training .image-wrapper {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .text h3 {
+        font-size: 1.25rem;
+    }
+
+    .image-wrapper a {
+        right: 40px;
+    }
+
+
+    .choose-us .wrapper-2 {
+        width: 720px;
+        /* min-height: 1190px; */
+    }
+
+    .choose-us .card-item {
+        margin-bottom: 13px;
+        flex-basis: 49%;
+    }
+
+
+    .wrapper-3 {
+        max-height: initial;
+    }
+
+    .life-description {
+        flex: 0 0 46.666666666%;
+        max-width: 46.666666666%;
+    }
+
+    .life-image {
+        flex: 0 0 53.333333333%;
+        max-width: 53.333333333%;
+    }
+
+
+
+    .life-is-good,
+    .life-description,
+    .life-image {
+        /* max-height: 467.77px; */
+        min-height: 210px;
+    }
+
+    .life-description h1 {
+        margin-top: 0px;
+    }
+
+    .life-description h5 {
+        line-height: 1.4;
+        font-size: 1.25rem;
+    }
+
+    .life-description p {
+        margin-right: 0;
+    }
+
+    .why-us {
+        background-size: 140%;
+    }
+    .why-us-wrapper {
+        width: 720px;
+        min-height: 356px;
+        max-height: 447.19px;
+
+    }
+
+    .why-us p:last-of-type {
+        margin-right: 236px;
+    }
+
+    .result-partner {
+        min-height: 550px;
+    }
+
+
+    .result-partner-wrapper {
+        width: 720px;
+    }
+
+
+    .partner-info-wrapper {
+        width: 720px;
+        /* min-height: 371px; */
+    }
+
+    .brand-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .brand-img {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+        min-height: 161px;
+    }
+
+    .brand-img:nth-last-child(1), 
+    .brand-img:nth-last-child(2) {
+        min-height: 241px;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .contact-wrapper {
+        width: 720px;
+        min-height: 666px;
+    }
+
+    .contact-wrapper h1 {
+        font-size: 9.375rem;
+    }
+
+    .contact-wrapper > h2 {
+        margin-top: -108px;
+    }
+
+    .contact-box {
+        margin-top: 35px;
+    }
+    
+
+    .footer-wrapper {
+        width: 720px;
+        min-height: 99px;
+    }
+}
+
+
+/* phone horizontal */
+@media (min-width: 576px) and (max-width: 767px) {
+    .online-training .wrapper,
+    .wrapper-3 {
+        width: calc(((100% - 540px) / 2) + 540px);
+        max-height: initial;
+        min-height: 516px;
+    }
+    
+    .online-training {
+        height: auto;
+    }
+    /* .online-training,
+    .text,
+    .image-wrapper {
+        max-height: 360px;
+        min-height: initial;
+    } */
+
+    .online-training .wrapper {
+        flex-direction: column;
+    }
+
+    .online-training .text,
+    .online-training .image-wrapper {
+        flex: 0 0 50%;
+        max-width: 100%;
+    }
+
+    .online-training .text {
+        min-height: 414px;
+        padding-left: 10px;
+    }
+
+    .online-training .image-wrapper {
+        min-height: 540px;
+    }
+
+    .text h3 {
+        font-size: 1.25rem;
+    }
+
+    .text .fa-bars {
+        display: block;
+        position: absolute;
+        top: 22px;
+        right: 80px;
+        font-size: 2rem;
+        color: rgb(153, 153, 153)
+    }
+
+    .image-wrapper a {
+        display: none;
+    }
+
+
+    .choose-us .wrapper-2 {
+        width: 540px;
+        /* min-height: 1190px; */
+    }
+
+    .choose-us .card-item {
+        margin-bottom: 13px;
+        flex-basis: 100%;
+    }
+
+
+    .life-is-good .wrapper-3 {
+        max-height: initial;
+        min-height: 499px;
+        width: 590px;
+        margin-right: auto;
+        flex-direction: column;
+    }
+
+    .life-description .read-more {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .life-description {
+        flex: 0 0 46.666666666%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .life-image {
+        flex: 0 0 53.333333333%;
+        max-width: 100%;
+        max-height: 532px;
+    }
+
+    .life-image img {
+        width: 100%;
+    }
+
+
+
+    .life-is-good,
+    .life-description,
+    .life-image {
+        /* max-height: 467.77px; */
+        min-height: 210px;
+    }
+
+    .life-is-good {
+        height: auto;
+    }
+
+    .life-description h1 {
+        margin-top: 0px;
+    }
+
+    .life-description h5 {
+        line-height: 1.4;
+        font-size: 1.25rem;
+    }
+
+    .life-description p {
+        margin-right: 0;
+    }
+
+    .why-us {
+        background-size: 140%;
+    }
+    .why-us-wrapper {
+        width: 540px;
+        min-height: 356px;
+        max-height: 447.19px;
+
+    }
+
+    .why-us p:last-of-type {
+        margin-right: 56px;
+    }
+
+    .result-partner {
+        min-height: 550px;
+    }
+
+
+    .result-partner-wrapper {
+        width: 540px;
+        flex-direction: column;
+    }
+
+    .result-text {
+        padding: 30px 10px;
+        max-width: 100%;
+    }
+
+    .result-image {
+        max-width: 100%;
+        min-height: 617px;
+    }
+
+
+    .partner-info-wrapper {
+        width: 540px;
+        /* min-height: 371px; */
+    }
+
+    .brand-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .brand-img {
+        flex: 0 0 100%;
+        max-width: 100%;
+        min-height: 362px;
+    }
+
+
+    .contact-wrapper {
+        width: 540px;
+        min-height: 666px;
+    }
+
+    .contact-wrapper h1 {
+        font-size: 6.25rem;
+        margin-top: 48px;
+    }
+
+    .contact-wrapper > h2 {
+        margin-top: -88px;
+    }
+
+    .contact-box {
+        margin-top: 35px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .company-info,
+    .fill-form {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 30px 10px;
+    }
+    
+
+    .footer-wrapper {
+        width: 540px;
+        min-height: 99px;
+    }
+}
+
+/* phone vertical */
+@media (max-width: 575px) {
+    .online-training .wrapper,
+    .wrapper-3 {
+        width: calc(((100% - 340px) / 2) + 340px);
+        max-height: initial;
+        min-height: 516px;
+    }
+    
+    .online-training {
+        height: auto;
+    }
+    /* .online-training,
+    .text,
+    .image-wrapper {
+        max-height: 360px;
+        min-height: initial;
+    } */
+
+    .online-training .wrapper {
+        flex-direction: column;
+    }
+
+    .online-training .text,
+    .online-training .image-wrapper {
+        flex: 0 0 50%;
+        max-width: 100%;
+    }
+
+    .online-training .text {
+        min-height: 414px;
+        padding-left: 10px;
+    }
+
+    .online-training .image-wrapper {
+        min-height: 340px;
+    }
+
+    .text h3 {
+        font-size: 1.25rem;
+    }
+
+    .text .fa-bars {
+        display: block;
+        position: absolute;
+        top: 22px;
+        right: 30px;
+        font-size: 2rem;
+        color: rgb(153, 153, 153)
+    }
+
+    .image-wrapper a {
+        display: none;
+    }
+
+
+    .choose-us .wrapper-2 {
+        width: 340px;
+        /* min-height: 1190px; */
+    }
+
+    .choose-us .wrapper-2 > h2 {
+        font-size: 2.25rem;
+        margin-top: 38px;
+    }
+    
+    .choose-us .wrapper-2 > p {
+        line-height: 1.6;
+    }
+
+    .choose-us .card-item {
+        margin-bottom: 13px;
+        flex-basis: 100%;
+        min-height: 212px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .card-item > h1 {
+        font-size: 6rem;
+    }
+
+    .card-item > h3 {
+        position: relative;
+        top: 30px;
+    }
+
+
+    .life-is-good .wrapper-3 {
+        max-height: initial;
+        min-height: 499px;
+        width: 340px;
+        margin-right: auto;
+        flex-direction: column;
+    }
+
+    .life-description .read-more {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .life-description {
+        flex: 0 0 46.666666666%;
+        max-width: 100%;
+        text-align: center;
+        padding: 30px 10px;
+    }
+
+    .life-image {
+        flex: 0 0 53.333333333%;
+        max-width: 100%;
+        max-height: 532px;
+    }
+
+    .life-image img {
+        width: 100%;
+    }
+
+
+
+    .life-is-good,
+    .life-description,
+    .life-image {
+        /* max-height: 467.77px; */
+        min-height: 210px;
+    }
+
+    .life-is-good {
+        height: auto;
+    }
+
+    .life-description h1 {
+        margin-top: 0px;
+        font-size: 2.25rem;
+    }
+
+    .life-description h5 {
+        line-height: 1.4;
+        font-size: 1.25rem;
+    }
+
+    .life-description p {
+        margin-right: 0;
+    }
+
+    .why-us {
+        background-size: auto 140%;
+    }
+    .why-us-wrapper {
+        width: 340px;
+        min-height: 530px;
+        max-height: 447.19px;
+        text-align: center;
+    }
+
+    .why-us h2 {
+        font-size: 2.25rem;
+    }
+
+    .why-us p:last-of-type {
+        margin-right: 0;
+    }
+
+    .result-partner {
+        min-height: 550px;
+    }
+
+
+    .result-partner-wrapper {
+        width: 340px;
+        flex-direction: column;
+    }
+
+    .result-text {
+        padding: 30px 10px;
+        max-width: 100%;
+    }
+
+    .result-text > h2,
+    .result-text > p:first-of-type {
+        text-align: center;
+    }
+
+    .result-text > h2 {
+        font-size: 2.25rem;
+        margin-top: 0;
+    }
+
+    .result-image {
+        max-width: 100%;
+        min-height: 388px;
+    }
+
+    .partner-info-wrapper {
+        width: 340px;
+        margin-top: 100px;
+        /* min-height: 371px; */
+    }
+
+    .partner-info-wrapper > h2 {
+        font-size: 2.25rem;
+    }
+
+    .partner-info-wrapper > p {
+        width: 340px;
+    }
+
+    .brand-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .brand-img {
+        flex: 0 0 100%;
+        max-width: 100%;
+        min-height: 228px;
+    }
+
+
+    .contact-wrapper {
+        width: 340px;
+        min-height: 666px;
+    }
+
+    .contact-wrapper h1 {
+        font-size: 4.5rem;
+        margin-top: 43px;
+    }
+
+    .contact-wrapper > h2 {
+        font-size: 2.25rem;
+        margin-top: -60px;
+    }
+
+    .contact-box {
+        margin-top: 35px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .company-info {
+        text-align: center;
+    }
+
+    .company-info > h2 {
+        margin-right: initial;
+    }
+
+    .company-info,
+    .fill-form {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 30px 20px;
+    }
+    
+
+    .footer-wrapper {
+        width: 340px;
+        min-height: 36px;
+    }
+
+    .footer-wrapper p {
+        width: 340px;
+    }
+
+    .web-credit {
+        text-align: center;
     }
 }
