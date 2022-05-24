@@ -55,6 +55,7 @@ header span.active {
 iframe {
     height: calc(100% - 70px);
     margin-top: 70px;
+    overflow-x: hidden;
 }
 
 
