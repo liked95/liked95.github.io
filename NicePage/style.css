@@ -26,7 +26,7 @@ p {
     text-decoration: none;
 }
 
-header {
+/* header {
     background-color: #f2f2f2;
     border: none;
     height: 70px;
@@ -36,11 +36,11 @@ header {
     display: flex;
     align-items: center;
     z-index: 999;
-}
+} */
 
-header a {
+/* header a {
     margin-left: 10px;
-}
+} */
 
 /* header .width-btn {
     margin-left: 100px;
@@ -52,7 +52,7 @@ header a {
     min-height: 607px;
     height: 607px;
     color: #312933;
-    margin-top: 70px;
+    /* margin-top: 70px; */
 }
 
 .online-training .wrapper {
