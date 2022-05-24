@@ -1452,12 +1452,17 @@ textarea::placeholder {
         transition: all 0.5s;
     }
 
+    .side-nav.fade {
+        transform: translateX(-100%);
+    }
+
     .menu-close {
         font-size: 40px;
         font-weight: 400;
         color: white;
         text-align: right;
-        padding: 15px
+        padding: 15px;
+        cursor: pointer;
     }
 
     .side-nav ul li {

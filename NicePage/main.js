@@ -7,6 +7,10 @@ const closeButton = document.querySelector('.menu-close')
 menuButton.addEventListener('click', () => {
     sideNav.classList.add('active');
     navContainer.classList.add('active');
+
+    sideNav.classList.remove('fade');
+    navContainer.classList.remove('fade');
+    
     body.style.overflowY = `hidden`;
     
 })
@@ -14,6 +18,10 @@ menuButton.addEventListener('click', () => {
 function closeTheMenu() {
     sideNav.classList.remove('active');
     navContainer.classList.remove('active');
+
+    sideNav.classList.add('fade');
+    navContainer.classList.add('fade');
+
     body.style.overflowY = `auto`;
 }
 
