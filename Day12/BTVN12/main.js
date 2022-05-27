@@ -81,36 +81,56 @@ console.log(isPalindrome('Hello world'))
 // 203950 -> 200359
 
 function smallestNumber(number) {
+
     let newNumber = "";
-    let zeros = "";
-    number = number.toString();
-    while (number.length > 0) {
-        let min = Number(number[0])
-        for (let i = 0; i < number.length; i++) {
-            if (Number(number[i]) < min) {
-                min = Number(number[i])
+
+    if (number >= 0) {
+        number = number.toString();
+        let zeros = "";
+        while (number.length > 0) {
+            let min = Number(number[0])
+            for (let i = 0; i < number.length; i++) {
+                if (Number(number[i]) < min) {
+                    min = Number(number[i])
+                }
             }
+
+            // after min has been found for each for loop
+
+            if (min === 0) {
+                zeros += min
+            } else {
+                newNumber += min
+            }
+
+            number = number.replace(min, "");
+        }
+        return Number(newNumber.slice(0, 1) + zeros + newNumber.slice(1))
+    } else {
+        // strip the minus sign "-"
+        number = number.toString().slice(1);
+        while (number.length > 0) {
+            max = Number(number[0])
+            for (let i = 0; i < number.length; i++) {
+                if (Number(number[i]) > max) {
+                    max = Number(number[i])
+                }
+            }
+
+            newNumber += max;
+            number = number.replace(max, "");
         }
 
-        // after min has been found for each for loop
-
-        if (min === 0) {
-            zeros += min
-        } else {
-            newNumber += min
-        }
-
-        number = number.replace(min, "");
+        return -1 * Number(newNumber)
     }
-
-    return Number(newNumber.slice(0, 1) + zeros + newNumber.slice(1))
 
 }
 
-console.log(smallestNumber(652140005230))
+console.log(smallestNumber(310))
 console.log(smallestNumber(53751))
 console.log(smallestNumber(14350))
-console.log(smallestNumber(20390985147150))
+console.log(smallestNumber(-470150))
+console.log(smallestNumber(-501401384))
 
 // Bài 5: Viết function truyền vào 1 chuỗi bất kỳ gồm nhiều từ. Hãy chuyển chuỗi đó thành dạng snake_case và viết thường
 
