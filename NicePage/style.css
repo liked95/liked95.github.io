@@ -1444,18 +1444,19 @@ textarea::placeholder {
         position: absolute;
         z-index: 100;
         transform: translateX(-100%);
-        transition: all 0.5s;
+        transition: all 0.3s;
     }
 
     .side-nav.active {
-        transform: translateX(0);
-        transition: all 0.5s;
+        transform: translateX(0%);
     }
 
-    .side-nav.fade {
+    
+
+    /* .side-nav.fade {
         transform: translateX(-100%);
         transition: all 0.5s;
-    }
+    } */
 
     .menu-close {
         font-size: 40px;
@@ -1469,6 +1470,7 @@ textarea::placeholder {
     .side-nav ul li {
         width: 100%;
         text-align: center;
+        list-style-type: none;
     }
 
     .side-nav ul li a {

@@ -8,8 +8,8 @@ menuButton.addEventListener('click', () => {
     sideNav.classList.add('active');
     navContainer.classList.add('active');
 
-    sideNav.classList.remove('fade');
-    navContainer.classList.remove('fade');
+    // sideNav.classList.remove('fade');
+    // navContainer.classList.remove('fade');
     
     body.style.overflowY = `hidden`;
     
@@ -19,8 +19,8 @@ function closeTheMenu() {
     sideNav.classList.remove('active');
     navContainer.classList.remove('active');
 
-    sideNav.classList.add('fade');
-    navContainer.classList.add('fade');
+    // sideNav.classList.add('fade');
+    // navContainer.classList.add('fade');
 
     body.style.overflowY = `auto`;
 }

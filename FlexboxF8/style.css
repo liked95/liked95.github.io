@@ -1,240 +1,156 @@
 * {
-    box-sizing: border-box;
-}
-
-html, body {
     margin: 0;
     padding: 0;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    background-color: #ccc;
-}
-
-/* Navbar */
-.nav {
-    min-height: 42px;
-    background-color: #EF5122;
+.cards {
+    --gap: 30px;
+    --columns: 4;
+    margin-left: calc((-1/2)*var(--gap));
+    margin-top: 20px;
+    /* margin: 30px; */
     display: flex;
-    /*
-      Ngoài cách này, các bạn có thể
-      sử dụng 1 trong 2 cách mình
-      comment phía dưới
-    */
-    justify-content: space-between;
+    justify-content: initial;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
-/* Cách này */
-/* .nav-list:nth-child(1) {
-  margin-right: auto;
-} */
-
-/* Hoặc cách này */
-/* .nav-list:nth-child(2) {
-  margin-left: auto;
-} */
-
-.nav-list {
-    padding-left: 0;
-    margin: auto 16px;
+@media screen and (max-width: 567px) {
+    .cards {
+        --gap: 15px;
+        --columns: 1;
+    }
 }
 
-.nav-item {
-    color: #fff;
-    list-style: none;
-    margin: 0 8px;
-    display: inline-block;
+@media screen and (min-width: 568px) and (max-width: 1200px) {
+    .cards {
+        --gap: 20px;
+        --columns: 2;
+    }
 }
 
-/* Form layout */
-.form-container {
-    max-width: 720px;
-    padding: 32px;
-    margin: 36px auto 0 auto;
-    background-color: #fff;
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+    .cards {
+        --gap: 20px;
+        --columns: 3;
+    }
 }
 
-.form__row {
-    padding: 8px 0;
-    display: flex;
+@media screen and (min-width: 1601px) and (max-width: 1800px){
+    .cards {
+        --gap: 20px;
+        --columns: 4;
+    }
 }
 
-.form__label {
-    min-width: 90px;
+@media screen and (min-width: 1801px) {
+    .cards {
+        --gap: 20px;
+        --columns: 5;
+    }
 }
 
-.form__input {
-    flex: 1;
-}
 
-/* Column layout */
-.column-layout {
-    margin-top: 36px;
-    padding: 12px 0;
-    background-color: #fff;
-    display: flex;
-}
 
-.column-item {
-    padding: 0 16px;
-}
 
-.sidebar-one {
-    flex: 1;
-}
 
-.sidebar-two {
-    flex: 1;
-}
+.card {
 
-.main-column {
-    flex: 3;
-}
-
-/* Feature layout */
-.feature-layout {
-    margin-top: 36px;
+    width: calc(calc(100% / var(--columns)) - var(--gap));
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: stretch;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 0 black;
+    overflow: hidden;
+    margin-left: var(--gap);
+    margin-bottom: var(--gap);
 }
 
-/* PC, Tablet */
-@media (min-width: 740px) {
-    .feature-layout {
-        flex-direction: row;
-    }
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
-.feature-item {
-    padding: 12px 16px;
-    margin-top: 16px;
-    flex-basis: 30%;
-}
-
-.feature-item:nth-child(1) {
-    background-color: rgb(192, 227, 222);
-}
-
-.feature-item:nth-child(2) {
-    background-color: rgb(227, 200, 192);
-}
-
-.feature-item:nth-child(3) {
-    background-color: rgb(226, 192, 227);
-}
-
-/* Wrap layout */
-.wrap-layout {
-    background-color: #fff;
-    margin-top: 36px;
-    padding: 12px 0 32px 0;
+.card-content {
+    --content-padding: 30px;
+    padding: var(--content-padding);
+    flex-grow: 1;
+    padding-bottom: 0;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap-reverse;
+    flex-direction: column;
+    /* justify-content: space-between; */
 }
 
-.wrap-layout__item {
-    width: 148px;
-    height: 90px;
-    color: #fff;
-    text-align: center;
-    line-height: 90px;
-    font-size: 48px;
-    font-weight: 700;
-    margin-top: 20px;
-    background-color: #EF5122;
+.card-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    word-wrap: break-word;
 }
 
-/* Center layout */
-.center-layout {
-    background-color: rgb(192, 227, 194);
-    margin: 36px auto 0 auto;
-    padding: 32px 0;
-    max-width: 640px;
-    height: 360px;
+.card-top {
     display: flex;
+    margin: auto 0 10px 0;
 }
 
-.center-layout__item {
-    font-size: 42px;
-    font-weight: 700;
-    /*
-      Cũng có cách khác là các bạn
-      thêm 2 thuộc tính vào flex-container:
-      justify-content: center;
-      align-item: center;
-  
-      cũng cho kết quả tương tự,
-      nhưng cách margin: auto này
-      ngắn gọn hơn
-    */
-    margin: auto;
-}
-
-/* Chart layout */
-.chart-layout {
-    margin: 36px auto 0 auto;
-    padding: 32px 0;
-    height: 320px;
-    background-color: #fff;
+.card-user-top {
     display: flex;
-    justify-content: space-around;
+
 }
 
-.chart-layout__item {
-    align-self: flex-end;
-    width: 60px;
-    color: #fff;
-    text-align: center;
-    height: var(--percent);
-    background-color: #EF5122;
-    animation: growth ease-in 0.5s;
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    flex-shrink: 0;
 }
 
-@keyframes growth {
-    from {
-        opacity: 0;
-        height: calc(var(--percent) - 50%);
-    }
-    to {
-        opacity: 1;
-        height: var(--percent);
-    }
+.card-user-name {
+    margin-right: 5px;
 }
 
-/* End */
-.the-end {
-    margin: 12px auto 48px auto;
-    padding: 32px 0;
-    max-width: 740px;
-    min-height: 360px;
+.card-user-game {
+    font-size: 0.9rem;
+}
+
+.card-user-avatar {
+    max-width: 100%;
+}
+
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px calc(var(--content-padding));
+    border-top: 1px gray solid;
+    margin: 0 calc(-1*var(--content-padding));
+    /* margin-top: auto; */
+}
+
+.card-live {
+    background-color: orange;
+    padding: 7px 13px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+}
+
+.card-watching {
+    line-height: 100%;
+    position: relative;
     display: flex;
     flex-direction: row;
+    /* align-self: center; */
 }
 
-.the-end__first {
-    padding: 4px 16px;
-    background-color: #fff;
-    flex: 1;
-}
+.card-watching p {
+    align-self: center;
 
-.the-end__second {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.the-end__second-one {
-    flex: 1;
-    padding: 4px 16px;
-    background-color: rgb(227, 192, 214);
-}
-
-.the-end__second-two {
-    flex: 1;
-    padding: 4px 16px;
-    background-color: rgb(192, 210, 227);
 }
