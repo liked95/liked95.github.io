@@ -132,6 +132,36 @@ console.log(smallestNumber(14350))
 console.log(smallestNumber(-470150))
 console.log(smallestNumber(-501401384))
 
+
+function smallestNumber2(num) {
+    let numArray = num.toString().split("").sort();
+    if (numArray[0] != '-') {
+        for (let i = 0; i < numArray.length; i++) {
+            if (numArray[i] != 0) {
+                let removeItem = numArray[i]
+                numArray.splice(i, 1);
+                numArray.unshift(removeItem);
+                break;
+            }
+        }
+    } else {
+        numArray = numArray.reverse();
+        for (let i = 0; i < numArray.length; i++) {
+            if (numArray[i] == '-') {
+                let removeItem = numArray[i]
+                numArray.splice(i, 1);
+                numArray.unshift(removeItem);
+                break;
+            }
+        }
+    }
+
+    return Number((numArray.join("")))
+
+}
+
+console.log(smallestNumber2(-1540125))
+
 // Bài 5: Viết function truyền vào 1 chuỗi bất kỳ gồm nhiều từ. Hãy chuyển chuỗi đó thành dạng snake_case và viết thường
 
 // Ví dụ:
