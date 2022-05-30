@@ -1,0 +1,884 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,700;0,800;0,900;1,600&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@300;400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,700;0,900;1,400;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    font-family: "Roboto", "sans-serif";
+    /* overflow-x: hidden; */
+    --main-container-width: 1140px;
+    --open-sans: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Oswald, sans-serif;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    color: #42434b;
+}
+
+/* a:active {
+    color: initial;
+} */
+
+.main-wrapper {
+    width: var(--main-container-width);
+    margin: auto;
+}
+
+
+header .main-wrapper {
+    min-height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a h3 {
+    font-family: Oswald, sans-serif;
+    font-size: 1.875rem;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fe7ec9;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+}
+
+.menu-item {
+    margin-right: 25px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(66, 67, 75);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.landing-page .main-wrapper {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: flex;
+
+}
+
+.landing-page-intro {
+    min-height: 670px;
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    padding: 0 49px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.landing-page-intro h2 {
+    font-size: 4.5rem;
+    color: #488df4;
+    margin: 65px 30px 0;
+}
+
+.landing-page-intro h3 {
+    font-size: 1.875rem;
+    color: rgb(66, 67, 75);
+    font-weight: 700;
+    margin: 20px 30px 65px;
+
+}
+
+
+.landing-page-image {
+    background: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/1928ac4fdeea5ee28a624ce0/firstdayofschoolbacktoschoolphotoideasphotographyhowtotakegreatpictures13.jpg);
+    min-height: 670px;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.activities {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.activity-container {
+    min-height: 340px;
+    flex: 0 0 25%;
+    min-width: 25%;
+    background-color: #38c4c1;
+}
+
+.activity-container:nth-of-type(2) {
+    background-color: #feca02
+}
+
+.activity-container:nth-of-type(3) {
+    background-color: #fe8ec9;
+}
+
+
+.activity-container:nth-of-type(4) {
+    background-color: #488df4;
+}
+
+
+.activity-icon {
+    height: 86px;
+    width: 86px;
+    margin: 85px auto 0;
+}
+
+.activity-icon img {
+    fill: white;
+}
+
+.activity-content {
+    margin: 20px auto 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.treat-kids {
+    background-color: #f2f2f2;
+}
+
+.treat-kids .main-wrapper {
+    min-height: 492px;
+    padding: 60px 105px 49px;
+}
+
+.treat-kids h1 {
+    margin: 75px 60px 0;
+    font-size: 3.75rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: #488df4;
+    word-wrap: break-word;
+}
+
+.treat-kids .black-line {
+    width: 67px;
+    height: 3px;
+    margin: 30px auto 0;
+    border: 3px solid #000;
+    /* transform-origin: right center; */
+}
+
+.treat-kids p {
+    font-size: 1.25rem;
+    margin: 35px 60px;
+    text-align: center;
+    color: #42434b;
+    line-height: 1.7;
+
+}
+
+.about-us .main-wrapper {
+    min-height: 995px;
+    position: relative;
+}
+
+.about-us .intro {
+    width: 855px;
+    min-height: 185px;
+    margin: 26px auto 0;
+    text-align: center;
+    padding-top: 59px;
+}
+
+.intro h4 {
+    /* margin: 59px 0 0; */
+    color: #808080;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.intro h2 {
+    font-size: 3rem;
+    text-transform: capitalize;
+    margin: 13px 0 20px;
+    color: rgb(66, 67, 75);
+    line-height: 1.2;
+}
+
+.about-us .card-container {
+    margin: 25px 0 60px 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.about-us .image-container {
+    padding: 10px;
+    min-height: 719px;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.about-us .image-container .image {
+    background-image: url(./img/large-image.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.about-us .right-content {
+    padding: 10px;
+    min-height: 719px;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-content .description {
+    flex: 0 0 calc(50% - 10px);
+    max-height: calc(50% - 10px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.description .teacher {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+}
+
+.teacher,
+.mission {
+    background-color: #ebfcfc;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mission {
+    background-color: #fff2fa;
+}
+
+/* start global  */
+.svg-icon {
+    background-color: #38c4c1;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    margin: 32px 0 0 auto;
+    padding: 14px;
+}
+
+.svg-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.description h4 {
+    margin: 30px 0 0 auto;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    font-weight: 300;
+    color: #808080;
+}
+
+
+.description p {
+    font-size: .875rem;
+    margin-top: 20px;
+    font-weight: 400;
+    line-height: 1.7;
+    font-style: italic;
+    color: #42434b;
+}
+
+.description a {
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 20px 0 auto auto;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(56, 196, 193);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+.description a:hover {
+    color: #32b0ae;
+}
+
+/* end global  */
+
+.mission .svg-icon {
+    background-color: #fe7ec9;
+}
+
+.mission a {
+    color: #fe7ec9;
+}
+
+.mission a:hover {
+    color: #fe58b9;
+}
+
+
+
+.description .mission {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+}
+
+
+
+.right-content .illustrative-images {
+    flex: 0 0 calc(50% - 10px);
+    max-height: calc(50% - 10px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.illustrative-images .girl-image {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+
+    background-image: url(./img/girl-image.jpg);
+}
+
+.illustrative-images .boy-image {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+
+    background-image: url(./img/boy-image.jpg);
+}
+
+.illustrative-images .girl-image,
+.illustrative-images .boy-image {
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.key-features {
+    background-color: #feca02;
+    color: #42434b;
+}
+
+.key-features .main-wrapper {
+    min-height: 615px;
+    padding-top: 65px;
+}
+
+.features-services {
+    display: block;
+    margin: 0 auto;
+    width: 570px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 133px;
+}
+
+.features-services h4 {
+    margin-top: 9px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.2;
+
+}
+
+.features-services h2 {
+    margin: 12px 0 9px 0;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #fff;
+}
+
+.feature-card-container {
+    --gap: 30px;
+    --columns: 4;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--gap);
+}
+
+.feature-card {
+    min-height: 317px;
+    width: calc(calc(100% - calc((var(--columns) - 1) * var(--gap))) / var(--columns));
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.feature-card .feature-icon {
+    height: 64px;
+    width: 64px;
+    margin: 30px auto 0;
+}
+
+.feature-card h5 {
+    margin: 31px auto 0;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #fe7ec9;
+    line-height: 1.2;
+}
+
+.feature-card:nth-of-type(2) h5 {
+    color: #488df4;
+}
+
+.feature-card:nth-of-type(3) h5 {
+    color: #38c4c1;
+}
+
+.feature-card:nth-of-type(4) h5 {
+    color: #feca02;
+}
+
+
+.feature-card p {
+    margin: 30px;
+    color: #454545;
+    font-style: italic;
+    line-height: 1.7;
+    text-align: center;
+
+}
+
+.enrollment {
+    background-color: #f2f2f2;
+}
+
+.enrollment .main-wrapper {
+    min-height: 425px;
+}
+
+.enrollment h1 {
+    margin: 79px auto 0;
+    padding-left: 20px;
+    display: inline-block;
+    color: #42434b;
+    width: 100%;
+    font-size: 3.75rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.enrollment .para-container {
+    margin-top: 18px;
+    margin-bottom: 34px;
+    display: flex;
+}
+
+.para-container p {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 20px 40px 20px 20px;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    word-wrap: break-word;
+}
+
+.innovative-teaching {
+    background-color: #fe7ec9;
+    padding: 70px 0;
+}
+
+.innovative-teaching .main-wrapper {
+    --innovative-gap: 30px;
+    --innovative-columns: 3;
+    min-height: 478px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--innovative-gap)
+}
+
+.innovative-teaching .main-wrapper>div {
+    width: calc(calc(100% - calc((var(--innovative-columns) - 1) * var(--innovative-gap))) / var(--innovative-columns));
+}
+
+.innovative-girl-image {
+    background-image: url(./img/innovative-girl.jpg);
+    background-position: 0% 0%;
+    background-size: cover;
+}
+
+.innovative-boy-image {
+    background-image: url(./img/innovative-boy.jpg);
+    background-position: 0% 0%;
+    background-size: cover;
+}
+
+.innovative-description {
+    padding: 0 30px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.innovative-description h3 {
+    font-size: 1.875rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #42434b;
+}
+
+.innovative-description p {
+    margin-top: 20px;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.preschool.main-wrapper {
+    min-height: 937px;
+
+}
+
+.intro-preschool {
+    margin: 50px auto 10px;
+    padding: 10px 0;
+    width: 500px;
+    text-align: center;
+}
+
+.intro-preschool h4 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #808080;
+}
+
+.intro-preschool h2 {
+    margin: 13px 0;
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #42434b;
+    text-transform: capitalize;
+}
+
+.preschool-flex-container {
+    --preschool-gap: 24px;
+    --preschool-columms: 3;
+    min-height: 550px;
+    width: 100%;
+    margin: 90px 0 130px 0;
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--preschool-gap)
+}
+
+.preschool-flex-container>div {
+    width: calc(calc(100% - calc((var(--preschool-columms) - 1) * var(--preschool-gap))) / var(--preschool-columns));
+    flex: 1;
+    /* width: 33%; */
+
+}
+
+
+.middle-image {
+    background-image: url(./img/middle-image.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.first-paras,
+.second-paras {
+    padding-right: 20px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.second-paras {
+    padding-right: 0;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.para h5 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #42434b;
+}
+
+.para p {
+    color: #42434b;
+    word-wrap: break-word;
+    margin-top: 20px;
+    font-size: 1.125rem;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.facility {
+    background-color: #38c4c1;
+}
+
+.facility .main-wrapper {
+    min-height: 907px;
+}
+
+.intro-facility {
+    color: #fff;
+    margin: 100px auto 0;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.intro-facility h4 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.intro-facility h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 13px;
+}
+
+.facility-flex-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.facility-image {
+    flex: 1 1 50%;
+    max-width: 50%;
+    min-height: 599px;
+    background-image: url(./img/facility-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 7.08%;
+
+}
+
+.facility-content {
+    flex: 1 1 50%;
+    max-width: 50%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px;
+}
+
+.facility-content h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #42434b;
+}
+
+.facility-content p {
+    margin-top: 20px;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #42434b;
+}
+
+.facility-content a {
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 30px;
+    font-family: 'Open Sans', sans-serif;
+    color: #fe7ec9;
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 2px;
+}
+
+.facility-content a:hover {
+    color: #fe58b9;
+}
+
+.contact .main-wrapper {
+    min-height: 355px;
+    display: flex;
+}
+
+.contact .main-wrapper>div {
+    width: 33.3333%;
+}
+
+.address,
+.phone,
+.email {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-icon {
+    height: 65px;
+    width: 65px;
+    margin: 25px auto 0;
+    padding: 12px;
+    border-radius: 50%;
+    color: white;
+    background-color: #fe7ec9;
+}
+
+.phone .contact-icon {
+    background-color: #feca02;
+}
+
+.email .contact-icon {
+    background-color: #38c4c1;
+}
+
+.contact-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.contact .main-wrapper h6 {
+    margin: 32px 30px 25px;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #42434b;
+    text-align: center;
+}
+
+
+.samples {
+    background-color: #fe7ec9;
+}
+
+.samples .main-wrapper {
+    min-height: 309px;
+    padding-top: 105px;
+}
+
+.samples .headline-container {
+    display: flex;
+    width: 100%;
+}
+
+.headline {
+    width: 100%;
+    padding-top: 25px;
+    color: #fff;
+}
+
+.headline h6 {
+    font-size: 0.875rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.headline p {
+    margin-top: 10px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #fff;
+
+}
+
+.samples .social {
+    margin: 70px auto auto;
+    color: #fff;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.social-icon a {
+    color: #fff;
+}
+.web-credit {
+    background-color: #333;
+    min-height: 102.59px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.web-credit p {
+    font-size: 0.8rem;
+    color: #fff;
+    text-align: center;
+   
+}
+
+.web-credit p a {
+    text-decoration: underline;
+    color: #feb8e1;
+}
+
+.web-credit p a:hover {
+    text-decoration: none;
+    color: #a1a1a1;
+
+}
+
