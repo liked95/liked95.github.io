@@ -122,6 +122,8 @@ header a h3 {
 
 .landing-page-image {
     background: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/1928ac4fdeea5ee28a624ce0/firstdayofschoolbacktoschoolphotoideasphotographyhowtotakegreatpictures13.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
     min-height: 670px;
     flex: 0 0 50%;
     max-width: 50%;
