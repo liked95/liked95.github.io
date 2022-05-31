@@ -1451,7 +1451,7 @@ textarea::placeholder {
         transform: translateX(0%);
     }
 
-    
+
 
     /* .side-nav.fade {
         transform: translateX(-100%);
@@ -1483,8 +1483,7 @@ textarea::placeholder {
 
     .side-nav ul li a:hover,
     .menu-close i:hover {
-        color:#a1a1a1;
+        color: #a1a1a1;
     }
 }
-
 

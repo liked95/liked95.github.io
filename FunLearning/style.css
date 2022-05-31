@@ -78,6 +78,13 @@ header a h3 {
     font-weight: 600;
 }
 
+.hamburger-menu {
+    width: 25px;
+    height: 25px;
+    display: none;
+    cursor: pointer;
+}
+
 .landing-page .main-wrapper {
     margin-top: 60px;
     margin-bottom: 60px;
@@ -172,6 +179,7 @@ header a h3 {
 .treat-kids .main-wrapper {
     min-height: 492px;
     padding: 60px 105px 49px;
+    text-align: center;
 }
 
 .treat-kids h1 {
@@ -402,7 +410,7 @@ header a h3 {
 .features-services {
     display: block;
     margin: 0 auto;
-    width: 570px;
+    width: var(--main-container-width);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -482,7 +490,7 @@ header a h3 {
 
 
 .feature-card p {
-    margin: 30px;
+    margin: 30px 10px;
     color: #454545;
     font-style: italic;
     line-height: 1.7;
@@ -855,6 +863,7 @@ header a h3 {
 .social-icon a {
     color: #fff;
 }
+
 .web-credit {
     background-color: #333;
     min-height: 102.59px;
@@ -868,7 +877,7 @@ header a h3 {
     font-size: 0.8rem;
     color: #fff;
     text-align: center;
-   
+
 }
 
 .web-credit p a {
@@ -879,6 +888,994 @@ header a h3 {
 .web-credit p a:hover {
     text-decoration: none;
     color: #a1a1a1;
-
 }
 
+
+
+/* laptop */
+@media (min-width: 992px) and (max-width: 1199px) {
+    body {
+        --main-container-width: 940px
+    }
+
+    .menu-item a {
+        font-weight: 400;
+    }
+
+    .landing-page-intro,
+    .landing-page-image {
+        min-height: initial;
+    }
+
+    .landing-page .main-wrapper {
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 500.39px;
+    }
+
+    .landing-page-image {
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+
+    .landing-page-intro h2 {
+        margin-top: 65px;
+        font-size: 2.25rem;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .landing-page-intro h3 {
+        margin-top: 20px;
+    }
+
+    .activity-container {
+        min-height: 291px;
+    }
+
+    .treat-kids .main-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .treat-kids h1 {
+        margin-top: 58px;
+    }
+
+    .treat-kids .black-line {
+        width: 55px;
+    }
+
+    .treat-kids p {
+        font-size: 1.125rem;
+        margin-top: 20px;
+        margin-bottom: 25px;
+        font-weight: 400;
+        line-height: 1.7;
+    }
+
+    .intro h2 {
+        margin-top: 11px;
+        font-weight: 700;
+        line-height: 1.2;
+        font-size: 2.25rem;
+    }
+
+    .about-us .image-container,
+    .about-us .right-content {
+        min-height: initial;
+        height: 663px;
+    }
+
+    .about-us .card-container {
+        margin-top: 10px;
+    }
+
+    .teacher,
+    .mission {
+        padding: 0 16px;
+    }
+
+    .svg-icon {
+        height: 60px;
+        width: 60px;
+        margin-top: 28px;
+    }
+
+    .description h4 {
+        margin-top: 29px;
+    }
+
+    .description p {
+        text-align: right;
+    }
+
+    .description a {
+        margin-top: 14px;
+    }
+
+    .about-us .main-wrapper {
+        min-height: 926px;
+    }
+
+    .key-features .main-wrapper {
+        min-height: 662px;
+    }
+
+    .feature-card-container {
+        margin-top: 44px;
+    }
+
+    .feature-card .feature-icon {
+        height: 53px;
+        width: 53px;
+    }
+
+    .feature-card p {
+        margin: 31px 13px 30px;
+    }
+
+    .enrollment .main-wrapper {
+        min-height: 450px;
+    }
+
+    .innovative-teaching .main-wrapper {
+        --innovative-gap: 10px;
+        min-height: 539.13px;
+    }
+
+    .innovative-girl-image {
+        background-position: 50% 50%;
+    }
+
+    .innovative-boy-image {
+        background-position: 50% 50%;
+    }
+
+    .innovative-description {
+        padding: 0 25px;
+    }
+
+    .preschool-flex-container {
+        margin: 70px 0 183px;
+    }
+
+    .facility-image {
+        min-height: 565px;
+    }
+
+    .contact-icon {
+        height: 54px;
+        width: 54px;
+    }
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        --main-container-width: 720px;
+    }
+
+    .activity-container {
+        flex: 0 0 50%;
+        min-width: 50%;
+    }
+
+    .menu-item a {
+        font-weight: 400;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .landing-page-intro,
+    .landing-page-image {
+        min-height: initial;
+    }
+
+    .landing-page .main-wrapper {
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 332px;
+    }
+
+    .landing-page-image {
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+
+    .landing-page-intro h2 {
+        margin-top: 100px;
+        font-size: 2.25rem;
+        line-height: 1.2;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .landing-page-intro h3 {
+        margin: 20px 0 65px;
+    }
+
+    .activity-container {
+        min-height: 291px;
+    }
+
+    .treat-kids .main-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .treat-kids h1 {
+        margin-top: 58px;
+        font-size: 3rem;
+        margin: 75px 0px 0;
+    }
+
+    .treat-kids .black-line {
+        width: 42px;
+    }
+
+    .treat-kids p {
+        font-size: 1.125rem;
+        margin: 35px 38px;
+        font-weight: 400;
+        line-height: 1.7;
+    }
+
+    .intro h2 {
+        margin-top: 11px;
+        font-weight: 700;
+        line-height: 1.2;
+        font-size: 2.25rem;
+    }
+
+    .about-us .intro {
+        width: 720px;
+    }
+
+    .about-us .image-container,
+    .about-us .right-content {
+        min-height: initial;
+        height: 663px;
+    }
+
+    .about-us .card-container {
+        margin-top: 10px;
+    }
+
+    .teacher,
+    .mission {
+        padding: 0 16px;
+    }
+
+    .svg-icon {
+        height: 60px;
+        width: 60px;
+        margin-top: 28px;
+    }
+
+    .description h4 {
+        margin-top: 29px;
+    }
+
+    .description p {
+        text-align: right;
+    }
+
+    .description a {
+        margin-top: 14px;
+    }
+
+    .about-us .main-wrapper {
+        min-height: 1860px;
+    }
+
+    .about-us .card-container {
+        display: block;
+    }
+
+    .about-us .image-container, .about-us .right-content {
+        max-width: 100%;
+        height: 798px;
+        padding: 10px 0;
+    }
+
+    .right-content .description {
+        text-align: center;
+    }
+
+    .key-features .main-wrapper {
+        min-height: 1114px;
+        
+    }
+
+    .feature-card-container {
+        margin-top: 44px;
+        --columns: 2;
+    }
+
+    .feature-card {
+        min-height: 372px;
+    }
+
+    .feature-card .feature-icon {
+        height: 53px;
+        width: 53px;
+    }
+
+    .feature-card p {
+        margin: 31px 13px 30px;
+    }
+
+    .enrollment .main-wrapper {
+        min-height: 580px;
+    }
+
+    .innovative-teaching .main-wrapper {
+        --innovative-gap: 10px;
+        min-height: 697.5px;
+    }
+
+    .innovative-girl-image {
+        background-position: 50% 50%;
+    }
+
+    .innovative-boy-image {
+        background-position: 50% 50%;
+    }
+
+    .innovative-description {
+        padding: 0 19px;
+    }
+
+    .intro-preschool {
+        width: 300px;
+    }
+
+    .preschool-flex-container {
+        margin: 0px 0 113px;
+        --preschool-gap: 14px;
+    }
+
+    .preschool-flex-container>div {
+        max-width: 49%;
+        min-height: 560px;
+        flex: 1 0 50%;
+    }
+
+    .preschool-flex-container .second-paras {
+        min-height: 500px;
+        margin: 100px 0;
+        flex: 1 0 100%;
+        max-width: 100%;
+        align-items: flex-start;
+        padding-left: 13px;
+    }
+
+    .facility-image {
+        min-height: 565px;
+    }
+
+    .contact .main-wrapper {
+        min-height: 269px;
+    }
+
+    .contact-icon {
+        height: 54px;
+        width: 54px;
+    }
+
+    .samples .main-wrapper {
+        min-height: 262px;
+        padding-top: 65px;
+    }
+}
+
+
+/* phone horizontal */
+@media (min-width: 576px) and (max-width: 767px) {
+    body {
+        --main-container-width: 540px;
+    }
+
+
+    .menu {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .landing-page .main-wrapper {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .landing-page-intro {
+        max-width: 100%;
+        min-height: 459px;
+        background-position: 50% 50%;
+        background-size: cover;
+        padding: 0 29px;
+    }
+
+    .landing-page-image {
+        max-width: 100%;
+        min-height: 461px;
+    }
+
+    .landing-page-intro h2 {
+        font-size: 2.25rem;
+    }
+
+    .landing-page-intro h3 {
+        margin-top: 50px;
+    }
+
+    .activity-container {
+        min-width: 100%;
+        min-height: 291px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .activity-icon {
+        height: 75px;
+        width: 75px;
+        margin: 0 auto;
+    }
+
+    .activity-content {
+        margin: 22px auto 30px;
+    }
+    .treat-kids .main-wrapper {
+        padding: 0 28px;
+        margin-bottom: 30px;
+        min-height: 512px;
+    }
+    .treat-kids h1 {
+        display: inline-block;
+        margin: 90px 0 0;
+        font-size: 3rem;
+    }
+    .treat-kids .black-line {
+        width: 39px;
+    }
+
+    .treat-kids p {
+        margin: 20px 0 25px;
+        font-size: 1.125rem;
+    }
+
+    .about-us .main-wrapper {
+        min-height: 1860px;
+    }
+
+    .about-us .intro {
+        width: 100%;
+        padding-top: 100px;
+    }
+
+    .intro h2 {
+        margin: 11px 0 10px;
+        font-size: 2.25rem;
+    }
+
+    .about-us .card-container {
+        display: block;
+        margin-top: 70px;
+        margin-bottom: 20px;
+    }
+
+    .about-us .image-container, .about-us .right-content {
+        max-width: 100%;
+        padding: 10px 0;
+    }
+
+    .about-us .image-container {
+        height: 674px;
+    }
+
+    .about-us .right-content {
+        height: 1416px;
+    }
+
+    .right-content .description {
+        text-align: center;
+        flex-direction: column;
+    }
+    .description .teacher,
+    .description .mission {
+        max-width: 100%
+    }
+
+    .svg-icon {
+        width: 64px;
+        height: 64px;
+        margin: 48px auto 0;
+    }
+
+    .description h4 {
+        margin: 33px auto 0;
+    }
+
+    .description a {
+        margin: 20px auto 28px;
+    }
+
+    .right-content .illustrative-images {
+        flex-direction: column;
+    }
+
+    .illustrative-images .girl-image, 
+    .illustrative-images .boy-image {
+        max-width: 100%;
+    }
+
+    .key-features .main-wrapper {
+        min-height: 1645px;
+    }
+    
+    .feature-card-container {
+        --columns: 1;
+    }
+
+    .feature-card .feature-icon {
+        height: 65px;
+        width: 65px;
+        margin-top: 10px;
+    }
+
+    .feature-card h5 {
+        font-size: 1.5rem;
+    }
+
+    .feature-card p {
+        font-size: 1.125rem;
+    }
+
+    .enrollment .main-wrapper {
+        min-height: 655px;
+    }
+
+    .enrollment .para-container {
+        flex-direction: column;
+    }
+
+    .para-container p {
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 60px;
+    }
+
+    .para-container p:last-child {
+        padding-left: 20px;
+    }
+
+    .innovative-teaching .main-wrapper {
+        --innovative-columns: 1;
+    }
+
+    .innovative-girl-image,
+    .innovative-boy-image {
+        height: 256px;
+        background-position: 50% 50%;
+    }
+
+    .innovative-description {
+        height: 386.16px;
+        padding: 0 14px;
+    }
+
+    .intro-preschool {
+        width: 300px;
+    }
+
+    .preschool-flex-container {
+        margin: 0;
+        --preschool-gap: 14px;
+    }
+
+    .preschool-flex-container>div {
+        max-width: 100%;
+        min-height: 560px;
+        flex: 1 0 50%;
+    }
+
+    .preschool-flex-container .first-paras,
+    .preschool-flex-container .second-paras {
+        min-height: 500px;
+        margin: 100px 0;
+        flex: 1 0 100%;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .preschool-flex-container .second-paras {
+        margin-bottom: 50px;
+    }
+
+    .para p {
+        text-align: left;
+    }
+
+
+    .facility .main-wrapper {
+        min-height: 1300px;
+    }
+
+    .facility-flex-container {
+        flex-direction: column;
+    }
+
+    .facility-image {
+        max-width: 100%;
+        min-height: 461px;
+        background-position: 50% 50%;
+    }
+
+    .facility-content {
+        max-width: 100%;
+        min-height: 530px;
+        padding: 0 28px;
+    }
+    .contact .main-wrapper {
+        flex-wrap: wrap;
+    }
+    .contact .main-wrapper>div {
+        width: 100%;
+        min-height: 259px;
+    }
+
+    .contact-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .samples .main-wrapper {
+        padding-top: 50px;
+        min-height: 501px;
+    }
+
+    .samples .headline-container {
+        flex-direction: column;
+        min-height: 350px;
+    }
+
+    .headline {
+        text-align: center;
+        flex: 1;
+    }
+
+    .samples .social {
+        margin-top: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* phone vertical */
+@media (max-width: 576px) {
+    body {
+        --main-container-width: 340px;
+    }
+
+    header .main-wrapper {
+        flex-direction: column;
+    }
+
+    header a h3 {
+        margin-top: 15px;
+    }
+
+
+    .menu {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .landing-page .main-wrapper {
+        flex-direction: column;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .landing-page-intro {
+        max-width: 100%;
+        min-height: 300px;
+        background-position: 50% 50%;
+        background-size: cover;
+        padding: 0 10px;
+    }
+
+    .landing-page-image {
+        max-width: 100%;
+        min-height: 300px;
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+
+    .landing-page-intro h2 {
+        font-size: 2.25rem;
+        margin: 62px 0 0;
+    }
+
+    .landing-page-intro h3 {
+        margin-top: 50px;
+        margin: 25px 0 5px 0;
+    }
+
+    .activity-container {
+        min-width: 100%;
+        min-height: 291px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .activity-icon {
+        height: 75px;
+        width: 75px;
+        margin: 0 auto;
+    }
+
+    .activity-content {
+        margin: 22px auto 30px;
+    }
+    .treat-kids .main-wrapper {
+        padding: 0 18px;
+        margin-bottom: 30px;
+        min-height: 612px;
+    }
+    .treat-kids h1 {
+        display: inline-block;
+        margin: 86px 0 0;
+        font-size: 2.25rem;
+    }
+    .treat-kids .black-line {
+        width: 33px;
+    }
+
+    .treat-kids p {
+        margin: 20px 0 25px;
+        font-size: 1.125rem;
+    }
+
+    .about-us .main-wrapper {
+        min-height: 2250px;
+    }
+
+    .about-us .intro {
+        width: 100%;
+        padding-top: 40px;
+    }
+
+    .intro h2 {
+        margin: 11px 0 10px;
+        font-size: 2.25rem;
+    }
+
+    .about-us .card-container {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .about-us .image-container, .about-us .right-content {
+        max-width: 100%;
+        padding: 10px 0;
+    }
+
+    .about-us .image-container {
+        height: 563px;
+        min-height: 563px;
+    }
+
+    .about-us .right-content {
+        height: 1416px;
+    }
+
+    .right-content .description {
+        text-align: center;
+        flex-direction: column;
+    }
+    .description .teacher,
+    .description .mission {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .svg-icon {
+        width: 64px;
+        height: 64px;
+        margin: 48px auto 0;
+    }
+
+    .description h4 {
+        margin: 33px auto 0;
+    }
+
+    .description a {
+        margin: 20px auto 28px;
+    }
+
+    .right-content .illustrative-images {
+        flex-direction: column;
+    }
+
+    .illustrative-images .girl-image, 
+    .illustrative-images .boy-image {
+        max-width: 100%;
+    }
+
+    .key-features .main-wrapper {
+        min-height: 1645px;
+    }
+    
+    .feature-card-container {
+        --columns: 1;
+    }
+
+    .feature-card .feature-icon {
+        height: 65px;
+        width: 65px;
+        margin-top: 10px;
+    }
+
+    .feature-card h5 {
+        font-size: 1.5rem;
+    }
+
+    .feature-card p {
+        font-size: 1.125rem;
+    }
+
+    .enrollment .main-wrapper {
+        min-height: 1003px;
+    }
+
+    .enrollment .para-container {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .para-container p {
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 60px;
+    }
+
+    .para-container p:last-child {
+        padding-left: 20px;
+    }
+
+    .innovative-teaching .main-wrapper {
+        --innovative-columns: 1;
+        --innovative-gap: 10px;
+    }
+
+    .innovative-girl-image,
+    .innovative-boy-image {
+        height: 256px;
+        background-position: 50% 50%;
+    }
+
+    .innovative-description {
+        height: 488px;
+        padding: 0 14px;
+    }
+
+    .intro-preschool {
+        width: 300px;
+    }
+
+    .preschool-flex-container {
+        margin: 0;
+        --preschool-gap: 14px;
+    }
+
+    .preschool-flex-container>div {
+        max-width: 100%;
+        min-height: 560px;
+        flex: 1 0 50%;
+    }
+
+    .preschool-flex-container .first-paras,
+    .preschool-flex-container .second-paras {
+        min-height: 500px;
+        margin: 100px 0;
+        flex: 1 0 100%;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .preschool-flex-container .second-paras {
+        margin-bottom: 50px;
+    }
+
+    .para p {
+        text-align: left;
+    }
+
+
+    .facility .main-wrapper {
+        min-height: 1210px;
+    }
+
+    .intro-facility {
+        margin-top: 80px;
+    }
+
+    .facility-flex-container {
+        flex-direction: column;
+    }
+
+    .facility-image {
+        max-width: 100%;
+        min-height: 300px;
+        background-position: 50% 50%;
+    }
+
+    .facility-content {
+        max-width: 100%;
+        min-height: 584.5px;
+        padding: 0 28px;
+    }
+
+    .facility-content h2 {
+        margin-top: 110px;
+    }
+    .contact .main-wrapper {
+        flex-wrap: wrap;
+    }
+    .contact .main-wrapper>div {
+        width: 100%;
+        min-height: 259px;
+    }
+
+    .contact-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .samples .main-wrapper {
+        padding-top: 50px;
+        min-height: 501px;
+    }
+
+    .samples .headline-container {
+        flex-direction: column;
+        min-height: 350px;
+    }
+
+    .headline {
+        text-align: center;
+        flex: 1;
+    }
+
+    .samples .social {
+        margin-top: 30px;
+    }
+}
