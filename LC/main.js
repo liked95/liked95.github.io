@@ -1,26 +1,14 @@
-var getLucky = function (s, k) {
-    let nums = ""
-    for (let i = 0; i < s.length; i++) {
-        nums += Number(s[i].charCodeAt(0)) - 96
-    }
-
-    
-    for (let i = 0; i < k; i++) {
-        var tempSumDigits = 0;
-        while (nums.length > 0) {
-            tempSumDigits += Number(nums.slice(nums.length-1));
-            nums = nums.slice(0, nums.length-1)
+var generate = function (numRows) {
+    let output = [[1]]
+    for (let i = 0; i < numRows - 1; i++) {
+        let x = output[output.length - 1];
+        let row = [1]
+        for (let j = 1; j < x.length; j++) {
+            row.push(x[j-1]+x[j])
         }
-        nums = tempSumDigits.toString()
+        row.push(1)
+        output.push(row)
     }
-    return tempSumDigits
+
+    return output
 };
-
-console.log(getLucky('dbvmfhnttvr', 5))
-
-// let nums = ""
-// s = 'dbvttvr'
-// for (let i = 0; i < s.length; i++) {
-//     nums += Number(s[i].charCodeAt(0)) - 96
-// }
-// console.log(nums) // 4(2)(22)(13)(6)(8)(14)(20)(20)(22)(18)
