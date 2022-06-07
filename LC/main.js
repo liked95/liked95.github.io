@@ -1,14 +1,35 @@
-var generate = function (numRows) {
-    let output = [[1]]
-    for (let i = 0; i < numRows - 1; i++) {
-        let x = output[output.length - 1];
-        let row = [1]
-        for (let j = 1; j < x.length; j++) {
-            row.push(x[j-1]+x[j])
+/**
+ * @param {number[]} candidates
+ * @param {number} target
+ * @return {number[][]}
+ */
+
+
+var combinationSum = function (candidates, target) {
+    let res = []
+
+    function dfs(i, cur =[], total) {
+        if (total === target) {
+            res.push(cur.slice())
+            return;
         }
-        row.push(1)
-        output.push(row)
+        if (i > candidates.length || total > target) return;
+
+        dfs(i, cur.push(candidates[i]), total + candidates[i])
+
+        dfs(i + 1, cur.pop(), total)
+         
     }
 
-    return output
-};
+    dfs(0, [], 0)
+    return res
+}
+
+
+console.log(combinationSum([2, 3, 6, 7], 7))
+// console.log(combinationSum([6, 3, 6, 2], 8))
+
+// console.log(combinationSum([5, 3, 4, 7], 7))
+// console.log(combinationSum([2, 4], 7))
+// console.log(combinationSum([2, 3, 5], 8))
+// console.log(combinationSum([2, 3], 7))
