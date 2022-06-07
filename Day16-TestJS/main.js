@@ -212,3 +212,4 @@ const getCountElement = arr => {
 
 
 console.log(getCountElement(["one", "two", "three", "one", "one", "three"]))
+console.log(getCountElement(["one", "two", "three", "one", "one", "three", 'love', 'three']))
