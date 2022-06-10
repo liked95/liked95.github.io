@@ -1,35 +1,54 @@
-/**
- * @param {number[]} candidates
- * @param {number} target
- * @return {number[][]}
- */
-
-
-var combinationSum = function (candidates, target) {
-    let res = []
-
-    function dfs(i, cur =[], total) {
-        if (total === target) {
-            res.push(cur.slice())
-            return;
-        }
-        if (i > candidates.length || total > target) return;
-
-        dfs(i, cur.push(candidates[i]), total + candidates[i])
-
-        dfs(i + 1, cur.pop(), total)
-         
+class Node {
+    constructor(val) {
+        this.val = val
+        this.left = null
+        this.right = null
     }
-
-    dfs(0, [], 0)
-    return res
 }
 
+const a = new Node(1)
+const b = new Node(2)
+const c = new Node(2)
+const d = new Node(3)
+const e = new Node(3)
 
-console.log(combinationSum([2, 3, 6, 7], 7))
-// console.log(combinationSum([6, 3, 6, 2], 8))
 
-// console.log(combinationSum([5, 3, 4, 7], 7))
-// console.log(combinationSum([2, 4], 7))
-// console.log(combinationSum([2, 3, 5], 8))
-// console.log(combinationSum([2, 3], 7))
+
+a.left = b
+a.right = c
+b.right = d
+c.right = e
+
+
+// var isBalanced = function (root) {
+//     function dfs(root) {
+//         if (!root) return [true, 0]
+//         let left = dfs(root.left)
+//         let right = dfs(root.right)
+//         let balanced = Math.abs(left[1] - right[1]) <= 1 && left[0] && right[0]
+//         return [balanced, Math.max(left[1], right[1]) + 1]
+//     }
+//     return dfs(root)[0]
+// };
+
+
+
+var pathSum = function(root, targetSum) {
+    let result = []
+    const dfs = (root, currentSum, temp = []) => {
+        if (!root) return;
+        
+        temp.push(root.val)
+        currentSum += root.val
+
+        if (!root.left && !root.right && currentSum === targetSum) {
+            result.push([...temp])
+        }
+
+        dfs(root.left, currentSum, temp)
+        dfs(root.right, currentSum, temp)
+
+    }
+
+    return result
+};
