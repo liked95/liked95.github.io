@@ -38,8 +38,8 @@ function renderUI(arr) {
     for (let todo of arr) {
         const newList = document.createElement("div")
         newList.innerHTML = `
-        <div class="todo-item active-todo">
-            <div class="todo-item-title ${todo.status ? "active-todo" : ""} " >
+        <div class="todo-item ${todo.status ? "active-todo" : ""} ">
+            <div class="todo-item-title " >
                 <input type="checkbox" ${todo.status ? "checked" : ""} onclick = toggleStatus(${todo.id})>
                 <p>${todo.title}</p>
             </div>
@@ -103,9 +103,10 @@ input.addEventListener("keydown", (e) => {
 
 
 const toggleStatus = (id) => {
-
+    
     todos.forEach(todo => {
         if (todo.id === id) {
+            console.log(todo.status)
             todo.status = !todo.status
         }
     })
