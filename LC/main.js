@@ -6,39 +6,31 @@ class TreeNode {
     }
 }
 
-const a = new TreeNode(3)
-const b = new TreeNode(9)
-const c = new TreeNode(20)
-const d = new TreeNode(15)
-const e = new TreeNode(7)
+const a = new TreeNode(4)
+const b = new TreeNode(8)
+const c = new TreeNode(5)
+const d = new TreeNode(0)
+const e = new TreeNode(1)
+const f = new TreeNode(6)
 
 
 
 a.left = b
 a.right = c
-c.left = d
-c.right = e
+b.left = d
+b.right = e
+c.right = f
 
 
-var combinationSum3 = function (k, n) {
-    let res = []
-
-    function dfs(idx, currentSum, count, tmp) {
-        if (currentSum > n) return;
-
-
-        if (count === k && currentSum === n) {
-            res.push(tmp.slice())
-        }
-        for (let i = idx; i <= 9; i++) {
-            dfs(i + 1, currentSum + i, count + 1, [...tmp, i])
-        }
-
+function isPalindromic(str) {
+    let left = 0;
+    let right = str.length - 1
+    while (left < right) {
+        if (str[left] != str[right]) return false
+        left++
+        right--
     }
+    return true;
+}
 
-    dfs(1, 0, 0, [])
-    return res
-};
-
-
-console.log(combinationSum3(4, 17))
+console.log(isPalindromic("racecar"))
