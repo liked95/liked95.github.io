@@ -22,15 +22,13 @@ b.right = e
 c.right = f
 
 
-function isPalindromic(str) {
-    let left = 0;
-    let right = str.length - 1
-    while (left < right) {
-        if (str[left] != str[right]) return false
-        left++
-        right--
+function isForm(word, chars) {
+    for (letter of word) {
+        if (!chars.includes(letter)) return false
+        chars = chars.replace(letter,"")
     }
-    return true;
+    return true
 }
 
-console.log(isPalindromic("racecar"))
+
+console.log(isForm("cat", "atach"))
