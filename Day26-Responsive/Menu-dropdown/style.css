@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,700;0,800;0,900;1,600&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@300;400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,700;0,900;1,400;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border-style: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+header {
+    height: 70px;
+    background-color: #111;
+    color: #fff;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo span {
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu ul li {
+    text-transform: uppercase;
+    margin-left: 16px;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: inline-block;
+    }
+
+    header {
+        position: relative;
+    }
+
+    .menu ul {
+        position: absolute;
+        background-color: tomato;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        flex-direction: column;
+        align-items: initial;
+        display: none;
+    }
+
+    .menu ul.show {
+        display: flex;
+    }
+
+    .menu ul li {
+        padding: 10px;
+        cursor: pointer;
+        transition: 0.3s all;
+    }
+
+    .menu ul li:hover {
+        background-color: green;
+    }
+}
