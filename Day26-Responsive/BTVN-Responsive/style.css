@@ -211,6 +211,10 @@ footer {
         --main-width: 720px;
     }
 
+    .spa-news .title {
+        width: 500px;
+    }
+
     .menu-icon {
         display: block;
     }
@@ -322,5 +326,9 @@ footer {
 
     .card {
         margin-bottom: 22px;
+    }
+
+    .sample-text {
+        width: 340px;
     }
 }
