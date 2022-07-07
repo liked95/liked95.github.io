@@ -22,21 +22,41 @@ b.right = e
 c.right = f
 
 
-let arr = [3, 2, 4, 1]
 
-
-function flip(idx) {
-    let left = 0, right = idx
-    while (left < right) {
-        let temp = arr[left]
-        arr[left] = arr[right]
-        arr[right] = temp
-        left++
-        right--
+/**
+ * @param {number[][]} costs
+ * @return {number}
+ */
+ var twoCitySchedCost = function(costs) {
+   
+    let ans1 = 0;
+    
+    while (costs.length > 0) {
+        costs.sort((a, b) => a[0]-b[0])
+        ans1 += costs.shift()[0]
+        console.log(costs)
+        
+        
+        costs.sort((a, b)=> a[1]-b[1])
+        ans1 += costs.shift()[1]
+        console.log(costs)
+        
+        
     }
-}
+    
+    return ans1
+    
+};
 
 
-flip(2)
+let costs = [[70,311],[74,927],[732,711],[126,583],[857,118],[97,928],[975,843],[175,221],[284,929],[816,602],[689,863],[721,888]]
 
-console.log(arr)
+console.log(twoCitySchedCost(costs))
+
+
+[
+    11, 12, 14, 13, 15,
+    16, 17, 14, 16, 17,
+    18, 19
+  ]
+  
