@@ -1,0 +1,512 @@
+header .row>* {
+    width: auto;
+}
+
+header .row {
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.logo {
+    width: 95px;
+    height: auto;
+}
+
+.main-menu {
+    list-style-type: none;
+    display: flex;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.menu-item {
+    margin-left: 50px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#login-btn {
+    border: none;
+    background-color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+}
+
+#get-started-btn {
+    width: 102px;
+    height: 32px;
+    background: #540CFA;
+    box-shadow: 0px 2px 4px rgba(60, 9, 179, 0.3);
+    border-radius: 4px;
+    margin-left: 30px;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#iphoneX {
+    position: relative;
+}
+
+#iphoneX .container {
+    padding-top: 83px;
+}
+
+#layer-orange {
+    position: absolute;
+    height: 600px;
+    right: 0;
+}
+
+#layer-purple {
+    position: absolute;
+    height: 600px;
+    right: 0;
+}
+
+#layer-blue {
+    position: relative;
+    height: 150px;
+    top: -50px;
+    left: -100px;
+}
+
+.iphone-image {
+    position: relative;
+    z-index: 1;
+}
+
+.introduction .intro-content {
+    width: 570px;
+    height: 100%;
+}
+
+.intro-content h1 {
+    margin: 65px 0 20px;
+    font-weight: 900;
+    font-size: 70px;
+    line-height: 72px;
+}
+
+.intro-content>p {
+    margin-bottom: 30px;
+    width: 471px;
+    font-weight: 300;
+    font-size: 21px;
+    line-height: 32px;
+}
+
+.email-form {
+    position: relative;
+    width: 450px;
+    height: 53px;
+    display: flex;
+}
+
+.email-form input {
+    padding-left: 3.33%;
+    height: 100%;
+    flex: 1;
+    background: #FFFFFF;
+    border: 0.5px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.05), 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.email-form input::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #000000;
+
+    mix-blend-mode: normal;
+    opacity: 0.3;
+}
+
+.email-form button {
+    border: none;
+    background-color: #540fca;
+    width: 141px;
+    height: 100%;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+#email-label {
+    position: absolute;
+    left: 3.33%;
+    top: 4px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #540CFA;
+}
+
+#partner {
+    margin-top: 130px;
+    width: 420px;
+}
+
+#partner p {
+
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.3;
+    margin-bottom: 16px;
+}
+
+#partner .partner-logos {
+    mix-blend-mode: normal;
+    opacity: 0.3;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#features {
+    margin-top: -50px;
+    min-height: 650px;
+}
+
+#features .row {
+    margin-top: 80px;
+}
+
+#features #title {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+#features h1 {
+    margin: 10px auto 30px;
+    width: 610px;
+    height: 126px;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 63px;
+    text-align: center;
+    color: #000000;
+
+}
+
+#features .description {
+    margin: 0 auto;
+    width: 610px;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 32px;
+    text-align: center;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+}
+
+.card {
+    border: none;
+}
+
+.card-content h4 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    margin: 14px 0 8px;
+}
+
+.card-content .card-description {
+    margin: 0 auto 10px;
+    width: 300px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    mix-blend-mode: normal;
+    opacity: 0.7;
+}
+
+.card-content a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #540CFA;
+}
+
+#movies .row>* {
+    padding: 0;
+}
+
+
+#app-showcases {
+    margin-top: 130px;
+    min-height: 800px;
+}
+
+#app-showcases .container {
+    position: relative;
+}
+
+.showcase-content .inner-showcase-content {
+    width: 460px;
+}
+
+.inner-showcase-content h1 {
+    margin: 80px 0 20px;
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 50px;
+}
+
+.inner-showcase-content .description {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+}
+
+.custom-modes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 184px;
+    margin-top: 40px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.custom-modes span {
+    margin: 0 17px;
+}
+
+.showcase-image {
+    height: 580px;
+    overflow: hidden;
+}
+
+.showcase-image img {
+    width: auto;
+    height: 100%;
+    max-width: initial;
+}
+
+.show-case-iphone-image {
+    width: 314px;
+    position: absolute;
+    top: 160px;
+    left: 46%;
+}
+
+#testimonial {
+    background-color: #000;
+    height: 800px;
+}
+
+#testimonial .row,
+#testimonial .container {
+    height: 100%;
+    overflow: hidden;
+}
+
+.testimonial-content-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-content {
+    margin-top: 200px;
+    width: 430px;
+}
+
+.testimonial-content p:first-of-type {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+}
+
+.testimonial-content h1 {
+    margin: 10px 0 20px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 50px;
+    color: #FFFFFF;
+}
+
+.testimonial-content p:nth-of-type(2) {
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+}
+
+.testimonial-content button {
+    width: 216px;
+    height: 42px;
+    background: #540CFA;
+    box-shadow: 0px 2px 4px rgba(32, 5, 97, 0.1), 0px 1px 2px rgba(32, 5, 97, 0.08);
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.user-reviews {
+    overflow: hidden;
+    display: flex;
+    gap: 20px;
+}
+
+.first-col {
+    width: 260px;
+    transform: translateY(-90px);
+}
+
+.second-col {
+    width: 260px;
+    transform: translateY(-10px);
+}
+
+.review-card {
+    margin: 20px 0;
+    width: 100%;
+    height: 210px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 15px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.info,
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.username {
+    height: 15px;
+    line-height: 40px;
+    margin-bottom: 0;
+    margin-left: 8px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.comment {
+    margin: 14px 0 35px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+}
+
+.comment-date {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+footer {
+    height: 600px;
+}
+
+.footer-content {
+    width: 610px;
+    margin: 138px auto 120px;
+}
+
+#footer-started {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 23px;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+}
+
+.footer-content h1 {
+    margin: 10px 0 25px;
+    width: 606px;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 63px;
+}
+
+.footer-content p:last-of-type {
+    margin-bottom: 50px;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 32px;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+}
+
+.footer-content .email-form {
+    margin: 0 auto;
+}
+
+.social {
+    width: 323px;
+    margin: 0 auto;
+    color: #DADADA;
+}
+
+.social-sites {
+    width: 117px;
+    height: 16px;
+    margin: 0 auto 28px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social p {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.3;
+}
