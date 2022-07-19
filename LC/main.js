@@ -23,40 +23,38 @@ c.right = f
 
 
 
-/**
- * @param {number[][]} costs
- * @return {number}
- */
- var twoCitySchedCost = function(costs) {
-   
-    let ans1 = 0;
-    
-    while (costs.length > 0) {
-        costs.sort((a, b) => a[0]-b[0])
-        ans1 += costs.shift()[0]
-        console.log(costs)
-        
-        
-        costs.sort((a, b)=> a[1]-b[1])
-        ans1 += costs.shift()[1]
-        console.log(costs)
-        
-        
+
+
+
+let arr = [3,1,2,4]
+function prevLessElement(arr) {
+    let ans = new Array(arr.length).fill(-1), stack = []
+    for (let i = 0; i < arr.length; i++) {
+        while (stack.length && arr[i] < arr[stack[stack.length-1]]) {
+            stack.pop()
+        }
+        if (stack.length) ans[i] = stack[stack.length-1]
+        stack.push(i)
     }
-    
-    return ans1
-    
-};
+
+    return ans
+}
 
 
-let costs = [[70,311],[74,927],[732,711],[126,583],[857,118],[97,928],[975,843],[175,221],[284,929],[816,602],[689,863],[721,888]]
-
-console.log(twoCitySchedCost(costs))
 
 
-[
-    11, 12, 14, 13, 15,
-    16, 17, 14, 16, 17,
-    18, 19
-  ]
-  
+
+const nextLessEle = arr => {
+    let ans = new Array(arr.length).fill(-1)
+    let stack = []
+    for (let i = 0; i < arr.length; i++) {
+        while (stack.length && arr[i] < arr[stack[stack.length-1]]) {
+            ans[stack.pop()] = i
+        }
+
+        stack.push(i)
+    }
+    return ans
+}
+console.log(nextLessEle(arr))    
+console.log(prevLessElement(arr))
