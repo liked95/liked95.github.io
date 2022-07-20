@@ -93,8 +93,8 @@ function renderProduct(obj) {
             <p>${obj.description}</p>
         </div>
     `
-}
-
+} 
+ 
 function renderImages(obj) {
     mainCarouselEl.innerHTML = ""
     thumbCarouselEl.innerHTML = ""

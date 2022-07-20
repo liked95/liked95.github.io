@@ -265,17 +265,39 @@ header .second-header-row {
     margin-right: 6px;
 }
 
-.old-price {
+.alter-options button:hover {
+    color: #2f80ed;
+    border-color: #2f80ed;
+}
+
+.alter-options button.active {
+    color: #2f80ed;
+    border-color: #2f80ed;
+}
+
+.old-price-container {
     margin-top: 20px;
+    line-height: 13px; 
+}
+
+.old-price-container .percent {
+    text-decoration-line: none;
     font-size: 13px;
-    line-height: 17px;
+    color: rgb(3, 219, 3);
+    font-weight: bold;
+}
+
+.old-price-container span {
+    font-size: 14px;
     text-decoration-line: line-through;
+    margin-right: 5px;
 }
 
 .current-price {
+    color: #222;
     margin-top: 9px;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 17px;
 }
 

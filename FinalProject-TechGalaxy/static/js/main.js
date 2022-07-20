@@ -17,7 +17,7 @@ $(document).mouseup(function (e) {
 
 
 const topSoldPhoneEl = document.querySelector(".top-sold-phones .row")
-console.log(topSoldPhoneEl)
+
 
 function renderSmartPhoneCart(arr) {
     topSoldPhoneEl.innerHTML = ""
@@ -33,7 +33,7 @@ function renderSmartPhoneCart(arr) {
 
         if (optionArr.length > 0) {
             for (const option of optionArr) {
-                optionEl += `<button onclick=chooseOption()>${option}</button>`
+                optionEl += `<button onclick=chooseOption(this)>${option}</button>`
             }
         }
 
@@ -60,12 +60,17 @@ function renderSmartPhoneCart(arr) {
 
                 <div class="product-content">
                     <p class="product-name">${p.name}</p>
+                    <p class="product-id" style = "display:none">${p.id}</p>
 
                     <div class="alter-options">
                         ${optionEl}
                     </div>
 
-                    <p class="old-price">${formatMoney(p.oldPrices[0])}</p>
+                    <div class="old-price-container">
+                        <span class="old-price">${formatMoney(p.oldPrices[0])}</span>  
+                        <span class="percent">${p.discounts[0]}%</span>
+                    </div>
+
                     <p class="current-price">${formatMoney(p.currentPrices[0])}</p>
 
                     <ul class="product-description">
@@ -90,6 +95,34 @@ function renderSmartPhoneCart(arr) {
             </div>
         `
     }
+
+    // color the first btn
+    const optionEls = document.querySelectorAll(".alter-options")
+    optionEls.forEach(ele => {
+        ele.firstElementChild.classList.add("active")
+    })
 }
 
 renderSmartPhoneCart(products)
+
+
+function chooseOption(ele) {
+    const productContentBox = ele.parentNode.parentNode
+    const options = ele.parentNode.children
+    Array.from(options).map(button => button.classList.remove("active"))
+    ele.classList.add("active")
+
+    const productID = productContentBox.querySelector(".product-id").innerText
+    const chosenIdx = Array.from(options).indexOf(ele)
+    let p = products.find(p => p.id == productID)
+
+    let oldPriceEl = productContentBox.querySelector(".old-price")
+    oldPriceEl.innerHTML = `${formatMoney(p.oldPrices[chosenIdx])}`
+
+    let currentPriceEl = productContentBox.querySelector(".current-price")
+    currentPriceEl.innerHTML = `${formatMoney(p.currentPrices[chosenIdx])}`
+
+    let percentEl = productContentBox.querySelector(".percent")
+    percentEl.innerHTML = `${p.discounts[chosenIdx]}%`
+
+}
