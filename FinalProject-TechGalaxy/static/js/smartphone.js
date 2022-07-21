@@ -98,6 +98,10 @@ function isSame(arr1, arr2) {
     return arr1.some(ele => arr2.includes(ele))
 }
 
+// function isBetween(num, low, high) {
+//     return num >= low && num <= high
+// }
+
 filterBtn.addEventListener("click", () => {
     // console.log(filterTagArr)
     const filterObject = {}
@@ -109,7 +113,6 @@ filterBtn.addEventListener("click", () => {
         }
     })
 
-    console.log(filterObject)
 
     let filterRes = []
     
@@ -119,17 +122,27 @@ filterBtn.addEventListener("click", () => {
         for (let key in filterObject) {
             let values = filterObject[key]
             values = values.map(value => value.toLowerCase())
-            console.log(values)
+            // console.log(values)
             if (key == "brand") {
                 if (!values.includes(p[key].toLowerCase())) {
                     isMatch = false
                     break
                 }
             } else if (key == "price") {
-
+                let isInPriceRange = values.some(value => {
+                    let pair = value.split(":")
+                    const low = 10**6*Number(pair[0]), high = 10**6*Number(pair[1])
+                    console.log(low, high)
+                    return (low <= p.currentPrices[0]) && (p.currentPrices[0] <= high)
+                })
+                
+                if (!isInPriceRange) {
+                    isMatch = false
+                    break
+                }
             } else {
                 let productValues = p[key].map(val => val.toLowerCase())
-                console.log(productValues)
+                // console.log(productValues)
                 if (!isSame(productValues, values)) {
                     isMatch = false
                     break
