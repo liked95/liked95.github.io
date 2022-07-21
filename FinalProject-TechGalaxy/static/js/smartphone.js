@@ -94,7 +94,9 @@ eraseAllTagBtn.addEventListener("click", () => {
 // lọc điện thoại
 const filterBtn = document.querySelector(".filter-btn")
 // convert filter criteria from array into objects with key = criteria, value = [value1, value2]
-
+function isSame(arr1, arr2) {
+    return arr1.some(ele => arr2.includes(ele))
+}
 
 filterBtn.addEventListener("click", () => {
     // console.log(filterTagArr)
@@ -118,16 +120,24 @@ filterBtn.addEventListener("click", () => {
             let values = filterObject[key]
             values = values.map(value => value.toLowerCase())
             console.log(values)
-            if (key != "price") {
-                console.log(p[key].toLowerCase())
+            if (key == "brand") {
                 if (!values.includes(p[key].toLowerCase())) {
+                    isMatch = false
+                    break
+                }
+            } else if (key == "price") {
+
+            } else {
+                let productValues = p[key].map(val => val.toLowerCase())
+                console.log(productValues)
+                if (!isSame(productValues, values)) {
                     isMatch = false
                     break
                 }
             }
 
         }
-        
+
         if (isMatch) filterRes.push(p)
     }
     
