@@ -34,6 +34,10 @@ p {
     margin-bottom: 0;
 }
 
+input[type=checkbox] {
+    transform: scale(1.3);
+}
+
 .row {
     margin: 0;
 }
@@ -465,7 +469,7 @@ footer p {
     padding: 16px;
     width: 350px;
     border-radius: 6px;
-    border: 1px solid hsla(210,18%,87%,1);
+    border: 1px solid hsla(210, 18%, 87%, 1);
 }
 
 .login h4 {
@@ -493,7 +497,9 @@ footer p {
     color: #24292f;
 }
 
-.username-noti, .password-noti, .phonenumber-noti {
+.username-noti,
+.password-noti,
+.phonenumber-noti {
     height: 20px;
     margin: 4px 0 5px 0;
     line-height: 1;
@@ -538,7 +544,127 @@ footer p {
 /* logout button */
 
 #logout-btn {
-    color:rgb(216, 18, 18);
+    color: rgb(216, 18, 18);
     margin-left: 5px;
     cursor: pointer;
+}
+
+
+/* trang category */
+.filter-container {
+    width: 20%;
+}
+
+.product-category-container {
+    width: 80%;
+}
+
+.product-category-container .product-card {
+    width: 25%;
+}
+
+.breadcrumb {
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+/* filter trang category */
+.filter-container {
+    padding: 10px;
+}
+.filter-container h4 {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.tag-container {
+    border: 1px solid #e9e9e9;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+
+.tags {
+    min-height: 200px;
+    padding: 10px;
+}
+
+.function-btn {
+    display: flex;
+}
+
+.function-btn > div {
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.function-btn > div:hover {
+    font-size: 15px;
+}
+
+.filter-btn {
+    background-color: #0C8AFE;
+}
+
+.erase-tag-btn {
+    background-color: #fc6b6b;
+}
+.filter-category {
+    margin-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.filter-title {
+    text-align-last: left;
+}
+.filter-option-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+
+.filter-option {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.filter-option input {
+    font-size: 16px;
+}
+.filter-option label {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+
+/* tag item */
+.tag-item {
+    padding-left: 8px;
+    padding-right: 0;
+    margin-left: 5px;
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #e9e9e9;
+}
+
+.delete-tag-icon {
+    background-color: rgb(219, 213, 213);
+    cursor: pointer;
+}
+
+.delete-tag-icon i {
+
 }

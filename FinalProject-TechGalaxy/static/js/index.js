@@ -95,23 +95,3 @@ renderCardItem(topSoldTabletEl, tablets)
 renderCardItem(topSoldLaptopEl, laptops)
 
 
-function chooseOption(ele) {
-    const productContentBox = ele.parentNode.parentNode
-    const options = ele.parentNode.children
-    Array.from(options).map(button => button.classList.remove("active"))
-    ele.classList.add("active")
-
-    const productID = productContentBox.querySelector(".product-id").innerText
-    const chosenIdx = Array.from(options).indexOf(ele)
-    let p = products.find(p => p.id == productID)
-
-    let oldPriceEl = productContentBox.querySelector(".old-price")
-    oldPriceEl.innerHTML = `${formatMoney(p.oldPrices[chosenIdx])}`
-
-    let currentPriceEl = productContentBox.querySelector(".current-price")
-    currentPriceEl.innerHTML = `${formatMoney(p.currentPrices[chosenIdx])}`
-
-    let percentEl = productContentBox.querySelector(".percent")
-    percentEl.innerHTML = `${p.discounts[chosenIdx]}%`
-
-}

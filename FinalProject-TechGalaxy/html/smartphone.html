@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Điện thoại</title>
+</head>
+
+<body>
+    <header>
+        <div class="row first-header-row">
+            <div class="main-container">
+                <a href="index.html" class="logo-img">
+                    <img src="../static/images/header/TECH GALAXY.png" alt="tech-galaxy">
+                </a>
+
+                <div class="search-input">
+                    <input type="text" placeholder="Nhập tên sản phẩm cần tìm">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <div class="login-logout">
+                    <a class="login-btn" href="login.html">Đăng nhập</a>
+                    <p>|</p>
+                    <a class="register-btn" href="register.html">Đăng kí</a>
+                </div>
+
+                <div class="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="row second-header-row">
+            <div class="main-container">
+                <ul class="main-menu">
+                    <li class="menu-icon">
+                        <a href="/smartphone">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <p>Điện thoại</p>
+                            <ul class="sub-menu">
+                                <a href="/smartphone/apple">
+                                    <li class="sub-menu-item">iPhone</li>
+                                </a>
+                                <a href="#">
+                                    <li class="sub-menu-item">Samsung</li>
+                                </a>
+                                <a href="#">
+                                    <li class="sub-menu-item">Xiaomi</li>
+                                </a>
+                                <a href="#">
+                                    <li class="sub-menu-item">Oppo</li>
+                                </a>
+                                <a href="#">
+                                    <li class="sub-menu-item">Huawei</li>
+                                </a>
+                            </ul>
+                        </a>
+                    </li>
+
+
+                    <li class="menu-icon">
+                        <a href="/tablet">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-tablet-screen-button"></i>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <p>máy tính bảng</p>
+                            <ul class="sub-menu">
+                                <a href="#">
+                                    <li class="sub-menu-item">Apple</li>
+                                </a>
+                                <a href="#">
+                                    <li class="sub-menu-item">Samsung</li>
+                                </a>
+                                <a href="#">
+                                    <li class="sub-menu-item">Xiaomi</li>
+                                </a>
+                                <a href="#">
+                                    <li class="sub-menu-item">Oppo</li>
+                                </a>
+                                <a href="#">
+                                    <li class="sub-menu-item">Huawei</li>
+                                </a>
+                            </ul>
+                        </a>
+                    </li>
+
+                    <li class="menu-icon">
+                        <a href="/laptop">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-laptop"></i>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <p>laptop</p>
+                            <ul class="sub-menu">
+                                <a href="#">
+                                    <li class="sub-menu-item">Macbook</li>
+                                </a>
+                                <a href="#">
+                                    <li class="sub-menu-item">Windows</li>
+                                </a>
+                                <a href="#">
+                                    <li class="sub-menu-item">Samsung</li>
+                                </a>
+                                <a href="#">
+                                    <li class="sub-menu-item">Oppo</li>
+                                </a>
+                                <a href="#">
+                                    <li class="sub-menu-item">Huawei</li>
+                                </a>
+                            </ul>
+                        </a>
+                    </li>
+
+                    <li class="menu-icon">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-tv"></i>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                        <p>smart tv</p>
+                    </li>
+
+                    <li class="menu-icon">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-headphones-simple"></i>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                        <p>âm thanh</p>
+                    </li>
+
+                    <li class="menu-icon">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <p>sửa chữa</p>
+                    </li>
+
+                    <li class="menu-icon">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-newspaper"></i>
+                        </div>
+                        <p>tin tức</p>
+                    </li>
+
+                    <li class="menu-icon">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-exclamation"></i>
+                        </div>
+                        <p>về chúng tôi</p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="smartphone-container">
+        <div class="main-container">
+            <div class="breadcrumb"><a href="#">Điện thoại</a></div>
+            <div class="row main-page-container">
+                <div class="filter-container">
+                    <h4>bộ lọc tìm kiếm</h4>
+                    <div class="tag-container">
+                        <div class="tags">
+
+                        </div>
+
+                        <div class="function-btn">
+                            <div class="filter-btn">
+                                <i class="fa-solid fa-filter"></i>
+                                lọc
+                            </div>
+                            <div class="erase-tag-btn">
+                                <i class="fa-solid fa-eraser"></i>
+                                xóa hết
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-category">
+                        <h4 class="filter-title">
+                            thương hiệu
+                        </h4>
+
+                        <form class="filter-option-container" id="brand">
+                            <div class="filter-option">
+                                <input type="checkbox" name="apple" id="apple" value="Apple">
+                                <label for="apple">Apple</label>
+                            </div>
+
+                            <div class="filter-option">
+                                <input type="checkbox" name="samsung" id="samsung" value="Samsung">
+                                <label for="samsung">Samsung</label>
+                            </div>
+
+                            <div class="filter-option">
+                                <input type="checkbox" name="oppo" id="oppo" value="Oppo">
+                                <label for="oppo">Oppo</label>
+                            </div>
+
+                            <div class="filter-option">
+                                <input type="checkbox" name="huawei" id="huawei" value="Huawei">
+                                <label for="huawei">Huawei</label>
+                            </div>
+                        </form>
+                    </div>
+
+
+
+                    <div class="filter-category">
+                        <h4 class="filter-title">
+                            giá
+                        </h4>
+
+                        <form class="filter-option-container" id = "price">
+                            <div class="filter-option">
+                                <input type="checkbox" name="below-seven" id="0:7" value="&lt7tr">
+                                <label for="0:7">Dưới 7 triệu</label>
+                            </div>
+
+                            <div class="filter-option">
+                                <input type="checkbox" name="seven-to-ten" id="7:10" value="7-10tr">
+                                <label for="7:10">7-10 triệu</label>
+                            </div>
+
+                            <div class="filter-option">
+                                <input type="checkbox" name="ten-to-twenty" id="10:20" value="10-20tr">
+                                <label for="10:20">10-20 triệu</label>
+                            </div>
+
+                            <div class="filter-option">
+                                <input type="checkbox" name="over-twenty" id="20:1000" value="&gt20tr">
+                                <label for="20:1000">Trên 20 triệu</label>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="filter-category">
+                        <h4 class="filter-title">
+                            ram
+                        </h4>
+
+                        <form class="filter-option-container" id = "ram">
+                            <div class="filter-option">
+                                <input type="checkbox" name="ram4" id="ram4" value="RAM:4GB">
+                                <label for="ram4">4GB</label>
+                            </div>
+
+                            <div class="filter-option">
+                                <input type="checkbox" name="ram6" id="ram6" value="RAM:6GB">
+                                <label for="ram6">6GB</label>
+                            </div>
+
+                            <div class="filter-option">
+                                <input type="checkbox" name="ram8" id="ram8" value="RAM:8GB">
+                                <label for="ram8">8GB</label>
+                            </div>
+
+                            <div class="filter-option">
+                                <input type="checkbox" name="ram12" id="ram12" value="RAM:12GB">
+                                <label for="ram12">12GB</label>
+                            </div>
+                        </form>
+                    </div>
+
+                    
+                    <div class="filter-category">
+                        <h4 class="filter-title">
+                            rom
+                        </h4>
+
+                        <form class="filter-option-container" id = "rom">
+                            <div class="filter-option">
+                                <input type="checkbox" name="rom32" id="rom32" value="ROM:32GB">
+                                <label for="rom32">32GB</label>
+                            </div>
+
+                            <div class="filter-option">
+                                <input type="checkbox" name="rom64" id="rom64" value="ROM:64GB">
+                                <label for="rom64">64GB</label>
+                            </div>
+
+                            <div class="filter-option">
+                                <input type="checkbox" name="rom128" id="rom128" value="ROM:128GB">
+                                <label for="rom128">128GB</label>
+                            </div>
+
+                            <div class="filter-option">
+                                <input type="checkbox" name="rom256" id="rom256" value="ROM:256GB">
+                                <label for="rom256">256GB</label>
+                            </div>
+
+                            <div class="filter-option">
+                                <input type="checkbox" name="rom512" id="rom512" value="ROM:512GB">
+                                <label for="rom512">512GB</label>
+                            </div>
+
+                            
+                        </form>
+                    </div>
+                </div>
+
+                
+
+                <div class="row product-category-container">
+                    <!-- <div class="product-card">
+                        <div class="product-image">
+                            <img src="../static/images/product-card-images/iphone-13-pro.png" alt="iphone-13-pro">
+                        </div>
+
+                        <div class="product-content">
+                            <p class="product-name">iPhone 13 Pro</p>
+
+                            <div class="alter-options">
+                                <button>128GB</button>
+                                <button>256GB</button>
+                                <button>512GB</button>
+                                <button>1TB</button>
+                            </div>
+
+                            <p class="old-price">28.490.000đ</p>
+                            <p class="current-price">26.490.000đ</p>
+
+                            <ul class="product-description">
+                                <li>Chip Apple 15 Bionic</li>
+                                <li>RAM:6 GB, ROM:128 GB</li>
+                                <li>Camera sau: 3 camera 12 MP</li>
+                                <li>Camera trước: 12 MP</li>
+                                <li>Pin 3095 mAh, Sạc 20 W</li>
+                            </ul>
+
+                            <div class="product-card-bottom">
+                                <div class="bot-first">
+                                    <div class="rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div class="qtt-sold">
+                                        Đã bán: 256
+                                    </div>
+                                </div>
+                                <div class="bot-second">
+                                    <i class="fa-solid fa-circle-plus"></i>
+                                    <p>So sánh</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="main-container">
+            <div class="row">
+                <div class="footer-column col-lg-3">
+                    <h2>Tech Galaxy</h2>
+                    <p>GPKD: 001100431112</p>
+                    <p>Địa chỉ: Thanh Xuân - Hà Nội</p>
+                    <p>Ngày thành lập: 14 - 07 - 2022</p>
+                    <p>Chủ sở hữu: Vũ Hoài Sơn</p>
+                </div>
+
+                <div class="footer-column col-lg-3">
+                    <h2>Dịch vụ hỗ trợ</h2>
+                    <p>Dịch vụ hỗ trợ</p>
+                    <p>Đặt hàng và thanh toán</p>
+                    <p>Chính sách bảo hành</p>
+                    <p>Bảo hành mở rộng</p>
+                    <p>Giải quyết khiếu nại</p>
+                </div>
+
+                <div class="footer-column col-lg-3">
+                    <h2>Đối tác thương hiệu</h2>
+                    <p>Apple</p>
+                    <p>Samsung</p>
+                    <p>Xiaomi</p>
+                    <p>Huawei</p>
+                    <p>Microsoft</p>
+                </div>
+
+                <div class="footer-column col-lg-3">
+                    <h2>Đối tác thanh toán</h2>
+                    <p>Vietcombank</p>
+                    <p>VNPAY</p>
+                    <p>Mocagrab</p>
+                    <p>Momo</p>
+                    <p>Zalopay</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/data.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/smartphone.js"></script>
+</body>
+
+</html>

@@ -14,11 +14,12 @@ let products = [
             "Pin 4352 mAh, Sạc 20 W"
         ],
         alterOptions: ["128GB", "256GB", "512GB", "1TB"],
+        ram: "6GB",
         oldPrices: [33990000, 36990000, 41490000, 47990000],
         currentPrices: [28190000, 30990000, 34890000, 40990000],
         ratings: 5,
         soldQuantity: 1541,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -35,11 +36,12 @@ let products = [
             "Pin 3095 mAh, Sạc 20 W"
         ],
         alterOptions: ["128GB", "256GB", "512GB", "1TB"],
+        ram: "6GB",
         oldPrices: [36390000, 33490000, 38990000, 43990000],
         currentPrices: [30990000, 27390000, 31990000, 36990000],
         ratings: 4,
         soldQuantity: 562,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -56,11 +58,12 @@ let products = [
             "Pin 3240 mAh, Sạc 20 W"
         ],
         alterOptions: ["128GB", "256GB", "512GB"],
+        ram: "4GB",
         oldPrices: [24990000, 27990000, 32490000],
         currentPrices: [20390000, 23890000, 26490000],
         ratings: 4,
         soldQuantity: 823,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -77,11 +80,12 @@ let products = [
             "Pin 3110 mAh, Sạc 18 W"
         ],
         alterOptions: ["64GB", "128GB"],
+        ram: "4GB",
         oldPrices: [14990000, 16990000],
         currentPrices: [12390000, 14390000],
         ratings: 4,
         soldQuantity: 412,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -98,11 +102,12 @@ let products = [
             "Pin 2438 mAh, Sạc 18 W"
         ],
         alterOptions: ["128GB", "256GB", "512GB"],
+        ram: "4GB",
         oldPrices: [21990000, 22900000, 30990000],
         currentPrices: [18490000, 20990000, 23990000],
         ratings: 3,
         soldQuantity: 312,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -119,11 +124,12 @@ let products = [
             "Pin 3110 mAh, Sạc 18 W"
         ],
         alterOptions: ["128GB", "256GB", "512GB"],
+        ram: "4GB",
         oldPrices: [19990000, 21990000, 23890000],
         currentPrices: [17390000, 19990000, 21890000],
         ratings: 4,
         soldQuantity: 741,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -140,11 +146,12 @@ let products = [
             "Pin 2227 mAh, Sạc 20 W"
         ],
         alterOptions: ["128GB", "256GB", "512GB"],
+        ram: "4GB",
         oldPrices: [20990000, 18990000, 21990000],
         currentPrices: [16490000, 14990000, 16990000],
         ratings: 4,
         soldQuantity: 412,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -161,11 +168,12 @@ let products = [
             "Pin 2018 mAh, Sạc 20 W"
         ],
         alterOptions: ["64GB", "128GB"],
+        ram: "4GB",
         oldPrices: [12990000, 13990000],
         currentPrices: [12490000, 12990000],
         ratings: 2,
         soldQuantity: 218,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -182,11 +190,12 @@ let products = [
             "Pin 5000 mAh, Sạc 45 W"
         ],
         alterOptions: ["8GB-128GB", "12GB-256GB"],
+        ram: "8GB",
         oldPrices: [30990000, 33990000],
         currentPrices: [27990000, 30990000],
         ratings: 4,
         soldQuantity: 537,
-        brand: "samsung"
+        brand: "samsung",
     },
 
     {
@@ -203,33 +212,35 @@ let products = [
             "Pin 3700 mAh, Sạc 25 W"
         ],
         alterOptions: ["8GB-128GB", "12GB-256GB"],
+        ram: "8GB",
         oldPrices: [21990000, 23490000],
         currentPrices: [18990000, 20490000],
         ratings: 4,
         soldQuantity: 214,
-        brand: "samsung"
+        brand: "samsung",
     },
 
-    // {
-    //     id: 11,
-    //     category: "smartphone",
-    //     name: "Xiaomi 11T Pro 5G",
-    //     indexProductImgURL: "xiaomi-11t-pro-5g.jpeg",
-    //     features: [
-    //         "Màn 6.67 inch, Full HD+",
-    //         "Chip Snapdragon 888",
-    //         "RAM 8GB/12GB, ROM 256GB",
-    //         "Camera sau: Chính 108 MP & Phụ 8 MP, 5 MP",
-    //         "Camera trước: 16 MP",
-    //         "Pin 5000 mAh, Sạc 120 W"
-    //     ],
-    //     alterOptions: ["8GB-128GB", "12GB-256GB"],
-    //     oldPrices: [15690000, 16990000],
-    //     currentPrices: [13990000, 14990000],
-    //     ratings: 4,
-    //     soldQuantity: 389,
-    //     brand: "xiaomi"
-    // },
+    {
+        id: 11,
+        category: "smartphone",
+        name: "Xiaomi 11T Pro 5G",
+        indexProductImgURL: "xiaomi-11t-pro-5g.jpeg",
+        features: [
+            "Màn 6.67 inch, Full HD+",
+            "Chip Snapdragon 888",
+            "RAM 8GB/12GB, ROM 256GB",
+            "Camera sau: Chính 108 MP & Phụ 8 MP, 5 MP",
+            "Camera trước: 16 MP",
+            "Pin 5000 mAh, Sạc 120 W"
+        ],
+        alterOptions: ["8GB-128GB", "12GB-256GB"],
+        ram: "8GB",
+        oldPrices: [15690000, 16990000],
+        currentPrices: [13990000, 14990000],
+        ratings: 4,
+        soldQuantity: 389,
+        brand: "xiaomi",
+    },
 
     {
         id: 12,
@@ -245,11 +256,12 @@ let products = [
             "Pin 28.65 Wh, Sạc 20 W"
         ],
         alterOptions: ["128GB", "256GB", "512GB"],
+        ram: "8GB",
         oldPrices: [26990000, 29990000, 35990000],
         currentPrices: [26090000, 29690000, 30990000],
         ratings: 5,
         soldQuantity: 532,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -266,11 +278,12 @@ let products = [
             "Pin 28.65 Wh, Sạc 20 W"
         ],
         alterOptions: ["64GB", "256GB"],
+        ram: "8GB",
         oldPrices: [20990000, 24990000],
         currentPrices: [20290000, 24290000],
         ratings: 4,
         soldQuantity: 921,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -287,11 +300,12 @@ let products = [
             "Pin 19.3 Wh, Sạc 20 W"
         ],
         alterOptions: ["64GB", "256GB"],
+        ram: "4GB",
         oldPrices: [19990000, 23990000],
         currentPrices: [17790000, 20790000],
         ratings: 4,
         soldQuantity: 124,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -308,11 +322,12 @@ let products = [
             "Pin 32.4 Wh, Sạc 20 W"
         ],
         alterOptions: ["64GB", "256GB"],
+        ram: "3GB",
         oldPrices: [10590000, 15990000],
         currentPrices: [9990000, 13990000],
         ratings: 4,
         soldQuantity: 655,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -329,11 +344,12 @@ let products = [
             "Pin 8000 mAh, Sạc 45 W"
         ],
         alterOptions: ["128GB", "256GB"],
+        ram: "8GB",
         oldPrices: [23990000, 26590000],
         currentPrices: [20990000, 24990000],
         ratings: 5,
         soldQuantity: 236,
-        brand: "samsung"
+        brand: "samsung",
     },
 
     {
@@ -350,11 +366,12 @@ let products = [
             "Pin 5100 mAh, Sạc 15 W"
         ],
         alterOptions: ["32GB", "64GB"],
+        ram: "3GB",
         oldPrices: [4890000, 6190000],
         currentPrices: [4490000, 5690000],
         ratings: 3,
         soldQuantity: 149,
-        brand: "samsung"
+        brand: "samsung",
     },
 
     {
@@ -371,11 +388,12 @@ let products = [
             "Pin 7250 mAh, Sạc 18 W"
         ],
         alterOptions: ["128GB", "256GB"],
+        ram: "6GB",
         oldPrices: [13990000, 15590000],
         currentPrices: [12990000, 14190000],
         ratings: 4,
         soldQuantity: 145,
-        brand: "huawei"
+        brand: "huawei",
     },
 
     {
@@ -392,11 +410,12 @@ let products = [
             "Pin 7250 mAh, Sạc 22.5 W"
         ],
         alterOptions: ["128GB", "256GB"],
+        ram: "4GB",
         oldPrices: [7790000, 8900000],
         currentPrices: [6790000, 7590000],
         ratings: 5,
         soldQuantity: 217,
-        brand: "huawei"
+        brand: "huawei",
     },
 
     {
@@ -413,11 +432,12 @@ let products = [
             "Pin 7700 mAh, Sạc 20 W"
         ],
         alterOptions: ["64GB"],
+        ram: "4GB",
         oldPrices: [8190000],
         currentPrices: [7390000],
         ratings: 3,
         soldQuantity: 62,
-        brand: "lenovo"
+        brand: "lenovo",
     },
 
     {
@@ -434,11 +454,12 @@ let products = [
             "Pin 28.7 Wh, Sạc 20 W"
         ],
         alterOptions: ["64GB"],
+        ram: "4GB",
         oldPrices: [14590000],
         currentPrices: [13590000],
         ratings: 5,
         soldQuantity: 478,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -455,11 +476,12 @@ let products = [
             "Trọng lượng 1,4kg",
         ],
         alterOptions: ["256GB", "512GB"],
+        ram: "8GB",
         oldPrices: [35590000, 41990000],
         currentPrices: [34890000, 40290000],
         ratings: 4,
         soldQuantity: 45,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -476,11 +498,12 @@ let products = [
             "Trọng lượng 2,2kg",
         ],
         alterOptions: ["512GB"],
+        ram: "32GB",
         oldPrices: [98990000],
         currentPrices: [90990000],
         ratings: 5,
         soldQuantity: 136,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -497,11 +520,12 @@ let products = [
             "Trọng lượng 1,6kg",
         ],
         alterOptions: ["512GB"],
+        ram: "32GB",
         oldPrices: [76900000],
         currentPrices: [72900000],
         ratings: 4,
         soldQuantity: 512,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -518,11 +542,12 @@ let products = [
             "Trọng lượng 1,4kg",
         ],
         alterOptions: ["256GB", "512GB"],
+        ram: "8GB",
         oldPrices: [34990000, 39990000],
         currentPrices: [31490000, 35290000],
         ratings: 4,
         soldQuantity: 363,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -539,11 +564,12 @@ let products = [
             "Trọng lượng 1,29kg",
         ],
         alterOptions: ["256GB", "512GB"],
+        ram: "8GB",
         oldPrices: [33990000, 37990000],
         currentPrices: [29290000, 33990000],
         ratings: 4,
         soldQuantity: 1032,
-        brand: "apple"
+        brand: "apple",
     },
 
     {
@@ -560,11 +586,12 @@ let products = [
             "Trọng lượng 1,7kg",
         ],
         alterOptions: ["512GB"],
+        ram: "8GB",
         oldPrices: [17990000],
         currentPrices: [17490000],
         ratings: 5,
         soldQuantity: 96,
-        brand: "asus"
+        brand: "asus",
     },
 
     {
@@ -581,11 +608,12 @@ let products = [
             "Trọng lượng 2,3kg",
         ],
         alterOptions: ["512GB"],
+        ram: "8GB",
         oldPrices: [19990000],
         currentPrices: [15990000],
         ratings: 5,
         soldQuantity: 141,
-        brand: "asus"
+        brand: "asus",
     },
 
     {
@@ -602,11 +630,12 @@ let products = [
             "Trọng lượng 1.14kg",
         ],
         alterOptions: ["512GB"],
+        ram: "16GB",
         oldPrices: [29990000],
         currentPrices: [27990000],
         ratings: 4,
         soldQuantity: 236,
-        brand: "asus"
+        brand: "asus",
     },
 
     {
@@ -623,11 +652,12 @@ let products = [
             "Trọng lượng 1.25kg",
         ],
         alterOptions: ["512GB"],
+        ram: "16GB",
         oldPrices: [49500000],
         currentPrices: [42090000],
         ratings: 4,
         soldQuantity: 362,
-        brand: "hp"
+        brand: "hp",
     },
 
     {
@@ -644,11 +674,12 @@ let products = [
             "Trọng lượng 2.2kg",
         ],
         alterOptions: ["512GB"],
+        ram: "8GB",
         oldPrices: [26490000],
         currentPrices: [21190000],
         ratings: 4,
         soldQuantity: 284,
-        brand: "acer"
+        brand: "acer",
     },
 ]
 
