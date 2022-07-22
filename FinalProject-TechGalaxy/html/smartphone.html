@@ -170,6 +170,7 @@
     <section class="smartphone-container">
         <div class="main-container">
             <div class="breadcrumb"><a href="#">Điện thoại</a></div>
+
             <div class="row main-page-container">
                 <div class="filter-container">
                     <h4>bộ lọc tìm kiếm</h4>
@@ -212,8 +213,8 @@
                             </div>
 
                             <div class="filter-option">
-                                <input type="checkbox" name="huawei" id="huawei" value="Huawei">
-                                <label for="huawei">Huawei</label>
+                                <input type="checkbox" name="xiaomi" id="xiaomi" value="Xiaomi">
+                                <label for="xiaomi">Xiaomi</label>
                             </div>
                         </form>
                     </div>
@@ -225,7 +226,7 @@
                             giá
                         </h4>
 
-                        <form class="filter-option-container" id = "price">
+                        <form class="filter-option-container" id="price">
                             <div class="filter-option">
                                 <input type="checkbox" name="below-seven" id="0:7" value="&lt7tr">
                                 <label for="0:7">Dưới 7 triệu</label>
@@ -253,7 +254,7 @@
                             ram
                         </h4>
 
-                        <form class="filter-option-container" id = "ram">
+                        <form class="filter-option-container" id="ram">
                             <div class="filter-option">
                                 <input type="checkbox" name="ram4" id="ram4" value="RAM:4GB">
                                 <label for="ram4">4GB</label>
@@ -276,13 +277,13 @@
                         </form>
                     </div>
 
-                    
+
                     <div class="filter-category">
                         <h4 class="filter-title">
                             rom
                         </h4>
 
-                        <form class="filter-option-container" id = "rom">
+                        <form class="filter-option-container" id="rom">
                             <div class="filter-option">
                                 <input type="checkbox" name="rom32" id="rom32" value="ROM:32GB">
                                 <label for="rom32">32GB</label>
@@ -308,60 +309,81 @@
                                 <label for="rom512">512GB</label>
                             </div>
 
-                            
+
                         </form>
                     </div>
                 </div>
 
-                
 
-                <div class="row product-category-container">
-                    <!-- <div class="product-card">
-                        <div class="product-image">
-                            <img src="../static/images/product-card-images/iphone-13-pro.png" alt="iphone-13-pro">
+                <div class="panel-right">
+                    <div class="product-length-sort">
+                        <div class="product-length">
+                            <p>Tìm thấy <b class="search-quantity"></b> sản phẩm </p>
                         </div>
+                        <div class="sort-container">
+                            <label for="sort">Sắp xếp theo:</label>
+                            <select name="sort" id="sort">
+                                <option value="" selected disabled hidden class="disabled">Tiêu chí...</option>
+                                <option value="priceAsc">Giá tăng dần</option>
+                                <option value="priceDesc">Giá giảm dần</option>
+                                <option value="discountAsc">Chiết khấu tăng dần</option>
+                                <option value="discountDesc">Chiết khấu giảm dần</option>
+                                <option value="quantityAsc">Đã bán tăng dần</option>
+                                <option value="quantityDesc">Đã bán giảm dần</option>
+                                <option value="ratingAsc">Xếp hạng tăng dần</option>
+                                <option value="ratingDesc">Xếp hạng giảm dần</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row product-category-container">
 
-                        <div class="product-content">
-                            <p class="product-name">iPhone 13 Pro</p>
-
-                            <div class="alter-options">
-                                <button>128GB</button>
-                                <button>256GB</button>
-                                <button>512GB</button>
-                                <button>1TB</button>
+                        <!-- <div class="product-card">
+                            <div class="product-image">
+                                <img src="../static/images/product-card-images/iphone-13-pro.png" alt="iphone-13-pro">
                             </div>
-
-                            <p class="old-price">28.490.000đ</p>
-                            <p class="current-price">26.490.000đ</p>
-
-                            <ul class="product-description">
-                                <li>Chip Apple 15 Bionic</li>
-                                <li>RAM:6 GB, ROM:128 GB</li>
-                                <li>Camera sau: 3 camera 12 MP</li>
-                                <li>Camera trước: 12 MP</li>
-                                <li>Pin 3095 mAh, Sạc 20 W</li>
-                            </ul>
-
-                            <div class="product-card-bottom">
-                                <div class="bot-first">
-                                    <div class="rating">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
+    
+                            <div class="product-content">
+                                <p class="product-name">iPhone 13 Pro</p>
+    
+                                <div class="alter-options">
+                                    <button>128GB</button>
+                                    <button>256GB</button>
+                                    <button>512GB</button>
+                                    <button>1TB</button>
+                                </div>
+    
+                                <p class="old-price">28.490.000đ</p>
+                                <p class="current-price">26.490.000đ</p>
+    
+                                <ul class="product-description">
+                                    <li>Chip Apple 15 Bionic</li>
+                                    <li>RAM:6 GB, ROM:128 GB</li>
+                                    <li>Camera sau: 3 camera 12 MP</li>
+                                    <li>Camera trước: 12 MP</li>
+                                    <li>Pin 3095 mAh, Sạc 20 W</li>
+                                </ul>
+    
+                                <div class="product-card-bottom">
+                                    <div class="bot-first">
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <div class="qtt-sold">
+                                            Đã bán: 256
+                                        </div>
                                     </div>
-                                    <div class="qtt-sold">
-                                        Đã bán: 256
+                                    <div class="bot-second">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                        <p>So sánh</p>
                                     </div>
                                 </div>
-                                <div class="bot-second">
-                                    <i class="fa-solid fa-circle-plus"></i>
-                                    <p>So sánh</p>
-                                </div>
                             </div>
-                        </div>
-                    </div> -->
+                        </div> -->
+                    </div>
                 </div>
             </div>
         </div>

@@ -2,6 +2,10 @@ function formatMoney(num) {
     return num.toLocaleString('vi', { style: 'currency', currency: 'VND' });
 }
 
+function isSame(arr1, arr2) {
+    return arr1.some(ele => arr2.includes(ele))
+}
+
 function saveToLocalStorage(key, arr) {
     localStorage.setItem(key, JSON.stringify(arr))
 }
@@ -149,6 +153,64 @@ function chooseOption(ele) {
     let percentEl = productContentBox.querySelector(".percent")
     percentEl.innerHTML = `${p.discounts[chosenIdx]}%`
 
+}
+
+function filterProduct(originalArr, filterTagArr, category, categoryContainer) {
+    const filterObject = {}
+    filterTagArr.forEach(object => {
+        if (!filterObject[object.key]) {
+            filterObject[object.key] = [object.value]
+        } else {
+            filterObject[object.key].push(object.value)
+        }
+    })
+
+
+    let filterRes = []
+
+    for (let p of originalArr) {
+        if (p.category !== category) {
+            continue;
+        }
+        let isMatch = true
+
+        for (let key in filterObject) {
+            let values = filterObject[key]
+            values = values.map(value => value.toLowerCase())
+            
+            if (key == "brand") {
+                if (!values.includes(p[key].toLowerCase())) {
+                    isMatch = false
+                    break
+                }
+            } else if (key == "price") {
+                let isInPriceRange = values.some(value => {
+                    let pair = value.split(":")
+                    const low = 10 ** 6 * Number(pair[0]), high = 10 ** 6 * Number(pair[1])
+                    // console.log(low, high)
+                    return (low <= p.currentPrices[0]) && (p.currentPrices[0] <= high)
+                })
+
+                if (!isInPriceRange) {
+                    isMatch = false
+                    break
+                }
+            } else {
+                let productValues = p[key].map(val => val.toLowerCase())
+                // console.log(productValues)
+                if (!isSame(productValues, values)) {
+                    isMatch = false
+                    break
+                }
+            }
+
+        }
+
+        if (isMatch) filterRes.push(p)
+    }
+    filterResults = filterRes
+    renderCardItem(categoryContainer, filterRes)
+    
 }
 
 

@@ -1,14 +1,16 @@
 // render smartphone category
 const phoneCategoryBox = document.querySelector(".smartphone-container .product-category-container")
+$(".search-quantity")
 
-renderCardItem(phoneCategoryBox, products.filter(p => p.category == "smartphone"))
+let filterResults = products.filter(p => p.category == "smartphone")
+renderCardItem(phoneCategoryBox, filterResults)
+$(".search-quantity").text(filterResults.length)
 
 const filterCheckBoxes = document.querySelectorAll(".filter-option input")
 let deleteTagIcons = []
-
-
 let filterTagArr = []
 const tagContainer = document.querySelector(".tags")
+const selectSortBtn = document.getElementById("sort")
 
 
 function updateTag() {
@@ -18,7 +20,7 @@ function updateTag() {
         <span class="tag-item">
            <span> ${tag.displayTag}</span>
             <span class="delete-tag-icon" onclick = removeMiniTag("${tag.displayTag}")>
-                <i class="fa-solid fa-xmark "></i>
+                <img src="../static/images/icons/128px-White_x_in_red_rounded_square.svg.png" alt="squareX">
             </span>
         </span>
         `
@@ -94,81 +96,33 @@ eraseAllTagBtn.addEventListener("click", () => {
 // lọc điện thoại
 const filterBtn = document.querySelector(".filter-btn")
 // convert filter criteria from array into objects with key = criteria, value = [value1, value2]
-function isSame(arr1, arr2) {
-    return arr1.some(ele => arr2.includes(ele))
-}
 
-// function isBetween(num, low, high) {
-//     return num >= low && num <= high
-// }
+
 
 filterBtn.addEventListener("click", () => {
-    // console.log(filterTagArr)
-    const filterObject = {}
-    filterTagArr.forEach(object => {
-        if (!filterObject[object.key]) {
-            filterObject[object.key] = [object.value]
-        } else {
-            filterObject[object.key].push(object.value)
-        }
-    })
-
-
-    let filterRes = []
-    
-    for (let p of products) {
-        let isMatch = true
-        
-        for (let key in filterObject) {
-            let values = filterObject[key]
-            values = values.map(value => value.toLowerCase())
-            // console.log(values)
-            if (key == "brand") {
-                if (!values.includes(p[key].toLowerCase())) {
-                    isMatch = false
-                    break
-                }
-            } else if (key == "price") {
-                let isInPriceRange = values.some(value => {
-                    let pair = value.split(":")
-                    const low = 10**6*Number(pair[0]), high = 10**6*Number(pair[1])
-                    console.log(low, high)
-                    return (low <= p.currentPrices[0]) && (p.currentPrices[0] <= high)
-                })
-                
-                if (!isInPriceRange) {
-                    isMatch = false
-                    break
-                }
-            } else {
-                let productValues = p[key].map(val => val.toLowerCase())
-                // console.log(productValues)
-                if (!isSame(productValues, values)) {
-                    isMatch = false
-                    break
-                }
-            }
-
-        }
-
-        if (isMatch) filterRes.push(p)
-    }
-    
-    console.log(filterRes.length)
-    renderCardItem(phoneCategoryBox, filterRes)
-
+    filterProduct(products, filterTagArr, "smartphone", phoneCategoryBox)
+    $(".search-quantity").text(filterResults.length)
+    selectSortBtn.value = ""
 })
 
 
 
 
-// 0: {key: 'price', value: 'seven-to-ten', displayTag: '7-10tr'}
-// 1: {key: 'brand', value: 'Oppo', displayTag: 'Oppo'}
-// 2: {key: 'ram', value: '12GB', displayTag: 'RAM:12GB'}
-// 3: {key: 'rom', value: '64GB', displayTag: 'ROM:64GB'}
+// sort action
+
+selectSortBtn.addEventListener("change", (e) => {
+    let sortValue = e.target.value
+    let sortResults = filterResults
+    if (sortValue == "priceAsc") sortResults = filterResults.sort((p1, p2) => p1.currentPrices[0] - p2.currentPrices[0])
+    if (sortValue == "priceDesc") sortResults = filterResults.sort((p1, p2) => p2.currentPrices[0] - p1.currentPrices[0])
+    if (sortValue == "discountAsc") sortResults = filterResults.sort((p1, p2) => Math.abs(Number(p1.discounts[0])) - Math.abs(Number(p2.discounts[0])))
+    if (sortValue == "discountDesc") sortResults = filterResults.sort((p1, p2) => Math.abs(Number(p2.discounts[0])) - Math.abs(Number(p1.discounts[0])))
+    if (sortValue == "quantityAsc") sortResults = filterResults.sort((p1, p2) => p1.soldQuantity - p2.soldQuantity)
+    if (sortValue == "quantityDesc") sortResults = filterResults.sort((p1, p2) => p2.soldQuantity - p1.soldQuantity)
+    if (sortValue == "ratingAsc") sortResults = filterResults.sort((p1, p2) => p1.ratings - p2.ratings)
+    if (sortValue == "ratingDesc") sortResults = filterResults.sort((p1, p2) => p2.ratings - p1.ratings)
+    renderCardItem(phoneCategoryBox, sortResults)
+})
 
 
 
-// brand: (3) ['Samsung', 'Apple', 'Huawei']
-// price: (2) ['0:7', '10:20']
-// ram: ['6GB']
