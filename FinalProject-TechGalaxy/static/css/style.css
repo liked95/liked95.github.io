@@ -39,7 +39,7 @@ input[type=checkbox] {
 }
 
 option.disabled {
-    color:rgb(7, 126, 193)
+    color: rgb(7, 126, 193)
 }
 
 .row {
@@ -562,6 +562,7 @@ footer p {
 .smartphone-container {
     margin-bottom: 60px;
 }
+
 .filter-container {
     width: 20%;
 }
@@ -709,6 +710,7 @@ footer p {
 .product-length {
     font-size: 14px;
 }
+
 .sort-container {
     text-align: right;
 
@@ -727,4 +729,23 @@ footer p {
 }
 
 
+/* trang chi tiet */
+.detail-heading {
+    margin-top: 20px;
+    font-size: 14px;
+}
 
+.detail-heading .product-name {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+    margin-top: 15px;
+}
+
+.box-main {
+    display: flex;
+}
+
+.left-side {
+    width: calc(100% - 490px);
+}

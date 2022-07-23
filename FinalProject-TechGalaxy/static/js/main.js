@@ -52,7 +52,7 @@ if (logoutBtn) {
 function renderCardItem(containerEl, arr) {
     containerEl.innerHTML = ""
     if (arr.length == 0) {
-        containerEl.innerHTML = `<h2>Không có sản phẩm tương ứng</h2>`
+        containerEl.innerHTML = `<h2 class="empty-noti" style="font-size:16px">Không có sản phẩm tương ứng</h2>`
         return
     }
 
