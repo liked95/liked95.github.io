@@ -29,6 +29,7 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     },
 });
 
+
 function formatMoney(num) {
     return num.toLocaleString('vi', { style: 'currency', currency: 'VND' });
 }

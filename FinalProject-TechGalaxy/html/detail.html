@@ -10,6 +10,7 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <link rel="stylesheet" href="../static/css/style.css">
     <title>Trang chi tiết</title>
 </head>
@@ -183,13 +184,1051 @@
         <div class="main-container box-main">
             <div class="left-side">
                 <div class="feature-image">
-                    
+                    <div id="mainCarousel" class="carousel">
+                        <div class="carousel__slide">
+                            <img src="../static/images/main-carousel-images/iphone-13-pro-xanh-xa-1.jpg" />
+                        </div>
+                        <div class="carousel__slide">
+                            <img src="../static/images/main-carousel-images/iphone-13-pro6-gold.jpg" />
+                        </div>
+                        <div class="carousel__slide">
+                            <img src="../static/images/main-carousel-images/iphone-13-pro-blue.jpg" />
+                        </div>
+                        <div class="carousel__slide">
+                            <img src="../static/images/main-carousel-images/iphone-13-pro-silver-2.jpg" />
+                        </div>
+                        <div class="carousel__slide">
+                            <img src="../static/images/main-carousel-images/iphone-13-pro-xam-1.jpg" />
+                        </div>
+                    </div>
+
+                    <div id="thumbCarousel" class="carousel max-w-xl mx-auto">
+                        <div class="carousel__slide">
+                            <div class="thumbnail-image"><img
+                                    src="../static/images/thumnail-carousel/xanh-la-iphone.jpg" /></div>
+                            <p class="thumbnail-name">Xanh lá</p>
+                        </div>
+                        <div class="carousel__slide">
+                            <div class="thumbnail-image"><img
+                                    src="../static/images/thumnail-carousel/iphone-13-pro-gold-1-200x200.jpg" /></div>
+                            <p class="thumbnail-name">Vàng đồng</p>
+                        </div>
+                        <div class="carousel__slide">
+                            <div class="thumbnail-image"><img
+                                    src="../static/images/thumnail-carousel/iphone-13-pro-sierra-blue-200x200.jpg" />
+                            </div>
+                            <p class="thumbnail-name">Xanh dương</p>
+                        </div>
+                        <div class="carousel__slide">
+                            <div class="thumbnail-image"><img
+                                    src="../static/images/thumnail-carousel/iphone-13-pro-silver-200x200.jpg" /></div>
+                            <p class="thumbnail-name">Bạc</p>
+                        </div>
+                        <div class="carousel__slide">
+                            <div class="thumbnail-image"><img
+                                    src="../static/images/thumnail-carousel/iphone-13-pro-graphite-200x200.jpg" /></div>
+                            <p class="thumbnail-name">Xám</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warranty">
+                    <div class="warranty-claim">
+                        <span class="warranty-icon"><i class="fa-solid fa-money-bill"></i></span>
+                        <span class="warranty-description">Hư gì đổi nấy 12 tháng tại 999 siêu thị toàn quốc (miễn phí
+                            tháng đầu)</span>
+                    </div>
+
+                    <div class="warranty-claim">
+                        <span class="warranty-icon"><i class="fa-solid fa-calendar-check"></i></span>
+                        <span class="warranty-description">Bảo hành chính hãng 1 năm tại các trung tâm bảo hành hãng
+                        </span>
+                    </div>
+
+                    <div class="warranty-claim">
+                        <span class="warranty-icon"><i class="fa-solid fa-box"></i></span>
+                        <span class="warranty-description">Hư gì đổi nấy 12 tháng tại 999 siêu thị toàn quốc (miễn phí
+                            tháng đầu) </span>
+                    </div>
+                </div>
+
+                <div class="product-detail-image">
+                    <img src="../static/images/product-detail-img/iphone-13-pro-n-2.jpg" alt="13 pro detail">
                 </div>
             </div>
 
-            <div class="right-side"></div>
+            <div class="right-side">
+                <div class="option-container">
+                    <button>128GB</button>
+                    <button>256GB</button>
+                    <button>512GB</button>
+                    <button>1TB</button>
+                </div>
+                <div class="color-container">
+                    <button>Xanh dương</button>
+                    <button>Xanh lá</button>
+                    <button>Vàng đồng</button>
+                    <button>Xám</button>
+                    <button>Bạc</button>
+                </div>
+
+                <div class="price-container">
+                    <div class="price-caller">Giá giảm cực sốc</div>
+                    <div class="price-main">
+                        <div class="price-info">
+                            <span class="new-price">27.190.000₫</span>
+                            <span class="old-price">30.990.000₫</span>
+                            <span class="discount">(-20%)</span>
+                        </div>
+
+                        <p>Kết thúc 31/8 (Số lượng có hạn)</p>
+                    </div>
+
+                </div>
+
+                <div class="payment-box">
+                    <h4>Ưu đãi thanh toán</h4>
+                    <div class="payment-promotion">
+                        <div class="payment-company">
+                            <div class="payment-logo">
+                                <img src="../static/images/payment-supplier/vnpay.png" alt="">
+                            </div>
+                            <p class="payment-discount">
+                                Giảm <b>500.000đ</b>
+                            </p>
+                            <p class="discount-item">Sản phẩm iPhone</p>
+                        </div>
+
+                        <div class="payment-company">
+                            <div class="payment-logo">
+                                <img src="../static/images/payment-supplier/tpbank.png" alt="">
+                            </div>
+                            <p class="payment-discount">
+                                Giảm <b>300.000đ</b>
+                            </p>
+                            <p class="discount-item">Sản phẩm từ 8tr</p>
+                        </div>
+
+                        <div class="payment-company">
+                            <div class="payment-logo">
+                                <img src="../static/images/payment-supplier/eximbank.png" alt="">
+                            </div>
+                            <p class="payment-discount">
+                                Giảm <b>200.000đ</b>
+                            </p>
+                            <p class="discount-item">Sản phẩm từ 3tr</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantity-and-cart">
+                    <div class="change-quantity">
+                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                        <input type="text" id="number" value="0" />
+                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                    </div>
+
+                    <button class="add-to-cart">thêm vào giỏ hàng</button>
+                </div>
+
+                <div class="item-spec">
+                    <div class="title">
+                        Cấu hình <span class="brand">điện thoại</span> <span class="product">iPhone 13 Pro</span>
+                    </div>
+
+                    <table class="spec-table">
+                        <tbody>
+                            <tr>
+                                <td class="spec-key"><span>Màn hình</span>:</td>
+                                <td class="spec-attribute">OLED, 6.1", Super Retina XDR</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-key"><span>Hệ điều hành</span>:</td>
+                                <td class="spec-attribute">iOS 15</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-key"><span>Camera sau</span>:</td>
+                                <td class="spec-attribute">OLED, 6.1", Super Retina XDR</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-key"><span>Camera trước</span>:</td>
+                                <td class="spec-attribute">OLED, 6.1", Super Retina XDR</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-key"><span>Màn hình</span>:</td>
+                                <td class="spec-attribute">OLED, 6.1", Super Retina XDR</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-key"><span>Hệ điều hành</span>:</td>
+                                <td class="spec-attribute">iOS 15</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-key"><span>Camera sau</span>:</td>
+                                <td class="spec-attribute">OLED, 6.1", Super Retina XDR</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-key"><span>Camera trước</span>:</td>
+                                <td class="spec-attribute">OLED, 6.1", Super Retina XDR</td>
+                            </tr>
+                            <tr>
+                                <td class="spec-key"><span>Camera trước</span>:</td>
+                                <td class="spec-attribute">OLED, 6.1", Super Retina XDR</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="promotion-info">
+                    <div class="promotion-title">
+                        <h4>Khuyến mãi</h4>
+                        <p>Giá và khuyến mãi dự kiến áp dụng đến 23:59 17/10</p>
+                    </div>
+                    <div class="promotion-items">
+                        <p>Giảm giá 50% gói bảo hành mở rộng thêm 1 năm (chính hãng)</p>
+                        <p>Giảm đến 1,500,000đ khi Thu cũ Đổi mới (tùy model máy cũ;
+                            không áp dụng kèm giảm giá qua VNPAY, Moca)</p>
+                        <p>Giảm giá 25% iPad Pro M1 12.9" (khi mua kèm iPhone
+                            (Không áp dụng kèm khuyến mãi khác của iPad)</p>
+                        <p>Giảm 50% giá gói cước 1 năm (Vina350/Vina500) cho Sim
+                            VinaPhone trả sau (Trị giá đến 3 triệu)</p>
+                        <p>Nhập mã TECH123 giảm 5% tối đa 400.000đ cho đơn hàng từ
+                            500.000đ trở lên khi thanh toán qua Ví Moca trên ứng dụng Grab</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div class="review">
+        <div class="main-container">
+            <div class="review-left">
+                <div class="review-title">
+                    Đánh giá <span class="brand">điện thoại</span> <span class="product">iPhone 13 Pro</span>
+                </div>
+
+                <div class="rating-box">
+                    <span class="rating-count"><span>79</span> đánh giá</span>
+                    <span class="rating-avg">
+                        <span>4.9</span>
+                        <i class="fa-solid fa-star"></i></span>
+                </div>
+
+                <div class="rating-detail">
+                    <div class="component">
+                        <p class="rating-label">5 <span><i class="fa-solid fa-star"></i></span></p>
+                        <div class="rating-bar">
+                            <div class="rating-bar-percent"></div>
+                        </div>
+                        <p class="rating-percent">53%</p>
+                    </div>
+
+                    <div class="component">
+                        <p class="rating-label">5 <span><i class="fa-solid fa-star"></i></span></p>
+                        <div class="rating-bar">
+                            <div class="rating-bar-percent"></div>
+                        </div>
+                        <p class="rating-percent">53%</p>
+                    </div>
+
+                    <div class="component">
+                        <p class="rating-label">5 <span><i class="fa-solid fa-star"></i></span></p>
+                        <div class="rating-bar">
+                            <div class="rating-bar-percent"></div>
+                        </div>
+                        <p class="rating-percent">53%</p>
+                    </div>
+
+                    <div class="component">
+                        <p class="rating-label">5 <span><i class="fa-solid fa-star"></i></span></p>
+                        <div class="rating-bar">
+                            <div class="rating-bar-percent"></div>
+                        </div>
+                        <p class="rating-percent">53%</p>
+                    </div>
+
+                    <div class="component">
+                        <p class="rating-label">5 <span><i class="fa-solid fa-star"></i></span></p>
+                        <div class="rating-bar">
+                            <div class="rating-bar-percent"></div>
+                        </div>
+                        <p class="rating-percent">53%</p>
+                    </div>
+
+                    <div class="component">
+                        <p class="rating-label">5 <span><i class="fa-solid fa-star"></i></span></p>
+                        <div class="rating-bar">
+                            <div class="rating-bar-percent"></div>
+                        </div>
+                        <p class="rating-percent">53%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-right">
+                <div class="user-review-container">
+                    <div class="user-review">
+                        <div class="review-identity">
+                            <div class="reviewer-name">Vu Van Phong</div>
+                            <div class="user-rating"><i class="fa-solid fa-star"></i></div>
+                            <div class="review-time">
+                                <div class="date">24-7-2022</div>
+                                <div class="time">5:52PM</div>
+                            </div>
+                        </div>
+
+                        <p class="review-content">
+                            Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí
+                        </p>
+                    </div>
+
+                    <div class="user-review">
+                        <div class="review-identity">
+                            <div class="reviewer-name">Nguyen Tran Nhu Thao</div>
+                            <div class="user-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="review-time">
+                                <div class="date">24-7-2022</div>
+                                <div class="time">5:52PM</div>
+                            </div>
+                        </div>
+
+                        <p class="review-content">
+                            Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí.
+                        </p>
+                    </div>
+
+                    <div class="user-review">
+                        <div class="review-identity">
+                            <div class="reviewer-name">Vu Van Phong</div>
+                            <div class="user-rating"><i class="fa-solid fa-star"></i></div>
+                            <div class="review-time">
+                                <div class="date">24-7-2022</div>
+                                <div class="time">5:52PM</div>
+                            </div>
+                        </div>
+
+                        <p class="review-content">
+                            Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng,
+                            giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí
+                            Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí
+                            Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí
+                        </p>
+                    </div>
+                </div>
+
+                <div class="review-actions">
+                    <button id="add-review">
+
+                        Viết đánh giá</button>
+                    <button id="see-all-reviews">
+                        Xem tất cả đánh giá
+                        <i class="fa-solid fa-caret-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="related-products">
+        <div class="main-container">
+            <h4>Sản phẩm liên quan</h4>
+            <div id="related-product-carousel" class="carousel">
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=1" class="product-image">
+                        <img src="../static/images/product-card-images/iphone-13-pro-max.jpg" alt="iPhone 13 Promax">
+                    </a>
+
+                    <div class="product-content">
+                        <p class="product-name">iPhone 13 Promax</p>
+                        <p class="product-id" style="display:none">1</p>
+
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">128GB</button><button
+                                onclick="chooseOption(this)">256GB</button><button
+                                onclick="chooseOption(this)">512GB</button><button
+                                onclick="chooseOption(this)">1TB</button>
+                        </div>
+
+                        <div class="old-price-container">
+                            <span class="old-price">33.990.000&nbsp;₫</span>
+                            <span class="percent">-17.06%</span>
+                        </div>
+
+                        <p class="current-price">28.190.000&nbsp;₫</p>
+
+                        <ul class="product-description">
+                            <li>Màn 6.7 inch</li>
+                            <li>Chip Apple 15 Bionic</li>
+                            <li>RAM 6GB</li>
+                            <li>Camera sau: 3 camera 12 MP</li>
+                            <li>Camera trước: 12 MP</li>
+                            <li>Pin 4352 mAh, Sạc 20 W</li>
+                        </ul>
+
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 1541
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=3" class="product-image">
+                        <img src="../static/images/product-card-images/iphone-13.jpg" alt="iPhone 13">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">iPhone 13</p>
+                        <p class="product-id" style="display:none">3</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">128GB</button><button onclick="chooseOption(this)">256GB</button><button onclick="chooseOption(this)">512GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">24.990.000&nbsp;₫</span>  
+                            <span class="percent">-18.41%</span>
+                        </div>
+    
+                        <p class="current-price">20.390.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 6.1 inch</li><li>Chip Apple 15 Bionic</li><li>RAM 4GB</li><li>Camera sau: 2 camera 12 MP</li><li>Camera trước: 12 MP</li><li>Pin 3240 mAh, Sạc 20 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 823
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=3" class="product-image">
+                        <img src="../static/images/product-card-images/iphone-13.jpg" alt="iPhone 13">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">iPhone 13</p>
+                        <p class="product-id" style="display:none">3</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">128GB</button><button onclick="chooseOption(this)">256GB</button><button onclick="chooseOption(this)">512GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">24.990.000&nbsp;₫</span>  
+                            <span class="percent">-18.41%</span>
+                        </div>
+    
+                        <p class="current-price">20.390.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 6.1 inch</li><li>Chip Apple 15 Bionic</li><li>RAM 4GB</li><li>Camera sau: 2 camera 12 MP</li><li>Camera trước: 12 MP</li><li>Pin 3240 mAh, Sạc 20 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 823
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=5" class="product-image">
+                        <img src="../static/images/product-card-images/iphone-13-mini.jpg" alt="iPhone 13 mini">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">iPhone 13 mini</p>
+                        <p class="product-id" style="display:none">5</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">128GB</button><button onclick="chooseOption(this)">256GB</button><button onclick="chooseOption(this)">512GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">21.990.000&nbsp;₫</span>  
+                            <span class="percent">-15.92%</span>
+                        </div>
+    
+                        <p class="current-price">18.490.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 5.4 inch</li><li>Chip Apple A13 Bionic</li><li>RAM 4GB</li><li>Camera sau: 2 camera 12 MP</li><li>Camera trước: 12 MP</li><li>Pin 2438 mAh, Sạc 18 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 312
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=7" class="product-image">
+                        <img src="../static/images/product-card-images/iphone-12-mini.jpg" alt="iPhone 12 mini">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">iPhone 12 mini</p>
+                        <p class="product-id" style="display:none">7</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">128GB</button><button onclick="chooseOption(this)">256GB</button><button onclick="chooseOption(this)">512GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">20.990.000&nbsp;₫</span>  
+                            <span class="percent">-21.44%</span>
+                        </div>
+    
+                        <p class="current-price">16.490.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 5.4 inch</li><li>Chip Apple A14 Bionic</li><li>RAM 4GB</li><li>Camera sau: 2 camera 12 MP</li><li>Camera trước: 12 MP</li><li>Pin 2227 mAh, Sạc 20 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 412
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=9" class="product-image">
+                        <img src="../static/images/product-card-images/Galaxy-S22-Ultra.jpg" alt="Galaxy S22 Ultra 5G">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">Galaxy S22 Ultra 5G</p>
+                        <p class="product-id" style="display:none">9</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">8GB-128GB</button><button onclick="chooseOption(this)">12GB-256GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">30.990.000&nbsp;₫</span>  
+                            <span class="percent">-9.68%</span>
+                        </div>
+    
+                        <p class="current-price">27.990.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 6.8 inch, Quad HD+</li><li>Chip Snapdragon 8 Gen 1</li><li>RAM 8GB/12GB</li><li>Camera sau: Chính 108 MP &amp; Phụ 12 MP, 10 MP, 10 MP</li><li>Camera trước: 40 MP</li><li>Pin 5000 mAh, Sạc 45 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 537
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=7" class="product-image">
+                        <img src="../static/images/product-card-images/iphone-12-mini.jpg" alt="iPhone 12 mini">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">iPhone 12 mini</p>
+                        <p class="product-id" style="display:none">7</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">128GB</button><button onclick="chooseOption(this)">256GB</button><button onclick="chooseOption(this)">512GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">20.990.000&nbsp;₫</span>  
+                            <span class="percent">-21.44%</span>
+                        </div>
+    
+                        <p class="current-price">16.490.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 5.4 inch</li><li>Chip Apple A14 Bionic</li><li>RAM 4GB</li><li>Camera sau: 2 camera 12 MP</li><li>Camera trước: 12 MP</li><li>Pin 2227 mAh, Sạc 20 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 412
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=11" class="product-image">
+                        <img src="../static/images/product-card-images/xiaomi-11t-pro-5g.jpeg" alt="Xiaomi 11T Pro 5G">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">Xiaomi 11T Pro 5G</p>
+                        <p class="product-id" style="display:none">11</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">8GB-128GB</button><button onclick="chooseOption(this)">12GB-256GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">15.690.000&nbsp;₫</span>  
+                            <span class="percent">-10.83%</span>
+                        </div>
+    
+                        <p class="current-price">13.990.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 6.67 inch, Full HD+</li><li>Chip Snapdragon 888</li><li>RAM 8GB/12GB, ROM 256GB</li><li>Camera sau: Chính 108 MP &amp; Phụ 8 MP, 5 MP</li><li>Camera trước: 16 MP</li><li>Pin 5000 mAh, Sạc 120 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 389
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="watched-products">
+        <div class="main-container">
+            <h4>Sản phẩm đã xem</h4>
+            <div id="watched-product-carousel" class="carousel">
+                <!-- <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=1" class="product-image">
+                        <img src="../static/images/product-card-images/iphone-13-pro-max.jpg" alt="iPhone 13 Promax">
+                    </a>
+
+                    <div class="product-content">
+                        <p class="product-name">iPhone 13 Promax</p>
+                        <p class="product-id" style="display:none">1</p>
+
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">128GB</button><button
+                                onclick="chooseOption(this)">256GB</button><button
+                                onclick="chooseOption(this)">512GB</button><button
+                                onclick="chooseOption(this)">1TB</button>
+                        </div>
+
+                        <div class="old-price-container">
+                            <span class="old-price">33.990.000&nbsp;₫</span>
+                            <span class="percent">-17.06%</span>
+                        </div>
+
+                        <p class="current-price">28.190.000&nbsp;₫</p>
+
+                        <ul class="product-description">
+                            <li>Màn 6.7 inch</li>
+                            <li>Chip Apple 15 Bionic</li>
+                            <li>RAM 6GB</li>
+                            <li>Camera sau: 3 camera 12 MP</li>
+                            <li>Camera trước: 12 MP</li>
+                            <li>Pin 4352 mAh, Sạc 20 W</li>
+                        </ul>
+
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 1541
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=3" class="product-image">
+                        <img src="../static/images/product-card-images/iphone-13.jpg" alt="iPhone 13">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">iPhone 13</p>
+                        <p class="product-id" style="display:none">3</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">128GB</button><button onclick="chooseOption(this)">256GB</button><button onclick="chooseOption(this)">512GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">24.990.000&nbsp;₫</span>  
+                            <span class="percent">-18.41%</span>
+                        </div>
+    
+                        <p class="current-price">20.390.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 6.1 inch</li><li>Chip Apple 15 Bionic</li><li>RAM 4GB</li><li>Camera sau: 2 camera 12 MP</li><li>Camera trước: 12 MP</li><li>Pin 3240 mAh, Sạc 20 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 823
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=3" class="product-image">
+                        <img src="../static/images/product-card-images/iphone-13.jpg" alt="iPhone 13">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">iPhone 13</p>
+                        <p class="product-id" style="display:none">3</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">128GB</button><button onclick="chooseOption(this)">256GB</button><button onclick="chooseOption(this)">512GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">24.990.000&nbsp;₫</span>  
+                            <span class="percent">-18.41%</span>
+                        </div>
+    
+                        <p class="current-price">20.390.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 6.1 inch</li><li>Chip Apple 15 Bionic</li><li>RAM 4GB</li><li>Camera sau: 2 camera 12 MP</li><li>Camera trước: 12 MP</li><li>Pin 3240 mAh, Sạc 20 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 823
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=5" class="product-image">
+                        <img src="../static/images/product-card-images/iphone-13-mini.jpg" alt="iPhone 13 mini">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">iPhone 13 mini</p>
+                        <p class="product-id" style="display:none">5</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">128GB</button><button onclick="chooseOption(this)">256GB</button><button onclick="chooseOption(this)">512GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">21.990.000&nbsp;₫</span>  
+                            <span class="percent">-15.92%</span>
+                        </div>
+    
+                        <p class="current-price">18.490.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 5.4 inch</li><li>Chip Apple A13 Bionic</li><li>RAM 4GB</li><li>Camera sau: 2 camera 12 MP</li><li>Camera trước: 12 MP</li><li>Pin 2438 mAh, Sạc 18 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 312
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=7" class="product-image">
+                        <img src="../static/images/product-card-images/iphone-12-mini.jpg" alt="iPhone 12 mini">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">iPhone 12 mini</p>
+                        <p class="product-id" style="display:none">7</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">128GB</button><button onclick="chooseOption(this)">256GB</button><button onclick="chooseOption(this)">512GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">20.990.000&nbsp;₫</span>  
+                            <span class="percent">-21.44%</span>
+                        </div>
+    
+                        <p class="current-price">16.490.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 5.4 inch</li><li>Chip Apple A14 Bionic</li><li>RAM 4GB</li><li>Camera sau: 2 camera 12 MP</li><li>Camera trước: 12 MP</li><li>Pin 2227 mAh, Sạc 20 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 412
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=9" class="product-image">
+                        <img src="../static/images/product-card-images/Galaxy-S22-Ultra.jpg" alt="Galaxy S22 Ultra 5G">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">Galaxy S22 Ultra 5G</p>
+                        <p class="product-id" style="display:none">9</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">8GB-128GB</button><button onclick="chooseOption(this)">12GB-256GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">30.990.000&nbsp;₫</span>  
+                            <span class="percent">-9.68%</span>
+                        </div>
+    
+                        <p class="current-price">27.990.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 6.8 inch, Quad HD+</li><li>Chip Snapdragon 8 Gen 1</li><li>RAM 8GB/12GB</li><li>Camera sau: Chính 108 MP &amp; Phụ 12 MP, 10 MP, 10 MP</li><li>Camera trước: 40 MP</li><li>Pin 5000 mAh, Sạc 45 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 537
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=7" class="product-image">
+                        <img src="../static/images/product-card-images/iphone-12-mini.jpg" alt="iPhone 12 mini">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">iPhone 12 mini</p>
+                        <p class="product-id" style="display:none">7</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">128GB</button><button onclick="chooseOption(this)">256GB</button><button onclick="chooseOption(this)">512GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">20.990.000&nbsp;₫</span>  
+                            <span class="percent">-21.44%</span>
+                        </div>
+    
+                        <p class="current-price">16.490.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 5.4 inch</li><li>Chip Apple A14 Bionic</li><li>RAM 4GB</li><li>Camera sau: 2 camera 12 MP</li><li>Camera trước: 12 MP</li><li>Pin 2227 mAh, Sạc 20 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 412
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card  carousel__slide">
+                    <a href="./detail.html?id=11" class="product-image">
+                        <img src="../static/images/product-card-images/xiaomi-11t-pro-5g.jpeg" alt="Xiaomi 11T Pro 5G">
+                    </a>
+    
+                    <div class="product-content">
+                        <p class="product-name">Xiaomi 11T Pro 5G</p>
+                        <p class="product-id" style="display:none">11</p>
+    
+                        <div class="alter-options">
+                            <button onclick="chooseOption(this)" class="active">8GB-128GB</button><button onclick="chooseOption(this)">12GB-256GB</button>
+                        </div>
+    
+                        <div class="old-price-container">
+                            <span class="old-price">15.690.000&nbsp;₫</span>  
+                            <span class="percent">-10.83%</span>
+                        </div>
+    
+                        <p class="current-price">13.990.000&nbsp;₫</p>
+    
+                        <ul class="product-description">
+                           <li>Màn 6.67 inch, Full HD+</li><li>Chip Snapdragon 888</li><li>RAM 8GB/12GB, ROM 256GB</li><li>Camera sau: Chính 108 MP &amp; Phụ 8 MP, 5 MP</li><li>Camera trước: 16 MP</li><li>Pin 5000 mAh, Sạc 120 W</li>
+                        </ul>
+    
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: 389
+                                </div>
+                            </div>
+                            <div class="bot-second">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>So sánh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
 
 
     <footer>
@@ -238,6 +1277,7 @@
 
 
     <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="../static/js/data.js"></script>
     <script src="../static/js/main.js"></script>
     <script src="../static/js/detail.js"></script>
