@@ -44,6 +44,10 @@ let products = [
         ratings: 4,
         soldQuantity: 562,
         brand: "apple",
+        mainCarouselImages: ["iphone-13-pro-xanh-xa-1.jpg", "iphone-13-pro6-gold.jpg", "iphone-13-pro-blue.jpg", "iphone-13-pro-silver-2.jpg", "iphone-13-pro-xam-1.jpg"],
+        dotCarouselImages: ["xanh-la-iphone.jpg", "iphone-13-pro-gold-1-200x200.jpg", "iphone-13-pro-sierra-blue-200x200.jpg", "iphone-13-pro-silver-200x200.jpg", "iphone-13-pro-graphite-200x200.jpg"],
+        colors: ["Xanh lá", "Vàng đồng", "Xanh dương", "Bạc", "Xám"]
+
     },
 
     {

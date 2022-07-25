@@ -1,66 +1,34 @@
 // Initialise Carousel ********************************
-const mainCarousel = new Carousel(document.querySelector("#mainCarousel"), {
-    Dots: false,
-});
-
-// Thumbnails
-const thumbCarousel = new Carousel(document.querySelector("#thumbCarousel"), {
-    Sync: {
-        target: mainCarousel,
-        friction: 0.9,
-    },
-    Dots: false,
-    Navigation: false,
-    center: true,
-    slidesPerPage: 1,
-    infinite: false,
-});
+$(document).ready(function () {
+    $(".owl-carousel").owlCarousel({
+        items: 1,
+        nav: true,
+        dotsContainer: "#thumbCarousel",
+    })
+})
 
 
-// Carousel sản phẩm liên quan 
-const relatedProductCarousel = new Carousel(document.querySelector("#related-product-carousel"), {
-    Dots: false,
-    slidesPerPage: 1,
-    infinite: false,
-});
-
-// Carousel sản phẩm liên quan 
-const watchedProductCarousel = new Carousel(document.querySelector("#watched-product-carousel"), {
-    Dots: false,
-    slidesPerPage: 1,
-    infinite: false,
-    center: false,
-});
 
 
-// Customize Fancybox
 
-// Fancybox.bind('[data-fancybox="gallery"]', {
-//     Carousel: {
-//         on: {
-//             change: (that) => {
-//                 mainCarousel.slideTo(mainCarousel.findPageForSlide(that.page), {
-//                     friction: 0,
-//                 });
-//             },
-//         },
-//     },
-// });
+
+
+
 
 function increaseValue() {
     var value = parseInt(document.getElementById('number').value, 10);
     value = isNaN(value) ? 0 : value;
     value++;
     document.getElementById('number').value = value;
-  }
-  
-  function decreaseValue() {
+}
+
+function decreaseValue() {
     var value = parseInt(document.getElementById('number').value, 10);
     value = isNaN(value) ? 0 : value;
     value < 1 ? value = 1 : '';
     value--;
     document.getElementById('number').value = value;
-  }
+}
 
 
 // lấy id trên url
@@ -76,9 +44,57 @@ if (id) {
         window.location.href = "./404.html"
     }
     console.log(product)
-    
+
 } else {
     //404
     window.location.href = "./404.html"
 }
+
+// product name
+function renderProductName() {
+    $(".product-name p").html(product.name)
+}
+renderProductName()
+
+// product detail
+const mainCarouselEl = document.querySelector("#mainCarousel")
+const thumbCarouselEl = document.querySelector("#thumbCarousel")
+
+
+
+function renderProductDetail() {
+    mainCarouselEl.innerHTML = ""
+    for (let mainCarouselURL of product.mainCarouselImages) {
+        // console.log(mainCarouselURL)
+        mainCarouselEl.innerHTML += `
+            <div class="myCarousel">
+                <img src="../static/images/main-carousel-images/${mainCarouselURL}" />
+            </div>
+        `
+    }
+
+    thumbCarouselEl.innerHTML = ""
+    for (let i = 0; i < product.dotCarouselImages.length; i++) {
+        dotCarouselURL = product.dotCarouselImages[i]
+        thumbCarouselEl.innerHTML += `
+            <div class="owl-dot owl-dot-img">
+                <div class="thumbnail-image"><img
+                        src="../static/images/thumnail-carousel/${dotCarouselURL}" /></div>
+                <p class="thumbnail-name">${product.colors[i]}</p>
+            </div>
+        `
+    }
+}
+
+renderProductDetail()
+
+//sync two slides of the main product images
+$('.owl-dot').click(function () {
+    $(".owl-carousel").trigger('to.owl.carousel', [$(this).index(), 300]);
+});
+
+
+
+
+
 

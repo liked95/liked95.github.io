@@ -752,87 +752,75 @@ footer p {
 
 .left-side {
     width: 710px;
-    /* border-left: 1px solid black;
-    border-right: 1px solid black; */
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .feature-image {
     /* height: 600px; */
 }
 
-/* carousel fancy */
-#mainCarousel {
-    --carousel-button-color: #170724;
-    --carousel-button-bg: #fff;
-    --carousel-button-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
-        0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgba(21, 0, 212, 0.12);
+/* Owl Carousel 2 */
 
-    --carousel-button-svg-width: 20px;
-    --carousel-button-svg-height: 20px;
-    --carousel-button-svg-stroke-width: 2.5;
+.owl-carousel .owl-nav button {
+    background: rgba(255,255,255,.9) !important;
+    height: 60px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    border: 1px solid #e0e0e0 !important;
 }
 
-#mainCarousel .carousel__slide {
-    width: 100%;
-    padding: 0;
-}
-
-#mainCarousel .carousel__button {
-    opacity: 0.6;
-    transition: all 0.2s;
-}
-
-#mainCarousel .carousel__button:hover {
-    opacity: 8;
-}
-
-#mainCarousel .carousel__button.is-prev {
-    left: 0
-}
-
-#mainCarousel .carousel__button.is-next {
+.owl-carousel .owl-nav button.owl-next {
     right: 0
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+    left: 0
 }
 
 
 #thumbCarousel {
     margin-top: 20px;
-
+    display: flex;
+    justify-content: center;
 }
 
-#thumbCarousel .carousel__slide {
+#thumbCarousel .owl-dot-img {
     cursor: pointer;
     padding: 0;
     margin: 0 10px;
     width: 55px;
 }
 
-#thumbCarousel .carousel__slide:hover img {
+#thumbCarousel .owl-dot-img:hover img {
     border-color: #fb6e2e;
 }
 
-#thumbCarousel .carousel__slide .thumbnail-image {
+#thumbCarousel .owl-dot-img .thumbnail-image {
     padding: 7px;
     border: 1px solid #e0e0e0;
 }
 
-#thumbCarousel .carousel__slide img {
+#thumbCarousel .owl-dot-img img {
     width: 100%;
     object-fit: cover;
     transition: all 0.3s;
 }
 
-#thumbCarousel .carousel__slide:hover img {
+#thumbCarousel .owl-dot-img:hover img {
     transform: scale(1.1);
 }
 
 
-#thumbCarousel .carousel__slide .thumbnail-name {
+#thumbCarousel .owl-dot-img .thumbnail-name {
     font-size: 12px;
     text-align: center;
 }
 
-#thumbCarousel .carousel__slide.is-nav-selected .thumbnail-image {
+#thumbCarousel .owl-dot-img.active .thumbnail-image {
     border-color: #fb6e2e;
 }
 
