@@ -42,6 +42,10 @@ option.disabled {
     color: rgb(7, 126, 193)
 }
 
+.chosen-button-border {
+    border-color: #0C8AFE !important
+}
+
 .row {
     margin: 0;
 }
@@ -752,18 +756,16 @@ footer p {
 
 .left-side {
     width: 710px;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    /* border-left: 1px solid black;
+    border-right: 1px solid black; */
 }
 
-.feature-image {
-    /* height: 600px; */
-}
+
 
 /* Owl Carousel 2 */
 
 .owl-carousel .owl-nav button {
-    background: rgba(255,255,255,.9) !important;
+    background: rgba(255, 255, 255, .9) !important;
     height: 60px;
     width: 30px;
     position: absolute;
@@ -771,14 +773,29 @@ footer p {
     transform: translateY(-50%);
     z-index: 2;
     border: 1px solid #e0e0e0 !important;
+    border-radius: 4px;
+    opacity: 0.3;
+}
+
+.owl-carousel .owl-nav button:hover {
+    opacity: 0.6;
 }
 
 .owl-carousel .owl-nav button.owl-next {
-    right: 0
+    right: 0;
+    box-shadow: -6px 0 4px rgba(0, 0, 0, .05), -4px 0 4px rgba(0, 0, 0, .09);
 }
 
 .owl-carousel .owl-nav button.owl-prev {
-    left: 0
+    left: 0;
+    box-shadow: 6px 0 4px rgba(0,0,0,.05),4px 0 4px rgba(0,0,0,.09);
+}
+
+.owl-carousel .owl-nav button span {
+    color: #666;
+    font-size: 60px;
+    line-height: 40px;
+    font-weight: lighter;
 }
 
 
@@ -879,6 +896,11 @@ footer p {
     border-radius: 2px;
     background-color: #fff;
     margin-right: 3px;
+}
+
+.option-container button:hover,
+.color-container button:hover {
+    border-color: #0C8AFE;
 }
 
 .price-container {
@@ -1106,7 +1128,7 @@ footer p {
 .review-left {
     width: 40%;
     padding: 20px 60px 20px 30px;
-} 
+}
 
 .review-left i {
     color: #FE8C23;
@@ -1147,7 +1169,7 @@ footer p {
     height: 10px;
 }
 
-.rating-bar-percent{
+.rating-bar-percent {
     width: 60%;
     height: 100%;
     background-color: #fe8c23;
@@ -1251,7 +1273,8 @@ footer p {
 
 
 
-.related-products h4, .watched-products h4 {
+.related-products h4,
+.watched-products h4 {
     margin-bottom: 15px;
     font-size: 20px;
     line-height: 1.3;

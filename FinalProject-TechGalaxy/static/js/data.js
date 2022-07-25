@@ -46,7 +46,18 @@ let products = [
         brand: "apple",
         mainCarouselImages: ["iphone-13-pro-xanh-xa-1.jpg", "iphone-13-pro6-gold.jpg", "iphone-13-pro-blue.jpg", "iphone-13-pro-silver-2.jpg", "iphone-13-pro-xam-1.jpg"],
         dotCarouselImages: ["xanh-la-iphone.jpg", "iphone-13-pro-gold-1-200x200.jpg", "iphone-13-pro-sierra-blue-200x200.jpg", "iphone-13-pro-silver-200x200.jpg", "iphone-13-pro-graphite-200x200.jpg"],
-        colors: ["Xanh lá", "Vàng đồng", "Xanh dương", "Bạc", "Xám"]
+        colors: ["Xanh lá", "Vàng đồng", "Xanh dương", "Bạc", "Xám"],
+        detailImgURL : "iphone-13-pro-n-2.jpg",
+        specAttributes: {
+            "Màn hình": 'OLED, 6.1", Super Retina XDR',
+            "Hệ điều hành": '	iOS 15',
+            "Camera sau": '3 camera 12 MP',
+            "Camera trước": '12MP',
+            "RAM": '6 GB',
+            "Bộ nhớ trong": '128 GB',
+            "Pin, Sạc": '3095 mAh, 20 W',
+        }
+
 
     },
 
