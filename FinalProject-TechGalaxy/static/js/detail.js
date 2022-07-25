@@ -1,12 +1,26 @@
 // Initialise Carousel ********************************
 $(document).ready(function () {
-    $(".owl-carousel").owlCarousel({
+    $("#mainCarousel").owlCarousel({
         items: 1,
         nav: true,
         dotsContainer: "#thumbCarousel",
     })
 })
 
+
+$(document).ready(function () {
+    $("#related-product-carousel").owlCarousel({
+        items: 5,
+        nav: true,
+    })
+})
+
+$(document).ready(function () {
+    $("#watched-product-carousel").owlCarousel({
+        items: 5,
+        nav: true,
+    })
+})
 
 
 
@@ -90,7 +104,7 @@ renderProductDetail()
 
 //sync two slides of the main product images
 $('.owl-dot').click(function () {
-    $(".owl-carousel").trigger('to.owl.carousel', [$(this).index(), 300]);
+    $("#mainCarousel").trigger('to.owl.carousel', [$(this).index(), 300]);
 });
 
 
