@@ -100,7 +100,7 @@ let products = [
         oldPrices: [30990000, 33490000, 38990000, 43990000],
         currentPrices: [26390000, 27390000, 31990000, 36990000],
         ratings: 4,
-        soldQuantity: 562,
+        soldQuantity: 582,
         brand: "apple",
         mainCarouselImages: ["iphone-13-pro-xanh-xa-1.jpg", "iphone-13-pro6-gold.jpg", "iphone-13-pro-blue.jpg", "iphone-13-pro-silver-2.jpg", "iphone-13-pro-xam-1.jpg"],
         dotCarouselImages: ["xanh-la-iphone.jpg", "iphone-13-pro-gold-1-200x200.jpg", "iphone-13-pro-sierra-blue-200x200.jpg", "iphone-13-pro-silver-200x200.jpg", "iphone-13-pro-graphite-200x200.jpg"],

@@ -66,11 +66,17 @@ function decreaseValue() {
 let params = new URLSearchParams(window.location.search)
 let id = params.get("id")
 
-let product
-
+let product, productIdx
+products = getFromLocalStorage("productList")
+console.log(products)
 
 if (id) {
-    product = products.find(p => p.id == id)
+    products.forEach((p, idx) => {
+        if (p.id == id) {
+            product = p
+            productIdx = idx
+        }
+    })
     if (!product) {
         window.location.href = "./404.html"
     }
@@ -80,6 +86,8 @@ if (id) {
     //404
     window.location.href = "./404.html"
 }
+
+console.log(product, productIdx)
 
 let brandTitle = ""
 if (product.category == "smartphone") brandTitle = "điện thoại"
@@ -248,9 +256,6 @@ function renderProductReview() {
             </div>`
         }
     }
-
-
-
 }
 
 renderProductReview()
@@ -265,10 +270,10 @@ renderCardItem(relatedProductEL, products.filter(p => p.category == "smartphone"
 //     userID1: [1, 2, 4, 5],
 //     userID2: [3, 2, 3, 5]
 // }
+let sessionID = userID ? userID.id : -1
 
 function renderWatchedProducts() {
     let watchContainerEl = document.querySelector("#watched-product-carousel")
-    let sessionID = userID ? userID.id : -1
     let watched = getObjectFromLocalStorage("watchedProducts")
 
     if (!watched || !watched[sessionID]) {
@@ -304,11 +309,90 @@ function renderWatchedProducts() {
 renderWatchedProducts()
 
 
+//render review modal
+$("#writeReviewModalLongTitle").html(`Thêm đánh giá cho ${product.name}`)
+
+// click vào nút gửi đánh giá
+document.getElementById("send-review-btn").addEventListener("click", () => {
+
+    const reviewInputEl = document.querySelector("#writeReviewModal textarea")
+    let reviewContent = reviewInputEl.value.trim()
+    if (!reviewContent) {
+        alert("Nội dung đánh giá không được để trống!")
+        return;
+    }
+    // retrieve rating
+    let rating;
+    let inputs = document.querySelectorAll("#writeReviewModal input")
+
+    inputs.forEach(input => {
+        if (input.checked) {
+            rating = Number(input.value)
+        }
+    })
+
+    let date = new Date().toLocaleDateString("vi-VN")
+    let time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    console.log(date, time, sessionID)
+    let reviewerName = userID ? userID.username : "Ẩn danh"
+    // modify products arr
+    products[productIdx].reviews.unshift({
+        reviewer: reviewerName,
+        date: date,
+        time: time,
+        rating: rating,
+        content: reviewContent
+    })
+
+    // lưu lại trên LS
+    saveToLocalStorage("productList", products)
+
+    // refresh phần review
+    renderProductReview()
+    //clear data
+    reviewInputEl.value = ""
+
+    // đóng modal
+    $("#writeReviewModal").modal("hide")
+
+    setTimeout(() => {
+        createAlert("Cảm ơn bạn đã thêm đánh giá")
+    }, 400)
+})
+
+// title 
+$("#allReviewModalLongTitle").html(`Tất cả đánh giá cho ${product.name}`)
+
+// click vào nút xem toàn bộ đánh giá
+document.getElementById("see-all-reviews").addEventListener("click", () => {
+    const allReviewEl = document.querySelectorAll("#all-review-modal .user-review-container")
+    for (let review of reviews) {
+        let starNum = review.rating
+
+        let userRatingContent = ""
+        for (let j = 0; j < starNum; j++) {
+            userRatingContent += `<i class="fa-solid fa-star"></i>`
+        }
+
+        allReviewEl.innerHTML += `
+        <div class="user-review">
+            <div class="review-identity">
+                <div class="reviewer-name">${review.reviewer}</div>
+                <div class="user-rating">${userRatingContent}</div>
+                <div class="review-time">
+                    <div class="date">${review.date}</div>
+                    <div class="time">${review.time}</div>
+                </div>
+            </div>
+
+            <p class="review-content">
+                ${review.content}
+            </p>
+        </div>`
+    }
+})
 
 
-
-
-// add productID vào object tương ứng với từng userID
 
 
 

@@ -1,3 +1,19 @@
+const alertDuration = 1200
+function createAlert(message) {
+    let messageEl = document.createElement("div")
+    messageEl.classList.add("alert", "alert-success")
+    messageEl.role = "alert"
+    messageEl.innerHTML = message
+    document.body.prepend(messageEl)
+
+    setTimeout(function(){ 
+        $(".alert").fadeOut(alertDuration);
+        setTimeout(() => {
+            messageEl.remove()
+        }, alertDuration)
+    }, alertDuration);    
+}
+
 function formatMoney(num) {
     return num.toLocaleString('vi', { style: 'currency', currency: 'VND' });
 }
@@ -28,8 +44,14 @@ function getObjectFromLocalStorage(key) {
     }
 }
 
+// Lưu dynamic productList vào localstorage 1 lần duy nhất
+let isAlreadyLoadedIntoLocalStorage = getObjectFromLocalStorage("isLoaded")
+if (!isAlreadyLoadedIntoLocalStorage) {
+    saveToLocalStorage("productList", products)
+    saveToLocalStorage("isLoaded", true)
+}
 
-saveToLocalStorage("productList", products)
+
 
 const headerLoginBtn = document.querySelector(".login-btn")
 const headerRegisterBtn = document.querySelector(".register-btn")

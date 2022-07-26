@@ -13,7 +13,6 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" /> -->
     <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
-
     <link rel="stylesheet" href="../static/css/style.css">
     <title>Trang chi tiết</title>
 </head>
@@ -440,8 +439,8 @@
                 </div>
 
                 <div class="review-actions">
-                    <button id="add-review" data-toggle="modal" data-target="#exampleModalCenter">Viết đánh giá</button>
-                    <button id="see-all-reviews">
+                    <button id="add-review" data-toggle="modal" data-target="#writeReviewModal">Viết đánh giá</button>
+                    <button id="see-all-reviews" data-toggle="modal" data-target="#all-review-modal">
                         Xem tất cả đánh giá
                         <i class="fa-solid fa-caret-right"></i>
                     </button>
@@ -1247,30 +1246,103 @@
     </div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <!-- Modal viết đánh giá -->
+    <div class="modal fade" id="writeReviewModal" tabindex="-1" role="dialog" aria-labelledby="writeReviewModalTitle"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h5 class="modal-title" id="writeReviewModalLongTitle">Thêm đánh giá cho sản phẩm </h5>
                 </div>
-                <div class="modal-body">
-                    ...
+                <div class="modal-body row">
+                    <div class="col-lg-3">
+                        <div class="rating-button-container">
+                            <div>
+                                <input type="radio" name="rating-checkbox" id="five-star" value="5" checked>
+                                <label for="five-star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="rating-checkbox" value="4" id="four-star">
+                                <label for="four-star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="rating-checkbox" value="3" id="three-star">
+                                <label for="three-star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="rating-checkbox" value="2" id="two-star">
+                                <label for="two-star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="rating-checkbox" value="1" id="one-star">
+                                <label for="one-star">
+                                    <i class="fa-solid fa-star"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9 review-input">
+                        <textarea placeholder="Mời bạn chia sẻ thêm một số cảm nhận về sản phẩm ..."></textarea>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" id="send-review-btn">Gửi đánh giá</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                 </div>
             </div>
         </div>
     </div>
 
 
-    
+    <!-- Modal toàn bộ đánh giá -->
+
+    <div class="modal fade" id="all-review-modal" tabindex="-1" role="dialog" aria-labelledby="allReviewModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="allReviewModalLongTitle">Tất cả đánh giá</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="user-review-container">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <footer>
         <div class="main-container">
             <div class="row">
@@ -1332,6 +1404,7 @@
 
     <script src="../static/js/data.js"></script>
     <script src="../static/js/main.js"></script>
+
     <script src="../static/js/detail.js"></script>
 </body>
 
