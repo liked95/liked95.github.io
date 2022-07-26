@@ -21,6 +21,64 @@ let products = [
         ratings: 5,
         soldQuantity: 1541,
         brand: "apple",
+        mainCarouselImages: ["iphone-13-pro-xanh-xa-1.jpg", "iphone-13-pro6-gold.jpg", "iphone-13-pro-blue.jpg", "iphone-13-pro-silver-2.jpg", "iphone-13-pro-xam-1.jpg"],
+        dotCarouselImages: ["xanh-la-iphone.jpg", "iphone-13-pro-gold-1-200x200.jpg", "iphone-13-pro-sierra-blue-200x200.jpg", "iphone-13-pro-silver-200x200.jpg", "iphone-13-pro-graphite-200x200.jpg"],
+        colors: ["Xanh lá", "Vàng đồng", "Xanh dương", "Bạc", "Xám"],
+        detailImgURL: "iphone-13-pro-n-2.jpg",
+        specAttributes: {
+            "Màn hình": 'OLED, 6.1", Super Retina XDR',
+            "Hệ điều hành": '	iOS 15',
+            "Camera sau": '3 camera 12 MP',
+            "Camera trước": '12MP',
+            "RAM": '6 GB',
+            "Bộ nhớ trong": '128 GB',
+            "Pin, Sạc": '3095 mAh, 20 W',
+        },
+        reviews: [
+            {
+                reviewer: "Trương Tam Phong",
+                date: "24-7-2022",
+                time: "5:52PM",
+                rating: 4,  //[1,5]
+                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
+            },
+            {
+                reviewer: "Trương Thu Hoài",
+                date: "21-3-2022",
+                time: "4:52AM",
+                rating: 1,  //[1,5]
+                content: "Điện thoại gì chán thế nhỉ, cửa hàng lớn làm ăn lom dom =))"
+            },
+            {
+                reviewer: "Nguyen Tran Nhu Thao",
+                date: "3-1-2022",
+                time: "8:31AM",
+                rating: 5,  //[1,5]
+                content: "sao giá ở đây đắt hơn giá bên cửa hàng khác vậy"
+            },
+            {
+                reviewer: "Vũ Sơn",
+                date: "3-10-2021",
+                time: "8:17PM",
+                rating: 3,  //[1,5]
+                content: "Shop bán hàng đẽu"
+            },
+            {
+                reviewer: "Ngọc",
+                date: "3-8-2021",
+                time: "8:63PM",
+                rating: 2,  //[1,5]
+                content: "Tạm được"
+            },
+            {
+                reviewer: "Thư Ngố",
+                date: "4-2-2021",
+                time: "8:63PM",
+                rating: 5,  //[1,5]
+                content: "Hàng đẹp phết"
+            },
+        ]
+
     },
 
     {
@@ -47,7 +105,7 @@ let products = [
         mainCarouselImages: ["iphone-13-pro-xanh-xa-1.jpg", "iphone-13-pro6-gold.jpg", "iphone-13-pro-blue.jpg", "iphone-13-pro-silver-2.jpg", "iphone-13-pro-xam-1.jpg"],
         dotCarouselImages: ["xanh-la-iphone.jpg", "iphone-13-pro-gold-1-200x200.jpg", "iphone-13-pro-sierra-blue-200x200.jpg", "iphone-13-pro-silver-200x200.jpg", "iphone-13-pro-graphite-200x200.jpg"],
         colors: ["Xanh lá", "Vàng đồng", "Xanh dương", "Bạc", "Xám"],
-        detailImgURL : "iphone-13-pro-n-2.jpg",
+        detailImgURL: "iphone-13-pro-n-2.jpg",
         specAttributes: {
             "Màn hình": 'OLED, 6.1", Super Retina XDR',
             "Hệ điều hành": '	iOS 15',
@@ -56,7 +114,51 @@ let products = [
             "RAM": '6 GB',
             "Bộ nhớ trong": '128 GB',
             "Pin, Sạc": '3095 mAh, 20 W',
-        }
+        },
+        reviews: [
+            {
+                reviewer: "Trương Tam Phong",
+                date: "24-7-2022",
+                time: "5:52PM",
+                rating: 4,  //[1,5]
+                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
+            },
+            {
+                reviewer: "Trương Thu Hoài",
+                date: "21-3-2022",
+                time: "4:52AM",
+                rating: 1,  //[1,5]
+                content: "Điện thoại gì chán thế nhỉ, cửa hàng lớn làm ăn lom dom =))"
+            },
+            {
+                reviewer: "Nguyen Tran Nhu Thao",
+                date: "3-1-2022",
+                time: "8:31AM",
+                rating: 5,  //[1,5]
+                content: "sao giá ở đây đắt hơn giá bên cửa hàng khác vậy"
+            },
+            {
+                reviewer: "Vũ Sơn",
+                date: "3-10-2021",
+                time: "8:17PM",
+                rating: 3,  //[1,5]
+                content: "Shop bán hàng đẽu"
+            },
+            {
+                reviewer: "Ngọc",
+                date: "3-8-2021",
+                time: "8:63PM",
+                rating: 2,  //[1,5]
+                content: "Tạm được"
+            },
+            {
+                reviewer: "Thư Ngố",
+                date: "4-2-2021",
+                time: "8:63PM",
+                rating: 5,  //[1,5]
+                content: "Hàng đẹp phết"
+            },
+        ]
 
 
     },
@@ -82,6 +184,63 @@ let products = [
         ratings: 4,
         soldQuantity: 823,
         brand: "apple",
+        mainCarouselImages: ["iphone-13-pro-xanh-xa-1.jpg", "iphone-13-pro6-gold.jpg", "iphone-13-pro-blue.jpg", "iphone-13-pro-silver-2.jpg", "iphone-13-pro-xam-1.jpg"],
+        dotCarouselImages: ["xanh-la-iphone.jpg", "iphone-13-pro-gold-1-200x200.jpg", "iphone-13-pro-sierra-blue-200x200.jpg", "iphone-13-pro-silver-200x200.jpg", "iphone-13-pro-graphite-200x200.jpg"],
+        colors: ["Xanh lá", "Vàng đồng", "Xanh dương", "Bạc", "Xám"],
+        detailImgURL : "iphone-13-pro-n-2.jpg",
+        specAttributes: {
+            "Màn hình": 'OLED, 6.1", Super Retina XDR',
+            "Hệ điều hành": '	iOS 15',
+            "Camera sau": '3 camera 12 MP',
+            "Camera trước": '12MP',
+            "RAM": '6 GB',
+            "Bộ nhớ trong": '128 GB',
+            "Pin, Sạc": '3095 mAh, 20 W',
+        },
+        reviews: [
+            {
+                reviewer: "Trương Tam Phong",
+                date: "24-7-2022",
+                time: "5:52PM",
+                rating: 4,  //[1,5]
+                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
+            },
+            {
+                reviewer: "Trương Thu Hoài",
+                date: "21-3-2022",
+                time: "4:52AM",
+                rating: 1,  //[1,5]
+                content: "Điện thoại gì chán thế nhỉ, cửa hàng lớn làm ăn lom dom =))"
+            },
+            {
+                reviewer: "Nguyen Tran Nhu Thao",
+                date: "3-1-2022",
+                time: "8:31AM",
+                rating: 5,  //[1,5]
+                content: "sao giá ở đây đắt hơn giá bên cửa hàng khác vậy"
+            },
+            {
+                reviewer: "Vũ Sơn",
+                date: "3-10-2021",
+                time: "8:17PM",
+                rating: 3,  //[1,5]
+                content: "Shop bán hàng đẽu"
+            },
+            {
+                reviewer: "Ngọc",
+                date: "3-8-2021",
+                time: "8:63PM",
+                rating: 2,  //[1,5]
+                content: "Tạm được"
+            },
+            {
+                reviewer: "Thư Ngố",
+                date: "4-2-2021",
+                time: "8:63PM",
+                rating: 5,  //[1,5]
+                content: "Hàng đẹp phết"
+            },
+        ]
     },
 
     {

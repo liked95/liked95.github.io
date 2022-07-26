@@ -6,8 +6,8 @@ function isSame(arr1, arr2) {
     return arr1.some(ele => arr2.includes(ele))
 }
 
-function saveToLocalStorage(key, arr) {
-    localStorage.setItem(key, JSON.stringify(arr))
+function saveToLocalStorage(key, item) {
+    localStorage.setItem(key, JSON.stringify(item))
 }
 
 function getFromLocalStorage(key) {
@@ -16,6 +16,15 @@ function getFromLocalStorage(key) {
         return JSON.parse(value)
     } else {
         return []
+    }
+}
+
+function getObjectFromLocalStorage(key) {
+    let value = localStorage.getItem(key)
+    if (value !== undefined) {
+        return JSON.parse(value)
+    } else {
+        return {}
     }
 }
 

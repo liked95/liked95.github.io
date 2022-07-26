@@ -1,4 +1,4 @@
-// Initialise Carousel ********************************
+// Initialise Carousel 
 $(document).ready(function () {
     $("#mainCarousel").owlCarousel({
         items: 1,
@@ -24,7 +24,7 @@ $(document).ready(function () {
 
 
 function chooseAlterOption(ele) {
-    const buttons = document.querySelectorAll(".option-container button") 
+    const buttons = document.querySelectorAll(".option-container button")
     Array.from(buttons).map(button => button.classList.remove("chosen-button-border"))
     ele.classList.add("chosen-button-border")
 
@@ -37,7 +37,7 @@ function chooseAlterOption(ele) {
 }
 
 function chooseColor(ele) {
-    const buttons = document.querySelectorAll(".color-container button") 
+    const buttons = document.querySelectorAll(".color-container button")
     Array.from(buttons).map(button => button.classList.remove("chosen-button-border"))
     ele.classList.add("chosen-button-border")
 }
@@ -65,21 +65,26 @@ function decreaseValue() {
 // lấy id trên url
 let params = new URLSearchParams(window.location.search)
 let id = params.get("id")
-console.log(id)
 
 let product
+
 
 if (id) {
     product = products.find(p => p.id == id)
     if (!product) {
         window.location.href = "./404.html"
     }
-    console.log(product)
+
 
 } else {
     //404
     window.location.href = "./404.html"
 }
+
+let brandTitle = ""
+if (product.category == "smartphone") brandTitle = "điện thoại"
+if (product.category == "tablet") brandTitle = "máy tính bảng"
+if (product.category == "laptop") brandTitle = "laptop"
 
 // product name
 function renderProductName() {
@@ -146,11 +151,7 @@ function renderProductDetail() {
     $(".price-info .discount").html(`(${formatMoney(product.discounts[0])}%)`)
 
     // tên cấu hình
-    const specTitle = document.querySelector(".item-spec .title") 
-    let brandTitle = ""
-    if (product.category == "smartphone") brandTitle = "điện thoại"
-    if (product.category == "tablet") brandTitle = "máy tính bảng"
-    if (product.category == "laptop") brandTitle = "laptop"
+    const specTitle = document.querySelector(".item-spec .title")
     specTitle.innerHTML = `
     Cấu hình <span class="brand">${brandTitle}</span> <span class="product">${product.name}</span>`
 
@@ -166,7 +167,7 @@ function renderProductDetail() {
         </tr>
     `
     }
-   
+
 }
 
 renderProductDetail()
@@ -177,6 +178,137 @@ renderProductDetail()
 $('.owl-dot').click(function () {
     $("#mainCarousel").trigger('to.owl.carousel', [$(this).index(), 300]);
 });
+
+
+// render review section
+let reviews = product.reviews
+let reviewCount = reviews.length
+let ratingAvgEl = document.querySelector(".rating-avg span")
+// reviewCount = 0
+function ratingCount(star) {
+    return reviews.filter(review => review.rating == star).length
+}
+
+
+
+function renderProductReview() {
+    // tên sản phẩm review
+    const reviewTitle = document.querySelector(".review-title")
+    reviewTitle.innerHTML = `Đánh giá <span class="brand">${brandTitle}</span> <span class="product">${product.name}</span>`
+    //số lượng đánh giá
+    $(".rating-count span").html(reviewCount)
+    // Đánh giá trung bình 
+    if (reviewCount == 0) ratingAvgEl.innerHTML = 0
+    else {
+        ratingAvgEl.innerHTML = (reviews.reduce((total, review) => total + review.rating, 0) / reviewCount).toFixed(1)
+    }
+    // tổng hợp rating
+    let ratingContent = ""
+    for (let i = 5; i >= 1; i--) {
+        const percent = reviewCount != 0 ? ((ratingCount(i) / reviewCount) * 100).toFixed(0) : 0
+        ratingContent += `
+        <div class="component">
+            <p class="rating-label">${i} <span><i class="fa-solid fa-star"></i></span></p>
+            <div class="rating-bar">
+                <div class="rating-bar-percent" style="width: ${percent}%"></div>
+            </div>
+            <p class="rating-percent">${percent}%</p>
+        </div>`
+    }
+    $(".rating-detail").html(ratingContent)
+    // show 3 đánh giá đầu tiên, gần nhất, shift() method
+    let reviewContentEl = document.querySelector(".user-review-container")
+    if (reviewCount == 0) reviewContentEl.innerHTML = `<p>Chưa có đánh giá nào cho sản phẩm này</p>`
+    else {
+        let showLength = reviewCount >= 3 ? 3 : reviewCount
+        reviewContentEl.innerHTML = ""
+
+        for (let i = 0; i < showLength; i++) {
+            let starNum = reviews[i].rating
+
+            let userRatingContent = ""
+            for (let j = 0; j < starNum; j++) {
+                userRatingContent += `<i class="fa-solid fa-star"></i>`
+            }
+
+            reviewContentEl.innerHTML += `
+            <div class="user-review">
+                <div class="review-identity">
+                    <div class="reviewer-name">${reviews[i].reviewer}</div>
+                    <div class="user-rating">${userRatingContent}</div>
+                    <div class="review-time">
+                        <div class="date">${reviews[i].date}</div>
+                        <div class="time">${reviews[i].time}</div>
+                    </div>
+                </div>
+
+                <p class="review-content">
+                ${reviews[i].content}
+                </p>
+            </div>`
+        }
+    }
+
+
+
+}
+
+renderProductReview()
+
+//render sp liên quan
+let relatedProductEL = document.getElementById("related-product-carousel")
+renderCardItem(relatedProductEL, products.filter(p => p.category == "smartphone" && p.brand == product.brand))
+
+//render sp đã xem
+// mỗi lần vào trang detail của 1 sp thì lưu sp đó vào localStorage "watchedProducts" tương ứng với userId 
+// watchedProducts = {
+//     userID1: [1, 2, 4, 5],
+//     userID2: [3, 2, 3, 5]
+// }
+
+function renderWatchedProducts() {
+    let watchContainerEl = document.querySelector("#watched-product-carousel")
+    let sessionID = userID ? userID.id : -1
+    let watched = getObjectFromLocalStorage("watchedProducts")
+
+    if (!watched || !watched[sessionID]) {
+        $(".watched-products").css("display", "none")
+        watchContainerEl.innerHTML = `Chưa có sp đã xem`
+    } else {
+        let watchProductArr = []
+        for (let productID of watched[sessionID]) {
+            watchProductArr.push(products.find(p => p.id == productID))
+        }
+        renderCardItem(watchContainerEl, watchProductArr)
+    }
+
+
+
+
+    if (!watched) {
+        watched = {}
+        watched[sessionID] = [product.id]
+    } else {
+        if (!watched[sessionID]) {
+            watched[sessionID] = [product.id]
+        } else {
+            if (!watched[sessionID].includes(product.id)) {
+                watched[sessionID].unshift(product.id)
+            }
+        }
+    }
+
+    saveToLocalStorage("watchedProducts", watched)
+}
+
+renderWatchedProducts()
+
+
+
+
+
+
+// add productID vào object tương ứng với từng userID
 
 
 
