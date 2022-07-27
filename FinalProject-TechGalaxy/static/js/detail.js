@@ -68,7 +68,7 @@ let id = params.get("id")
 
 let product, productIdx
 products = getFromLocalStorage("productList")
-console.log(products)
+// console.log(products)
 
 if (id) {
     products.forEach((p, idx) => {
@@ -87,7 +87,7 @@ if (id) {
     window.location.href = "./404.html"
 }
 
-console.log(product, productIdx)
+// console.log(product, productIdx)
 
 let brandTitle = ""
 if (product.category == "smartphone") brandTitle = "điện thoại"
@@ -189,11 +189,11 @@ $('.owl-dot').click(function () {
 
 
 // render review section
-let reviews = product.reviews
-let reviewCount = reviews.length
+// let reviews = product.reviews
+// let reviewCount = reviews.length
 let ratingAvgEl = document.querySelector(".rating-avg span")
-// reviewCount = 0
-function ratingCount(star) {
+
+function ratingCount(reviews, star) {
     return reviews.filter(review => review.rating == star).length
 }
 
@@ -201,6 +201,9 @@ function ratingCount(star) {
 
 function renderProductReview() {
     // tên sản phẩm review
+    let products = getFromLocalStorage("productList")
+    let reviews = products[productIdx].reviews
+    let reviewCount = reviews.length
     const reviewTitle = document.querySelector(".review-title")
     reviewTitle.innerHTML = `Đánh giá <span class="brand">${brandTitle}</span> <span class="product">${product.name}</span>`
     //số lượng đánh giá
@@ -213,7 +216,7 @@ function renderProductReview() {
     // tổng hợp rating
     let ratingContent = ""
     for (let i = 5; i >= 1; i--) {
-        const percent = reviewCount != 0 ? ((ratingCount(i) / reviewCount) * 100).toFixed(0) : 0
+        const percent = reviewCount != 0 ? ((ratingCount(reviews, i) / reviewCount) * 100).toFixed(0) : 0
         ratingContent += `
         <div class="component">
             <p class="rating-label">${i} <span><i class="fa-solid fa-star"></i></span></p>
@@ -333,7 +336,7 @@ document.getElementById("send-review-btn").addEventListener("click", () => {
 
     let date = new Date().toLocaleDateString("vi-VN")
     let time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    console.log(date, time, sessionID)
+    // console.log(date, time, sessionID)
     let reviewerName = userID ? userID.username : "Ẩn danh"
     // modify products arr
     products[productIdx].reviews.unshift({
@@ -349,6 +352,8 @@ document.getElementById("send-review-btn").addEventListener("click", () => {
 
     // refresh phần review
     renderProductReview()
+    // renderAllReview()
+
     //clear data
     reviewInputEl.value = ""
 
@@ -365,7 +370,18 @@ $("#allReviewModalLongTitle").html(`Tất cả đánh giá cho ${product.name}`)
 
 // click vào nút xem toàn bộ đánh giá
 document.getElementById("see-all-reviews").addEventListener("click", () => {
-    const allReviewEl = document.querySelectorAll("#all-review-modal .user-review-container")
+    renderAllReview()
+})
+
+// renderAllReview()
+
+function renderAllReview() {
+    const allReviewEl = document.querySelector("#all-review-modal .user-review-container")
+
+    let products = getFromLocalStorage("productList")
+    let reviews = products[productIdx].reviews
+    console.log(reviews)
+    allReviewEl.innerHTML = ""
     for (let review of reviews) {
         let starNum = review.rating
 
@@ -380,8 +396,14 @@ document.getElementById("see-all-reviews").addEventListener("click", () => {
                 <div class="reviewer-name">${review.reviewer}</div>
                 <div class="user-rating">${userRatingContent}</div>
                 <div class="review-time">
-                    <div class="date">${review.date}</div>
-                    <div class="time">${review.time}</div>
+                    <div class="date">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        ${review.date}
+                    </div>
+                    <div class="time">
+                        <i class="fa-solid fa-clock"></i>
+                        ${review.time}
+                    </div>
                 </div>
             </div>
 
@@ -390,7 +412,7 @@ document.getElementById("see-all-reviews").addEventListener("click", () => {
             </p>
         </div>`
     }
-})
+}
 
 
 

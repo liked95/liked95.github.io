@@ -1247,7 +1247,7 @@ footer p {
 }
 
 .review-time .time {
-    margin-left: 8px;
+    margin-left: 20px;
 }
 
 .review-content {
@@ -1359,6 +1359,18 @@ footer p {
     font-size: 14px;
 }
 
+#all-review-modal .user-review-container {
+    max-height: initial;
+}
+
+#all-review-modal .user-rating i {
+    color: #fe8c23;
+    font-size: 13px;
+}
+
+#all-review-modal .review-time {
+    font-size: 14px;
+}
 
 
 
