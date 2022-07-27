@@ -64,7 +64,7 @@ option.disabled {
     color: rgb(7, 126, 193)
 }
 
-.chosen-button-border {
+.right-side button.active {
     border-color: #0C8AFE !important
 }
 
@@ -1370,6 +1370,11 @@ footer p {
 
 #all-review-modal .review-time {
     font-size: 14px;
+}
+
+
+.user-review {
+    word-break: break-all;
 }
 
 

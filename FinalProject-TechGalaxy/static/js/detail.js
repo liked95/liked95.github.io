@@ -25,8 +25,8 @@ $(document).ready(function () {
 
 function chooseAlterOption(ele) {
     const buttons = document.querySelectorAll(".option-container button")
-    Array.from(buttons).map(button => button.classList.remove("chosen-button-border"))
-    ele.classList.add("chosen-button-border")
+    Array.from(buttons).map(button => button.classList.remove("active"))
+    ele.classList.add("active")
 
     // adjust price accordingly
     let idx = product.alterOptions.indexOf(ele.innerHTML)
@@ -38,8 +38,8 @@ function chooseAlterOption(ele) {
 
 function chooseColor(ele) {
     const buttons = document.querySelectorAll(".color-container button")
-    Array.from(buttons).map(button => button.classList.remove("chosen-button-border"))
-    ele.classList.add("chosen-button-border")
+    Array.from(buttons).map(button => button.classList.remove("active"))
+    ele.classList.add("active")
 }
 
 
@@ -413,6 +413,7 @@ function renderAllReview() {
         </div>`
     }
 }
+
 
 
 
