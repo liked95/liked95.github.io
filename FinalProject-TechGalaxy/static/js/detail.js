@@ -46,20 +46,7 @@ function chooseColor(ele) {
 
 
 
-function increaseValue() {
-    var value = parseInt(document.getElementById('number').value, 10);
-    value = isNaN(value) ? 0 : value;
-    value++;
-    document.getElementById('number').value = value;
-}
 
-function decreaseValue() {
-    var value = parseInt(document.getElementById('number').value, 10);
-    value = isNaN(value) ? 0 : value;
-    value--;
-    value < 1 ? value = 1 : '';
-    document.getElementById('number').value = value;
-}
 
 
 // lấy id trên url
@@ -415,9 +402,71 @@ function renderAllReview() {
 }
 
 
+// increase or decrease count
+let count = 1
+const countEl = document.querySelector(".change-quantity input")
+countEl.value = count
+const minusCount = document.querySelector(".change-quantity #decrease")
+const plusCount = document.querySelector(".change-quantity #increase")
+
+
+plusCount.addEventListener("click", () => {
+    count++
+    countEl.value = count
+})
+
+minusCount.addEventListener("click", () => {
+    console.log("Hello world")
+    count--
+    if (count < 1) {
+        count = 1
+    }
+    countEl.value = count
+})
+
+
+// add to Cart btn
+const addToCartBtn  = document.querySelector(".add-to-cart")
+addToCartBtn.addEventListener("click", () => {
+    const alterOption = document.querySelector(".option-container .active")
+    if (!alterOption) {
+        alert("Bạn cần chọn 1 tùy chọn!")
+        return
+    }
+
+    const colorOption = document.querySelector(".color-container .active")
+    if (!colorOption) {
+        alert("Bạn cần chọn 1 màu!")
+        return
+    }
+
+    let optionIdx = product.alterOptions.indexOf(alterOption.innerHTML)
+    let colorIdx = product.colors.indexOf(colorOption.innerHTML)
+    let item = {
+        id: product.id,
+        name: product.name,
+        alterOption: alterOption.innerHTML,
+        color: colorOption.innerHTML,
+        price: product.currentPrices[optionIdx],
+        count: count, 
+        image: product.dotCarouselImages[colorIdx]
+    }
+
+    addItemToCart(item)
+    alert("Thêm giỏ hàng thành công!")
+})
 
 
 
+
+// let item = {
+//     id: product.id,
+//     name: product.name,
+//     price: product.price,
+//     image: product.images[0],
+//     count: count,
+//     size: selectedEl.innerText
+// }
 
 
 

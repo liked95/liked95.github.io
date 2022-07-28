@@ -54,10 +54,12 @@ input[type=checkbox] {
 
 
 
-
-
-
-
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 
 option.disabled {
@@ -138,9 +140,24 @@ header .first-header-row {
     margin-bottom: 0;
 }
 
+.cart-icon {
+    position: relative;
+}
+
 .cart-icon i {
     font-size: 30px;
     color: #2B337D;
+}
+
+#cart-length {
+    color: rgb(43, 51, 125);
+    position: absolute;
+    top: -15px;
+    right: -8px;
+    z-index: 50;
+    background-color: rgb(255, 255, 255);
+    padding: 0px 5px;
+    border-radius: 4px;
 }
 
 header .second-header-row {

@@ -171,3 +171,14 @@ btnAddToCart.addEventListener("click", () => {
 })
 
 
+
+let item = {
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    image: product.images[0],
+    count: count,
+    size: selectedEl.innerText
+}
+
+
