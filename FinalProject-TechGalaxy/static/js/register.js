@@ -56,6 +56,8 @@ createAccountBtn.addEventListener("click", (e) => {
                 })
     
             saveToLocalStorage("users", userArr)
+            createAlert("Tạo tài khoản thành công")
+            window.location.href = "login.html"
         }
     }
 })

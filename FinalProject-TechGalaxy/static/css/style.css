@@ -149,7 +149,7 @@ header .first-header-row {
     color: #2B337D;
 }
 
-#cart-length {
+.cart-length {
     color: rgb(43, 51, 125);
     position: absolute;
     top: -15px;
@@ -1045,20 +1045,20 @@ footer p {
     justify-content: center;
     align-items: center;
     width: 40px;
-    font-size: 24px;
+    font-size: 26px;
     border: 1px solid #E0E0E0;
     cursor: pointer;
+    color: #288ad6;
+    user-select: none;
 }
 
 .value-button#decrease {
-    background-color: rgb(201, 32, 32);
     border-right: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
 .value-button#increase {
-    background-color: rgb(29, 197, 13);
     border-left: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;

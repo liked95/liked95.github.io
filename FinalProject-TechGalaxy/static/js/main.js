@@ -71,6 +71,10 @@ if (userID) {
     headerRegisterBtn.parentNode.replaceChild(logoutBtn, headerRegisterBtn)
 }
 
+
+let sessionID = userID ? userID.id : -1
+
+
 let logoutBtn = document.getElementById("logout-btn")
 if (logoutBtn) {
     logoutBtn.addEventListener("click", () => {
@@ -243,6 +247,21 @@ function filterProduct(originalArr, filterTagArr, category, categoryContainer) {
     renderCardItem(categoryContainer, filterRes)
     
 }
+
+// global func to update cart length
+
+const updateCartCount = () => {
+    let cart = getFromLocalStorage("techCart")
+    if (!cart || !cart[sessionID]) {
+        $(".cart-length").html(0)
+    }
+
+    let cartLen = cart[sessionID].length
+    $(".cart-length").html(cartLen)
+}
+
+
+updateCartCount()
 
 
 

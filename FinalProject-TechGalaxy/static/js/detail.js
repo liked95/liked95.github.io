@@ -260,7 +260,8 @@ renderCardItem(relatedProductEL, products.filter(p => p.category == "smartphone"
 //     userID1: [1, 2, 4, 5],
 //     userID2: [3, 2, 3, 5]
 // }
-let sessionID = userID ? userID.id : -1
+
+// let sessionID = userID ? userID.id : -1
 
 function renderWatchedProducts() {
     let watchContainerEl = document.querySelector("#watched-product-carousel")
@@ -409,6 +410,9 @@ countEl.value = count
 const minusCount = document.querySelector(".change-quantity #decrease")
 const plusCount = document.querySelector(".change-quantity #increase")
 
+countEl.addEventListener("keyup", () => {
+    count = parseInt(countEl.value)
+})
 
 plusCount.addEventListener("click", () => {
     count++
@@ -448,12 +452,13 @@ addToCartBtn.addEventListener("click", () => {
         alterOption: alterOption.innerHTML,
         color: colorOption.innerHTML,
         price: product.currentPrices[optionIdx],
+        oldPrice: product.oldPrices[optionIdx],
         count: count, 
         image: product.dotCarouselImages[colorIdx]
     }
 
     addItemToCart(item)
-    alert("Thêm giỏ hàng thành công!")
+    alert("Đã thêm vào giỏ hàng")
 })
 
 
