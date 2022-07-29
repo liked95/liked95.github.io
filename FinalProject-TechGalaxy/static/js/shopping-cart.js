@@ -1,12 +1,23 @@
 function renderCart() {
+    const cartTitleEl = document.querySelector(".cart-detail .cart-title")
+    let isChecked = getObjectFromLocalStorage("isCheckAll")[sessionID]
+
+    cartTitleEl.innerHTML = `
+        <input type="checkbox" name="toggle-all" id="toggle-all" ${isChecked ? "checked" : ""} onclick="toggleAllChecks(this)"/>
+        <div class="product">Sản phẩm</div>
+        <div class="prices">Giá</div>
+        <div class="quantity">Số lượng</div>
+        <div class="value">Số tiền</div>
+        <div class="delete-all">Xóa hết</div>
+    `
     const cartContentEl = document.querySelector(".cart-detail .cart-content")
-    
+
     let cart = getObjectFromLocalStorage("techCart")
     if (!cart || !cart[sessionID]) {
         cartContentEl.innerHTML = `<p>Bạn chưa mua sản phẩm nào. Tiếp tục mua và quay lại đây nhé </p>`
         return;
     }
-    
+
     let items = cart[sessionID]
     // render cart detail
     cartContentEl.innerHTML = ""
@@ -31,7 +42,7 @@ function renderCart() {
                   <div class="value-button" id="increase" value="Increase Value" onclick="increaseItemCount(${item.id}, '${item.alterOption}', '${item.color}')">+</div>
                 </div>
 
-                <div class="value">${formatMoney(item.count*item.price)}</div>
+                <div class="value">${formatMoney(item.count * item.price)}</div>
 
                 <div class="delete-item">
                   <i class="fa-solid fa-circle-xmark"></i>
@@ -79,25 +90,71 @@ function toggleCheck(id, alterOption, color) {
     let items = cart[sessionID]
     let item = items.find(i => i.id == id && i.alterOption == alterOption && i.color == color)
     item.checked = !item.checked
-    
+
     saveToLocalStorage("techCart", cart)
     renderCart()
 }
 
 // toggle all checks
-document.getElementById("toggle-all").addEventListener("click", (e) => {
-    let cart = getObjectFromLocalStorage("techCart")
-    let items = cart[sessionID]
+// document.getElementById("toggle-all").addEventListener("click", (e) => {
+//     console.log("start")
+//     let cart = getObjectFromLocalStorage("techCart")
+//     if (!cart) return
+//     let items = cart[sessionID]
+//     if (!items) return
 
-    if (e.currentTarget.checked) {
-        for (let item of items) item.checked = true
+//     if (e.currentTarget.checked) {
+//         for (let item of items) {
+//             item.checked = true
+//         }
+//     } else {
+//         for (let item of items) {
+//             item.checked = false
+//         }
+//     }
+
+//     saveToLocalStorage("techCart", cart)
+
+//     // toggle checkAll for that particular sessionID
+//     let isCheckAll = getObjectFromLocalStorage("isCheckAll")
+//     // console.log(isCheckAll[sessionID])
+//     isCheckAll[sessionID] = !isCheckAll[sessionID]
+//     saveToLocalStorage("isCheckAll", isCheckAll)
+
+//     renderCart()
+//     console.log("end")
+// })
+
+
+function toggleAllChecks(ele) {
+    console.log("start")
+    let cart = getObjectFromLocalStorage("techCart")
+    if (!cart) return
+    let items = cart[sessionID]
+    if (!items) return
+
+    if (ele.checked) {
+        for (let item of items) {
+            item.checked = true
+        }
     } else {
-        for (let item of items) item.checked = false
+        for (let item of items) {
+            item.checked = false
+        }
     }
 
     saveToLocalStorage("techCart", cart)
+
+    // toggle checkAll for that particular sessionID
+    let isCheckAll = getObjectFromLocalStorage("isCheckAll")
+    // console.log(isCheckAll[sessionID])
+    isCheckAll[sessionID] = !isCheckAll[sessionID]
+    saveToLocalStorage("isCheckAll", isCheckAll)
+
     renderCart()
-})
+    console.log("end")
+}
+
 
 
 

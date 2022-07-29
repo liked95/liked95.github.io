@@ -60,8 +60,6 @@ function addItemToCart(item) {
         }
     }
 
-
-
     saveToLocalStorage("techCart", cart)
     updateCartCount()
 }

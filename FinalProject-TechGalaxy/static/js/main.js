@@ -74,6 +74,20 @@ if (userID) {
 
 let sessionID = userID ? userID.id : -1
 
+// kiểm tra xem toggleAll có đc tick cho từng session ID ko?
+let isCheckAll = getObjectFromLocalStorage("isCheckAll")
+
+if (!isCheckAll) {
+    isCheckAll = {}
+    isCheckAll[sessionID] = true
+} else {
+    if (isCheckAll[sessionID] == undefined) {
+        isCheckAll[sessionID] = true
+    }
+}
+
+saveToLocalStorage("isCheckAll", isCheckAll)
+
 
 let logoutBtn = document.getElementById("logout-btn")
 if (logoutBtn) {
