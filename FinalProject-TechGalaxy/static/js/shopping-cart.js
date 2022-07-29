@@ -26,10 +26,16 @@ function renderCart() {
             cartContentEl.innerHTML += `
                 <div class="cart-item">
                     <input type="checkbox" ${item.checked ? "checked" : ""} class="choose-item" onclick="toggleCheck(${item.id}, '${item.alterOption}', '${item.color}')"  />
-    
+                    
                     <a href="./detail.html?id=${item.id}" class="product">
-                      <div class="product-name">${item.name}</div>
-                      <div class="product-attr">(${item.color}, ${item.alterOption})</div>
+                        <div class="cart-item-image">
+                            <img src="../static/images/thumnail-carousel/${item.image}" alt="${item.image}">
+                        </div>
+
+                        <div class="cart-item-detail">
+                            <div class="product-name">${item.name}</div>
+                            <div class="product-attr">(${item.color}, ${item.alterOption})</div>
+                        </div>
                     </a>
     
                     <div class="prices">
@@ -148,6 +154,7 @@ function deleteItem(id, alterOption, color) {
 
     saveToLocalStorage("techCart", cart)
     renderCart()
+    updateCartCount()
 
     console.log("end")
 }

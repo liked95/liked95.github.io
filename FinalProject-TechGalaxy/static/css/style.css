@@ -1411,6 +1411,7 @@ footer p {
     background-color: #eeeeee;
     font-weight: 600;
     font-size: 16px;
+    margin-bottom: 5px;
 }
 
 .cart-item {
@@ -1426,12 +1427,24 @@ footer p {
     font-size: 14px;
 }
 
+.cart-item .cart-item-image {
+    width: 48px;
+    margin-right: 6px;
+}
+
+.cart-item .cart-item-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .cart-detail input[type="checkbox"] {
-    width: 10%;
+    width: 7%;
 }
 
 .cart-detail .product {
-    width: 30%;
+    width: 33%;
+    display: flex;
 }
 
 .cart-detail .prices {
