@@ -454,7 +454,8 @@ addToCartBtn.addEventListener("click", () => {
         price: product.currentPrices[optionIdx],
         oldPrice: product.oldPrices[optionIdx],
         count: count, 
-        image: product.dotCarouselImages[colorIdx]
+        image: product.dotCarouselImages[colorIdx],
+        checked: true,
     }
 
     addItemToCart(item)

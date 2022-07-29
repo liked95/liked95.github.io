@@ -252,11 +252,11 @@ function filterProduct(originalArr, filterTagArr, category, categoryContainer) {
 
 const updateCartCount = () => {
     let cart = getFromLocalStorage("techCart")
-    if (!cart || !cart[sessionID]) {
+    if (!cart) {
         $(".cart-length").html(0)
     }
 
-    let cartLen = cart[sessionID].length
+    let cartLen = cart[sessionID] ? cart[sessionID].length : 0
     $(".cart-length").html(cartLen)
 }
 

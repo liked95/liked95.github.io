@@ -1419,6 +1419,7 @@ footer p {
     height: var(--row-height);
 }
 
+
 .cart-item .product-name {
     margin-bottom: 0;
     font-weight: 400;
@@ -1477,8 +1478,12 @@ footer p {
     padding: 20px;
 }
 
-.cart-content .quantity input {
+.cart-content .quantity span {
     border: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
 }
 
 .cart-content .value {
