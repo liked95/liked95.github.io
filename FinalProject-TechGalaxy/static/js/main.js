@@ -147,7 +147,7 @@ function renderCardItem(containerEl, arr) {
 
                     <div class="old-price-container">
                         <span class="old-price">${formatMoney(p.oldPrices[0])}</span>  
-                        <span class="percent">${p.discounts[0]}%</span>
+                        <span class="percent">${Number(p.discounts[0]).toFixed(0)}%</span>
                     </div>
 
                     <p class="current-price">${formatMoney(p.currentPrices[0])}</p>
@@ -200,7 +200,7 @@ function chooseOption(ele) {
     currentPriceEl.innerHTML = `${formatMoney(p.currentPrices[chosenIdx])}`
 
     let percentEl = productContentBox.querySelector(".percent")
-    percentEl.innerHTML = `${p.discounts[chosenIdx]}%`
+    percentEl.innerHTML = `${Number(p.discounts[chosenIdx]).toFixed(0)}%`
 
 }
 
