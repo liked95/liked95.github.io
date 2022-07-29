@@ -81,10 +81,23 @@ function toggleCheck(id, alterOption, color) {
     item.checked = !item.checked
     
     saveToLocalStorage("techCart", cart)
-
     renderCart()
 }
 
+// toggle all checks
+document.getElementById("toggle-all").addEventListener("click", (e) => {
+    let cart = getObjectFromLocalStorage("techCart")
+    let items = cart[sessionID]
+
+    if (e.currentTarget.checked) {
+        for (let item of items) item.checked = true
+    } else {
+        for (let item of items) item.checked = false
+    }
+
+    saveToLocalStorage("techCart", cart)
+    renderCart()
+})
 
 
 
