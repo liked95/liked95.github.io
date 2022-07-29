@@ -1,49 +1,45 @@
 
 // Cart structure
-const cart =
-{
-    userID1: [
-        {
-            productId: 2,
-            alterOption: "128GB",
-            color: "Xanh lá",
-            count: 1,
-            id: 2,
-            image: "xanh-la-iphone.jpg",
-            name: "iPhone 13 Pro",
-            price: 26390000,
-        },
-        {
-            productId: 3,
-            alterOption: "128GB",
-            color: "Xanh lá",
-            count: 1,
-            id: 2,
-            image: "xanh-la-iphone.jpg",
-            name: "iPhone 13 Pro",
-            price: 26390000,
-        }
-    ],
+// const cart =
+// {
+//     userID1: [
+//         {
+//             productId: 2,
+//             alterOption: "128GB",
+//             color: "Xanh lá",
+//             count: 1,
+//             id: 2,
+//             image: "xanh-la-iphone.jpg",
+//             name: "iPhone 13 Pro",
+//             price: 26390000,
+//         },
+//         {
+//             productId: 3,
+//             alterOption: "128GB",
+//             color: "Xanh lá",
+//             count: 1,
+//             id: 2,
+//             image: "xanh-la-iphone.jpg",
+//             name: "iPhone 13 Pro",
+//             price: 26390000,
+//         }
+//     ],
 
-    userID2: [
-        {
-            productId: 2,
-            alterOption: "128GB",
-            color: "Xanh lá",
-            count: 1,
-            id: 2,
-            image: "xanh-la-iphone.jpg",
-            name: "iPhone 13 Pro",
-            price: 26390000,
-        },
-    ],
+//     userID2: [
+//         {
+//             productId: 2,
+//             alterOption: "128GB",
+//             color: "Xanh lá",
+//             count: 1,
+//             id: 2,
+//             image: "xanh-la-iphone.jpg",
+//             name: "iPhone 13 Pro",
+//             price: 26390000,
+//         },
+//     ],
+// }
 
-
-
-
-}
-
-console.log(sessionID)
+// console.log(sessionID)
 
 function addItemToCart(item) {
     let cart = getObjectFromLocalStorage("techCart")

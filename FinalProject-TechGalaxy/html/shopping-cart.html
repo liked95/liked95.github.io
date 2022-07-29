@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Giỏ hàng</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="row first-header-row">
+        <div class="main-container">
+          <a href="index.html" class="logo-img">
+            <img
+              src="../static/images/header/TECH GALAXY.png"
+              alt="tech-galaxy"
+            />
+          </a>
+
+          <div class="search-input">
+            <input type="text" placeholder="Nhập tên sản phẩm cần tìm" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <div class="login-logout">
+            <a class="login-btn" href="login.html">Đăng nhập</a>
+            <p>|</p>
+            <a class="register-btn" href="register.html">Đăng kí</a>
+          </div>
+
+          <div class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-length"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row second-header-row">
+        <div class="main-container">
+          <ul class="main-menu">
+            <li class="menu-icon">
+              <a href="smartphone.html">
+                <div class="icon-box">
+                  <i class="fa-solid fa-mobile-screen"></i>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <p>Điện thoại</p>
+                <ul class="sub-menu">
+                  <a href="/smartphone/apple">
+                    <li class="sub-menu-item">iPhone</li>
+                  </a>
+                  <a href="#">
+                    <li class="sub-menu-item">Samsung</li>
+                  </a>
+                  <a href="#">
+                    <li class="sub-menu-item">Xiaomi</li>
+                  </a>
+                  <a href="#">
+                    <li class="sub-menu-item">Oppo</li>
+                  </a>
+                  <a href="#">
+                    <li class="sub-menu-item">Huawei</li>
+                  </a>
+                </ul>
+              </a>
+            </li>
+
+            <li class="menu-icon">
+              <a href="/tablet">
+                <div class="icon-box">
+                  <i class="fa-solid fa-tablet-screen-button"></i>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <p>máy tính bảng</p>
+                <ul class="sub-menu">
+                  <a href="#">
+                    <li class="sub-menu-item">Apple</li>
+                  </a>
+                  <a href="#">
+                    <li class="sub-menu-item">Samsung</li>
+                  </a>
+                  <a href="#">
+                    <li class="sub-menu-item">Xiaomi</li>
+                  </a>
+                  <a href="#">
+                    <li class="sub-menu-item">Oppo</li>
+                  </a>
+                  <a href="#">
+                    <li class="sub-menu-item">Huawei</li>
+                  </a>
+                </ul>
+              </a>
+            </li>
+
+            <li class="menu-icon">
+              <a href="/laptop">
+                <div class="icon-box">
+                  <i class="fa-solid fa-laptop"></i>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <p>laptop</p>
+                <ul class="sub-menu">
+                  <a href="#">
+                    <li class="sub-menu-item">Macbook</li>
+                  </a>
+                  <a href="#">
+                    <li class="sub-menu-item">Windows</li>
+                  </a>
+                  <a href="#">
+                    <li class="sub-menu-item">Samsung</li>
+                  </a>
+                  <a href="#">
+                    <li class="sub-menu-item">Oppo</li>
+                  </a>
+                  <a href="#">
+                    <li class="sub-menu-item">Huawei</li>
+                  </a>
+                </ul>
+              </a>
+            </li>
+
+            <li class="menu-icon">
+              <div class="icon-box">
+                <i class="fa-solid fa-tv"></i>
+                <i class="fa-solid fa-caret-down"></i>
+              </div>
+              <p>smart tv</p>
+            </li>
+
+            <li class="menu-icon">
+              <div class="icon-box">
+                <i class="fa-solid fa-headphones-simple"></i>
+                <i class="fa-solid fa-caret-down"></i>
+              </div>
+              <p>âm thanh</p>
+            </li>
+
+            <li class="menu-icon">
+              <div class="icon-box">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+              </div>
+              <p>sửa chữa</p>
+            </li>
+
+            <li class="menu-icon">
+              <div class="icon-box">
+                <i class="fa-solid fa-newspaper"></i>
+              </div>
+              <p>tin tức</p>
+            </li>
+
+            <li class="menu-icon">
+              <div class="icon-box">
+                <i class="fa-solid fa-exclamation"></i>
+              </div>
+              <p>về chúng tôi</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="breadcrumb">
+      <div class="main-container"><p>Giỏ hàng</p></div>
+    </div>
+
+    <div class="cart-and-customer-info">
+      <div class="main-container">
+        <div class="row">
+          <div class="col-lg-8 cart-detail">
+            <div class="cart-title">
+              <input type="checkbox" name="choose-all" id="choose-all" />
+              <div class="product">Sản phẩm</div>
+              <div class="prices">Giá</div>
+              <div class="quantity">Số lượng</div>
+              <div class="value">Số tiền</div>
+              <div class="delete-all">Xóa hết</div>
+            </div>
+
+            <div class="cart-content">
+              <div class="cart-item">
+                <input type="checkbox" class="choose-item" />
+
+                <div class="product">
+                  <div class="product-name">iPhone 13 ProMax</div>
+                  <div class="product-attr">(Vàng, 128GB)</div>
+                </div>
+
+                <div class="prices">
+                  <div class="new-price">19.990.990đ</div>
+                  <div class="old-price">29.990.990đ</div>
+                </div>
+
+                <div class="quantity">
+                  <div
+                    class="value-button"
+                    id="decrease"
+                    value="Decrease Value"
+                  >
+                    -
+                  </div>
+                  <input type="number" id="number" />
+                  <div
+                    class="value-button"
+                    id="increase"
+                    value="Increase Value"
+                  >
+                    +
+                  </div>
+                </div>
+
+                <div class="value">27990000đ</div>
+
+                <div class="delete-item">
+                  <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+              </div>
+
+              <div class="cart-item">
+                <input type="checkbox" class="choose-item" />
+
+                <div class="product">
+                  <div class="product-name">iPhone 13 ProMax</div>
+                  <div class="product-attr">(Vàng, 128GB)</div>
+                </div>
+
+                <div class="prices">
+                  <div class="new-price">19.990.990đ</div>
+                  <div class="old-price">29.990.990đ</div>
+                </div>
+
+                <div class="quantity">
+                  <div
+                    class="value-button"
+                    id="decrease"
+                    value="Decrease Value"
+                  >
+                    -
+                  </div>
+                  <input type="number" id="number" />
+                  <div
+                    class="value-button"
+                    id="increase"
+                    value="Increase Value"
+                  >
+                    +
+                  </div>
+                </div>
+
+                <div class="value">27990000đ</div>
+
+                <div class="delete-item">
+                  <i class="fa-solid fa-circle-minus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 customer-info">
+            <h4>Thông tin khách hàng</h4>
+            <div class="customer-info-form">
+              <input type="text" class="email" placeholder="Email" />
+              <input type="text" class="name" placeholder="Họ và tên" />
+              <input type="text" class="phone" placeholder="Số điện thoại" />
+              <input type="text" class="province" placeholder="Tỉnh thành" />
+              <input type="text" class="district" placeholder="Quận huyện" />
+              <input type="text" class="sub-district" placeholder="Phường xã" />
+              <input type="text" class="full-address" placeholder="Địa chỉ" />
+              <input type="text" class="note" placeholder="Ghi chú" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="payment">
+      <div class="main-container">
+        <div class="row">
+          <div class="col-lg-4 total-cart-container">
+            <div class="total-value">
+              <span>Tiền hàng</span>
+              <span>50,000,000đ</span>
+            </div>
+
+            <div class="shipment-fee">
+              <span>Phí vận chuyển</span>
+              <span>50,000đ</span>
+            </div>
+
+            <div class="discount">
+              <span>Chiết khấu</span>
+              <span>-850,000đ</span>
+            </div>
+
+            <div class="pretax-value">
+              <span>Tạm tính</span>
+              <span>49,200,000đ</span>
+            </div>
+
+            <div class="vat">
+              <span>VAT (8%)</span>
+              <span>4,000,000đ</span>
+            </div>
+
+            <div class="total">
+              <span>Tổng cộng</span>
+              <span>54,200,000đ</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4 payment-method-container">
+            <div class="voucher-container">
+              <input type="text" placeholder="Nhập mã giảm giá"/>
+              <button id="voucher-apply-btn">Áp dụng</button>
+            </div>
+
+            <h4>Phương thức thanh toán</h4>
+            <div class="payment-method">
+              <input type="radio" name="method" id="cash" />
+              <label for="cash">Bằng tiền mặt khi giao hàng</label>
+              <span><i class="fa-solid fa-money-bill-1"></i></span>
+            </div>
+
+            <div class="payment-method">
+              <input type="radio" name="method" id="bank" />
+              <label for="bank">Chuyển khoản ngân hàng</label>
+              <span><i class="fa-solid fa-house-chimney-crack"></i></span>
+            </div>
+
+            <div class="payment-method">
+              <input type="radio" name="method" id="credit" />
+              <label for="credit">Trả góp qua thẻ tín dụng</label>
+              <span><i class="fa-brands fa-cc-visa"></i></span>
+            </div>
+
+            <div class="payment-method">
+              <input type="radio" name="method" id="wallet" />
+              <label for="wallet">Thanh toán qua ví điện tử</label>
+              <span><i class="fa-solid fa-wallet"></i></span>
+            </div>
+
+            <div class="payment-btn-area">
+                <a href="#">
+                    <span><i class="fa-solid fa-caret-left"></i></span>
+                    Tiếp tục mua hàng
+                  </a>
+      
+                  <button id="pay-btn">Thanh toán</button>
+            </div>
+          </div>
+
+          <div class="col-lg-4 payment-partner">
+            <h4>ƯU ĐÃI TỪ ĐỐI TÁC THANH TOÁN</h4>
+            <ul class="payment-promotions">
+                <li>Cash back lên tới 10% khi thanh toán qua VPBANK</li>
+                <li>Lãi suất 0% khi trả góp 12 tháng qua Visa, MasterCard</li>
+                <li>Cash back lên tới 10% khi thanh toán qua VPBANK</li>
+                <li>Cash back lên tới 10% khi thanh toán qua VPBANK</li>
+                <li>Cash back lên tới 10% khi thanh toán qua VPBANK</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="main-container">
+        <div class="row">
+          <div class="footer-column col-lg-3">
+            <h2>Tech Galaxy</h2>
+            <p>GPKD: 001100431112</p>
+            <p>Địa chỉ: Thanh Xuân - Hà Nội</p>
+            <p>Ngày thành lập: 14 - 07 - 2022</p>
+            <p>Chủ sở hữu: Vũ Hoài Sơn</p>
+          </div>
+
+          <div class="footer-column col-lg-3">
+            <h2>Dịch vụ hỗ trợ</h2>
+            <p>Dịch vụ hỗ trợ</p>
+            <p>Đặt hàng và thanh toán</p>
+            <p>Chính sách bảo hành</p>
+            <p>Bảo hành mở rộng</p>
+            <p>Giải quyết khiếu nại</p>
+          </div>
+
+          <div class="footer-column col-lg-3">
+            <h2>Đối tác thương hiệu</h2>
+            <p>Apple</p>
+            <p>Samsung</p>
+            <p>Xiaomi</p>
+            <p>Huawei</p>
+            <p>Microsoft</p>
+          </div>
+
+          <div class="footer-column col-lg-3">
+            <h2>Đối tác thanh toán</h2>
+            <p>Vietcombank</p>
+            <p>VNPAY</p>
+            <p>Mocagrab</p>
+            <p>Momo</p>
+            <p>Zalopay</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/data.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/shopping-cart.js"></script>
+  </body>
+</html>
