@@ -160,25 +160,7 @@ function deleteItem(id, alterOption, color) {
 }
 
 // API Tỉnh huyện xã của Giao Hang Nhanh
-let provinceID, districtID, subdistrictID;
-
-// async function getProvinceData() {
-//     try {
-        // let provinceURI = "https://online-gateway.ghn.vn/shiip/public-api/master-data/province"
-        // let provinceHeader = {headers: {token: "6b47d361-0f52-11ed-8636-7617f3863de9"}}
-        // let res = await axios.get(provinceURI, provinceHeader)
-        // let data = res.data.data
-        // console.log(data)
-
-        // let districtURI = "https://online-gateway.ghn.vn/shiip/public-api/master-data/district"
-        // let districtHeader = {headers: {token: "6b47d361-0f52-11ed-8636-7617f3863de9"}, params: {province_id:201}}
-        // let res2 = await axios.get(districtURI, districtHeader)
-        // console.log(res2)
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
-
+let provinceID, districtID, wardID
 
 async function renderProvince() {
     let provinceSelectEl = document.querySelector("#province")
@@ -186,13 +168,13 @@ async function renderProvince() {
     try {
         let provinceSelectEl = document.querySelector("#province")
         let provinceURI = "https://online-gateway.ghn.vn/shiip/public-api/master-data/province"
-        let provinceHeader = {headers: {token: "6b47d361-0f52-11ed-8636-7617f3863de9"}}
+        let provinceHeader = { headers: { token: GHNToken } }
         let res = await axios.get(provinceURI, provinceHeader)
         let data = res.data.data
-        console.log(data)
+        // console.log(data)
         if (data.length) {
             provinceSelectEl.innerHTML = `<option value="null" selected="" disabled hidden="" class="disabled">Chọn tỉnh/thành phố</option>`
-            for (let i = data.length-1; i >=0; i--) {
+            for (let i = data.length - 1; i >= 0; i--) {
                 let province = data[i]
                 provinceSelectEl.innerHTML += `
                     <option value="${province.ProvinceID}">${province.ProvinceName}</option>
@@ -205,7 +187,87 @@ async function renderProvince() {
     }
 }
 
+async function getDistrictData(provinceID) {
+    try {
+        let districtSelectEl = document.getElementById("district")
+        let URI = "https://online-gateway.ghn.vn/shiip/public-api/master-data/district"
+        let header = { headers: { token: GHNToken }, params: { province_id: provinceID } }
+        let res = await axios.get(URI, header)
+        let data = res.data.data
+
+        if (data.length) {
+            districtSelectEl.innerHTML = `<option value="null" selected="" disabled hidden="" class="disabled">Chọn quận/huyện</option>`
+            for (let i = data.length - 1; i >= 0; i--) {
+                let district = data[i]
+                districtSelectEl.innerHTML += `
+                    <option value="${district.DistrictID}">${district.DistrictName}</option>
+                `
+            }
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+async function getWardData(districtID) {
+    try {
+        let wardSelectEl = document.getElementById("ward")
+        let URI = "https://online-gateway.ghn.vn/shiip/public-api/master-data/ward"
+        let header = { headers: { token: GHNToken }, params: { district_id: districtID } }
+        let res = await axios.get(URI, header)
+        let data = res.data.data
+        console.log(data)
+        if (data.length) {
+            wardSelectEl.innerHTML = `<option value="null" selected="" disabled hidden="" class="disabled">Chọn xã/phường</option>`
+            for (let i = data.length - 1; i >= 0; i--) {
+                let ward = data[i]
+                wardSelectEl.innerHTML += `
+                    <option value="${ward.WardCode}">${ward.WardName}</option>
+                `
+            }
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 renderProvince()
+
+// tạo danh sách quận huyện khi user chọn ProvinceID
+$("#province").change((e) => {
+    provinceID = e.currentTarget.value
+    getDistrictData(provinceID)
+    // cho phép chọn quận/huyện
+    $("#district").prop("disabled", false)
+    // bỏ chọn xã/phường 
+    $("#ward").prop("disabled", true)
+    $("#ward").val("")
+    // bỏ chọn địa chỉ cụ thể
+    $("#address").prop("disabled", true)
+    $("#address").val("")
+})
+
+// tạo danh sách phường xã khi user chọn DistrictID
+$("#district").change((e) => {
+    districtID = e.currentTarget.value
+    getWardData(districtID)
+    // cho phép chọn 
+    $("#ward").prop("disabled", false)
+    // bỏ chọn địa chỉ cụ thể
+    $("#address").prop("disabled", true)
+    $("#address").val("")
+})
+
+
+//cho phép gõ địa chỉ cụ thể
+$("#ward").change((e) => {
+    wardID = e.currentTarget.value
+    $("#address").prop("disabled", false)
+})
+
+console.log(provinceID, districtID, wardID)
+
+
 
 
 
