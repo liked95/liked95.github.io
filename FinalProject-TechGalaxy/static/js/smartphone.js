@@ -1,6 +1,6 @@
 // render smartphone category
 const phoneCategoryBox = document.querySelector(".smartphone-container .product-category-container")
-$(".search-quantity")
+// $(".search-quantity")
 
 let filterResults = products.filter(p => p.category == "smartphone")
 renderCardItem(phoneCategoryBox, filterResults)
@@ -35,7 +35,7 @@ filterCheckBoxes.forEach(checkBox => {
         if (e.target.checked) {
             let key = e.target.parentNode.parentNode.id
             console.log(key)
-            
+
             // get value của filter object
             let value
             if (key != "price") {
@@ -52,7 +52,7 @@ filterCheckBoxes.forEach(checkBox => {
             removeFilterTag(e.target.value)
         }
         deleteTagIcons = document.querySelectorAll(".delete-tag-icon")
-        
+
     })
 })
 
@@ -89,6 +89,12 @@ eraseAllTagBtn.addEventListener("click", () => {
         filterTagArr = []
         Array.from(filterCheckBoxes).forEach(checkbox => checkbox.checked = false)
         updateTag()
+
+
+        // reset lai trang thai ban dau
+        filterResults = products.filter(p => p.category == "smartphone")
+        renderCardItem(phoneCategoryBox, filterResults)
+        $(".search-quantity").text(filterResults.length)
     }
 })
 

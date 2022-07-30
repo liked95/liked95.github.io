@@ -1,11 +1,14 @@
 
 
 GET https://dog.ceo/api/breeds/image/random HTTP/1.1
-
+Content-Type: application/application/json
 ###
 
 GET https://dog.ceo/api/breeds/image/random/10 HTTP/1.1
 
 
 ###
-GET https://dog.ceo/api/breeds/list/all HTTP/1.1
+GET  https://online-gateway.ghn.vn/shiip/public-api/master-data/province HTTP/1.1
+Content-Type: application/application/json
+Authorization: "token" "6b47d361-0f52-11ed-8636-7617f3863de9"
+

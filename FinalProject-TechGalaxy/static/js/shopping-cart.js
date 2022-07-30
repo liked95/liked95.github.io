@@ -1,3 +1,5 @@
+
+
 renderCart()
 
 function renderCart() {
@@ -65,10 +67,10 @@ function renderCart() {
     let items = cart[sessionID]
     let totalValue = 0
     for (let item of items) {
-        console.log(item)
+        // console.log(item)
         if (item.checked) totalValue += item.count * item.price
     }
-    $(".payment .total-value span:last-child").html(formatMoney(totalValue))
+    $(".total-value span:last-child").html(formatMoney(totalValue))
 
 }
 
@@ -142,7 +144,6 @@ function deleteItem(id, alterOption, color) {
     if (!cart) return
     let items = cart[sessionID]
     if (!items) return
-    console.log(items)
 
     // remove the check status in the local storage
     // let item = items.find(i => i.id == id && i.alterOption == alterOption && i.color == color)
@@ -156,8 +157,57 @@ function deleteItem(id, alterOption, color) {
     renderCart()
     updateCartCount()
 
-    console.log("end")
 }
+
+// API Tỉnh huyện xã của Giao Hang Nhanh
+let provinceID, districtID, subdistrictID;
+
+// async function getProvinceData() {
+//     try {
+        // let provinceURI = "https://online-gateway.ghn.vn/shiip/public-api/master-data/province"
+        // let provinceHeader = {headers: {token: "6b47d361-0f52-11ed-8636-7617f3863de9"}}
+        // let res = await axios.get(provinceURI, provinceHeader)
+        // let data = res.data.data
+        // console.log(data)
+
+        // let districtURI = "https://online-gateway.ghn.vn/shiip/public-api/master-data/district"
+        // let districtHeader = {headers: {token: "6b47d361-0f52-11ed-8636-7617f3863de9"}, params: {province_id:201}}
+        // let res2 = await axios.get(districtURI, districtHeader)
+        // console.log(res2)
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+
+async function renderProvince() {
+    let provinceSelectEl = document.querySelector("#province")
+    console.log(provinceSelectEl)
+    try {
+        let provinceSelectEl = document.querySelector("#province")
+        let provinceURI = "https://online-gateway.ghn.vn/shiip/public-api/master-data/province"
+        let provinceHeader = {headers: {token: "6b47d361-0f52-11ed-8636-7617f3863de9"}}
+        let res = await axios.get(provinceURI, provinceHeader)
+        let data = res.data.data
+        console.log(data)
+        if (data.length) {
+            provinceSelectEl.innerHTML = `<option value="null" selected="" disabled hidden="" class="disabled">Chọn tỉnh/thành phố</option>`
+            for (let i = data.length-1; i >=0; i--) {
+                let province = data[i]
+                provinceSelectEl.innerHTML += `
+                    <option value="${province.ProvinceID}">${province.ProvinceName}</option>
+                `
+            }
+        }
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+renderProvince()
+
+
 
 
 

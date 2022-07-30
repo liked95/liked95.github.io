@@ -204,6 +204,7 @@ function chooseOption(ele) {
 
 }
 
+// global func to filter product for each different category
 function filterProduct(originalArr, filterTagArr, category, categoryContainer) {
     const filterObject = {}
     filterTagArr.forEach(object => {
@@ -276,7 +277,6 @@ const updateCartCount = () => {
 
 
 updateCartCount()
-
 
 
 
