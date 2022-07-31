@@ -4,7 +4,7 @@ $(function () {
 
 // API Tỉnh huyện xã của Giao Hang Nhanh
 let provinceID, districtID, wardCode
-let shipmentFee = 0, discountFactor = 0
+let shipmentFee = 0, discountFactor = 0, discountLimit = Infinity
 let discountValue, preTaxValue, grandTotal
 
 renderCart()
@@ -83,12 +83,13 @@ function renderCart() {
     // Important!!! dùng await để chờ shipment fee được update từ function updateShippingFee (function request API)
     let promise = updateShippingFee()
     console.log(promise)
-    
+
     promise.then(value => {
         shipmentFee = value
         $(".shipment-fee span:last-child").html(formatMoney(shipmentFee))
 
-        let discountValue = -(totalValue + shipmentFee) * discountFactor
+        let discount = totalValue * discountFactor < discountLimit ? totalValue * discountFactor : discountLimit
+        let discountValue = -discount
         $(".discount span:last-child").html(formatMoney(discountValue))
 
         let preTaxValue = totalValue + shipmentFee + discountValue
@@ -100,6 +101,15 @@ function renderCart() {
         let grandTotal = preTaxValue + VAT
         $(".grand-total span:last-child").html(formatMoney(grandTotal))
     })
+
+    let voucherToolTip = ``
+    for (let voucher in vouchers) {
+        voucherToolTip += `
+            <b>${voucher}</b>: ${vouchers[voucher].description} </br>
+        `
+    }
+
+    $(".voucher-container i").attr("data-original-title", voucherToolTip)
 
 }
 
@@ -337,7 +347,7 @@ async function updateShippingFee() {
             }
             let res = await axios.get(URI, header)
             shipmentFee = res.data.data.total * totalCount
-            return shipmentFee 
+            return shipmentFee
         } else {
             return 0
         }
@@ -346,6 +356,43 @@ async function updateShippingFee() {
         return 0
     }
 }
+
+// function áp mã giảm giá
+function applyVoucher() {
+    let voucherValue = $(".voucher-container input").val().trim().toUpperCase()
+    if (voucherValue == "") {
+        alert("Mã giảm giá không được để trống");
+        discountFactor = 0
+        discountLimit = Infinity
+        renderCart()
+        return;
+    }
+
+    if (voucherValue in vouchers) {
+        discountFactor = vouchers[voucherValue].value
+        discountLimit = vouchers[voucherValue].limit
+        renderCart()
+        alert("Áp mã giảm giá thành công")
+        return;
+    } else {
+        alert("Mã giảm giá không hợp lệ");
+        discountFactor = 0
+        discountLimit = Infinity
+        renderCart()
+        return;
+    }
+
+}
+
+$("#voucher-apply-btn").click((e) => {
+    applyVoucher()
+})
+
+$(".voucher-container input").keydown(e => {
+    if (e.keyCode == 13) {
+        applyVoucher()
+    }
+})
 
 
 
