@@ -9,7 +9,7 @@ let discountValue, preTaxValue, grandTotal
 
 renderCart()
 
-async function renderCart() {
+function renderCart() {
     const cartTitleEl = document.querySelector(".cart-detail .cart-title")
     let isChecked = getObjectFromLocalStorage("isCheckAll")[sessionID]
 
@@ -81,20 +81,26 @@ async function renderCart() {
 
     // update HTML shipping fee và lưu giá trị vào biến global shipmentFee
     // Important!!! dùng await để chờ shipment fee được update từ function updateShippingFee (function request API)
-    await updateShippingFee()
-    console.log(shipmentFee)
-
-    let discountValue = -(totalValue + shipmentFee) * discountFactor
-    $(".discount span:last-child").html(formatMoney(discountValue))
+    let promise = updateShippingFee()
+    console.log(promise)
     
-    let preTaxValue = totalValue + shipmentFee + discountValue
-    $(".pretax-value span:last-child").html(formatMoney(preTaxValue))
+    promise.then(value => {
+        shipmentFee = value
+        $(".shipment-fee span:last-child").html(formatMoney(shipmentFee))
 
-    let VAT = preTaxValue * 0.08
-    $(".vat span:last-child").html(formatMoney(VAT))
+        let discountValue = -(totalValue + shipmentFee) * discountFactor
+        $(".discount span:last-child").html(formatMoney(discountValue))
 
-    let grandTotal = preTaxValue + VAT
-    $(".grand-total span:last-child").html(formatMoney(grandTotal))
+        let preTaxValue = totalValue + shipmentFee + discountValue
+        $(".pretax-value span:last-child").html(formatMoney(preTaxValue))
+
+        let VAT = preTaxValue * 0.08
+        $(".vat span:last-child").html(formatMoney(VAT))
+
+        let grandTotal = preTaxValue + VAT
+        $(".grand-total span:last-child").html(formatMoney(grandTotal))
+    })
+
 }
 
 
@@ -259,9 +265,9 @@ async function getWardData(districtID) {
 renderProvince()
 
 // tạo danh sách quận huyện khi user chọn ProvinceID
-$("#province").change((e) => {
+$("#province").change(async (e) => {
     provinceID = e.currentTarget.value
-    getDistrictData(provinceID)
+    await getDistrictData(provinceID)
     // cho phép chọn quận/huyện và reset district ID to undefined
     $("#district").prop("disabled", false)
     districtID = undefined
@@ -276,12 +282,11 @@ $("#province").change((e) => {
 })
 
 // tạo danh sách phường xã khi user chọn DistrictID
-$("#district").change((e) => {
+$("#district").change(async (e) => {
     districtID = e.currentTarget.value
-    getWardData(districtID)
+    await getWardData(districtID)
     // cho phép chọn 
     $("#ward").prop("disabled", false)
-    $("#ward").val("")
     wardCode = undefined
     // bỏ chọn địa chỉ cụ thể
     $("#address").prop("disabled", true)
@@ -311,7 +316,7 @@ async function updateShippingFee() {
         for (let item of items) {
             if (item.checked) totalCount += item.count
         }
-        console.log(totalCount)
+        // console.log(totalCount)
 
         if (districtID && wardCode && totalCount > 0) {
 
@@ -324,23 +329,21 @@ async function updateShippingFee() {
                     to_ward_code: wardCode,
                     to_district_id: districtID,
                     from_district_id: 1493, // sender from quận Thanh Xuân
-                    weight: totalCount * 150,
-                    length: totalCount * 6,
-                    width: totalCount * 6,
-                    height: totalCount * 3,
+                    weight: 150,
+                    length: 16,
+                    width: 6,
+                    height: 3,
                 }
             }
             let res = await axios.get(URI, header)
-            shipmentFee = res.data.data.total
-            $(".shipment-fee span:last-child").html(formatMoney(shipmentFee))
+            shipmentFee = res.data.data.total * totalCount
+            return shipmentFee 
         } else {
-            $(".shipment-fee span:last-child").html(0)
-            shipmentFee = 0
+            return 0
         }
     } catch (error) {
-        $(".shipment-fee span:last-child").html(0)
-        shipmentFee = 0
         console.log(error)
+        return 0
     }
 }
 
