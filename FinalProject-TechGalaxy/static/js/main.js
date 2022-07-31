@@ -1,5 +1,6 @@
 // API GHN liked95
 const GHNToken = "6b47d361-0f52-11ed-8636-7617f3863de9"
+const GHNShopID = 3136159
 
 const alertDuration = 1200
 function createAlert(message) {

@@ -1,8 +1,15 @@
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
 
+// API Tỉnh huyện xã của Giao Hang Nhanh
+let provinceID, districtID, wardCode
+let shipmentFee = 0, discountFactor = 0
+let discountValue, preTaxValue, grandTotal
 
 renderCart()
 
-function renderCart() {
+async function renderCart() {
     const cartTitleEl = document.querySelector(".cart-detail .cart-title")
     let isChecked = getObjectFromLocalStorage("isCheckAll")[sessionID]
 
@@ -54,7 +61,7 @@ function renderCart() {
                     <div class="value">${formatMoney(item.count * item.price)}</div>
     
                     <div class="delete-item">
-                      <i class="fa-solid fa-circle-xmark" onclick="deleteItem(${item.id}, '${item.alterOption}', '${item.color}')"></i>
+                      <i class="fa-solid fa-circle-xmark" onclick="deleteItem(this, ${item.id}, '${item.alterOption}', '${item.color}')"></i>
                     </div>
                 </div>`
         }
@@ -72,6 +79,22 @@ function renderCart() {
     }
     $(".total-value span:last-child").html(formatMoney(totalValue))
 
+    // update HTML shipping fee và lưu giá trị vào biến global shipmentFee
+    // Important!!! dùng await để chờ shipment fee được update từ function updateShippingFee (function request API)
+    await updateShippingFee()
+    console.log(shipmentFee)
+
+    let discountValue = -(totalValue + shipmentFee) * discountFactor
+    $(".discount span:last-child").html(formatMoney(discountValue))
+    
+    let preTaxValue = totalValue + shipmentFee + discountValue
+    $(".pretax-value span:last-child").html(formatMoney(preTaxValue))
+
+    let VAT = preTaxValue * 0.08
+    $(".vat span:last-child").html(formatMoney(VAT))
+
+    let grandTotal = preTaxValue + VAT
+    $(".grand-total span:last-child").html(formatMoney(grandTotal))
 }
 
 
@@ -138,8 +161,8 @@ function toggleAllChecks(ele) {
 
 // delete Item button
 
-function deleteItem(id, alterOption, color) {
-    console.log(id, alterOption, color)
+function deleteItem(ele, id, alterOption, color) {
+    // console.log(id, alterOption, color)
     let cart = getObjectFromLocalStorage("techCart")
     if (!cart) return
     let items = cart[sessionID]
@@ -153,18 +176,21 @@ function deleteItem(id, alterOption, color) {
     items = items.filter(i => i.id != id || i.alterOption != alterOption || i.color != color)
     cart[sessionID] = items
 
-    saveToLocalStorage("techCart", cart)
-    renderCart()
-    updateCartCount()
+    const timeout = 400
+    $(ele).parent().parent().hide(timeout)
+
+    setTimeout(() => {
+        saveToLocalStorage("techCart", cart)
+        renderCart()
+        updateCartCount()
+    }, timeout);
 
 }
 
-// API Tỉnh huyện xã của Giao Hang Nhanh
-let provinceID, districtID, wardID
+
 
 async function renderProvince() {
-    let provinceSelectEl = document.querySelector("#province")
-    console.log(provinceSelectEl)
+
     try {
         let provinceSelectEl = document.querySelector("#province")
         let provinceURI = "https://online-gateway.ghn.vn/shiip/public-api/master-data/province"
@@ -216,7 +242,6 @@ async function getWardData(districtID) {
         let header = { headers: { token: GHNToken }, params: { district_id: districtID } }
         let res = await axios.get(URI, header)
         let data = res.data.data
-        console.log(data)
         if (data.length) {
             wardSelectEl.innerHTML = `<option value="null" selected="" disabled hidden="" class="disabled">Chọn xã/phường</option>`
             for (let i = data.length - 1; i >= 0; i--) {
@@ -237,14 +262,17 @@ renderProvince()
 $("#province").change((e) => {
     provinceID = e.currentTarget.value
     getDistrictData(provinceID)
-    // cho phép chọn quận/huyện
+    // cho phép chọn quận/huyện và reset district ID to undefined
     $("#district").prop("disabled", false)
-    // bỏ chọn xã/phường 
+    districtID = undefined
+    // bỏ chọn xã/phường và reset ward ID to undefined
     $("#ward").prop("disabled", true)
     $("#ward").val("")
+    wardCode = undefined
     // bỏ chọn địa chỉ cụ thể
     $("#address").prop("disabled", true)
     $("#address").val("")
+    renderCart()
 })
 
 // tạo danh sách phường xã khi user chọn DistrictID
@@ -253,19 +281,69 @@ $("#district").change((e) => {
     getWardData(districtID)
     // cho phép chọn 
     $("#ward").prop("disabled", false)
+    $("#ward").val("")
+    wardCode = undefined
     // bỏ chọn địa chỉ cụ thể
     $("#address").prop("disabled", true)
     $("#address").val("")
+    renderCart()
 })
 
 
 //cho phép gõ địa chỉ cụ thể
 $("#ward").change((e) => {
-    wardID = e.currentTarget.value
+    wardCode = e.currentTarget.value
     $("#address").prop("disabled", false)
+    renderCart()
+
 })
 
-console.log(provinceID, districtID, wardID)
+$("#pay-btn").click(() => {
+    console.log(provinceID, districtID, wardCode)
+})
+
+// function update shipment cost
+async function updateShippingFee() {
+    console.log(provinceID, districtID, wardCode)
+    try {
+        let items = getObjectFromLocalStorage("techCart")[sessionID]
+        let totalCount = 0
+        for (let item of items) {
+            if (item.checked) totalCount += item.count
+        }
+        console.log(totalCount)
+
+        if (districtID && wardCode && totalCount > 0) {
+
+            let URI = "https://online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/fee"
+            let header = {
+                headers: { token: GHNToken, shop_id: GHNShopID },
+                params: {
+                    service_type_id: 2,
+                    insurance_value: 0,
+                    to_ward_code: wardCode,
+                    to_district_id: districtID,
+                    from_district_id: 1493, // sender from quận Thanh Xuân
+                    weight: totalCount * 150,
+                    length: totalCount * 6,
+                    width: totalCount * 6,
+                    height: totalCount * 3,
+                }
+            }
+            let res = await axios.get(URI, header)
+            shipmentFee = res.data.data.total
+            $(".shipment-fee span:last-child").html(formatMoney(shipmentFee))
+        } else {
+            $(".shipment-fee span:last-child").html(0)
+            shipmentFee = 0
+        }
+    } catch (error) {
+        $(".shipment-fee span:last-child").html(0)
+        shipmentFee = 0
+        console.log(error)
+    }
+}
+
 
 
 
