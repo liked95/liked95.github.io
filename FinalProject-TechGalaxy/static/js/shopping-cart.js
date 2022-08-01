@@ -67,7 +67,7 @@ function renderCart() {
                 </div>`
         }
 
-        
+
     }
 
 
@@ -314,13 +314,10 @@ $("#ward").change((e) => {
 
 })
 
-$("#pay-btn").click(() => {
-    console.log(provinceID, districtID, wardCode)
-})
 
 // function update shipment cost
 async function updateShippingFee() {
-    console.log(provinceID, districtID, wardCode)
+    // console.log(provinceID, districtID, wardCode)
     try {
         let items = getObjectFromLocalStorage("techCart")[sessionID]
         let totalCount = 0
@@ -370,6 +367,10 @@ function applyVoucher() {
     }
 
     if (voucherValue in vouchers) {
+        if (totalValue == 0) {
+            alert("Không thể áp dụng mã giảm giá khi tổng đơn hàng bằng 0")
+            return;
+        }
         discountFactor = vouchers[voucherValue].value
         discountLimit = vouchers[voucherValue].limit
         renderCart()
@@ -528,7 +529,6 @@ $("#paymentConfirm").on("hidden.bs.modal", (e) => {
 
 
 $("#confirm-btn").click((e) => {
-    console.log(e)
     $("#paymentConfirm").modal("hide")
 
     createAlert("Thanh toán thành công, cảm ơn bạn đã mua hàng!", 2000)
@@ -536,22 +536,71 @@ $("#confirm-btn").click((e) => {
     let items = cart[sessionID]
     // thêm số lượng đã bán vào productList
     let products = getFromLocalStorage("productList")
+
+    const purchasedItems = []
     for (let item of items) {
         if (item.checked) {
             let product = products.find(p => p.id == item.id)
             product.soldQuantity += item.count
-            console.log(product)
+            purchasedItems.push(item)
         }
     }
     saveToLocalStorage("productList", products)
+
+    // Tạo object để track lịch sử thanh toán
+    const financialVals = {
+        totalValue: $("#payment-shipment-info .total-value span:last-child").text(),
+        shipmentFee: $("#payment-shipment-info .shipment-fee span:last-child").text(),
+        discount: $("#payment-shipment-info .discount span:last-child").text(),
+        pretaxValue: $("#payment-shipment-info .pretax-value span:last-child").text(),
+        grandTotal: $("#payment-shipment-info .grand-total span:last-child").text(),
+    }
+
+    const userInfo = {
+        name: $("#order-name").text(),
+        phone: $("#order-phone").text(),
+        address: $("#order-address").text(),
+        paymentMethod: $("#order-payment-method").text(),
+    }
+
+    const purchaseTime = {
+        date: new Date().toLocaleDateString("vi-VN"),
+        hour: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+    }
+
     
-        // xóa item được check và render giỏ hàng
+    let purchaseObj = {
+        purchasedItems: purchasedItems,
+        financialVals: financialVals,
+        userInfo: userInfo, 
+        purchaseTime: purchaseTime,
+    }
+
+    addToPurchaseHistory(sessionID, purchaseObj)
+
+    
+
+    // xóa item được check và render giỏ hàng
     items = items.filter(item => item.checked == false)
     cart[sessionID] = items
     saveToLocalStorage("techCart", cart)
-    renderCart()  
+    renderCart()
     updateCartCount()
 })
+
+
+function addToPurchaseHistory(sessionID, obj) {
+    let purchases = getObjectFromLocalStorage("purchases")
+    if (!purchases) {
+        purchases = {}
+        purchases[sessionID] = []
+    } else if (!purchases[sessionID]) {
+        purchases[sessionID] = []
+    }
+
+    purchases[sessionID].unshift(obj)
+    saveToLocalStorage("purchases", purchases)
+}
 
 
 
