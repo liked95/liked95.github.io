@@ -4,7 +4,7 @@ $(function () {
 
 // API Tỉnh huyện xã của Giao Hang Nhanh
 let provinceID, districtID, wardCode
-let shipmentFee = 0, discountFactor = 0, discountLimit = Infinity
+let totalValue = 0, shipmentFee = 0, discountFactor = 0, discountLimit = Infinity
 let discountValue, preTaxValue, grandTotal
 
 renderCart()
@@ -72,7 +72,7 @@ function renderCart() {
     // render tien hang va tong so tien
     // chỉ tính tổng tiền item đc check
     let items = cart[sessionID]
-    let totalValue = 0
+    totalValue = 0
     for (let item of items) {
         // console.log(item)
         if (item.checked) totalValue += item.count * item.price
@@ -82,10 +82,9 @@ function renderCart() {
     // update HTML shipping fee và lưu giá trị vào biến global shipmentFee
     // Important!!! dùng await để chờ shipment fee được update từ function updateShippingFee (function request API)
     let promise = updateShippingFee()
-    console.log(promise)
+    // console.log(promise)
 
-    promise.then(value => {
-        shipmentFee = value
+    promise.then(shipmentFee => {
         $(".shipment-fee span:last-child").html(formatMoney(shipmentFee))
 
         let discount = totalValue * discountFactor < discountLimit ? totalValue * discountFactor : discountLimit
@@ -393,6 +392,101 @@ $(".voucher-container input").keydown(e => {
         applyVoucher()
     }
 })
+
+
+// Nhấn nút thanh toán
+$("#pay-btn").click(() => {
+    // if (totalValue == 0) {
+    //     alert("Giỏ hàng trống hoặc bạn chưa chọn sản phẩm nào")
+    //     return;
+    // }
+
+
+    // if ($("#phone").val().trim() == "") {
+    //     alert("Bạn chưa nhập số điện thoại")
+    //     return;
+    // }
+
+    // if ($("#fullName").val().trim() == "") {
+    //     alert("Bạn chưa nhập họ tên")
+    //     return;
+    // }
+
+    // if ($("#address").val().trim() == "") {
+    //     alert("Bạn chưa nhập địa chỉ cụ thể")
+    //     return;
+    // }
+
+    // const paymentCheckEl = document.querySelector(".payment-method input:checked")
+    // if (!paymentCheckEl) {
+    //     alert("Bạn chưa chọn phương thức thanh toán")
+    //     return;
+    // }
+    renderOrderConfirmation()
+    $("#paymentConfirm").modal("show")
+})
+
+function renderOrderConfirmation() {
+    // render full name
+    $("#order-name").text($("#fullName").val())
+    // render phone
+    $("#order-phone").text($("#phone").val())
+    // render address
+    let firstAddress = $("#address").val()
+    let ward = $("#ward option:selected").text()
+    let district = $("#district option:selected").text()
+    let province = $("#province option:selected").text()
+    let fullAddress = `${firstAddress}, ${ward}, ${district}, ${province}`
+    $("#order-address").html(fullAddress)
+    // render payment method
+    let paymentMethod = $(".payment-method input:checked").parent().find("label").text()
+    $("#order-payment-method").html(paymentMethod)
+
+    // render cart item in payment cf
+    const paymentItemEl = document.getElementById("payment-item-container")
+    paymentItemEl.innerHTML = `
+        <div class="payment-item-title d-flex mb-3">
+            <div class="product fw-bold">Sản phẩm</div>
+            <div class="prices text-end fw-bold">Giá</div>
+            <div class="quantity text-center fw-bold">Số lượng</div>
+            <div class="value text-end fw-bold">Số tiền</div>
+        </div>
+    `
+    let items = getObjectFromLocalStorage("techCart")[sessionID]
+    for (let item of items) {
+        if (item.checked) {
+            paymentItemEl.innerHTML += `
+            <div class="cart-item mb-2">
+                                
+                <div class="product d-flex">
+                    <div class="cart-item-image">
+                        <img src="../static/images/thumnail-carousel/${item.image}" alt="${item.image}">
+                    </div>
+
+                    <div class="cart-item-detail">
+                        <div class="product-name">${item.name}</div>
+                        <div class="product-attr">(${item.color}, ${item.alterOption})</div>
+                    </div>
+                </div>
+
+                <div class="prices text-end">
+                  <div class="new-price fw-bold">${formatMoney(item.price)}</div>
+                  <div class="old-price"><del>${formatMoney(item.oldPrice)}<del></div>
+                </div>
+
+                <div class="quantity text-center">
+                  <span>${item.count}</span>
+                </div>
+
+                <div class="value text-end">${formatMoney(item.count * item.price)}</div>
+            </div>`
+        }
+    }
+
+
+    // xem them btn
+    paymentItemEl.innerHTML += `<button id="expand-cart">Xem thêm</button>`
+}
 
 
 

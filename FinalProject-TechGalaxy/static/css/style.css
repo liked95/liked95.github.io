@@ -1546,6 +1546,7 @@ footer p {
 /* thanh toan */
 .payment {
     margin-bottom: 60px;
+    margin-top: 20px;
 }
 
 .payment input[type="text"] {
@@ -1566,7 +1567,7 @@ footer p {
 }
 
 .total-cart-container>div {
-    height: 46px;
+    height: 50px;
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -1601,25 +1602,29 @@ footer p {
 }
 
 .voucher-container>* {
-    height: 44px;
+    height: 50px;
 }
 
 .voucher-container {
     display: flex;
+    margin-top: 20px;
 }
 
 .voucher-field-container {
     flex: 1;
-    border: 1px solid #e0e0e0;
+    border: none;
     border-radius: 4px 0px 0px 4px;
-    padding-left: 10px;
     position: relative;
+}
+
+.voucher-field-container .form-floating {
+    height: 100%;
 }
 
 .voucher-field-container input {
     height: 100%;
     width: 100%;
-    border: none;
+    border-right: none;
 }
 
 .voucher-field-container i {
@@ -1638,9 +1643,13 @@ footer p {
     color: #fff;
 }
 
+#voucher-apply-btn:hover {
+    background-color: #66be23;
+}
+
 .payment-method-container h4 {
-    font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 700;
     text-align: center;
 }
 
@@ -1683,6 +1692,10 @@ footer p {
     border-radius: 4px;
 }
 
+#pay-btn:hover {
+    background-color: #01a7e8;
+}
+
 /* payment partner */
 .payment-partner h4 {
     font-weight: 600;
@@ -1694,7 +1707,7 @@ footer p {
     padding: 0 50px;
 }
 .payment-promotions li {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 20px;
     list-style-type: disc;
 }
@@ -1749,4 +1762,57 @@ footer p {
     caret-color: #1a73e8;
     border-width: 2.2px;
     box-shadow: none;
+}
+
+/* xác nhận thanh toán */
+#payment-shipment-info .total-cart-container > div {
+    height: 35px;
+}
+
+.receiver-info {
+    padding: 16px;
+    border-left: 1px solid #E0E0E0;
+}
+
+.receiver-info p {
+    font-size: 14px;
+    line-height: 1.5rem;
+    margin-bottom: 2rem
+}
+
+.receiver-info p span {
+    font-weight: 700;
+}
+
+/* payment item container */
+#payment-item-container {
+    font-size: 14px;
+    padding: 15px;
+    padding-top: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#payment-item-container .payment-item-title {
+    font-size: 15px;
+}
+
+#payment-item-container .cart-item {
+    justify-content: space-between;
+}
+
+#payment-item-container .product {
+    flex-basis: 30%;
+}
+
+#payment-item-container .prices {
+    flex-basis: 25%;
+}
+
+
+#payment-item-container .quantity {
+    flex-basis: 30%;
+}
+
+#payment-item-container .value {
+    flex-basis: 15%;
 }
