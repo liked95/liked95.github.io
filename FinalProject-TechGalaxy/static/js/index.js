@@ -86,9 +86,12 @@ const topSoldLaptopEl = document.querySelector(".top-sold-laptops .row")
 //         ele.firstElementChild.classList.add("active")
 //     })
 // }
-let smartphones = products.filter(p => p.category == "smartphone")
-let tablets = products.filter(p => p.category == "tablet")
-let laptops = products.filter(p => p.category == "laptop")
+
+
+let getProducts = getFromLocalStorage("productList")
+let smartphones = getProducts.filter(p => p.category == "smartphone")
+let tablets = getProducts.filter(p => p.category == "tablet")
+let laptops = getProducts.filter(p => p.category == "laptop")
 
 renderCardItem(topSoldPhoneEl, smartphones)
 renderCardItem(topSoldTabletEl, tablets)

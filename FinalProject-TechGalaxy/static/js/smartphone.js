@@ -2,7 +2,7 @@
 const phoneCategoryBox = document.querySelector(".smartphone-container .product-category-container")
 // $(".search-quantity")
 
-let filterResults = products.filter(p => p.category == "smartphone")
+let filterResults = getFromLocalStorage("productList").filter(p => p.category == "smartphone")
 renderCardItem(phoneCategoryBox, filterResults)
 $(".search-quantity").text(filterResults.length)
 

@@ -66,6 +66,8 @@ function renderCart() {
                     </div>
                 </div>`
         }
+
+        
     }
 
 
@@ -198,7 +200,6 @@ function deleteItem(ele, id, alterOption, color) {
     setTimeout(() => {
         saveToLocalStorage("techCart", cart)
         renderCart()
-        updateCartCount()
     }, timeout);
 
 }
@@ -395,38 +396,6 @@ $(".voucher-container input").keydown(e => {
 })
 
 
-// Nhấn nút thanh toán
-$("#pay-btn").click(() => {
-    if (totalValue == 0) {
-        alert("Giỏ hàng trống hoặc bạn chưa chọn sản phẩm nào")
-        return;
-    }
-
-
-    if ($("#phone").val().trim() == "") {
-        alert("Bạn chưa nhập số điện thoại")
-        return;
-    }
-
-    if ($("#fullName").val().trim() == "") {
-        alert("Bạn chưa nhập họ tên")
-        return;
-    }
-
-    if ($("#address").val().trim() == "") {
-        alert("Bạn chưa nhập địa chỉ cụ thể")
-        return;
-    }
-
-    const paymentCheckEl = document.querySelector(".payment-method input:checked")
-    if (!paymentCheckEl) {
-        alert("Bạn chưa chọn phương thức thanh toán")
-        return;
-    }
-    renderOrderConfirmation()
-    $("#paymentConfirm").modal("show")
-})
-
 function renderOrderConfirmation() {
     // render cart item in payment cf
     const paymentItemContentEl = document.querySelector("#payment-item-container .payment-item-content")
@@ -501,6 +470,38 @@ function renderOrderConfirmation() {
     $("#order-payment-method").html(paymentMethod)
 
 }
+// Nhấn nút thanh toán
+$("#pay-btn").click(() => {
+    // if (totalValue == 0) {
+    //     alert("Giỏ hàng trống hoặc bạn chưa chọn sản phẩm nào")
+    //     return;
+    // }
+
+
+    // if ($("#phone").val().trim() == "") {
+    //     alert("Bạn chưa nhập số điện thoại")
+    //     return;
+    // }
+
+    // if ($("#fullName").val().trim() == "") {
+    //     alert("Bạn chưa nhập họ tên")
+    //     return;
+    // }
+
+    // if ($("#address").val().trim() == "") {
+    //     alert("Bạn chưa nhập địa chỉ cụ thể")
+    //     return;
+    // }
+
+    // const paymentCheckEl = document.querySelector(".payment-method input:checked")
+    // if (!paymentCheckEl) {
+    //     alert("Bạn chưa chọn phương thức thanh toán")
+    //     return;
+    // }
+    renderOrderConfirmation()
+    $("#paymentConfirm").modal("show")
+})
+
 
 
 renderOrderConfirmation()
@@ -516,7 +517,40 @@ $("#expand-cart-btn").click(() => {
         $("#expand-cart-btn").html(`Xem tất cả <span id="product-type-quantity">${checkItemLen}</span> loại sản phẩm`)
         $("#payment-item-container").addClass("shrink")
     }
+})
 
+// xóa prop khi đóng modal
+$("#paymentConfirm").on("hidden.bs.modal", (e) => {
+    $(".fade-btn-container").removeClass("active")
+    $("#expand-cart-btn").html(`Xem tất cả <span id="product-type-quantity">${checkItemLen}</span> loại sản phẩm`)
+    $("#payment-item-container").addClass("shrink")
+})
+
+
+$("#confirm-btn").click((e) => {
+    console.log(e)
+    $("#paymentConfirm").modal("hide")
+
+    createAlert("Thanh toán thành công, cảm ơn bạn đã mua hàng!", 2000)
+    let cart = getObjectFromLocalStorage("techCart")
+    let items = cart[sessionID]
+    // thêm số lượng đã bán vào productList
+    let products = getFromLocalStorage("productList")
+    for (let item of items) {
+        if (item.checked) {
+            let product = products.find(p => p.id == item.id)
+            product.soldQuantity += item.count
+            console.log(product)
+        }
+    }
+    saveToLocalStorage("productList", products)
+    
+        // xóa item được check và render giỏ hàng
+    items = items.filter(item => item.checked == false)
+    cart[sessionID] = items
+    saveToLocalStorage("techCart", cart)
+    renderCart()  
+    updateCartCount()
 })
 
 

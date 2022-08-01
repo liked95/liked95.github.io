@@ -3,7 +3,7 @@ const GHNToken = "6b47d361-0f52-11ed-8636-7617f3863de9"
 const GHNShopID = 3136159
 
 const alertDuration = 1200
-function createAlert(message) {
+function createAlert(message, duration = alertDuration) {
     let messageEl = document.createElement("div")
     messageEl.classList.add("alert", "alert-success")
     messageEl.role = "alert"
@@ -11,11 +11,11 @@ function createAlert(message) {
     document.body.prepend(messageEl)
 
     setTimeout(function(){ 
-        $(".alert").fadeOut(alertDuration);
+        $(".alert").fadeOut(duration);
         setTimeout(() => {
             messageEl.remove()
-        }, alertDuration)
-    }, alertDuration);    
+        }, duration)
+    }, duration);    
 }
 
 function formatMoney(num) {
