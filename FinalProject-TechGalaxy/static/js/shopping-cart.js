@@ -6,6 +6,7 @@ $(function () {
 let provinceID, districtID, wardCode
 let totalValue = 0, shipmentFee = 0, discountFactor = 0, discountLimit = Infinity
 let discountValue, preTaxValue, grandTotal
+let checkItemLen
 
 renderCart()
 
@@ -396,37 +397,94 @@ $(".voucher-container input").keydown(e => {
 
 // Nhấn nút thanh toán
 $("#pay-btn").click(() => {
-    // if (totalValue == 0) {
-    //     alert("Giỏ hàng trống hoặc bạn chưa chọn sản phẩm nào")
-    //     return;
-    // }
+    if (totalValue == 0) {
+        alert("Giỏ hàng trống hoặc bạn chưa chọn sản phẩm nào")
+        return;
+    }
 
 
-    // if ($("#phone").val().trim() == "") {
-    //     alert("Bạn chưa nhập số điện thoại")
-    //     return;
-    // }
+    if ($("#phone").val().trim() == "") {
+        alert("Bạn chưa nhập số điện thoại")
+        return;
+    }
 
-    // if ($("#fullName").val().trim() == "") {
-    //     alert("Bạn chưa nhập họ tên")
-    //     return;
-    // }
+    if ($("#fullName").val().trim() == "") {
+        alert("Bạn chưa nhập họ tên")
+        return;
+    }
 
-    // if ($("#address").val().trim() == "") {
-    //     alert("Bạn chưa nhập địa chỉ cụ thể")
-    //     return;
-    // }
+    if ($("#address").val().trim() == "") {
+        alert("Bạn chưa nhập địa chỉ cụ thể")
+        return;
+    }
 
-    // const paymentCheckEl = document.querySelector(".payment-method input:checked")
-    // if (!paymentCheckEl) {
-    //     alert("Bạn chưa chọn phương thức thanh toán")
-    //     return;
-    // }
+    const paymentCheckEl = document.querySelector(".payment-method input:checked")
+    if (!paymentCheckEl) {
+        alert("Bạn chưa chọn phương thức thanh toán")
+        return;
+    }
     renderOrderConfirmation()
     $("#paymentConfirm").modal("show")
 })
 
 function renderOrderConfirmation() {
+    // render cart item in payment cf
+    const paymentItemContentEl = document.querySelector("#payment-item-container .payment-item-content")
+    paymentItemContentEl.innerHTML = `
+        <div class="payment-item-title d-flex mb-3">
+            <div class="product fw-bold px-5">Sản phẩm</div>
+            <div class="prices text-end fw-bold px-4">Giá</div>
+            <div class="quantity text-center fw-bold">Số lượng</div>
+            <div class="value text-end fw-bold">Số tiền</div>
+        </div>
+    `
+    let items = getObjectFromLocalStorage("techCart")[sessionID]
+    for (let item of items) {
+        if (item.checked) {
+            paymentItemContentEl.innerHTML += `
+            <div class="cart-item mb-2">
+                                
+                <div class="product d-flex">
+                    <div class="cart-item-image">
+                        <img src="../static/images/thumnail-carousel/${item.image}" alt="${item.image}">
+                    </div>
+
+                    <div class="cart-item-detail">
+                        <div class="product-name">${item.name}</div>
+                        <div class="product-attr">(${item.color}, ${item.alterOption})</div>
+                    </div>
+                </div>
+
+                <div class="prices text-end">
+                    <div class="new-price fw-bold">${formatMoney(item.price)}</div>
+                    <div class="old-price"><del>${formatMoney(item.oldPrice)}<del></div>
+                </div>
+
+                <div class="quantity text-center">
+                    <span>${item.count}</span>
+                </div>
+                    
+                <div class="value text-end">${formatMoney(item.count * item.price)}</div>
+            </div>`
+        }
+    }
+
+
+    // xem them btn
+    checkItemLen = items.filter(item => item.checked).length
+    $("#product-type-quantity").html(checkItemLen)
+
+    if (checkItemLen <= 2) {
+        $(".fade-btn-container").addClass("d-none")
+        $("#payment-item-container").removeClass("shrink")
+    } else {
+        $(".fade-btn-container").removeClass("d-none")
+        $("#payment-item-container").addClass("shrink")
+    }
+
+
+
+
     // render full name
     $("#order-name").text($("#fullName").val())
     // render phone
@@ -442,51 +500,24 @@ function renderOrderConfirmation() {
     let paymentMethod = $(".payment-method input:checked").parent().find("label").text()
     $("#order-payment-method").html(paymentMethod)
 
-    // render cart item in payment cf
-    const paymentItemEl = document.getElementById("payment-item-container")
-    paymentItemEl.innerHTML = `
-        <div class="payment-item-title d-flex mb-3">
-            <div class="product fw-bold">Sản phẩm</div>
-            <div class="prices text-end fw-bold">Giá</div>
-            <div class="quantity text-center fw-bold">Số lượng</div>
-            <div class="value text-end fw-bold">Số tiền</div>
-        </div>
-    `
-    let items = getObjectFromLocalStorage("techCart")[sessionID]
-    for (let item of items) {
-        if (item.checked) {
-            paymentItemEl.innerHTML += `
-            <div class="cart-item mb-2">
-                                
-                <div class="product d-flex">
-                    <div class="cart-item-image">
-                        <img src="../static/images/thumnail-carousel/${item.image}" alt="${item.image}">
-                    </div>
+}
 
-                    <div class="cart-item-detail">
-                        <div class="product-name">${item.name}</div>
-                        <div class="product-attr">(${item.color}, ${item.alterOption})</div>
-                    </div>
-                </div>
 
-                <div class="prices text-end">
-                  <div class="new-price fw-bold">${formatMoney(item.price)}</div>
-                  <div class="old-price"><del>${formatMoney(item.oldPrice)}<del></div>
-                </div>
-
-                <div class="quantity text-center">
-                  <span>${item.count}</span>
-                </div>
-
-                <div class="value text-end">${formatMoney(item.count * item.price)}</div>
-            </div>`
-        }
+renderOrderConfirmation()
+// khi click vào nút xem thêm
+$("#expand-cart-btn").click(() => {
+    renderOrderConfirmation()
+    if (!$(".fade-btn-container").hasClass("active")) {
+        $(".fade-btn-container").addClass("active")
+        $("#expand-cart-btn").html("Thu gọn")
+        $("#payment-item-container").removeClass("shrink")
+    } else {
+        $(".fade-btn-container").removeClass("active")
+        $("#expand-cart-btn").html(`Xem tất cả <span id="product-type-quantity">${checkItemLen}</span> loại sản phẩm`)
+        $("#payment-item-container").addClass("shrink")
     }
 
-
-    // xem them btn
-    paymentItemEl.innerHTML += `<button id="expand-cart">Xem thêm</button>`
-}
+})
 
 
 

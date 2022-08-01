@@ -1765,7 +1765,16 @@ footer p {
 }
 
 /* xác nhận thanh toán */
+#payment-shipment-info {
+    border-top: 1px solid #e0e0e0;
+    margin-top: 15px;
+}
+
 #payment-shipment-info .total-cart-container > div {
+    margin-bottom: 2px;
+}
+
+ .total-cart-container > div {
     height: 35px;
 }
 
@@ -1777,7 +1786,7 @@ footer p {
 .receiver-info p {
     font-size: 14px;
     line-height: 1.5rem;
-    margin-bottom: 2rem
+    margin-bottom: 10px
 }
 
 .receiver-info p span {
@@ -1787,9 +1796,13 @@ footer p {
 /* payment item container */
 #payment-item-container {
     font-size: 14px;
-    padding: 15px;
-    padding-top: 0;
-    border-bottom: 1px solid #e0e0e0;
+    padding: 0 15px;
+    overflow: hidden;
+    height: auto;
+}
+
+#payment-item-container.shrink {
+    height: 200px;
 }
 
 #payment-item-container .payment-item-title {
@@ -1815,4 +1828,32 @@ footer p {
 
 #payment-item-container .value {
     flex-basis: 15%;
+}
+
+.fade-btn-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to bottom,rgba(255 255 255/0),rgba(255 255 255/62.5),rgba(255 255 255/1));
+}
+
+.fade-btn-container.active {
+    position: relative
+}
+
+
+#expand-cart-btn {
+    padding: 10px 60px;
+    border: 1px solid #2f80ed;
+    color: #2f80ed;
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+
+#expand-cart-btn:hover {
+    border: none;
+    background-color: #2f80ed;
+    color: #fff;
 }
