@@ -284,18 +284,7 @@ updateCartCount()
 
 
 
-// $(".expand-history-btn").click(() => {
-//     // renderPurchaseHistory()
-//     if (!$(".fade-btn-container").hasClass("active")) {
-//         $(".fade-btn-container").addClass("active")
-//         $(".expand-history-btn").html("Thu gọn")
-//         $("#payment-item-container").removeClass("shrink")
-//     } else {
-//         $(".fade-btn-container").removeClass("active")
-//         $(".expand-history-btn").html(`Xem tất cả <span id="product-type-quantity">${checkItemLen}</span> loại sản phẩm`)
-//         $("#payment-item-container").addClass("shrink")
-//     }
-// })
+
 
 
 function renderPurchaseHistory() {
@@ -364,14 +353,13 @@ function renderPurchaseHistory() {
                     </div>
                 </div>
 
-                <div class="history-payment-item-container position-relative">
+                <div class="history-payment-item-container position-relative ${purchase.purchasedItems.length > 2 ? "shrink" : ""}">
                     <div class="payment-item-content">
                         ${productsHTML}
                     </div>
 
-                    <div class="fade-btn-container d-flex justify-content-center">
-                        <button class="expand-history-btn">Xem tất cả <span class="history-type-quantity">${purchase.purchasedItems.length}</span> loại
-                            sản phẩm</button>
+                    <div class="fade-btn-container d-flex justify-content-center ${purchase.purchasedItems.length <= 2 ? "d-none" : ""}">
+                        <button class="expand-history-btn" onclick="toggleHistoryItem(this)">Xem tất cả</button>
                     </div>
                 </div>
 
@@ -427,7 +415,31 @@ function renderPurchaseHistory() {
 
 renderPurchaseHistory()
 
+// $(".expand-history-btn").click(() => {
+//     // renderPurchaseHistory()
+//     if (!$(".fade-btn-container").hasClass("active")) {
+//         $(".fade-btn-container").addClass("active")
+//         $(".expand-history-btn").html("Thu gọn")
+//         $("#payment-item-container").removeClass("shrink")
+//     } else {
+//         $(".fade-btn-container").removeClass("active")
+//         $(".expand-history-btn").html(`Xem tất cả <span id="product-type-quantity">${checkItemLen}</span> loại sản phẩm`)
+//         $("#payment-item-container").addClass("shrink")
+//     }
+    
+// })
 
+function toggleHistoryItem(ele) {
+    if (!$(ele).parent().hasClass("active")) {
+        $(ele).parent().addClass("active")
+        $(ele).html("Thu gọn")
+        $(ele).parent().parent().removeClass("shrink")
+    } else {
+        $(ele).parent().removeClass("active")
+        $(ele).html(`Xem tất cả`)
+        $(ele).parent().parent().addClass("shrink")
+    }
+}
 
 
 
