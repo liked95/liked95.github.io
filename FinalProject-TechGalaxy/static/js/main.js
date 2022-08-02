@@ -57,30 +57,19 @@ if (!isAlreadyLoadedIntoLocalStorage) {
 
 
 
-const headerLoginBtn = document.querySelector(".login-btn")
-const headerRegisterBtn = document.querySelector(".register-btn")
+
 
 // console.log(localStorage.getItem("userID"))
 let userID = JSON.parse(localStorage.getItem("userID"))
+// replace thanh phan login bang user info khi đăng nhập
 if (userID) {
-    // Thay đăng nhập bằng tên username
-    // console.log("sdfdsafd")
-    // headerLoginBtn.innerHTML = `${userID.username}`
-    // headerLoginBtn.href = "#"
-
-    // THay đăng kí bằng đăng xuất
-    // const logoutBtn = document.createElement(`i`)
-    // logoutBtn.classList.add("fa-solid", "fa-power-off")
-    // logoutBtn.id = "logout-btn"
-    // headerRegisterBtn.parentNode.replaceChild(logoutBtn, headerRegisterBtn)
-
     let credentialEl = $("<div></div")
     credentialEl.addClass("credential-container")
     credentialEl.html(`
         <div class="avatar-image">
             <img src="../static/images/contingency-images/default-avatar.png" alt="ava-default">
         </div>
-
+        <div class="arrow-up"></div>
         <ul class="dropdown-container">
             <li>Xin chào <b>${userID.username}</b></li>
             <li data-toggle="modal" data-target="#orderHistory">Lịch sử đặt hàng</li>
