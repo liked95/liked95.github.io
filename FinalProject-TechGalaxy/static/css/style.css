@@ -174,6 +174,42 @@ header .first-header-row {
     cursor: pointer;
 }
 
+#search-result {
+    width: 100%;
+    background-color: #fff;
+    /* display: none; */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 6px 6px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+}
+/* hiện kq tìm kiếm khi focus */
+
+
+.search-item {
+    font-size: 14px;
+    height: 30px;
+    padding-left: 20px;
+}
+
+.search-item:hover {
+    background-color: #e0e0e0;
+}
+
+.search-item > p {
+    height: 100%;
+    line-height: 30px;
+}
+
+
+
+
+
 .login-logout {
     display: flex;
     align-items: center;

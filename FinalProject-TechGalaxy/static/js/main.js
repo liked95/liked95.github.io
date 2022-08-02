@@ -102,7 +102,7 @@ let logoutBtn = document.getElementById("logout-btn")
 if (logoutBtn) {
     logoutBtn.addEventListener("click", () => {
         saveToLocalStorage("userID", null)
-        window.location.reload()
+        window.location.href = "index.html"
     })
 }
 
@@ -431,7 +431,7 @@ renderPurchaseHistory()
 //         $(".expand-history-btn").html(`Xem tất cả <span id="product-type-quantity">${checkItemLen}</span> loại sản phẩm`)
 //         $("#payment-item-container").addClass("shrink")
 //     }
-    
+
 // })
 
 function toggleHistoryItem(ele) {
@@ -447,4 +447,53 @@ function toggleHistoryItem(ele) {
 }
 
 
+products = getFromLocalStorage('productList')
+// Tìm kiếm trên thanh search bar
+
+
+
+
+
+$(".search-input input").keyup((e) => {
+    let searchVal = e.target.value.toLowerCase().trim()
+    const searchResEl = $("#search-result")
+    // if (!searchVal) {
+    //     return;
+    // }
+
+    let res = []
+    if (searchVal) {
+        for (let product of products) {
+            if (product.name.toLowerCase().includes(searchVal)) {
+                res.push({name: product.name, id: product.id})
+            }
+        }
+    }
+    // console.log(res)
+    if (res.length == 0 && searchVal != '') {
+        searchResEl.html(`<p>Không tìm thấy sản phẩm...</p>`)
+    } else {
+        let searchHTML = ``
+        for (let p of res) {
+            searchHTML += `
+                <a href="./detail.html?id=${p.id}" class="search-item">
+                    <p>${p.name}</p>
+                </a>
+            `
+        }
+
+        searchResEl.html(searchHTML)
+    }
+})
+
+$(document).click((e) => {
+    console.log(e.target);
+    let searchInput = document.querySelector(".search-input")
+    let searchResEl = document.getElementById("search-result")
+    if (searchInput.contains(e.target) || searchResEl.contains(e.target)) {
+        $("#search-result").show()
+    } else {
+        $("#search-result").hide()
+    }
+})
 
