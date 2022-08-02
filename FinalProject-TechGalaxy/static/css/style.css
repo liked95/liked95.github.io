@@ -178,6 +178,63 @@ header .first-header-row {
     margin-bottom: 0;
 }
 
+.credential-container {
+    position: relative;
+    font-size: 14px;
+}
+
+.avatar-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px black;
+    overflow: hidden;
+}
+
+
+.credential-container:hover .dropdown-container {
+    display: block;
+}
+
+.dropdown-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 160px;
+    text-align: right;
+    background-color: #fff;
+    z-index: 600;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.dropdown-container > li {
+    padding: 18px 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.dropdown-container > li:first-child {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.dropdown-container > li:hover {
+    background-color: #e0e0e0;
+}
+
+.dropdown-menu-item {
+    height: 100%;
+    width: 100%;
+}
+.dropdown-container a {
+    
+}
+
 .cart-icon {
     position: relative;
 }
@@ -635,8 +692,7 @@ footer p {
 
 #logout-btn {
     color: rgb(216, 18, 18);
-    margin-left: 5px;
-    cursor: pointer;
+    border-top: 1px solid #e0e0e0;
 }
 
 /* panel right */
@@ -1856,11 +1912,13 @@ footer p {
     position: absolute;
     bottom: 0;
     width: 100%;
+    padding-top: 20px;
     background: linear-gradient(to bottom,rgba(255 255 255/0),rgba(255 255 255/62.5),rgba(255 255 255/1));
 }
 
 .fade-btn-container.active {
-    position: relative
+    position: relative;
+    padding-top: 0;
 }
 
 

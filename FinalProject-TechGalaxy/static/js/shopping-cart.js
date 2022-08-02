@@ -585,6 +585,9 @@ $("#confirm-btn").click((e) => {
     saveToLocalStorage("techCart", cart)
     renderCart()
     updateCartCount()
+
+    // update lịch sử mua hàng
+    renderPurchaseHistory()
 })
 
 

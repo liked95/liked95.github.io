@@ -65,17 +65,30 @@ let userID = JSON.parse(localStorage.getItem("userID"))
 if (userID) {
     // Thay đăng nhập bằng tên username
     // console.log("sdfdsafd")
-    headerLoginBtn.innerHTML = `${userID.username}`
-    headerLoginBtn.href = "#"
+    // headerLoginBtn.innerHTML = `${userID.username}`
+    // headerLoginBtn.href = "#"
 
     // THay đăng kí bằng đăng xuất
-    const logoutBtn = document.createElement(`i`)
-    logoutBtn.classList.add("fa-solid", "fa-power-off")
-    logoutBtn.id = "logout-btn"
-    headerRegisterBtn.parentNode.replaceChild(logoutBtn, headerRegisterBtn)
+    // const logoutBtn = document.createElement(`i`)
+    // logoutBtn.classList.add("fa-solid", "fa-power-off")
+    // logoutBtn.id = "logout-btn"
+    // headerRegisterBtn.parentNode.replaceChild(logoutBtn, headerRegisterBtn)
+
     let credentialEl = $("<div></div")
-    credentialEl.addClass("user-credential")
-    console.log(credentialEl);
+    credentialEl.addClass("credential-container")
+    credentialEl.html(`
+        <div class="avatar-image">
+            <img src="../static/images/contingency-images/default-avatar.png" alt="ava-default">
+        </div>
+
+        <ul class="dropdown-container">
+            <li>Xin chào <b>${userID.username}</b></li>
+            <li data-toggle="modal" data-target="#orderHistory">Lịch sử đặt hàng</li>
+            <li><a class="dropdown-menu-item" href="#">Another action</a></li>
+            <li id="logout-btn">Đăng xuất</li>
+        </ul>
+    `)
+    $(".login-logout").replaceWith(credentialEl)
 }
 
 
