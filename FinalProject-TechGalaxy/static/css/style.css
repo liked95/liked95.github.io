@@ -156,13 +156,15 @@ header .first-header-row {
     width: 630px;
     height: 41px;
     border-radius: 12px;
-    border: 1px solid #e0e0e0;
+    border: none;
     padding-left: 20px;
 }
 
-.search-input input:focus {
-    border: 2px solid #1a73e8;
-    caret-color: #1a73e8;
+
+.search-input input.typed {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .search-input i {
@@ -171,7 +173,7 @@ header .first-header-row {
     right: 10px;
     font-size: 24px;
     color: #333;
-    cursor: pointer;
+    cursor: pointer;    
 }
 
 #search-result {
@@ -185,25 +187,38 @@ header .first-header-row {
     display: flex;
     flex-direction: column;
     border-radius: 0 0 6px 6px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
+
+
 /* hiện kq tìm kiếm khi focus */
 
 
 .search-item {
     font-size: 14px;
-    height: 30px;
+    height: 40px;
     padding-left: 20px;
+    color: #333;
 }
 
 .search-item:hover {
     background-color: #e0e0e0;
+    color: #333;
 }
 
 .search-item > p {
     height: 100%;
-    line-height: 30px;
+    line-height: 40px;
+}
+
+.search-not-found {
+    padding: 20px 20px 0 20px;
+    font-style: italic;
+}
+
+.emoji {
+    padding: 20px;
 }
 
 

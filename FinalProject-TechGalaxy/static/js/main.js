@@ -455,7 +455,27 @@ products = getFromLocalStorage('productList')
 
 
 $(".search-input input").keyup((e) => {
-    let searchVal = e.target.value.toLowerCase().trim()
+    renderSearchResult()
+
+    if (e.keyCode == 13) {
+        // 2. hiển thị khi enter
+        redirectFirstRes()
+    }
+
+    if (e.keyCode == 27) {
+        $(".search-input input").val("")
+        $(".search-input input").blur()
+        $(".search-input input").removeClass("typed")
+        $("#search-result").hide()
+    }
+})
+
+$(".search-input input").focus((e) => {
+    renderSearchResult()
+})
+
+function renderSearchResult() {
+    let searchVal = $(".search-input input").val().toLowerCase().trim()
     const searchResEl = $("#search-result")
     // if (!searchVal) {
     //     return;
@@ -463,15 +483,24 @@ $(".search-input input").keyup((e) => {
 
     let res = []
     if (searchVal) {
+        // them class cho input
+        $(".search-input input").addClass("typed")
         for (let product of products) {
             if (product.name.toLowerCase().includes(searchVal)) {
-                res.push({name: product.name, id: product.id})
+                res.push({ name: product.name, id: product.id })
             }
         }
+    } else {
+        $(".search-input input").removeClass("typed")
     }
     // console.log(res)
     if (res.length == 0 && searchVal != '') {
-        searchResEl.html(`<p>Không tìm thấy sản phẩm...</p>`)
+        searchResEl.html(
+            `<p class="search-not-found">Không tìm thấy sản phẩm nào</p>
+            <span class="emoji">
+                <img src="../static/images/contingency-images/anya-shock.gif" alt="anya-shock">
+            </span>
+        `)
     } else {
         let searchHTML = ``
         for (let p of res) {
@@ -484,16 +513,35 @@ $(".search-input input").keyup((e) => {
 
         searchResEl.html(searchHTML)
     }
-})
+}
 
+
+// click outside to close the search result
 $(document).click((e) => {
-    console.log(e.target);
     let searchInput = document.querySelector(".search-input")
     let searchResEl = document.getElementById("search-result")
     if (searchInput.contains(e.target) || searchResEl.contains(e.target)) {
         $("#search-result").show()
     } else {
         $("#search-result").hide()
+        $(".search-input input").removeClass("typed")
     }
 })
+
+// hiển thị kết quả tìm kiếm đầu tiên
+function redirectFirstRes() {
+    const result = document.querySelector("#search-result > a:first-child")
+    if (!result) {
+        return;
+    }
+    window.location.href = result.href
+}
+// 2. hiển thị khi click kính lúp
+$(".search-input i").click((e) => {
+    redirectFirstRes()
+})
+
+
+
+
 
