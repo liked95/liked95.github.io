@@ -828,15 +828,16 @@ footer p {
     margin-top: 15px;
 }
 
-.box-main {
+/* .box-main {
     display: flex;
+    justify-content: space-between;
     padding-top: 15px;
     margin-top: 15px;
     border-top: 1px solid #e0e0e0;
-}
+} */
 
 .left-side {
-    width: 710px;
+    /* width: 60%; */
     /* border-left: 1px solid black;
     border-right: 1px solid black; */
 }
@@ -956,8 +957,7 @@ footer p {
 }
 
 .right-side {
-    width: 460px;
-    margin-left: 30px;
+    padding-left: 30px;
 }
 
 .option-container,
