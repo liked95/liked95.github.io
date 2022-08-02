@@ -546,7 +546,7 @@ footer p {
 }
 
 /* login form */
-.login .main-container {
+.login .container {
     min-height: 500px;
     display: flex;
     flex-direction: column;
@@ -622,7 +622,7 @@ footer p {
 /* register */
 
 
-.register .main-container {
+.register .container {
     margin-top: 20px;
     min-height: 480px;
     display: flex;
@@ -1200,7 +1200,7 @@ footer p {
 }
 
 
-.review .main-container {
+.review .container {
     border: 1px solid #e0e0e0;
     border-radius: 6px;
     display: flex;
@@ -1880,13 +1880,15 @@ footer p {
 }
 
 /* style history modal */
+#orderHistory .modal-body {
+    background-color: #cacaca
+}
 
 .history-item {
     padding: 16px;  
     padding-top: 3px;
     border: 1px solid #E0E0E0;
     border-radius: 6px;
-    /* background-color: rgb(246, 246, 246); */
 }
 .payment-time {
     border-bottom: 1px solid #E0E0E0;
@@ -1902,6 +1904,10 @@ footer p {
 
 #orderHistory .cart-item {
     font-size: 14px;
+}
+
+#orderHistory .history-item {
+    background-color: #fff;
 }
 .history-payment-item-container {
     overflow: hidden;

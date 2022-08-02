@@ -73,6 +73,9 @@ if (userID) {
     logoutBtn.classList.add("fa-solid", "fa-power-off")
     logoutBtn.id = "logout-btn"
     headerRegisterBtn.parentNode.replaceChild(logoutBtn, headerRegisterBtn)
+    let credentialEl = $("<div></div")
+    credentialEl.addClass("user-credential")
+    console.log(credentialEl);
 }
 
 

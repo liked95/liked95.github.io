@@ -27,7 +27,6 @@ function renderCart() {
     let cart = getObjectFromLocalStorage("techCart")
     if (!cart || !cart[sessionID] || cart[sessionID].length == 0) {
         cartContentEl.innerHTML = `<p>Bạn chưa mua sản phẩm nào. Tiếp tục mua và quay lại đây nhé </p>`
-        // return;
     } else {
         let items = cart[sessionID]
         // render cart detail
