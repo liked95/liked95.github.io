@@ -98,6 +98,18 @@
 /* tablet <= 992 */ 
 @media (max-width: 992px) {
     header .second-header-row {
+        display: none
+    }
+
+    #side-nav-container {
+        display: block;
+    }
+
+    .logo-img {
         display: none;
+    }
+
+    #sidebar-open-btn {
+        display: block;
     }
 }
