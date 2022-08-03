@@ -581,3 +581,18 @@ $("#back-drop").click(() => {
 $("#side-bar-history").click((e) => {
     closeSideBar()
 })
+
+
+function toggleSubMenu(ele, event) {
+
+    if (!ele.classList.contains("active")) {
+        ele.classList.add('active')
+        ele.parentNode.parentNode.querySelector(".sub-menu").classList.add('active')
+    } else {
+        ele.classList.remove('active')
+        ele.parentNode.parentNode.querySelector(".sub-menu").classList.remove('active')
+    }
+    
+}
+
+// $(".arrow-container").each()

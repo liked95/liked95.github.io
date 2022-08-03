@@ -141,6 +141,10 @@ input:focus {
     width: 100%;
 } */
 
+#back-drop {
+    z-index: -1;
+}
+
 #sidebar-open-btn {
     display: none;
     position: absolute;
@@ -167,6 +171,7 @@ header .first-header-row {
 
 .search-input {
     position: relative;
+    width: 700px;
 }
 
 .search-input input {

@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    
+
     <div id="back-drop"></div>
 
     <header>
@@ -25,7 +25,7 @@
             <span id="sidebar-open-btn">
                 <i class="fa-solid fa-bars"></i>
             </span>
-            
+
             <div class="container">
                 <a href="index.html" class="logo-img">
                     <img src="../static/images/header/TECH GALAXY.png" alt="tech-galaxy">
@@ -175,7 +175,7 @@
 
                 </ul>
             </div>
-        </div>       
+        </div>
 
     </header>
 
@@ -187,28 +187,34 @@
 
             <span id="close-btn">
                 <i class="fa-solid fa-xmark"></i>
-            </span>  
+            </span>
         </div>
+
         <ul class="side-menu">
             <li class="menu-item">
-                <a href="smartphone.html">Điện thoại</a>
-                <span class="arrow-container">
-                    <i class="fa-solid fa-chevron-down"></i>
-                </span>
+                <div class="sidebar-main-menu">
+                    <a href="smartphone.html">Điện thoại</a>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
                 <ul class="sub-menu">
                     <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
                     <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
                     <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
                     <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
-                    <li class="sub-menu-item" id="side-bar-history" data-toggle="modal" data-target="#orderHistory">Lịch sử đặt hàng</li>
+                    <li class="sub-menu-item" id="side-bar-history" data-toggle="modal" data-target="#orderHistory">Lịch
+                        sử đặt hàng</li>
                 </ul>
             </li>
 
             <li class="menu-item">
-                <a href="smartphone.html">Máy tính bảng</a>
-                <span class="arrow-container">
-                    <i class="fa-solid fa-chevron-down"></i>
-                </span>
+                <div class="sidebar-main-menu">
+                    <a href="smartphone.html">Máy tính bảng</a>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
                 <ul class="sub-menu">
                     <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
                     <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
@@ -218,22 +224,40 @@
             </li>
 
             <li class="menu-item">
-                <a href="smartphone.html">Laptop</a>
-                <span class="arrow-container">
-                    <i class="fa-solid fa-chevron-down"></i>
-                </span>
+                <div class="sidebar-main-menu">
+                    <a href="smartphone.html">Laptop</a>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
                 <ul class="sub-menu">
                     <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
                     <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Acer</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Asus</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">HP</a></li>
+
                 </ul>
             </li>
-        </ul>
-    </div>     
 
-   
+            <!-- <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <a href="smartphone.html">Điện thoại</a>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
+                <ul class="sub-menu">
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item" id="bar-history" data-toggle="modal" data-target="#orderHistory">Lịch sử
+                        đặt hàng</li>
+                </ul>
+            </li> -->
+
+        </ul>
+    </div>
+
+
 
 
     <!-- <div class="credential-container">
