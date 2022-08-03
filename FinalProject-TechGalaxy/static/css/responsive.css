@@ -101,15 +101,65 @@
         display: none
     }
 
-    #side-nav-container {
-        display: block;
-    }
-
     .logo-img {
         display: none;
     }
 
     #sidebar-open-btn {
         display: block;
+    }
+
+    #side-nav-container {
+        display: block;
+        height: 100vh;
+        width: 280px;
+        padding: 20px 0 20px 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transition: all 500ms;
+        transform: translateX(-100%);
+        z-index: 2000;
+    }
+    
+    #side-nav-container.active {
+        transform: translateX(0);
+    }
+
+    #back-drop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #back-drop.active {
+        opacity: 0.5;
+        z-index: 1500;
+        background-color: #000;
+    }
+    
+    .side-nav-title {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .sidebar-logo {
+        width: 60%;
+    }
+
+    #close-btn {
+        font-size: 30px;
+        transform: translateY(-10px);
+        padding: 0 10px;
+        cursor: pointer;
+    }
+
+    .side-menu {
+        margin-top: 15px;
     }
 }

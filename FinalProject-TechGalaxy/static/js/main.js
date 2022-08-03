@@ -550,4 +550,34 @@ $(".search-input i").click((e) => {
 
 
 
+// sidebar responsive
 
+// click vào btn để mở sidebar
+
+function closeSideBar() {
+    $("#side-nav-container").removeClass("active")
+    $("#back-drop").removeClass("active")
+    $("body").css("overflow", "auto")
+}
+
+// click vào hamburger
+$("#sidebar-open-btn").click((e) => {
+    $("#side-nav-container").addClass("active")
+    $("#back-drop").addClass("active")
+    $("body").css("overflow", "hidden")
+})
+
+// 2 cách đóng sidebar
+$("#close-btn").click(() => {
+    closeSideBar()
+})
+
+$("#back-drop").click(() => {
+    closeSideBar()
+})
+
+
+// đóng side bar khi click vào modal btn
+$("#side-bar-history").click((e) => {
+    closeSideBar()
+})
