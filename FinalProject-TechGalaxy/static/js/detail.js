@@ -1,19 +1,29 @@
 
 
-// Initialise Carousel 
+// Initialise Carousel Và target dót
 $(document).ready(function () {
     $("#mainCarousel").owlCarousel({
         items: 1,
         nav: true,
+        loop: true,
         dotsContainer: "#thumbCarousel",
     })
 })
+
 
 
 $(document).ready(function () {
     $("#related-product-carousel").owlCarousel({
         items: 5,
         nav: true,
+        responsive: {
+            992: {
+                items: 4
+            },
+            1200: {
+                items: 5
+            }
+        }
     })
 })
 
@@ -21,6 +31,14 @@ $(document).ready(function () {
     $("#watched-product-carousel").owlCarousel({
         items: 5,
         nav: true,
+        responsive: {
+            992: {
+                items: 4
+            },
+            1200: {
+                items: 5
+            }
+        }
     })
 })
 
@@ -432,7 +450,7 @@ minusCount.addEventListener("click", () => {
 
 
 // add to Cart btn
-const addToCartBtn  = document.querySelector(".add-to-cart")
+const addToCartBtn = document.querySelector(".add-to-cart")
 addToCartBtn.addEventListener("click", () => {
     const alterOption = document.querySelector(".option-container .active")
     if (!alterOption) {
@@ -455,7 +473,7 @@ addToCartBtn.addEventListener("click", () => {
         color: colorOption.innerHTML,
         price: product.currentPrices[optionIdx],
         oldPrice: product.oldPrices[optionIdx],
-        count: count, 
+        count: count,
         image: product.dotCarouselImages[colorIdx],
         checked: true,
     }

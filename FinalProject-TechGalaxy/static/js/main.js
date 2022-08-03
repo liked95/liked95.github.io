@@ -110,7 +110,13 @@ if (logoutBtn) {
 function renderCardItem(containerEl, arr) {
     containerEl.innerHTML = ""
     if (arr.length == 0) {
-        containerEl.innerHTML = `<h2 class="empty-noti" style="font-size:16px">Không có sản phẩm tương ứng</h2>`
+        containerEl.innerHTML = `
+            <p class="search-not-found">Không có sản phẩm tương ứng!</p>
+            <span class="emoji">
+                <img src="../static/images/contingency-images/anya-smug.png" alt="anya-smug">
+            </span>
+        `
+
         return
     }
 
