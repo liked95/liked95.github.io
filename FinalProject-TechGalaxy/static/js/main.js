@@ -583,16 +583,21 @@ $("#side-bar-history").click((e) => {
 })
 
 
-function toggleSubMenu(ele, event) {
+// Click vào arrow để drop down menu
+$(".arrow-container").each(function(idx, ele) {
+    $(ele).click(() => {
+        $(this).parent().next().toggle(300)
+        $(this).children().toggleClass("active")
+    })
+})
 
-    if (!ele.classList.contains("active")) {
-        ele.classList.add('active')
-        ele.parentNode.parentNode.querySelector(".sub-menu").classList.add('active')
-    } else {
-        ele.classList.remove('active')
-        ele.parentNode.parentNode.querySelector(".sub-menu").classList.remove('active')
-    }
-    
-}
 
-// $(".arrow-container").each()
+
+
+
+
+// function toggleSubMenu() {
+//     let me = $(this)
+//     console.log(me)
+// }
+

@@ -180,16 +180,15 @@
         transition: all 300ms;
     }
 
-    .arrow-container.active i {
+    .arrow-container i.active  {
         transform: rotate(90deg);
     }
 
     .sub-menu {
         display: none;
-        transition: all 300ms;
     }
 
     .sub-menu.active {
-        display: block;
+        
     }
 }
