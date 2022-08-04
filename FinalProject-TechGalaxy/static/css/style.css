@@ -798,6 +798,9 @@ footer p {
 }
 
 /* trang category */
+#filter-btn__res {
+    display: none;
+}
 .smartphone-container {
     margin-bottom: 60px;
 }
@@ -820,6 +823,9 @@ footer p {
 }
 
 /* filter trang category */
+.filter-expand-btn {
+    display: none;
+}
 .filter-container {
     padding: 10px;
     padding-top: 0;
@@ -828,7 +834,7 @@ footer p {
 .filter-container h4 {
     margin-top: 10px;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 25px;
     text-transform: uppercase;
     text-align: center;

@@ -131,4 +131,48 @@ selectSortBtn.addEventListener("change", (e) => {
 })
 
 
+// toggle filter btn responsive
+$("#filter-btn__res").click((e) => {
+    $(".filter-container").toggleClass("active")
+})
+
+
+
+//toggle filter field
+$(".filter-expand-btn").click((e) => {
+    const duration = 400
+    if (!$(".filter-expand-btn").hasClass("active")) {
+
+        $(".filter-expand-btn").addClass("active")
+
+        $(".tag-container").show(duration)
+        $(".tag-container").css("display", "flex")
+
+        $(".filter-category-container").show(duration)
+        $(".filter-category-container").css("display", "flex")
+    } else {
+        $(".filter-expand-btn").removeClass("active")
+        $(".tag-container").hide(duration)
+        $(".filter-category-container").hide(duration)
+    }
+})
+
+// tinh chỉnh css của filter khi resize
+$(window).resize(e => {
+    // console.log($(window).outerWidth())
+    if ($(window).outerWidth() >= 992) {
+        $(".tag-container").css("display", "block")
+        $(".filter-category-container").css("display", "block")
+    }
+
+    if ($(window).outerWidth() < 992) {
+        if ($(".filter-expand-btn").hasClass("active")) {
+            $(".tag-container").css("display", "flex")
+            $(".filter-category-container").css("display", "flex")
+        } else {
+            $(".tag-container").css("display", "none")
+            $(".filter-category-container").css("display", "none")
+        }
+    }
+})
 

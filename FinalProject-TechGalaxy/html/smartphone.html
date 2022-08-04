@@ -17,31 +17,39 @@
 </head>
 
 <body>
+    <div id="back-drop"></div>
+
     <header>
         <div class="first-header-row">
+            <span id="sidebar-open-btn">
+                <i class="fa-solid fa-bars"></i>
+            </span>
+
             <div class="container">
                 <a href="index.html" class="logo-img">
                     <img src="../static/images/header/TECH GALAXY.png" alt="tech-galaxy">
                 </a>
-    
+
+
                 <div class="search-input">
                     <input type="text" placeholder="Nhập tên sản phẩm cần tìm">
                     <i class="fa-solid fa-magnifying-glass"></i>
+                    <div id="search-result"></div>
                 </div>
-    
+
                 <div class="login-logout">
                     <a class="login-btn" href="login.html">Đăng nhập</a>
                     <p>|</p>
                     <a class="register-btn" href="register.html">Đăng kí</a>
                 </div>
-    
+
                 <a class="cart-icon" href="shopping-cart.html">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span class="cart-length"></span>
                 </a>
             </div>
         </div>
-    
+
         <div class="second-header-row">
             <div class="container">
                 <ul class="main-menu">
@@ -71,8 +79,8 @@
                             </ul>
                         </a>
                     </li>
-    
-    
+
+
                     <li class="menu-icon">
                         <a href="/tablet">
                             <div class="icon-box">
@@ -99,7 +107,7 @@
                             </ul>
                         </a>
                     </li>
-    
+
                     <li class="menu-icon">
                         <a href="/laptop">
                             <div class="icon-box">
@@ -126,7 +134,7 @@
                             </ul>
                         </a>
                     </li>
-    
+
                     <li class="menu-icon">
                         <div class="icon-box">
                             <i class="fa-solid fa-tv"></i>
@@ -134,7 +142,7 @@
                         </div>
                         <p>smart tv</p>
                     </li>
-    
+
                     <li class="menu-icon">
                         <div class="icon-box">
                             <i class="fa-solid fa-headphones-simple"></i>
@@ -142,34 +150,133 @@
                         </div>
                         <p>âm thanh</p>
                     </li>
-    
+
                     <li class="menu-icon">
                         <div class="icon-box">
                             <i class="fa-solid fa-screwdriver-wrench"></i>
                         </div>
                         <p>sửa chữa</p>
                     </li>
-    
+
                     <li class="menu-icon">
                         <div class="icon-box">
                             <i class="fa-solid fa-newspaper"></i>
                         </div>
                         <p>tin tức</p>
                     </li>
-    
+
                     <li class="menu-icon">
                         <div class="icon-box">
                             <i class="fa-solid fa-exclamation"></i>
                         </div>
                         <p>về chúng tôi</p>
                     </li>
-    
+
                 </ul>
             </div>
         </div>
-    
+
     </header>
 
+    <div id="side-nav-container">
+        <div class="side-nav-title">
+            <a href="index.html" class="sidebar-logo">
+                <img src="../static/images/header/TECH GALAXY.png" alt="tech-galaxy">
+            </a>
+
+            <span id="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+        </div>
+
+        <ul class="side-menu">
+
+            <!-- <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <div class="credential-sidebar d-flex">
+                        <span class="sidebar-avatar">
+                            <img src="../static/images/contingency-images/default-avatar.png" alt="default-avatar">
+                        </span>
+
+                        <span>
+                            <b>son</b>
+                        </span>
+                    </div>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
+
+                <ul class="sub-menu">
+                    <li class="sub-menu-item" id="side-bar-history" data-toggle="modal" data-target="#orderHistory">Lịch
+                        sử đặt hàng</li>
+                    <li class="sub-menu-item logout-btn">Đăng xuất</li>
+                </ul>
+            </li> -->
+
+            <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <a href="smartphone.html">Điện thoại</a>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
+                <ul class="sub-menu">
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                </ul>
+            </li>
+
+
+            <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <a href="smartphone.html">Máy tính bảng</a>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
+                <ul class="sub-menu">
+                    <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Huawei</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Acer</a></li>
+                </ul>
+            </li>
+
+            <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <a href="smartphone.html">Laptop</a>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
+                <ul class="sub-menu">
+                    <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
+
+                </ul>
+            </li>
+
+            <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <a href="smartphone.html">Về chúng tôi</a>
+                </div>
+            </li>
+
+            <li class="menu-item fst-italic" id="sidebar-login-logout">
+                <div class="sidebar-main-menu d-flex flex-column">
+                    <a href="login.html">Đăng nhập</a>
+                    <a href="register.html">Đăng ký</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="filter-btn__res">
+        <i class="fa-solid fa-filter"></i>
+    </div>
     <!-- Modal lịch sử mua hàng -->
     <div class="modal fade" id="orderHistory" tabindex="-1" role="dialog" aria-labelledby="orderHistoryTitle"
         aria-hidden="true">
@@ -296,7 +403,10 @@
 
             <div class="row main-page-container">
                 <div class="filter-container">
-                    <h4>bộ lọc tìm kiếm</h4>
+                    <h4>
+                        bộ lọc tìm kiếm
+                        <span class="filter-expand-btn"><i class="fa-solid fa-chevron-down "></i></span>
+                    </h4>
                     <div class="tag-container">
                         <div class="tags">
 
@@ -314,126 +424,128 @@
                         </div>
                     </div>
 
-                    <div class="filter-category">
-                        <h4 class="filter-title">
-                            thương hiệu
-                        </h4>
-
-                        <form class="filter-option-container" id="brand">
-                            <div class="filter-option">
-                                <input type="checkbox" name="apple" id="apple" value="Apple">
-                                <label for="apple">Apple</label>
-                            </div>
-
-                            <div class="filter-option">
-                                <input type="checkbox" name="samsung" id="samsung" value="Samsung">
-                                <label for="samsung">Samsung</label>
-                            </div>
-
-                            <div class="filter-option">
-                                <input type="checkbox" name="oppo" id="oppo" value="Oppo">
-                                <label for="oppo">Oppo</label>
-                            </div>
-
-                            <div class="filter-option">
-                                <input type="checkbox" name="xiaomi" id="xiaomi" value="Xiaomi">
-                                <label for="xiaomi">Xiaomi</label>
-                            </div>
-                        </form>
-                    </div>
-
-
-
-                    <div class="filter-category">
-                        <h4 class="filter-title">
-                            giá
-                        </h4>
-
-                        <form class="filter-option-container" id="price">
-                            <div class="filter-option">
-                                <input type="checkbox" name="below-seven" id="0:7" value="&lt7tr">
-                                <label for="0:7">Dưới 7 triệu</label>
-                            </div>
-
-                            <div class="filter-option">
-                                <input type="checkbox" name="seven-to-ten" id="7:10" value="7-10tr">
-                                <label for="7:10">7-10 triệu</label>
-                            </div>
-
-                            <div class="filter-option">
-                                <input type="checkbox" name="ten-to-twenty" id="10:20" value="10-20tr">
-                                <label for="10:20">10-20 triệu</label>
-                            </div>
-
-                            <div class="filter-option">
-                                <input type="checkbox" name="over-twenty" id="20:1000" value="&gt20tr">
-                                <label for="20:1000">Trên 20 triệu</label>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="filter-category">
-                        <h4 class="filter-title">
-                            ram
-                        </h4>
-
-                        <form class="filter-option-container" id="ram">
-                            <div class="filter-option">
-                                <input type="checkbox" name="ram4" id="ram4" value="RAM:4GB">
-                                <label for="ram4">4GB</label>
-                            </div>
-
-                            <div class="filter-option">
-                                <input type="checkbox" name="ram6" id="ram6" value="RAM:6GB">
-                                <label for="ram6">6GB</label>
-                            </div>
-
-                            <div class="filter-option">
-                                <input type="checkbox" name="ram8" id="ram8" value="RAM:8GB">
-                                <label for="ram8">8GB</label>
-                            </div>
-
-                            <div class="filter-option">
-                                <input type="checkbox" name="ram12" id="ram12" value="RAM:12GB">
-                                <label for="ram12">12GB</label>
-                            </div>
-                        </form>
-                    </div>
-
-
-                    <div class="filter-category">
-                        <h4 class="filter-title">
-                            rom
-                        </h4>
-
-                        <form class="filter-option-container" id="rom">
-                            <div class="filter-option">
-                                <input type="checkbox" name="rom32" id="rom32" value="ROM:32GB">
-                                <label for="rom32">32GB</label>
-                            </div>
-
-                            <div class="filter-option">
-                                <input type="checkbox" name="rom64" id="rom64" value="ROM:64GB">
-                                <label for="rom64">64GB</label>
-                            </div>
-
-                            <div class="filter-option">
-                                <input type="checkbox" name="rom128" id="rom128" value="ROM:128GB">
-                                <label for="rom128">128GB</label>
-                            </div>
-
-                            <div class="filter-option">
-                                <input type="checkbox" name="rom256" id="rom256" value="ROM:256GB">
-                                <label for="rom256">256GB</label>
-                            </div>
-
-                            <div class="filter-option">
-                                <input type="checkbox" name="rom512" id="rom512" value="ROM:512GB">
-                                <label for="rom512">512GB</label>
-                            </div>
-
-
-                        </form>
+                    <div class="filter-category-container">
+                        <div class="filter-category">
+                            <h4 class="filter-title">
+                                thương hiệu
+                            </h4>
+    
+                            <form class="filter-option-container" id="brand">
+                                <div class="filter-option">
+                                    <input type="checkbox" name="apple" id="apple" value="Apple">
+                                    <label for="apple">Apple</label>
+                                </div>
+    
+                                <div class="filter-option">
+                                    <input type="checkbox" name="samsung" id="samsung" value="Samsung">
+                                    <label for="samsung">Samsung</label>
+                                </div>
+    
+                                <div class="filter-option">
+                                    <input type="checkbox" name="oppo" id="oppo" value="Oppo">
+                                    <label for="oppo">Oppo</label>
+                                </div>
+    
+                                <div class="filter-option">
+                                    <input type="checkbox" name="xiaomi" id="xiaomi" value="Xiaomi">
+                                    <label for="xiaomi">Xiaomi</label>
+                                </div>
+                            </form>
+                        </div>
+    
+    
+    
+                        <div class="filter-category">
+                            <h4 class="filter-title">
+                                giá
+                            </h4>
+    
+                            <form class="filter-option-container" id="price">
+                                <div class="filter-option">
+                                    <input type="checkbox" name="below-seven" id="0:7" value="&lt7tr">
+                                    <label for="0:7">Dưới 7 triệu</label>
+                                </div>
+    
+                                <div class="filter-option">
+                                    <input type="checkbox" name="seven-to-ten" id="7:10" value="7-10tr">
+                                    <label for="7:10">7-10 triệu</label>
+                                </div>
+    
+                                <div class="filter-option">
+                                    <input type="checkbox" name="ten-to-twenty" id="10:20" value="10-20tr">
+                                    <label for="10:20">10-20 triệu</label>
+                                </div>
+    
+                                <div class="filter-option">
+                                    <input type="checkbox" name="over-twenty" id="20:1000" value="&gt20tr">
+                                    <label for="20:1000">Trên 20 triệu</label>
+                                </div>
+                            </form>
+                        </div>
+    
+                        <div class="filter-category">
+                            <h4 class="filter-title">
+                                ram
+                            </h4>
+    
+                            <form class="filter-option-container" id="ram">
+                                <div class="filter-option">
+                                    <input type="checkbox" name="ram4" id="ram4" value="RAM:4GB">
+                                    <label for="ram4">4GB</label>
+                                </div>
+    
+                                <div class="filter-option">
+                                    <input type="checkbox" name="ram6" id="ram6" value="RAM:6GB">
+                                    <label for="ram6">6GB</label>
+                                </div>
+    
+                                <div class="filter-option">
+                                    <input type="checkbox" name="ram8" id="ram8" value="RAM:8GB">
+                                    <label for="ram8">8GB</label>
+                                </div>
+    
+                                <div class="filter-option">
+                                    <input type="checkbox" name="ram12" id="ram12" value="RAM:12GB">
+                                    <label for="ram12">12GB</label>
+                                </div>
+                            </form>
+                        </div>
+    
+    
+                        <div class="filter-category">
+                            <h4 class="filter-title">
+                                rom
+                            </h4>
+    
+                            <form class="filter-option-container" id="rom">
+                                <div class="filter-option">
+                                    <input type="checkbox" name="rom32" id="rom32" value="ROM:32GB">
+                                    <label for="rom32">32GB</label>
+                                </div>
+    
+                                <div class="filter-option">
+                                    <input type="checkbox" name="rom64" id="rom64" value="ROM:64GB">
+                                    <label for="rom64">64GB</label>
+                                </div>
+    
+                                <div class="filter-option">
+                                    <input type="checkbox" name="rom128" id="rom128" value="ROM:128GB">
+                                    <label for="rom128">128GB</label>
+                                </div>
+    
+                                <div class="filter-option">
+                                    <input type="checkbox" name="rom256" id="rom256" value="ROM:256GB">
+                                    <label for="rom256">256GB</label>
+                                </div>
+    
+                                <div class="filter-option">
+                                    <input type="checkbox" name="rom512" id="rom512" value="ROM:512GB">
+                                    <label for="rom512">512GB</label>
+                                </div>
+    
+    
+                            </form>
+                        </div>
                     </div>
                 </div>
 
