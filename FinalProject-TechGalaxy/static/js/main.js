@@ -584,14 +584,10 @@ $("#side-bar-history").click((e) => {
 
 
 // Click vào arrow để drop down menu
-$(".arrow-container").each(function(idx, ele) {
-    $(ele).click(() => {
-        $(this).parent().next().toggle(300)
-        $(this).children().toggleClass("active")
-    })
-})
-
-
+function toggleSubMenu(ele) {
+    $(ele).parent().next().toggle(300)
+    $(ele).children().toggleClass("active")
+}
 
 
 
