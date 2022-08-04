@@ -105,6 +105,10 @@
         display: none;
     }
 
+    .search-input {
+        margin-left: 40px;
+    }
+
     #sidebar-open-btn {
         display: block;
     }
@@ -188,6 +192,27 @@
     }
 
     .sub-menu {
+        display: none;
+    }
+    
+    .credential-sidebar {
+        height: 100%
+    }
+
+    .sidebar-avatar {
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        overflow: hidden;
+    }
+
+    #sidebar-login-logout {
+        /* display: none; */
+    }
+
+    /* ẩn trên tablet */
+    .login-logout, .credential-container {
         display: none;
     }
 

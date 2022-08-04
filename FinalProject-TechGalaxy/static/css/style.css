@@ -787,7 +787,7 @@ footer p {
 
 /* logout button */
 
-#logout-btn {
+.logout-btn {
     color: rgb(216, 18, 18);
     border-top: 1px solid #e0e0e0;
 }

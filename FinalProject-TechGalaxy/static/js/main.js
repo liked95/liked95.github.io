@@ -74,10 +74,42 @@ if (userID) {
             <li>Xin chào <b>${userID.username}</b></li>
             <li data-toggle="modal" data-target="#orderHistory">Lịch sử đặt hàng</li>
             <li><a class="dropdown-menu-item" href="#">Another action</a></li>
-            <li id="logout-btn">Đăng xuất</li>
+            <li class="logout-btn">Đăng xuất</li>
         </ul>
     `)
     $(".login-logout").replaceWith(credentialEl)
+    
+    // responsive
+    let responsiveCredEl = $("<li></li>")
+    responsiveCredEl.addClass("menu-item")
+    responsiveCredEl.html(`
+        <div class="sidebar-main-menu">
+            <div class="credential-sidebar d-flex">
+                <span class="sidebar-avatar">
+                    <img src="../static/images/contingency-images/default-avatar.png" alt="default-avatar">
+                </span>
+
+                <span>
+                    <b>${userID.username}</b>
+                </span>
+            </div>
+
+            <span class="arrow-container" onclick="toggleSubMenu(this)">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+        </div>
+
+        <ul class="sub-menu">
+            <li class="sub-menu-item" id="side-bar-history" data-toggle="modal" data-target="#orderHistory">Lịch
+                sử đặt hàng</li>
+            <li class="sub-menu-item logout-btn">Đăng xuất</li>
+        </ul>
+    `)
+    // append to the beginning of side bar
+    $(".side-menu").prepend(responsiveCredEl)
+    $("#sidebar-login-logout").hide()
+} else {
+    $("#sidebar-login-logout").show()
 }
 
 
@@ -98,11 +130,14 @@ if (!isCheckAll) {
 saveToLocalStorage("isCheckAll", isCheckAll)
 
 
-let logoutBtn = document.getElementById("logout-btn")
-if (logoutBtn) {
-    logoutBtn.addEventListener("click", () => {
-        saveToLocalStorage("userID", null)
-        window.location.href = "index.html"
+let logoutBtns = document.querySelectorAll(".logout-btn")
+if (logoutBtns) {
+    Array.from(logoutBtns).forEach(btn => {
+        btn.addEventListener("click", () => {
+            console.log(btn);
+            saveToLocalStorage("userID", null)
+            window.location.href = "index.html"
+        })
     })
 }
 
@@ -588,12 +623,4 @@ function toggleSubMenu(ele) {
     $(ele).parent().next().toggle(300)
     $(ele).children().toggleClass("active")
 }
-
-
-
-
-// function toggleSubMenu() {
-//     let me = $(this)
-//     console.log(me)
-// }
 
