@@ -17,6 +17,12 @@ $(document).ready(function () {
         items: 5,
         nav: true,
         responsive: {
+            576: {
+                items: 3
+            },
+            768: {
+                items: 3
+            },
             992: {
                 items: 4
             },
@@ -32,6 +38,12 @@ $(document).ready(function () {
         items: 5,
         nav: true,
         responsive: {
+            576: {
+                items: 3
+            },
+            768: {
+                items: 3
+            },
             992: {
                 items: 4
             },

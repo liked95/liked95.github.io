@@ -191,7 +191,7 @@ function renderCardItem(containerEl, arr) {
                     <p class="product-name">${p.name}</p>
                     <p class="product-id" style = "display:none">${p.id}</p>
 
-                    <div class="alter-options">
+                    <div class="alter-options no-scrollbar">
                         ${optionEl}
                     </div>
 

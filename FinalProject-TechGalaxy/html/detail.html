@@ -13,44 +13,46 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" /> -->
     <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
-    
+
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/responsive.css">
     <title>Trang chi tiết</title>
 </head>
 
 <body>
+    <div id="back-drop"></div>
+
     <header>
         <div class="first-header-row">
             <span id="sidebar-open-btn">
                 <i class="fa-solid fa-bars"></i>
             </span>
-    
+
             <div class="container">
                 <a href="index.html" class="logo-img">
                     <img src="../static/images/header/TECH GALAXY.png" alt="tech-galaxy">
                 </a>
-    
-    
+
+
                 <div class="search-input">
                     <input type="text" placeholder="Nhập tên sản phẩm cần tìm">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <div id="search-result"></div>
                 </div>
-    
+
                 <div class="login-logout">
                     <a class="login-btn" href="login.html">Đăng nhập</a>
                     <p>|</p>
                     <a class="register-btn" href="register.html">Đăng kí</a>
                 </div>
-    
+
                 <a class="cart-icon" href="shopping-cart.html">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span class="cart-length"></span>
                 </a>
             </div>
         </div>
-    
+
         <div class="second-header-row">
             <div class="container">
                 <ul class="main-menu">
@@ -80,8 +82,8 @@
                             </ul>
                         </a>
                     </li>
-    
-    
+
+
                     <li class="menu-icon">
                         <a href="/tablet">
                             <div class="icon-box">
@@ -108,7 +110,7 @@
                             </ul>
                         </a>
                     </li>
-    
+
                     <li class="menu-icon">
                         <a href="/laptop">
                             <div class="icon-box">
@@ -135,7 +137,7 @@
                             </ul>
                         </a>
                     </li>
-    
+
                     <li class="menu-icon">
                         <div class="icon-box">
                             <i class="fa-solid fa-tv"></i>
@@ -143,7 +145,7 @@
                         </div>
                         <p>smart tv</p>
                     </li>
-    
+
                     <li class="menu-icon">
                         <div class="icon-box">
                             <i class="fa-solid fa-headphones-simple"></i>
@@ -151,33 +153,129 @@
                         </div>
                         <p>âm thanh</p>
                     </li>
-    
+
                     <li class="menu-icon">
                         <div class="icon-box">
                             <i class="fa-solid fa-screwdriver-wrench"></i>
                         </div>
                         <p>sửa chữa</p>
                     </li>
-    
+
                     <li class="menu-icon">
                         <div class="icon-box">
                             <i class="fa-solid fa-newspaper"></i>
                         </div>
                         <p>tin tức</p>
                     </li>
-    
+
                     <li class="menu-icon">
                         <div class="icon-box">
                             <i class="fa-solid fa-exclamation"></i>
                         </div>
                         <p>về chúng tôi</p>
                     </li>
-    
+
                 </ul>
             </div>
         </div>
-    
+
     </header>
+
+    <div id="side-nav-container">
+        <div class="side-nav-title">
+            <a href="index.html" class="sidebar-logo">
+                <img src="../static/images/header/TECH GALAXY.png" alt="tech-galaxy">
+            </a>
+
+            <span id="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+        </div>
+
+        <ul class="side-menu">
+
+            <!-- <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <div class="credential-sidebar d-flex">
+                        <span class="sidebar-avatar">
+                            <img src="../static/images/contingency-images/default-avatar.png" alt="default-avatar">
+                        </span>
+
+                        <span>
+                            <b>son</b>
+                        </span>
+                    </div>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
+
+                <ul class="sub-menu">
+                    <li class="sub-menu-item" id="side-bar-history" data-toggle="modal" data-target="#orderHistory">Lịch
+                        sử đặt hàng</li>
+                    <li class="sub-menu-item logout-btn">Đăng xuất</li>
+                </ul>
+            </li> -->
+
+            <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <a href="smartphone.html">Điện thoại</a>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
+                <ul class="sub-menu">
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                </ul>
+            </li>
+
+
+            <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <a href="smartphone.html">Máy tính bảng</a>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
+                <ul class="sub-menu">
+                    <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Huawei</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Acer</a></li>
+                </ul>
+            </li>
+
+            <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <a href="smartphone.html">Laptop</a>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
+                <ul class="sub-menu">
+                    <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
+
+                </ul>
+            </li>
+
+            <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <a href="smartphone.html">Về chúng tôi</a>
+                </div>
+            </li>
+
+            <li class="menu-item fst-italic" id="sidebar-login-logout">
+                <div class="sidebar-main-menu d-flex flex-column">
+                    <a href="login.html">Đăng nhập</a>
+                    <a href="register.html">Đăng ký</a>
+                </div>
+            </li>
+        </ul>
+    </div>
     <!-- Modal lịch sử mua hàng -->
     <div class="modal fade" id="orderHistory" tabindex="-1" role="dialog" aria-labelledby="orderHistoryTitle"
         aria-hidden="true">
@@ -332,7 +430,7 @@
                                 <img src="../static/images/main-carousel-images/iphone-13-pro-xam-1.jpg" />
                             </div> -->
                         </div>
-    
+
                         <div id="thumbCarousel" class="carousel max-w-xl mx-auto">
                             <!-- <div class="owl-dot owl-dot-img">
                                 <div class="thumbnail-image"><img
@@ -347,31 +445,32 @@
                             </div> -->
                         </div>
                     </div>
-    
+
                     <div class="warranty">
                         <div class="warranty-claim">
                             <span class="warranty-icon"><i class="fa-solid fa-money-bill"></i></span>
-                            <span class="warranty-description">Hư gì đổi nấy 12 tháng tại 999 siêu thị toàn quốc (miễn phí
+                            <span class="warranty-description">Hư gì đổi nấy 12 tháng tại 999 siêu thị toàn quốc (miễn
+                                phí
                                 tháng đầu)</span>
                         </div>
-    
+
                         <div class="warranty-claim">
                             <span class="warranty-icon"><i class="fa-solid fa-calendar-check"></i></span>
                             <span class="warranty-description">Bảo hành chính hãng 1 năm tại các trung tâm bảo hành hãng
                             </span>
                         </div>
-    
+
                         <div class="warranty-claim">
                             <span class="warranty-icon"><i class="fa-solid fa-box"></i></span>
                             <span class="warranty-description">Sản phẩm nguyên seal, đầy đủ phụ kiện</span>
                         </div>
                     </div>
-    
+
                     <div class="product-detail-image">
                         <!-- <img src="../static/images/product-detail-img/iphone-13-pro-n-2.jpg" alt="13 pro detail"> -->
                     </div>
                 </div>
-    
+
                 <div class="right-side col-lg-5">
                     <div class="option-container">
                         <!-- <button>128GB</button>
@@ -386,7 +485,7 @@
                         <button>Xám</button>
                         <button>Bạc</button> -->
                     </div>
-    
+
                     <div class="price-container">
                         <div class="price-caller">Giá giảm cực sốc</div>
                         <div class="price-main">
@@ -395,12 +494,12 @@
                                 <span class="old-price"></span>
                                 <span class="discount">(-20%)</span>
                             </div>
-    
+
                             <p>Kết thúc 31/8 (Số lượng có hạn)</p>
                         </div>
-    
+
                     </div>
-    
+
                     <div class="payment-box">
                         <h4>Ưu đãi thanh toán</h4>
                         <div class="payment-promotion">
@@ -413,7 +512,7 @@
                                 </p>
                                 <p class="discount-item">Đối với iPhone</p>
                             </div>
-    
+
                             <div class="payment-company">
                                 <div class="payment-logo">
                                     <img src="../static/images/payment-supplier/tpbank.png" alt="">
@@ -423,7 +522,7 @@
                                 </p>
                                 <p class="discount-item">Sản phẩm từ 8tr</p>
                             </div>
-    
+
                             <div class="payment-company">
                                 <div class="payment-logo">
                                     <img src="../static/images/payment-supplier/eximbank.png" alt="">
@@ -435,33 +534,33 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="quantity-and-cart">
                         <div class="change-quantity">
                             <div class="value-button" id="decrease" value="Decrease Value">-</div>
                             <input type="number" id="number" />
                             <div class="value-button" id="increase" value="Increase Value">+</div>
                         </div>
-    
+
                         <button class="add-to-cart">thêm vào giỏ hàng</button>
                     </div>
-    
+
                     <div class="item-spec">
                         <div class="title">
                             Cấu hình <span class="brand">điện thoại</span> <span class="product">iPhone 13 Pro</span>
                         </div>
-    
+
                         <table class="spec-table">
                             <tbody>
                                 <!-- <tr>
                                     <td class="spec-key"><span>Màn hình</span>:</td>
                                     <td class="spec-attribute">OLED, 6.1", Super Retina XDR</td>
                                 </tr> -->
-    
+
                             </tbody>
                         </table>
                     </div>
-    
+
                     <div class="promotion-info">
                         <div class="promotion-title">
                             <h4>Khuyến mãi</h4>
@@ -486,94 +585,98 @@
 
     <div class="review">
         <div class="container">
-            <div class="review-left">
-                <div class="review-title">
-                    Đánh giá <span class="brand">điện thoại</span> <span class="product">iPhone 13 Pro</span>
-                </div>
-
-                <div class="rating-box">
-                    <span class="rating-count"><span>79</span> đánh giá</span>
-                    <span class="rating-avg">
-                        <span>4.9</span>
-                        <i class="fa-solid fa-star"></i></span>
-                </div>
-
-                <div class="rating-detail">
-
-                    <!-- <div class="component">
-                        <p class="rating-label">5 <span><i class="fa-solid fa-star"></i></span></p>
-                        <div class="rating-bar">
-                            <div class="rating-bar-percent"></div>
-                        </div>
-                        <p class="rating-percent">53%</p>
-                    </div> -->
-
-
-                </div>
-            </div>
-
-            <div class="review-right">
-                <div class="user-review-container">
-                    <div class="user-review">
-                        <div class="review-identity">
-                            <div class="reviewer-name">Vu Van Phong</div>
-                            <div class="user-rating"><i class="fa-solid fa-star"></i></div>
-                            <div class="review-time">
-                                <div class="date">24-7-2022</div>
-                                <div class="time">5:52PM</div>
-                            </div>
-                        </div>
-
-                        <p class="review-content">
-                            Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí
-                        </p>
+            <div class="review-box d-flex">
+                <div class="review-left">
+                    <div class="review-title">
+                        Đánh giá <span class="brand">điện thoại</span> <span class="product">iPhone 13 Pro</span>
                     </div>
 
-                    <div class="user-review">
-                        <div class="review-identity">
-                            <div class="reviewer-name">Nguyen Tran Nhu Thao</div>
-                            <div class="user-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="review-time">
-                                <div class="date">24-7-2022</div>
-                                <div class="time">5:52PM</div>
-                            </div>
-                        </div>
-
-                        <p class="review-content">
-                            Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí.
-                        </p>
+                    <div class="rating-box">
+                        <span class="rating-count"><span>79</span> đánh giá</span>
+                        <span class="rating-avg">
+                            <span>4.9</span>
+                            <i class="fa-solid fa-star"></i></span>
                     </div>
 
-                    <div class="user-review">
-                        <div class="review-identity">
-                            <div class="reviewer-name">Vu Van Phong</div>
-                            <div class="user-rating"><i class="fa-solid fa-star"></i></div>
-                            <div class="review-time">
-                                <div class="date">24-7-2022</div>
-                                <div class="time">5:52PM</div>
-                            </div>
-                        </div>
+                    <div class="rating-detail">
 
-                        <p class="review-content">
-                            Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng,
-                            giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí
-                            Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí
-                            Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí
-                        </p>
+                        <!-- <div class="component">
+                            <p class="rating-label">5 <span><i class="fa-solid fa-star"></i></span></p>
+                            <div class="rating-bar">
+                                <div class="rating-bar-percent"></div>
+                            </div>
+                            <p class="rating-percent">53%</p>
+                        </div> -->
+
+
                     </div>
                 </div>
 
-                <div class="review-actions">
-                    <button id="add-review" data-toggle="modal" data-target="#writeReviewModal">Viết đánh giá</button>
-                    <button id="see-all-reviews" data-toggle="modal" data-target="#all-review-modal">
-                        Xem tất cả đánh giá
-                        <i class="fa-solid fa-caret-right"></i>
-                    </button>
+                <div class="review-right">
+                    <div class="user-review-container">
+                        <div class="user-review">
+                            <div class="review-identity">
+                                <div class="reviewer-name">Vu Van Phong</div>
+                                <div class="user-rating"><i class="fa-solid fa-star"></i></div>
+                                <div class="review-time">
+                                    <div class="date">24-7-2022</div>
+                                    <div class="time">5:52PM</div>
+                                </div>
+                            </div>
+
+                            <p class="review-content">
+                                Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí
+                            </p>
+                        </div>
+
+                        <div class="user-review">
+                            <div class="review-identity">
+                                <div class="reviewer-name">Nguyen Tran Nhu Thao</div>
+                                <div class="user-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="review-time">
+                                    <div class="date">24-7-2022</div>
+                                    <div class="time">5:52PM</div>
+                                </div>
+                            </div>
+
+                            <p class="review-content">
+                                Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí.
+                            </p>
+                        </div>
+
+                        <div class="user-review">
+                            <div class="review-identity">
+                                <div class="reviewer-name">Vu Van Phong</div>
+                                <div class="user-rating"><i class="fa-solid fa-star"></i></div>
+                                <div class="review-time">
+                                    <div class="date">24-7-2022</div>
+                                    <div class="time">5:52PM</div>
+                                </div>
+                            </div>
+
+                            <p class="review-content">
+                                Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất
+                                lượng,
+                                giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí
+                                Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí
+                                Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="review-actions">
+                        <button id="add-review" data-toggle="modal" data-target="#writeReviewModal">Viết đánh
+                            giá</button>
+                        <button id="see-all-reviews" data-toggle="modal" data-target="#all-review-modal">
+                            Xem tất cả đánh giá
+                            <i class="fa-solid fa-caret-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

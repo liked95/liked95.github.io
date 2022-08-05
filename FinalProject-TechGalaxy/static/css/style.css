@@ -1359,8 +1359,7 @@ footer p {
     margin-top: 40px;
 }
 
-
-.review .container {
+.review-box {
     border: 1px solid #e0e0e0;
     border-radius: 6px;
     display: flex;
@@ -1677,6 +1676,11 @@ footer p {
     font-size: 14px;
     height: 300px;
     overflow-y: auto;
+}
+
+.cart-content p {
+    font-style: italic;
+    margin-top: 20px
 }
 
 .cart-content .new-price {
@@ -2004,11 +2008,11 @@ footer p {
 }
 
 #payment-item-container .product {
-    flex-basis: 30%;
+    flex-basis: 40%;
 }
 
 #payment-item-container .prices {
-    flex-basis: 25%;
+    flex-basis: 15%;
 }
 
 
@@ -2098,11 +2102,11 @@ footer p {
 }
 
 .history-payment-item-container .product {
-    flex-basis: 30%;
+    flex-basis: 40%;
 }
 
 .history-payment-item-container .prices {
-    flex-basis: 25%;
+    flex-basis: 15%;
 }
 
 
