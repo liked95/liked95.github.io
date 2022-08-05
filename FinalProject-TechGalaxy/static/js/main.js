@@ -385,7 +385,7 @@ function renderPurchaseHistory() {
             `
         }
 
-        console.log(purchase.purchasedItems.length);
+
         purchaseHistoryEl.innerHTML += `
             <div class="history-item mb-4">
                 <div class="payment-time d-flex mb-2 p-2">
@@ -472,7 +472,6 @@ renderPurchaseHistory()
 //         $(".expand-history-btn").html(`Xem tất cả <span id="product-type-quantity">${checkItemLen}</span> loại sản phẩm`)
 //         $("#payment-item-container").addClass("shrink")
 //     }
-
 // })
 
 function toggleHistoryItem(ele) {
