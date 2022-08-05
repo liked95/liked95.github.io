@@ -140,7 +140,7 @@ $("#filter-btn__res").click((e) => {
 
 //toggle filter field
 $(".filter-expand-btn").click((e) => {
-    const duration = 400
+    const duration = 300
     if (!$(".filter-expand-btn").hasClass("active")) {
 
         $(".filter-expand-btn").addClass("active")

@@ -20,7 +20,7 @@ function renderCart() {
         <div class="prices">Giá</div>
         <div class="quantity">Số lượng</div>
         <div class="value">Số tiền</div>
-        <div class="delete-all">Xóa hết</div>
+        <div class="delete-all">Xóa</div>
     `
     const cartContentEl = document.querySelector(".cart-detail .cart-content")
 

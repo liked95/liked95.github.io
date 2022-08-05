@@ -445,6 +445,47 @@
         max-width: 650px;
     }
 
+    #expand-cart-btn, .expand-history-btn {
+        padding: 8px 40px;
+    }
+
+    /* payment modal */
+    #payment-item-container .product {
+        width: 40%;
+    }
+    
+    #payment-item-container .prices {
+        width: 25%;
+    }
+    
+    
+    #payment-item-container .quantity {
+        width: 15%;
+    }
+    
+    #payment-item-container .value {
+        width: 20%;
+    }
+    /* history item modal */
+    .history-payment-item-container .product {
+        width: 40%;
+    }
+    
+    .history-payment-item-container .prices {
+        width: 25%;
+    }
+    
+    
+    .history-payment-item-container .quantity {
+        width: 15%;
+    }
+    
+    .history-payment-item-container .value {
+        width: 20%;
+    }
+
+    
+
 }
 
 /* 576 < tablet <= 768 || bs: sm- */
@@ -485,6 +526,12 @@
     .alter-options {
         display: flex;
         overflow-x: auto;
+        /* height: 40px; */
+    }
+
+    .alter-options button {
+        padding: 0 3px;
+        margin-right: 4px;
     }
     /* https://stackoverflow.com/questions/56547013/how-to-hide-the-horizontal-scroll-bar-while-scrolling-in-mobile */
 
@@ -525,4 +572,94 @@
         padding: 5px 20px 10px 20px;
     }
 
+    .cart-title {
+        font-size: 14px;
+    }
+
+    .modal-dialog {
+        max-width: 90%;
+    }
+
+    .cart-detail {
+        --row-height: auto;
+        padding: 0;
+    }
+
+    .cart-item {
+        margin-bottom: 5px;
+    }
+
+    .cart-title {
+        height: 40px;
+    }
+
+    .cart-detail input[type="checkbox"] {
+        width: 5%;
+    }
+
+    .cart-detail .product {
+        width: 35%;
+    }
+
+    /* .cart-detail .prices {
+        margin-right: 10px;
+    } */
+
+    .cart-detail .quantity {
+        padding: 6px 0 6px 12px;
+        text-align: right;
+        width: 22%;
+    }
+
+    .cart-detail .value {
+        width: 18%;
+    }
+
+    .value-button {
+        width: 30px;
+    }
+
+
+    .cart-detail .delete-item, .delete-all {
+        width: 5%;
+    } 
+
+    .cart-content .quantity span {
+        min-width: 30px;
+    }
+
+    input[type=checkbox] {
+        transform: scale(1);
+    }
+
+    .cart-item .cart-item-image {
+        width: 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .cart-item .product-name {
+        font-size: 13px;
+    }
+
+    .cart-item .product-attr {
+        font-size: 13px;
+    }
+
+    .cart-content .value {
+        font-weight: 400;
+    }
+
+    .cart-and-total .total-cart-container {
+        padding: 0;
+    }
+
+    .payment .row>div {
+        padding: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    
 }

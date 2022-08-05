@@ -1649,6 +1649,7 @@ footer p {
 
 .cart-detail .prices {
     width: 15%;
+    text-align: center;
 }
 
 .cart-detail .quantity {
@@ -1663,6 +1664,11 @@ footer p {
 
 .cart-detail .value {
     width: 15%;
+    text-align: center;
+}
+
+.cart-item .prices, .cart-item .value {
+    text-align: right;
 }
 
 .cart-detail .delete-item,
@@ -2008,20 +2014,20 @@ footer p {
 }
 
 #payment-item-container .product {
-    flex-basis: 40%;
+    width: 40%;
 }
 
 #payment-item-container .prices {
-    flex-basis: 15%;
+    width: 15%;
 }
 
 
 #payment-item-container .quantity {
-    flex-basis: 30%;
+    width: 30%;
 }
 
 #payment-item-container .value {
-    flex-basis: 15%;
+    width: 15%;
 }
 
 .fade-btn-container {
@@ -2098,22 +2104,23 @@ footer p {
 }
 
 .history-payment-item-container.shrink {
-    height: 200px;
+    height: auto;
+    max-height: 200px;
 }
 
 .history-payment-item-container .product {
-    flex-basis: 40%;
+    width: 40%;
 }
 
 .history-payment-item-container .prices {
-    flex-basis: 15%;
+    width: 15%;
 }
 
 
 .history-payment-item-container .quantity {
-    flex-basis: 30%;
+    width: 30%;
 }
 
 .history-payment-item-container .value {
-    flex-basis: 15%;
+    width: 15%;
 }

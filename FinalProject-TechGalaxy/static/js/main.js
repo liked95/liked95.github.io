@@ -385,7 +385,7 @@ function renderPurchaseHistory() {
             `
         }
 
-
+        console.log(purchase.purchasedItems.length);
         purchaseHistoryEl.innerHTML += `
             <div class="history-item mb-4">
                 <div class="payment-time d-flex mb-2 p-2">
