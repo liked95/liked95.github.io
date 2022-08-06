@@ -101,6 +101,17 @@
         display: none
     }
 
+    header .first-header-row {
+        height: 60px;
+        position: fixed;
+        top: 0;
+        z-index: 500;
+    }
+
+    header {
+        margin-bottom: 60px;
+    }
+
     .logo-img {
         display: none;
     }
@@ -118,7 +129,7 @@
         height: 100vh;
         width: 280px;
         padding: 20px 0 20px 20px;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         background-color: #fff;
@@ -145,8 +156,8 @@
         opacity: 0.5;
         z-index: 1500;
         background-color: #000;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
     }
 
     #close-btn {
@@ -246,14 +257,6 @@
         margin-bottom: 10px;
     }
 
-    #filter-btn__res {
-        display: block;
-        position: fixed;
-        right: 15px;
-        bottom: 20px;
-        font-size: 25px;
-        cursor: pointer;
-    }
 
     .filter-expand-btn {
         display: block;
@@ -445,7 +448,8 @@
         max-width: 650px;
     }
 
-    #expand-cart-btn, .expand-history-btn {
+    #expand-cart-btn,
+    .expand-history-btn {
         padding: 8px 40px;
     }
 
@@ -453,43 +457,46 @@
     #payment-item-container .product {
         width: 40%;
     }
-    
+
     #payment-item-container .prices {
         width: 25%;
     }
-    
-    
+
+
     #payment-item-container .quantity {
         width: 15%;
     }
-    
+
     #payment-item-container .value {
         width: 20%;
     }
+
     /* history item modal */
     .history-payment-item-container .product {
         width: 40%;
     }
-    
+
     .history-payment-item-container .prices {
         width: 25%;
     }
-    
-    
+
+
     .history-payment-item-container .quantity {
         width: 15%;
     }
-    
+
     .history-payment-item-container .value {
         width: 20%;
     }
 
-    
+
 
 }
 
 /* 576 < tablet <= 768 || bs: sm- */
 @media (max-width: 768px) {
+
+    
     #sidebar-open-btn {
         left: 15px;
     }
@@ -533,6 +540,7 @@
         padding: 0 3px;
         margin-right: 4px;
     }
+
     /* https://stackoverflow.com/questions/56547013/how-to-hide-the-horizontal-scroll-bar-while-scrolling-in-mobile */
 
     .no-scrollbar {
@@ -560,7 +568,8 @@
         flex-direction: column;
     }
 
-    .review-left, .review-right {
+    .review-left,
+    .review-right {
         width: 100%;
     }
 
@@ -620,9 +629,10 @@
     }
 
 
-    .cart-detail .delete-item, .delete-all {
+    .cart-detail .delete-item,
+    .delete-all {
         width: 5%;
-    } 
+    }
 
     .cart-content .quantity span {
         min-width: 30px;
@@ -660,6 +670,164 @@
         margin-top: 20px;
         width: 100%;
     }
+}
+
+/* 576 < hori mobile <= 768 || bs: sm- */
+@media (max-width: 576px) {
+    .modal-dialog {
+        margin: auto;
+        position: relative;
+        max-width: 100%;
+        --modal-header-height: 70px
+    }
+
+    .modal-header {
+        position: fixed;
+        width: 100%;
+        height: var(--modal-header-height);
+        z-index: 1;
+        background-color: #fff;
+        border-radius: 0;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .modal-title {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .modal-content {
+        border: none;
+    }
+
+    .modal-body {
+        margin-top: var(--modal-header-height)
+    }
+
+
+    .product-card {
+        width: 33.33%;
+    }
+
+    .alter-options button {
+        padding: 0px 5px;
+    }
+
+    .top-sold-phones h3,
+    .top-sold-tablets h3,
+    .top-sold-laptop h3 {
+        font-size: 14px;
+    }
+
+    .product-name {
+        font-size: 14px;
+    }
+
+    .old-price-container span {
+        font-size: 13px;
+    }
+
+    .current-price {
+        font-size: 14px;
+    }
+
+    .product-description li {
+        font-size: 11px;
+    }
+
+    /* sidebar filter */
+    
+    #filter-btn__res {
+        display: block;
+        position: fixed;
+        left: 15px;
+        bottom: 20px;
+        font-size: 25px;
+        cursor: pointer;
+        z-index: 200;
+    }
+
+    .filter-container {
+        position: fixed; 
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100vh;
+        background-color: #fff;
+        padding: 5px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        overflow-y: auto;
+        z-index: 1600;
+        transform: translateX(100%);
+        transition: all 300ms;
+    }
+
+    .filter-container.mobile-active {
+        transform: translateX(0);
+    }
+
+    .filter-expand-btn {
+        display: none;
+    }
+
+    .tag-container {
+        display: block;
+    }
+
+    .filter-category-container {
+        display: block;
+    }
+
+
+    .tags {
+        min-height: 80px;
+    }
+
+    .function-btn {
+        margin: 0;
+        width: 100%;
+        flex-direction: row;
+    }
+
+
 
     
+}
+
+
+
+@media (max-width: 524px) {
+    .product-card {
+        width: 50%;
+    }
+
+    .alter-options button {
+        padding: 0px 5px;
+    }
+
+    .top-sold-phones h3,
+    .top-sold-tablets h3,
+    .top-sold-laptop h3 {
+        font-size: 14px;
+    }
+
+    .product-name {
+        font-size: 14px;
+    }
+
+    .old-price-container span {
+        font-size: 13px;
+    }
+
+    .current-price {
+        font-size: 14px;
+    }
+
+    .product-description li {
+        font-size: 11px;
+    }
+
+    .product-category-container .product-card {
+        width: 50%;
+    }
 }
