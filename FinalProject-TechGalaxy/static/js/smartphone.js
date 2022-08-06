@@ -95,6 +95,10 @@ eraseAllTagBtn.addEventListener("click", () => {
         filterResults = products.filter(p => p.category == "smartphone")
         renderCardItem(phoneCategoryBox, filterResults)
         $(".search-quantity").text(filterResults.length)
+
+        if ($(window).outerWidth() < 576) {
+            closeFilterSidebar()
+        }
     }
 })
 
@@ -109,6 +113,9 @@ filterBtn.addEventListener("click", () => {
     filterProduct(products, filterTagArr, "smartphone", phoneCategoryBox)
     $(".search-quantity").text(filterResults.length)
     selectSortBtn.value = ""
+    if ($(window).outerWidth() < 576) {
+        closeFilterSidebar()
+    }
 })
 
 
@@ -181,7 +188,11 @@ $("#filter-btn__res").click((e) => {
 })
 
 $("#back-drop").click(() => {
+    closeFilterSidebar()
+})
+
+function closeFilterSidebar() {
     $(".filter-container").removeClass("mobile-active")
     $("#back-drop").removeClass("active")
     $("body").css("overflow", "auto")
-})
+}
