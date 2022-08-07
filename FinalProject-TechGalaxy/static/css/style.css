@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* outline: 1px solid limegreen !important; */
+    /* background: rgb(0 100 0 / 0.1) !important; */
 }
 
 
@@ -469,6 +471,7 @@ header .second-header-row {
     border: 1px solid #e0e0e0;
     border-collapse: collapse;
     cursor: pointer;
+    align-self: stretch;
 }
 
 .product-card:hover {
@@ -1093,7 +1096,6 @@ footer p {
 
 /* warranty */
 .warranty {
-    width: 560px;
     margin: 29px auto;
 }
 
@@ -1106,7 +1108,7 @@ footer p {
 
 .warranty-description {
     font-size: 14px;
-    line-height: 20px;
+    line-height: 1.5rem;
 }
 
 .warranty-icon {
@@ -1381,7 +1383,7 @@ footer p {
 
 .review-title {
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.3;
     font-weight: 700;
 }
@@ -1467,6 +1469,7 @@ footer p {
     display: flex;
     margin-left: auto;
     font-size: 14px;
+    font-style: italic;
 }
 
 .review-time .time {
@@ -1476,6 +1479,7 @@ footer p {
 .review-content {
     font-size: 14px;
     margin-top: 15px;
+    color: #8c8b8b;
 }
 
 .review-actions {
@@ -1522,7 +1526,7 @@ footer p {
 .related-products h4,
 .watched-products h4 {
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.3;
     font-weight: 700;
 }

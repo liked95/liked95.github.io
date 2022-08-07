@@ -98,6 +98,11 @@ eraseAllTagBtn.addEventListener("click", () => {
 
         if ($(window).outerWidth() < 576) {
             closeFilterSidebar()
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+            })
         }
     }
 })
@@ -115,6 +120,11 @@ filterBtn.addEventListener("click", () => {
     selectSortBtn.value = ""
     if ($(window).outerWidth() < 576) {
         closeFilterSidebar()
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        })
     }
 })
 
