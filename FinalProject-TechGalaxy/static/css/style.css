@@ -801,6 +801,10 @@ footer p {
     display: none;
 }
 
+#filter-sidebar-close {
+    display: none;
+}
+
 .smartphone-container {
     margin-bottom: 60px;
 }

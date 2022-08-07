@@ -150,7 +150,7 @@ $(".filter-expand-btn").click((e) => {
 
         $(".tag-container").show(duration)
         $(".tag-container").css("display", "flex")
-        
+
         $(".filter-category-container").show(duration)
         $(".filter-category-container").css("display", "flex")
     } else {
@@ -167,8 +167,8 @@ $(window).resize(e => {
         $(".tag-container").css("display", "block")
         $(".filter-category-container").css("display", "block")
     }
-    
-    if ($(window).outerWidth() >= 576 && $(window).outerWidth() < 992 ) {
+
+    if ($(window).outerWidth() >= 576 && $(window).outerWidth() < 992) {
         if ($(".filter-expand-btn").hasClass("active")) {
             $(".tag-container").css("display", "flex")
             $(".filter-category-container").css("display", "flex")
@@ -179,7 +179,7 @@ $(window).resize(e => {
     }
 
     if ($(window).outerWidth() < 576) {
-        
+
     }
 })
 
@@ -191,11 +191,11 @@ $("#filter-btn__res").click((e) => {
 
 })
 
-$("#back-drop").click(() => {
-    closeFilterSidebar()
-})
 
 function closeFilterSidebar() {
     $(".filter-container").removeClass("mobile-active")
     $("#back-drop").removeClass("active")
 }
+
+$("#back-drop").click(() => closeFilterSidebar())
+$("#filter-sidebar-close").click(() => closeFilterSidebar())
