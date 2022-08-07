@@ -591,14 +591,14 @@ $(".search-input i").click((e) => {
 function closeSideBar() {
     $("#side-nav-container").removeClass("active")
     $("#back-drop").removeClass("active")
-    $("body").css("overflow", "auto")
+    // $("body").css("overflow", "auto")
 }
 
 // click vào hamburger
 $("#sidebar-open-btn").click((e) => {
     $("#side-nav-container").addClass("active")
     $("#back-drop").addClass("active")
-    $("body").css("overflow", "hidden")
+    // $("body").css("overflow", "hidden")
 })
 
 // 2 cách đóng sidebar

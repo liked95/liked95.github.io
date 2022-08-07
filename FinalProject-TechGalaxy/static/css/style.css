@@ -11,7 +11,6 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: #333;
     position: relative;
-    /* height: 2000px; */
 }
 
 img {
@@ -801,6 +800,7 @@ footer p {
 #filter-btn__res {
     display: none;
 }
+
 .smartphone-container {
     margin-bottom: 60px;
 }
@@ -826,6 +826,7 @@ footer p {
 .filter-expand-btn {
     display: none;
 }
+
 .filter-container {
     padding: 10px;
     padding-top: 0;
@@ -1667,7 +1668,8 @@ footer p {
     text-align: center;
 }
 
-.cart-item .prices, .cart-item .value {
+.cart-item .prices,
+.cart-item .value {
     text-align: right;
 }
 

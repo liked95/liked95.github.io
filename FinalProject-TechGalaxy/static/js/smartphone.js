@@ -177,6 +177,10 @@ $(window).resize(e => {
             $(".filter-category-container").css("display", "none")
         }
     }
+
+    if ($(window).outerWidth() < 576) {
+        
+    }
 })
 
 
@@ -184,7 +188,7 @@ $(window).resize(e => {
 $("#filter-btn__res").click((e) => {
     $(".filter-container").addClass("mobile-active")
     $("#back-drop").addClass("active")
-    $("body").css("overflow", "hidden")
+
 })
 
 $("#back-drop").click(() => {
@@ -194,5 +198,4 @@ $("#back-drop").click(() => {
 function closeFilterSidebar() {
     $(".filter-container").removeClass("mobile-active")
     $("#back-drop").removeClass("active")
-    $("body").css("overflow", "auto")
 }
