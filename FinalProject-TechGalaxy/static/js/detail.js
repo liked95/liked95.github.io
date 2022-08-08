@@ -34,6 +34,14 @@ $(document).ready(function () {
             }
         }
     })
+
+    $("#related-product-carousel").on("drag.owl.carousel", () => {
+        $("body").css("overflow", "hidden")
+    })
+    
+    $("#related-product-carousel").on("dragged.owl.carousel", () => {
+        $("body").css("overflow", "auto")
+    })
 })
 
 $(document).ready(function () {
@@ -57,6 +65,14 @@ $(document).ready(function () {
                 items: 5
             }
         }
+    })
+
+    $("#watched-product-carousel").on("drag.owl.carousel", () => {
+        $("body").css("overflow", "hidden")
+    })
+
+    $("#watched-product-carousel").on("dragged.owl.carousel", () => {
+        $("body").css("overflow", "auto")
     })
 })
 

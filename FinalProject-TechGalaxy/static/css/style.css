@@ -1486,6 +1486,8 @@ footer p {
     display: flex;
     justify-content: center;
     margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .review-actions button {
@@ -1500,14 +1502,15 @@ footer p {
     background-color: #2f80ed;
     color: #fff;
     border: none;
+    width: 45%;
 }
 
 
 #see-all-reviews {
-    margin-left: 20px;
     background-color: #fff;
     color: #2f80ed;
     border: 1px solid #2f89ed;
+    width: 45%;
 }
 
 #see-all-reviews i {

@@ -432,6 +432,19 @@
         overflow: hidden;
     }
 
+    .review-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #add-review, #see-all-reviews {
+        width: 70%;
+    }
+
+    #add-review {
+        margin-bottom: 15px;
+    }
+
     .user-rating {
         font-size: 14px;
     }
@@ -584,6 +597,19 @@
 
     .review-right {
         padding: 5px 20px 10px 20px;
+    }
+
+    .review-actions {
+        flex-direction: row;
+        align-items: initial;
+    }
+
+    #add-review, #see-all-reviews {
+        width: 45%;
+    }
+
+    #add-review {
+        margin-bottom: 0;
     }
 
     .cart-title {
@@ -924,19 +950,36 @@
     .reviewer-name {
         width: 60%;
         word-break: break-all;
+        font-size: 14px;
     }
 
     .user-rating {
         width: 40%;
         text-align: right;
+        font-size: 12px;
     }
 
     .review-time {
         margin-left: 0;
         margin-bottom: 5px;
+    } 
+
+    .review-actions {
+        flex-direction: column;
+        align-items: center;
     }
 
+    #add-review, #see-all-reviews {
+        width: 170px;
+    }
 
+    #add-review {
+        margin-bottom: 10px;
+    }
+
+    .product-content {
+        min-height: 380px;
+    }
 
 
     
