@@ -341,12 +341,13 @@ header .first-header-row {
 .cart-length {
     color: rgb(43, 51, 125);
     position: absolute;
-    top: -15px;
+    top: -10px;
     right: -8px;
     z-index: 50;
     background-color: rgb(255, 255, 255);
     padding: 0px 5px;
     border-radius: 4px;
+    font-size: 13px;
 }
 
 header .second-header-row {
@@ -1554,6 +1555,10 @@ footer p {
     max-width: 700px;
 }
 
+.modal-header {
+    padding: 0.5rem 1rem;
+}
+
 
 /* bootstrap rating modal*/
 .rating-button-container>div {
@@ -1732,7 +1737,7 @@ footer p {
 }
 
 .cart-content .delete-item {
-    color: #999
+    color: #ee4d2d;
 }
 
 .customer-info {
