@@ -606,6 +606,11 @@ function addToPurchaseHistory(sessionID, obj) {
     saveToLocalStorage("purchases", purchases)
 }
 
+// quay lai mua hang
+$(".go-back-btn").click(() => {
+    history.back();  
+})
+
 
 
 

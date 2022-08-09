@@ -189,7 +189,8 @@ $(window).resize(e => {
     }
 
     if ($(window).outerWidth() < 576) {
-
+        $(".filter-category-container").css("display", "block")
+        $(".tag-container").css("display", "block")
     }
 })
 
