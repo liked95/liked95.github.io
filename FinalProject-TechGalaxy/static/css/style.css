@@ -19,6 +19,10 @@ body {
     filter: invert(99%) sepia(1%) saturate(3781%) hue-rotate(150deg) brightness(122%) contrast(100%);
 }
 
+.filter-gray {
+    filter: invert(59%) sepia(0%) saturate(2096%) hue-rotate(32deg) brightness(97%) contrast(91%);
+}
+
 img {
     max-width: 100%;
 }
@@ -199,13 +203,19 @@ header .first-header-row {
     position: absolute;
     top: 0px;
     right: 0px;
-    padding: 5px 10px;
+    padding: 0px 10px;
     height: 100%;
     font-size: 24px;
     color: #333;
     background: #fff;
     cursor: pointer;
     border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.glass-img img {
+    width: 30px;
 }
 
 .glass-img .fa-xmark {
@@ -2182,6 +2192,8 @@ footer p {
     width: 15%;
 }
 
+/* trang gioi thieu */
+
 
 .about-us {
     margin: 30px 0;
@@ -2204,11 +2216,52 @@ footer p {
     margin-top: 40px;
     font-weight: 600;
 }
+
 .about-para {
     margin: 10px 0;
     line-height: 32px;
 }
 
-.about-image ~ .about-para {
+.about-image~.about-para {
     margin-top: 20px;
+}
+
+/* trang contact  */
+.contact {
+    margin: 40px 0 40px 0;
+}
+
+
+.contact h3 {
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.contact-detail {
+    padding: 10px 20px 10px 10px
+}
+
+.description p {
+    margin-bottom: 10px;
+    line-height: 2rem;
+}
+
+.coms-detail {
+    margin-top: 20px;
+}
+
+.coms-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.coms-image {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.map-container  {
+    min-height: 400px;
 }

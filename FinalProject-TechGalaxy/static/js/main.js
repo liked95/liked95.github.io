@@ -532,11 +532,11 @@ function renderSearchResult() {
             }
         }
         //ẩn glass hiện X
-        $(".glass-img .fa-magnifying-glass").hide()
+        $(".glass-img .magnify-glass").hide()
         $(".glass-img .fa-xmark").show()
     } else {
         $(".search-input input").removeClass("typed")
-        $(".glass-img .fa-magnifying-glass").show()
+        $(".glass-img .magnify-glass").show()
         $(".glass-img .fa-xmark").hide()
     }
     // console.log(res)
@@ -572,7 +572,7 @@ $(document).click((e) => {
     } else {
         $("#search-result").hide()
         $(".search-input input").removeClass("typed")
-        $(".glass-img .fa-magnifying-glass").show()
+        $(".glass-img .magnify-glass").show()
         $(".glass-img .fa-xmark").hide()
     }
 })
@@ -590,7 +590,7 @@ $(".search-input i").click((e) => {
     $("#search-result").hide()
     $(".search-input input").removeClass("typed")
     $(".search-input input").val("")
-    $(".glass-img .fa-magnifying-glass").show()
+    $(".glass-img .magnify-glass").show()
     $(".glass-img .fa-xmark").hide()
 })
 

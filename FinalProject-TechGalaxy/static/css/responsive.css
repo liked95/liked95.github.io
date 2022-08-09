@@ -509,6 +509,14 @@
         margin-top: 90px;
     }
 
+    .contact {
+        margin-top: 90px;   
+    }
+
+    .contact h3 {
+        margin-bottom: 10px;
+    }
+
 
 
 }
@@ -727,6 +735,10 @@
 
     .glass-img {
         padding: 0 6px;
+    }
+
+    .glass-img img {
+        width: 25px;
     }
 
     .search-input i {
