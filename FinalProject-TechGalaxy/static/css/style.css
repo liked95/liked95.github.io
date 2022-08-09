@@ -15,6 +15,10 @@ body {
     position: relative;
 }
 
+.filter-white {
+    filter: invert(99%) sepia(1%) saturate(3781%) hue-rotate(150deg) brightness(122%) contrast(100%);
+}
+
 img {
     max-width: 100%;
 }
@@ -394,6 +398,10 @@ header .second-header-row {
     cursor: pointer;
 }
 
+.menu-icon:hover .icon-box img {
+    filter: invert(64%) sepia(64%) saturate(2016%) hue-rotate(359deg) brightness(102%) contrast(106%);
+}
+
 .menu-icon:hover>a {
     color: orange;
 }
@@ -411,18 +419,25 @@ header .second-header-row {
 .menu-icon>a {
     font-size: 12px;
     text-transform: uppercase;
-    margin-top: 5px;
 }
 
 .icon-box {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
+
+.icon-box img {
+    height: 100%;
+    max-width: 30px;
 }
 
 .icon-box i:first-of-type {
     font-size: 20px;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .icon-box i:nth-of-type(2) {
@@ -433,7 +448,7 @@ header .second-header-row {
 .menu-icon a>p {
     font-size: 13px;
     text-transform: uppercase;
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .menu-icon .sub-menu {
