@@ -92,6 +92,11 @@
     .cart-content .value {
         font-size: 14px;
     }
+
+    .review-left {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 
@@ -431,10 +436,25 @@
         width: 50%;
     }
 
+    .review-identity {
+        flex-wrap: wrap;
+    }
+
     .reviewer-name {
-        min-width: 20%;
-        width: 20%;
+        width: 60%;
         overflow: hidden;
+    }
+
+    .review-time {
+        order: -1;
+        margin: 0;
+        width: 100%;
+    }
+
+    .user-rating {
+        width: 40%;
+        font-size: 14px;
+        text-align: right;
     }
 
     .review-actions {
@@ -451,9 +471,7 @@
         margin-bottom: 15px;
     }
 
-    .user-rating {
-        font-size: 14px;
-    }
+    
 
     .cart-content {
         height: auto;

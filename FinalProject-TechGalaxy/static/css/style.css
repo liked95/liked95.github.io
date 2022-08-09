@@ -1521,6 +1521,7 @@ footer p {
     font-size: 14px;
     margin-top: 15px;
     color: #8c8b8b;
+    word-break: keep-all;
 }
 
 .review-actions {
@@ -2257,11 +2258,12 @@ footer p {
     align-items: center;
     margin-bottom: 10px;
 }
+
 .coms-image {
     width: 30px;
     margin-right: 10px;
 }
 
-.map-container  {
+.map-container {
     min-height: 400px;
 }

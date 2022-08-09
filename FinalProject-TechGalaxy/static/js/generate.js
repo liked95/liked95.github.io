@@ -1,4 +1,3 @@
-let users = [];
 let products = [
     {
         id: 1,
@@ -27,7 +26,6 @@ let products = [
         detailImgURL: "iphone-13-pro-max-n-2.jpg",
         specAttributes: {
             "Màn hình": 'OLED, 6.7", Super Retina XDR',
-            "Chip": "Apple 15 Bionic",
             "Hệ điều hành": '	iOS 15',
             "Camera sau": '3 camera 12 MP',
             "Camera trước": '12MP',
@@ -109,7 +107,6 @@ let products = [
         detailImgURL: "iphone-13-pro-n-2.jpg",
         specAttributes: {
             "Màn hình": 'OLED, 6.1", Super Retina XDR',
-            "Chip": "Apple 15 Bionic",
             "Hệ điều hành": '	iOS 15',
             "Camera sau": '3 camera 12 MP',
             "Camera trước": '12MP',
@@ -186,19 +183,18 @@ let products = [
         ratings: 4,
         soldQuantity: 823,
         brand: "apple",
-        mainCarouselImages: ["iphone-13-1-trang.jpg", "iphone-13-xanh-1.jpg", "iphone-13-hong.jpg", "iphone-13-den.jpg"],
-        dotCarouselImages: ["iphone-13-starlight-1-200x200.jpg", "iphone-13-blue-1-200x200.jpg", "iphone-13-pink-2-200x200.jpg", "iphone-13-midnight-2-200x200.jpg"],
-        colors: ["Trắng", "Xanh dương", "Hồng", "Đen"],
-        detailImgURL: "iphone-13-n.jpg",
+        mainCarouselImages: ["iphone-13-pro-xanh-xa-1.jpg", "iphone-13-pro6-gold.jpg", "iphone-13-pro-blue.jpg", "iphone-13-pro-silver-2.jpg", "iphone-13-pro-xam-1.jpg"],
+        dotCarouselImages: ["xanh-la-iphone.jpg", "iphone-13-pro-gold-1-200x200.jpg", "iphone-13-pro-sierra-blue-200x200.jpg", "iphone-13-pro-silver-200x200.jpg", "iphone-13-pro-graphite-200x200.jpg"],
+        colors: ["Xanh lá", "Vàng đồng", "Xanh dương", "Bạc", "Xám"],
+        detailImgURL : "iphone-13-pro-n-2.jpg",
         specAttributes: {
             "Màn hình": 'OLED, 6.1", Super Retina XDR',
-            "Chip": "Apple 15 Bionic",
             "Hệ điều hành": '	iOS 15',
-            "Camera sau": '2 camera 12 MP',
+            "Camera sau": '3 camera 12 MP',
             "Camera trước": '12MP',
-            "RAM": '4 GB',
+            "RAM": '6 GB',
             "Bộ nhớ trong": '128 GB',
-            "Pin, Sạc": '3240 mAh, 20 W',
+            "Pin, Sạc": '3095 mAh, 20 W',
         },
         reviews: [
             {
@@ -267,64 +263,6 @@ let products = [
         ratings: 4,
         soldQuantity: 412,
         brand: "apple",
-        mainCarouselImages: ["iphone-11-tim-1-1-1-org.jpg", "iphone-11-vang-1-2-org.jpg", "iphone-11-trang-1-2-org.jpg", "iphone-11-do-1-1-1-org.jpg"],
-        dotCarouselImages: ["iphone-xi-tim-200x200.jpg", "iphone-xi-vang-200x200.jpg", "iphone-11-trang-200x200.jpg", "iphone-xi-do-200x200.jpg"],
-        colors: ["Tím", "Vàng", "Trắng", "Đỏ"],
-        detailImgURL: "iphone-11-note.jpg",
-        specAttributes: {
-            "Màn hình": 'IPS LCD, 6.1", Liquid Retina',
-            "Chip": "Apple 13 Bionic",
-            "Hệ điều hành": 'iOS 15',
-            "Camera sau": '2 camera 12 MP',
-            "Camera trước": '12MP',
-            "RAM": '4 GB',
-            "Bộ nhớ trong": '64 GB',
-            "Pin, Sạc": '3110 mAh, 18 W',
-        },
-        reviews: [
-            {
-                reviewer: "Trương Tam Phong",
-                date: "24-7-2022",
-                time: "5:52PM",
-                rating: 4,  //[1,5]
-                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
-            },
-            {
-                reviewer: "Trương Thu Hoài",
-                date: "21-3-2022",
-                time: "4:52AM",
-                rating: 1,  //[1,5]
-                content: "Điện thoại gì chán thế nhỉ, cửa hàng lớn làm ăn lom dom =))"
-            },
-            {
-                reviewer: "Nguyen Tran Nhu Thao",
-                date: "3-1-2022",
-                time: "8:31AM",
-                rating: 5,  //[1,5]
-                content: "sao giá ở đây đắt hơn giá bên cửa hàng khác vậy"
-            },
-            {
-                reviewer: "Vũ Sơn",
-                date: "3-10-2021",
-                time: "8:17PM",
-                rating: 3,  //[1,5]
-                content: "Shop bán hàng đẽu"
-            },
-            {
-                reviewer: "Ngọc",
-                date: "3-8-2021",
-                time: "8:63PM",
-                rating: 2,  //[1,5]
-                content: "Tạm được"
-            },
-            {
-                reviewer: "Thư Ngố",
-                date: "4-2-2021",
-                time: "8:63PM",
-                rating: 5,  //[1,5]
-                content: "Hàng đẹp phết"
-            },
-        ]
     },
 
     {
@@ -348,20 +286,6 @@ let products = [
         ratings: 3,
         soldQuantity: 312,
         brand: "apple",
-        mainCarouselImages: ["iphone-13-mini-hong-1.jpg", "iphone-13-mini-xanh-xa-1.jpg", "iphone-13-mini-red-1-1.jpg", "iphone-13-mini-1-2.jpg"],
-        dotCarouselImages: ["iphone-13-mini-pink-1-200x200.jpg", "iphone-13-mini-xanh-la-thumb-200x200.jpg", "iphone-13-mini-red-1-200x200.jpg", "iphone-13-mini-blue-2-200x200.jpg"],
-        colors: ["Hồng", "Xanh lá", "Đỏ", "Xanh dương"],
-        detailImgURL: "iphone-13-mini-n.jpg",
-        specAttributes: {
-            "Màn hình": 'OLED, 5.4", Super Retina XDR',
-            "Chip": "Apple 15 Bionic",
-            "Hệ điều hành": 'iOS 15',
-            "Camera sau": '2 camera 12 MP',
-            "Camera trước": '12MP',
-            "RAM": '4 GB',
-            "Bộ nhớ trong": '128 GB',
-            "Pin, Sạc": '2438 mAh, 20 W',
-        },
     },
 
     {
@@ -377,38 +301,14 @@ let products = [
             "Camera trước: 12 MP",
             "Pin 3110 mAh, Sạc 18 W"
         ],
-        alterOptions: ["64GB", "128GB", "256GB"],
+        alterOptions: ["128GB", "256GB", "512GB"],
         ram: ["4GB"],
-        rom: ["64GB", "128GB", "256GB"],
+        rom: ["128GB", "256GB", "512GB"],
         oldPrices: [19990000, 21990000, 23890000],
         currentPrices: [17390000, 19990000, 21890000],
         ratings: 4,
         soldQuantity: 741,
         brand: "apple",
-
-        mainCarouselImages: ["iphone-12-tim.jpg", "iphone-12-den.jpg", "iphone-12-xanh-la.jpg", "iphone-12-xanh-duong.jpg"],
-        dotCarouselImages: ["iphone-12-tim-1-200x200.jpg", "iphone-12-den-new-2-200x200.jpg", "iphone-12-xanh-la-new-2-200x200.jpg", "iphone-12-xanh-duong-new-2-200x200.jpg"],
-        colors: ["Tím", "Đen", "Xanh lá", "Xanh dương"],
-        detailImgURL: "iphone-12-note.jpg",
-        specAttributes: {
-            "Màn hình": 'OLED, 6.1", Super Retina XDR',
-            "Chip": "Apple 15 Bionic",
-            "Hệ điều hành": 'iOS 15',
-            "Camera sau": '2 camera 12 MP',
-            "Camera trước": '12MP',
-            "RAM": '4 GB',
-            "Bộ nhớ trong": '64 GB',
-            "Pin, Sạc": '2815 mAh, 20 W',
-        },
-        reviews: [
-            {
-                reviewer: "Trương Tam Phong",
-                date: "24-7-2022",
-                time: "5:52PM",
-                rating: 4,  //[1,5]
-                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
-            },
-        ],
     },
 
     {
@@ -432,30 +332,6 @@ let products = [
         ratings: 4,
         soldQuantity: 412,
         brand: "apple",
-
-        mainCarouselImages: ["iphone-12-mini-den", "iphone-12-mini-tim.jpg", "iphone-12-mini-xanh-duong-1-1-org.jpg", "iphone-12-mini-xanh-la-1-1-org.jpg"],
-        dotCarouselImages: ["iphone-12-mini-den-15-200x200.jpg", "iphone-12-mini-mau-tim-3-200x200.jpg", "iphone-12-mini-xanh-duong-15-200x200.jpg", "iphone-12-mini-xanh-la-15-200x200.jpg"],
-        colors: ["Đen", "Tím", "Xanh dương", "Xanh lá"],
-        detailImgURL: "iphone-12-mini-note-2",
-        specAttributes: {
-            "Màn hình": 'OLED, 5.4", Super Retina XDR',
-            "Chip": "Apple 14 Bionic",
-            "Hệ điều hành": 'iOS 15',
-            "Camera sau": '2 camera 12 MP',
-            "Camera trước": '12MP',
-            "RAM": '4 GB',
-            "Bộ nhớ trong": '64 GB',
-            "Pin, Sạc": '2227 mAh, 20 W',
-        },
-        reviews: [
-            {
-                reviewer: "Trương Tam Phong",
-                date: "24-7-2022",
-                time: "5:52PM",
-                rating: 4,  //[1,5]
-                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
-            },
-        ],
     },
 
     {
@@ -479,30 +355,6 @@ let products = [
         ratings: 2,
         soldQuantity: 218,
         brand: "apple",
-
-        mainCarouselImages: ["iphone-se-2022-2-1.jpg", "iphone-se-2022-white-1.jpg", "iphone-se-2022-den-1.jpg"],
-        dotCarouselImages: ["iphone-se-red-200x200.jpg", "iphone-se-white-200x200.jpg", "iphone-se-black-200x200.jpeg"],
-        colors: ["Đỏ", "Trắng", "Đen"],
-        detailImgURL: "iphone-se-2022-150322-045536.jpg",
-        specAttributes: {
-            "Màn hình": 'IPS LCD, 4.7", Retina HD',
-            "Chip": "Apple 15 Bionic",
-            "Hệ điều hành": 'iOS 15',
-            "Camera sau": '12 MP',
-            "Camera trước": '7MP',
-            "RAM": '4 GB',
-            "Bộ nhớ trong": '64 GB',
-            "Pin, Sạc": '2018 mAh, 20 W',
-        },
-        reviews: [
-            {
-                reviewer: "Trương Tam Phong",
-                date: "24-7-2022",
-                time: "5:52PM",
-                rating: 4,  //[1,5]
-                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
-            },
-        ],
     },
 
     {
@@ -518,7 +370,7 @@ let products = [
             "Camera trước: 40 MP",
             "Pin 5000 mAh, Sạc 45 W"
         ],
-        alterOptions: ["128GB", "256GB"],
+        alterOptions: ["8GB-128GB", "12GB-256GB"],
         ram: ["8GB", "12GB"],
         rom: ["128GB", "256GB"],
         oldPrices: [30990000, 33990000],
@@ -526,30 +378,6 @@ let products = [
         ratings: 4,
         soldQuantity: 537,
         brand: "samsung",
-
-        mainCarouselImages: ["samsung-galaxy-s22-ultra-1-1.jpg", "galaxy-s22-ultra-white-8.jpg", "galaxy-s22-ultra-black-4.jpg", "samsung-galaxy-s22-ultra-xanh-reu-1-1.jpg"],
-        dotCarouselImages: ["Galaxy-S22-Ultra-Burgundy-200x200.jpg", "Galaxy-S22-Ultra-White-200x200.jpg", "Galaxy-S22-Ultra-Black-200x200.jpg", "Galaxy-S22-Ultra-Green-200x200.jpg"],
-        colors: ["Đỏ", "Trắng", "Đen", "Xanh lá"],
-        detailImgURL: "samsung-galaxy-s22-ultra-note.jpg",
-        specAttributes: {
-            "Màn hình": 'Dynamic AMOLED 2X, 6.8", Quad HD+ (2K+)',
-            "Chip": "Snapdragon 8 Gen 1",
-            "Hệ điều hành": 'Android 12',
-            "Camera sau": 'Chính 108 MP & Phụ 12 MP, 10 MP, 10 MP',
-            "Camera trước": '40 MP',
-            "RAM": '8 GB',
-            "Bộ nhớ trong": '128 GB',
-            "Pin, Sạc": '5000 mAh, 45 W',
-        },
-        reviews: [
-            {
-                reviewer: "Trương Tam Phong",
-                date: "24-7-2022",
-                time: "5:52PM",
-                rating: 4,  //[1,5]
-                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
-            },
-        ],
     },
 
     {
@@ -565,7 +393,7 @@ let products = [
             "Camera trước: 10 MP",
             "Pin 3700 mAh, Sạc 25 W"
         ],
-        alterOptions: ["128GB", "256GB"],
+        alterOptions: ["8GB-128GB", "12GB-256GB"],
         ram: ["8GB"],
         rom: ["128GB", "256GB"],
         oldPrices: [21990000, 23490000],
@@ -573,30 +401,6 @@ let products = [
         ratings: 4,
         soldQuantity: 214,
         brand: "samsung",
-
-        mainCarouselImages: ["samsung-galaxy-s22-den-1.jpg", "samsung-galaxy-s22-green-2.jpg", "samsung-galaxy-s22-pink.jpg", "samsung-galaxy-s22-white.jpg"],
-        dotCarouselImages: ["Galaxy-S22-Black-200x200.jpg", "Galaxy-S22-Green-200x200.jpg", "Galaxy-S22-pink-200x200.jpg", "Galaxy-S22-White-200x200.jpg"],
-        colors: ["Đen", "Xanh lá", "Hồng", "Trắng"],
-        detailImgURL: "samsung-galaxy-s22-note.jpg",
-        specAttributes: {
-            "Màn hình": 'Dynamic AMOLED 2X, 6.1", Full HD+',
-            "Chip": "Snapdragon 8 Gen 1",
-            "Hệ điều hành": 'Android 12',
-            "Camera sau": 'Chính 50 MP & Phụ 12 MP, 10 MP',
-            "Camera trước": '10 MP',
-            "RAM": '8 GB',
-            "Bộ nhớ trong": '128 GB',
-            "Pin, Sạc": '3700 mAh, 45 W',
-        },
-        reviews: [
-            {
-                reviewer: "Trương Tam Phong",
-                date: "24-7-2022",
-                time: "5:52PM",
-                rating: 4,  //[1,5]
-                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
-            },
-        ],
     },
 
     {
@@ -612,38 +416,14 @@ let products = [
             "Camera trước: 16 MP",
             "Pin 5000 mAh, Sạc 120 W"
         ],
-        alterOptions: ["8GB", "12GB"],
-        ram: ["8GB", "12GB"],
+        alterOptions: ["8GB-128GB", "12GB-256GB"],
+        ram: ["8GB"],
         rom: ["128GB", "256GB"],
         oldPrices: [15690000, 16990000],
         currentPrices: [13990000, 14990000],
         ratings: 4,
         soldQuantity: 389,
         brand: "xiaomi",
-
-        mainCarouselImages: ["xiaomi-11t-pro-1-1.jpg", "xiaomi-11t-pro-1-2.jpg", "xiaomi-11t-pro-1-3"],
-        dotCarouselImages: ["Xiaomi-11T-Pro-Blue-1-2-200x200.jpg", "Xiaomi-11T-Pro-Grey-200x200.jpg", "Xiaomi-11T-Pro-White-200x200.jpg"],
-        colors: ["Xanh dương", "Xám", "Trắng"],
-        detailImgURL: "xiaomi-11t-pro-note-2.jpg",
-        specAttributes: {
-            "Màn hình": 'AMOLED, 6.67", Full HD+',
-            "Chip": "Snapdragon 888",
-            "Hệ điều hành": 'Android 11',
-            "Camera sau": 'Chính 108 MP & Phụ 8 MP, 5 MP',
-            "Camera trước": '16 MP',
-            "RAM": '8 GB',
-            "Bộ nhớ trong": '256 GB',
-            "Pin, Sạc": '5000 mAh, 120 W',
-        },
-        reviews: [
-            {
-                reviewer: "Trương Tam Phong",
-                date: "24-7-2022",
-                time: "5:52PM",
-                rating: 4,  //[1,5]
-                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
-            },
-        ],
     },
 
     {
@@ -1107,57 +887,4 @@ let products = [
     },
 ]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-products = products.map(obj => {
-    let discounts = []
-    for (let i = 0; i < obj.oldPrices.length; i++) {
-        let discountVal = (obj.currentPrices[i] / obj.oldPrices[i] - 1) * 100
-        discounts.push(discountVal.toFixed(2))
-    }
-    obj["discounts"] = discounts
-    return obj
-})
-
-
-let vouchers = {
-    "TECHG5": {
-        value: 0.05,
-        description: "Giảm 5% tối đa 2,000,000đ",
-        limit: 2000000
-    },
-
-    "TECHG10": {
-        value: 0.1,
-        description: "Giảm 10% tối đa 4,000,000đ",
-        limit: 4000000
-    },
-
-    "TECHG15": {
-        value: 0.15,
-        description: "Giảm 15% tối đa 1,500,000đ",
-        limit: 1500000
-    },
-}
-
-
+console.log(products.length)
