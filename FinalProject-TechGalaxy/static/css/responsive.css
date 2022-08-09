@@ -475,12 +475,12 @@
     }
 
     #payment-item-container .prices {
-        width: 25%;
+        width: 20%;
     }
 
 
     #payment-item-container .quantity {
-        width: 15%;
+        width: 20%;
     }
 
     #payment-item-container .value {
@@ -493,12 +493,12 @@
     }
 
     .history-payment-item-container .prices {
-        width: 25%;
+        width: 20%;
     }
 
 
     .history-payment-item-container .quantity {
-        width: 15%;
+        width: 20%;
     }
 
     .history-payment-item-container .value {
@@ -724,22 +724,6 @@
     .search-input i {
         top: 6px;
         color: #838383;
-    }
-
-    .modal-dialog {
-        margin: auto;
-        position: relative;
-        max-width: 100%;
-        --modal-header-height: 70px
-    }
-
-    .modal-header {
-        border-radius: 0;
-    }
-
-
-    .modal-content {
-        border: none;
     }
 
     .product-card {
@@ -998,7 +982,8 @@
     }
 
     .cart-detail {
-        border: 1px solid #e0e0e0;;
+        border: 1px solid #e0e0e0;
+        ;
     }
 
     .cart-and-total .row {}
@@ -1089,25 +1074,52 @@
         margin-top: 0;
     }
 
+    .payment .row {
+        padding: 8px;
+    }
+
     #voucher-field {
-        font-size: 14px;
+        font-size: 16px;
+        border-radius: 4px 0 0 4px;
     }
 
     #voucher-field::placeholder {
         font-size: 10px;
     }
 
-    #voucher-apply-btn {
-        font-size: 14px;
+    /* .voucher-container {
+        height: 42px;
+    } */
+
+    .voucher-field-container {
+        transform: translateY(4px);
     }
 
-    .form-floating>label, .form-floating>.form-select {
+    .voucher-field-container label {
+        height: 42px;
+    }
+
+    .voucher-field-container i {
+        padding: 10px 5px;
+        top: 43%;
+    }
+
+    #voucher-apply-btn {
+        font-size: 14px;
+        height: 42px;
+        line-height: 42px;
+    }
+
+    .form-floating>label,
+    .form-floating>.form-select {
         font-size: 13px;
     }
 
-    .form-floating>.form-control, .form-floating>.form-select {
+    .form-floating>.form-control,
+    .form-floating>.form-select {
         height: calc(2.5rem + 2px);
     }
+
 
     .form-floating>label {
         padding: 9px .75rem;
@@ -1117,6 +1129,75 @@
         font-size: 13px;
     }
 
+    .payment-method-container h4 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    #pay-btn {
+        font-size: 14px;
+        height: 42px;
+    }
+
+    .payment-partner {
+        margin-top: 30px;
+    }
+
+    .payment-partner h4 {
+        font-size: 16px;
+    }
+
+    .payment-promotions {
+        padding-top: 5px;
+    }
+
+    .payment-promotions li {
+        font-size: 13px;
+    }
+
+
+    /* modal xac nhan thanh toan */
+
+    .modal-dialog {
+        margin: auto;
+        position: relative;
+        max-width: 100%;
+        --modal-header-height: 70px
+    }
+
+    .modal-header {
+        border-radius: 0;
+        padding: 0.2rem 1rem;
+    }
+
+    .modal-body {
+        padding: 0.75rem;
+    }
+
+    #payment-item-container {
+        padding: 0;
+    }
+
+    .modal-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+    }
+
+    .modal-content {
+        border: none;
+        border-radius: 0;
+    }
+
+    #payment-shipment-info {
+        flex-direction: column;
+    }
+
+    .receiver-info {
+        border-left: 0;
+    }
+    
+
+    
 
 
 }
@@ -1175,10 +1256,66 @@
 
 
 /* small phone */
-@media (max-width: 350px) {
+@media (max-width: 450px) {
 
     .cart-item .product-name,
     .cart-item .product-attr {
-        font-size: 12px;
+        font-size: 13px;
+    }
+
+    #payment-item-container {
+        font-size: 13px;
+    }
+
+    
+    .cart-item .cart-item-detail {
+        flex: 1;
+    }
+
+    .cart-item .product-name,
+    .cart-item .product-attr {
+        font-size: 14px;
+    }
+
+
+    #payment-item-container {
+        font-size: 14px;
+    }
+
+    #payment-item-container .product {
+        width: 65%;
+    }
+
+    #payment-item-container .prices {
+        width: 35%;
+        padding-right: 2%;
+    }
+
+    #payment-item-container .quantity {
+        width: 40%;
+        margin-top: 7px;
+    }
+
+    #payment-item-container .value {
+        width: 60%;
+        padding-right: 2%;
+        font-weight: 700;
+        color: #ee4d2d;
+        margin-top: 7px;
+    }
+
+    .mobile-count-label {
+        display: inline;
+        font-weight: bold;
+    } 
+
+    #payment-item-container .payment-item-title .product {
+        width: 100%;
+    }
+
+    .payment-item-title .prices,
+    .payment-item-title .quantity,
+    .payment-item-title .value {
+        display: none;
     }
 }

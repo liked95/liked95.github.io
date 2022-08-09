@@ -401,7 +401,7 @@ function renderOrderConfirmation() {
     const paymentItemContentEl = document.querySelector("#payment-item-container .payment-item-content")
     paymentItemContentEl.innerHTML = `
         <div class="payment-item-title d-flex mb-3">
-            <div class="product fw-bold px-5">Sản phẩm</div>
+            <div class="product fw-bold text-center">Sản phẩm</div>
             <div class="prices text-end fw-bold px-4">Giá</div>
             <div class="quantity text-center fw-bold">Số lượng</div>
             <div class="value text-end fw-bold">Số tiền</div>
@@ -430,6 +430,8 @@ function renderOrderConfirmation() {
                 </div>
 
                 <div class="quantity text-center">
+                    
+                    <span class="mobile-count-label">Số lượng: </span>
                     <span>${item.count}</span>
                 </div>
                     

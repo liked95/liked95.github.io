@@ -2048,6 +2048,10 @@ footer p {
     width: 15%;
 }
 
+.mobile-count-label {
+    display: none;
+}
+
 .fade-btn-container {
     position: absolute;
     bottom: 0;
