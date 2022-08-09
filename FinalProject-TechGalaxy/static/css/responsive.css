@@ -722,7 +722,11 @@
 
     .search-input input {
         height: 35px;
-        /* font-size: 14px; */
+        padding-right: 35px;
+    }
+
+    .glass-img {
+        padding: 0 6px;
     }
 
     .search-input i {

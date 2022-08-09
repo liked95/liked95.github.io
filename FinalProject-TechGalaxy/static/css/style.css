@@ -178,9 +178,10 @@ header .first-header-row {
 .search-input input {
     width: 100%;
     height: 41px;
-    border-radius: 12px;
+    border-radius: 6px;
     border: none;
     padding-left: 20px;
+    padding-right: 45px;
 }
 
 
@@ -190,13 +191,21 @@ header .first-header-row {
     border-bottom: 1px solid #e0e0e0;
 }
 
-.search-input i {
+.glass-img {
     position: absolute;
-    top: 9px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
+    padding: 5px 10px;
+    height: 100%;
     font-size: 24px;
     color: #333;
+    background: #fff;
     cursor: pointer;
+    border-radius: 6px;
+}
+
+.glass-img .fa-xmark {
+    display: none;
 }
 
 #search-result {
@@ -394,6 +403,12 @@ header .second-header-row {
 }
 
 .menu-icon>p {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.menu-icon>a {
     font-size: 12px;
     text-transform: uppercase;
     margin-top: 5px;

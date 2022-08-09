@@ -531,8 +531,13 @@ function renderSearchResult() {
                 res.push({ name: product.name, id: product.id })
             }
         }
+        //ẩn glass hiện X
+        $(".glass-img .fa-magnifying-glass").hide()
+        $(".glass-img .fa-xmark").show()
     } else {
         $(".search-input input").removeClass("typed")
+        $(".glass-img .fa-magnifying-glass").show()
+        $(".glass-img .fa-xmark").hide()
     }
     // console.log(res)
     if (res.length == 0 && searchVal != '') {
@@ -559,13 +564,16 @@ function renderSearchResult() {
 
 // click outside to close the search result
 $(document).click((e) => {
-    let searchInput = document.querySelector(".search-input")
+    let searchInput = document.querySelector(".search-input input")
     let searchResEl = document.getElementById("search-result")
+
     if (searchInput.contains(e.target) || searchResEl.contains(e.target)) {
         $("#search-result").show()
     } else {
         $("#search-result").hide()
         $(".search-input input").removeClass("typed")
+        $(".glass-img .fa-magnifying-glass").show()
+        $(".glass-img .fa-xmark").hide()
     }
 })
 
@@ -577,10 +585,15 @@ function redirectFirstRes() {
     }
     window.location.href = result.href
 }
-// 2. hiển thị khi click kính lúp
+// out search func khi click X
 $(".search-input i").click((e) => {
-    redirectFirstRes()
+    $("#search-result").hide()
+    $(".search-input input").removeClass("typed")
+    $(".search-input input").val("")
+    $(".glass-img .fa-magnifying-glass").show()
+    $(".glass-img .fa-xmark").hide()
 })
+
 
 
 

@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/responsive.css">
@@ -34,7 +32,10 @@
 
                 <div class="search-input">
                     <input type="text" placeholder="Tìm kiếm">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <div class="glass-img">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
                     <div id="search-result"></div>
                 </div>
 
@@ -168,7 +169,7 @@
 
                     <li class="menu-icon">
                         <div class="icon-box">
-                            <i class="fa-solid fa-exclamation"></i>
+                            <i class="fa-solid fa-circle-info"></i>
                         </div>
                         <a href="about.html">về chúng tôi</a href="about.html">
                     </li>
