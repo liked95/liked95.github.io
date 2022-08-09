@@ -1333,6 +1333,12 @@
     }
 }
 
+@media (max-width: 476px) {
+    .product-content {
+        min-height: 330px;
+    }
+}
+
 
 /* small phone */
 @media (max-width: 450px) {
@@ -1428,5 +1434,12 @@
 
     #side-nav-container {
         width: 250px;
+    }
+}
+
+/* super small phone */
+@media (max-width: 360px) {
+    .product-content {
+        min-height: 460px;
     }
 }
