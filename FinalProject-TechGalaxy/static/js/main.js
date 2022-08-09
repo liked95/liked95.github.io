@@ -78,7 +78,7 @@ if (userID) {
         </ul>
     `)
     $(".login-logout").replaceWith(credentialEl)
-    
+
     // responsive
     let responsiveCredEl = $("<li></li>")
     responsiveCredEl.addClass("menu-item")
@@ -350,7 +350,7 @@ function renderPurchaseHistory() {
         // console.log(purchase);
         let productsHTML = `
             <div class="payment-item-title d-flex mb-3">
-                <div class="product fw-bold px-5">Sản phẩm</div>
+                <div class="product fw-bold text-center">Sản phẩm</div>
                 <div class="prices text-end fw-bold px-4">Giá</div>
                 <div class="quantity text-center fw-bold">Số lượng</div>
                 <div class="value text-end fw-bold">Số tiền</div>
@@ -377,6 +377,7 @@ function renderPurchaseHistory() {
                     </div>
 
                     <div class="quantity text-center">
+                        <span class="mobile-count-label">Số lượng: </span>
                         <span>${product.count}</span>
                     </div>
                     
@@ -411,7 +412,7 @@ function renderPurchaseHistory() {
 
             <div class="row" class="history-payment-shipment-info">
                 <div class="total-cart-container col-6">
-                    <h5 class="text-center mb-3 fw-bold">Tổng quan đơn hàng</h5>
+                    <h6 class="text-center mb-3 fw-bold">Tổng quan đơn hàng</h6>
                     <div class="total-value">
                         <span>Tiền hàng</span>
                         <span>${purchase.financialVals.totalValue}</span>
@@ -446,7 +447,7 @@ function renderPurchaseHistory() {
                 </div>
 
                 <div class="receiver-info col-6">
-                    <h5 class="text-center mb-3 fw-bold">Thông tin người nhận</h5>
+                    <h6 class="text-center mb-3 fw-bold">Thông tin người nhận</h6>
                     <p>Họ và tên: <span class="history-user-name">${purchase.userInfo.name}</span></p>
                     <p>Số điện thoại <span class="history-user-phone">${purchase.userInfo.phone}</span></p>
                     <p>Địa chỉ: <span class="history-user-address">${purchase.userInfo.address}</span></p>

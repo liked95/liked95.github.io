@@ -1966,7 +1966,7 @@ footer p {
 
 .customer-info-form input,
 .customer-info-form input select {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .form-floating>.form-select {
@@ -2084,9 +2084,9 @@ footer p {
 }
 
 /* style history modal */
-#orderHistory .modal-body {
+/* #orderHistory .modal-body {
     background-color: #cacaca
-}
+} */
 
 .history-item {
     padding: 16px;

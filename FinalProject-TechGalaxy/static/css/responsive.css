@@ -1192,9 +1192,36 @@
         flex-direction: column;
     }
 
+    .total-cart-container,
+    .receiver-info {
+        width: 100%;
+    }
+
     .receiver-info {
         border-left: 0;
     }
+
+    .receiver-info p {
+        font-size: 13px;
+    }
+    
+    .history-item {
+        padding: 0;
+    }
+
+    .history-item > .row {
+        flex-direction: column;
+    }
+
+    .history-payment-item-container {
+        padding: 4px;
+    }
+
+    .payment-time {
+        margin: 0 auto;
+        font-size: 14px;
+    }
+
     
 
     
@@ -1317,5 +1344,33 @@
     .payment-item-title .quantity,
     .payment-item-title .value {
         display: none;
+    }
+
+
+    /* lich su order */
+    .history-payment-item-container .product {
+        width: 65%;
+    }
+
+    .history-payment-item-container .prices {
+        width: 35%;
+        padding-right: 2%;
+    }
+
+    .history-payment-item-container .quantity {
+        width: 40%;
+        margin-top: 7px;
+    }
+
+    .history-payment-item-container .value {
+        width: 60%;
+        padding-right: 2%;
+        font-weight: 700;
+        color: #ee4d2d;
+        margin-top: 7px;
+    }
+    
+    .history-payment-item-container .payment-item-title .product {
+        width: 100%;
     }
 }
