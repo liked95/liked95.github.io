@@ -34,7 +34,10 @@
 
                 <div class="search-input">
                     <input type="text" placeholder="Tìm kiếm">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <div class="glass-img">
+                        <img src="../static/images/header/magnifying-glass.svg" alt="magnify-glass" class="magnify-glass filter-gray">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
                     <div id="search-result"></div>
                 </div>
 
@@ -54,10 +57,20 @@
         <div class="second-header-row">
             <div class="container">
                 <ul class="main-menu">
+
+                    <li class="menu-icon">
+                        <a href="index.html">
+                            <div class="icon-box">
+                                <img src="../static/images/header/homepage.svg" alt="homepage" class="filter-white">
+                            </div>
+                            <p>Trang chủ</p>
+                        </a>
+                    </li>
+
                     <li class="menu-icon">
                         <a href="smartphone.html">
                             <div class="icon-box">
-                                <i class="fa-solid fa-mobile-screen"></i>
+                                <img src="../static/images/header/smartphone.svg" alt="phone" class="filter-white">
                                 <i class="fa-solid fa-caret-down"></i>
                             </div>
                             <p>Điện thoại</p>
@@ -83,9 +96,9 @@
 
 
                     <li class="menu-icon">
-                        <a href="/tablet">
+                        <a href="tablet.html">
                             <div class="icon-box">
-                                <i class="fa-solid fa-tablet-screen-button"></i>
+                                <img src="../static/images/header/tablet.svg" alt="tablet" class="filter-white">
                                 <i class="fa-solid fa-caret-down"></i>
                             </div>
                             <p>máy tính bảng</p>
@@ -110,9 +123,9 @@
                     </li>
 
                     <li class="menu-icon">
-                        <a href="/laptop">
+                        <a href="laptop.html">
                             <div class="icon-box">
-                                <i class="fa-solid fa-laptop"></i>
+                                <img src="../static/images/header/laptop.svg" alt="laptop" class="filter-white">
                                 <i class="fa-solid fa-caret-down"></i>
                             </div>
                             <p>laptop</p>
@@ -136,42 +149,36 @@
                         </a>
                     </li>
 
+
+
                     <li class="menu-icon">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-tv"></i>
-                            <i class="fa-solid fa-caret-down"></i>
-                        </div>
-                        <p>smart tv</p>
+                        <a href="promotion.html">
+                            <div class="icon-box">
+                                <img src="../static/images/header/promotion.svg" alt="promotion" class="filter-white">
+                            </div>
+                            <p>khuyến mãi</p>
+                        </a>
+                    </li>
+
+                    
+                    <li class="menu-icon">
+                        <a href="about.html">
+                            <div class="icon-box">
+                                <img src="../static/images/header/about-us.svg" alt="about-us" class="filter-white">
+                            </div>
+                            <p>về chúng tôi</p>
+                        </a>
                     </li>
 
                     <li class="menu-icon">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-headphones-simple"></i>
-                            <i class="fa-solid fa-caret-down"></i>
-                        </div>
-                        <p>âm thanh</p>
+                        <a href="contact.html">
+                            <div class="icon-box">
+                                <img src="../static/images/header/contact.svg" alt="contact" class="filter-white">
+                            </div>
+                            <p>liên hệ</p>
+                        </a>
                     </li>
 
-                    <li class="menu-icon">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                        </div>
-                        <p>sửa chữa</p>
-                    </li>
-
-                    <li class="menu-icon">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-newspaper"></i>
-                        </div>
-                        <p>tin tức</p>
-                    </li>
-
-                    <li class="menu-icon">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-exclamation"></i>
-                        </div>
-                        <p>về chúng tôi</p>
-                    </li>
 
                 </ul>
             </div>
@@ -192,29 +199,6 @@
 
         <ul class="side-menu">
 
-            <!-- <li class="menu-item">
-                <div class="sidebar-main-menu">
-                    <div class="credential-sidebar d-flex">
-                        <span class="sidebar-avatar">
-                            <img src="../static/images/contingency-images/default-avatar.png" alt="default-avatar">
-                        </span>
-
-                        <span>
-                            <b>son</b>
-                        </span>
-                    </div>
-                    <span class="arrow-container" onclick="toggleSubMenu(this)">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </span>
-                </div>
-
-                <ul class="sub-menu">
-                    <li class="sub-menu-item" id="side-bar-history" data-toggle="modal" data-target="#orderHistory">Lịch
-                        sử đặt hàng</li>
-                    <li class="sub-menu-item logout-btn">Đăng xuất</li>
-                </ul>
-            </li> -->
-
             <li class="menu-item">
                 <div class="sidebar-main-menu">
                     <a href="smartphone.html">Điện thoại</a>
@@ -224,92 +208,62 @@
                 </div>
                 <ul class="sub-menu">
                     <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Huawei</a></li>
+                </ul>
+            </li>
+
+
+            <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <a href="tablet.html">Máy tính bảng</a>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
+                <ul class="sub-menu">
                     <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Huawei</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Acer</a></li>
+                </ul>
+            </li>
+
+            <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <a href="laptop.html">Laptop</a>
+                    <span class="arrow-container" onclick="toggleSubMenu(this)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
+                <ul class="sub-menu">
                     <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
-                </ul>
-            </li>
-
-
-            <li class="menu-item">
-                <div class="sidebar-main-menu">
-                    <a href="smartphone.html">Máy tính bảng</a>
-                    <span class="arrow-container" onclick="toggleSubMenu(this)">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </span>
-                </div>
-                <ul class="sub-menu">
-                    <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Huawei</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Windows</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Intel</a></li>
                     <li class="sub-menu-item"><a href="apple.html">Acer</a></li>
                 </ul>
             </li>
 
             <li class="menu-item">
                 <div class="sidebar-main-menu">
-                    <a href="smartphone.html">Máy tính bảng</a>
-                    <span class="arrow-container" onclick="toggleSubMenu(this)">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </span>
+                    <a href="promotion.html">Khuyến mãi</a>
                 </div>
-                <ul class="sub-menu">
-                    <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Huawei</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Acer</a></li>
-                </ul>
             </li>
 
             <li class="menu-item">
                 <div class="sidebar-main-menu">
-                    <a href="smartphone.html">Máy tính bảng</a>
-                    <span class="arrow-container" onclick="toggleSubMenu(this)">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </span>
+                    <a href="about.html">Về chúng tôi</a>
                 </div>
-                <ul class="sub-menu">
-                    <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Huawei</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Acer</a></li>
-                </ul>
             </li>
 
             <li class="menu-item">
                 <div class="sidebar-main-menu">
-                    <a href="smartphone.html">Máy tính bảng</a>
-                    <span class="arrow-container" onclick="toggleSubMenu(this)">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </span>
-                </div>
-                <ul class="sub-menu">
-                    <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Huawei</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Acer</a></li>
-                </ul>
-            </li>
-
-            <li class="menu-item">
-                <div class="sidebar-main-menu">
-                    <a href="smartphone.html">Laptop</a>
-                    <span class="arrow-container" onclick="toggleSubMenu(this)">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </span>
-                </div>
-                <ul class="sub-menu">
-                    <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
-
-                </ul>
-            </li>
-
-            <li class="menu-item">
-                <div class="sidebar-main-menu">
-                    <a href="smartphone.html">Về chúng tôi</a>
+                    <a href="contact.html">Liên hệ</a>
                 </div>
             </li>
+
+           
 
             <li class="menu-item fst-italic" id="sidebar-login-logout">
                 <div class="sidebar-main-menu d-flex flex-column">
@@ -319,7 +273,6 @@
             </li>
         </ul>
     </div>
-
 
 
 
@@ -538,7 +491,6 @@
             </div>
         </div>
     </footer>
-
 
 
 

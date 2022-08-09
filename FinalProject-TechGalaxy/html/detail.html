@@ -37,7 +37,7 @@
                 <div class="search-input">
                     <input type="text" placeholder="Tìm kiếm">
                     <div class="glass-img">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <img src="../static/images/header/magnifying-glass.svg" alt="magnify-glass" class="magnify-glass filter-gray">
                         <i class="fa-solid fa-xmark"></i>
                     </div>
                     <div id="search-result"></div>
@@ -61,16 +61,18 @@
                 <ul class="main-menu">
 
                     <li class="menu-icon">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-house"></i>
-                        </div>
-                        <a href="index.html">Trang chủ</a>
+                        <a href="index.html">
+                            <div class="icon-box">
+                                <img src="../static/images/header/homepage.svg" alt="homepage" class="filter-white">
+                            </div>
+                            <p>Trang chủ</p>
+                        </a>
                     </li>
-                    
+
                     <li class="menu-icon">
                         <a href="smartphone.html">
                             <div class="icon-box">
-                                <i class="fa-solid fa-mobile-screen"></i>
+                                <img src="../static/images/header/smartphone.svg" alt="phone" class="filter-white">
                                 <i class="fa-solid fa-caret-down"></i>
                             </div>
                             <p>Điện thoại</p>
@@ -96,9 +98,9 @@
 
 
                     <li class="menu-icon">
-                        <a href="/tablet">
+                        <a href="tablet.html">
                             <div class="icon-box">
-                                <i class="fa-solid fa-tablet-screen-button"></i>
+                                <img src="../static/images/header/tablet.svg" alt="tablet" class="filter-white">
                                 <i class="fa-solid fa-caret-down"></i>
                             </div>
                             <p>máy tính bảng</p>
@@ -123,9 +125,9 @@
                     </li>
 
                     <li class="menu-icon">
-                        <a href="/laptop">
+                        <a href="laptop.html">
                             <div class="icon-box">
-                                <i class="fa-solid fa-laptop"></i>
+                                <img src="../static/images/header/laptop.svg" alt="laptop" class="filter-white">
                                 <i class="fa-solid fa-caret-down"></i>
                             </div>
                             <p>laptop</p>
@@ -149,21 +151,36 @@
                         </a>
                     </li>
 
-                   
-                
+
+
                     <li class="menu-icon">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-newspaper"></i>
-                        </div>
-                        <p>tin tức</p>
+                        <a href="promotion.html">
+                            <div class="icon-box">
+                                <img src="../static/images/header/promotion.svg" alt="promotion" class="filter-white">
+                            </div>
+                            <p>khuyến mãi</p>
+                        </a>
+                    </li>
+
+                    
+                    <li class="menu-icon">
+                        <a href="about.html">
+                            <div class="icon-box">
+                                <img src="../static/images/header/about-us.svg" alt="about-us" class="filter-white">
+                            </div>
+                            <p>về chúng tôi</p>
+                        </a>
                     </li>
 
                     <li class="menu-icon">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </div>
-                        <a href="about.html">về chúng tôi</a>
+                        <a href="contact.html">
+                            <div class="icon-box">
+                                <img src="../static/images/header/contact.svg" alt="contact" class="filter-white">
+                            </div>
+                            <p>liên hệ</p>
+                        </a>
                     </li>
+
 
                 </ul>
             </div>
@@ -184,29 +201,6 @@
 
         <ul class="side-menu">
 
-            <!-- <li class="menu-item">
-                <div class="sidebar-main-menu">
-                    <div class="credential-sidebar d-flex">
-                        <span class="sidebar-avatar">
-                            <img src="../static/images/contingency-images/default-avatar.png" alt="default-avatar">
-                        </span>
-
-                        <span>
-                            <b>son</b>
-                        </span>
-                    </div>
-                    <span class="arrow-container" onclick="toggleSubMenu(this)">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </span>
-                </div>
-
-                <ul class="sub-menu">
-                    <li class="sub-menu-item" id="side-bar-history" data-toggle="modal" data-target="#orderHistory">Lịch
-                        sử đặt hàng</li>
-                    <li class="sub-menu-item logout-btn">Đăng xuất</li>
-                </ul>
-            </li> -->
-
             <li class="menu-item">
                 <div class="sidebar-main-menu">
                     <a href="smartphone.html">Điện thoại</a>
@@ -216,22 +210,22 @@
                 </div>
                 <ul class="sub-menu">
                     <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Huawei</a></li>
                 </ul>
             </li>
 
 
             <li class="menu-item">
                 <div class="sidebar-main-menu">
-                    <a href="smartphone.html">Máy tính bảng</a>
+                    <a href="tablet.html">Máy tính bảng</a>
                     <span class="arrow-container" onclick="toggleSubMenu(this)">
                         <i class="fa-solid fa-chevron-right"></i>
                     </span>
                 </div>
                 <ul class="sub-menu">
-                    <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
                     <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
                     <li class="sub-menu-item"><a href="apple.html">Huawei</a></li>
                     <li class="sub-menu-item"><a href="apple.html">Acer</a></li>
@@ -240,23 +234,38 @@
 
             <li class="menu-item">
                 <div class="sidebar-main-menu">
-                    <a href="smartphone.html">Laptop</a>
+                    <a href="laptop.html">Laptop</a>
                     <span class="arrow-container" onclick="toggleSubMenu(this)">
                         <i class="fa-solid fa-chevron-right"></i>
                     </span>
                 </div>
                 <ul class="sub-menu">
-                    <li class="sub-menu-item"><a href="apple.html">Oppo</a></li>
-                    <li class="sub-menu-item"><a href="apple.html">Samsung</a></li>
-
+                    <li class="sub-menu-item"><a href="apple.html">Apple</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Windows</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Intel</a></li>
+                    <li class="sub-menu-item"><a href="apple.html">Acer</a></li>
                 </ul>
             </li>
 
             <li class="menu-item">
                 <div class="sidebar-main-menu">
-                    <a href="smartphone.html">Về chúng tôi</a>
+                    <a href="promotion.html">Khuyến mãi</a>
                 </div>
             </li>
+
+            <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <a href="about.html">Về chúng tôi</a>
+                </div>
+            </li>
+
+            <li class="menu-item">
+                <div class="sidebar-main-menu">
+                    <a href="contact.html">Liên hệ</a>
+                </div>
+            </li>
+
+           
 
             <li class="menu-item fst-italic" id="sidebar-login-logout">
                 <div class="sidebar-main-menu d-flex flex-column">
@@ -1569,7 +1578,7 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="footer-column col-lg-3">
+                <div class="footer-column col-lg-3 col-sm-6">
                     <h2>Tech Galaxy</h2>
                     <p>GPKD: 001100431112</p>
                     <p>Địa chỉ: Thanh Xuân - Hà Nội</p>
@@ -1577,7 +1586,7 @@
                     <p>Chủ sở hữu: Vũ Hoài Sơn</p>
                 </div>
 
-                <div class="footer-column col-lg-3">
+                <div class="footer-column col-lg-3 col-sm-6">
                     <h2>Dịch vụ hỗ trợ</h2>
                     <p>Dịch vụ hỗ trợ</p>
                     <p>Đặt hàng và thanh toán</p>
@@ -1586,7 +1595,7 @@
                     <p>Giải quyết khiếu nại</p>
                 </div>
 
-                <div class="footer-column col-lg-3">
+                <div class="footer-column col-lg-3 col-sm-6">
                     <h2>Đối tác thương hiệu</h2>
                     <p>Apple</p>
                     <p>Samsung</p>
@@ -1595,7 +1604,7 @@
                     <p>Microsoft</p>
                 </div>
 
-                <div class="footer-column col-lg-3">
+                <div class="footer-column col-lg-3 col-sm-6">
                     <h2>Đối tác thanh toán</h2>
                     <p>Vietcombank</p>
                     <p>VNPAY</p>

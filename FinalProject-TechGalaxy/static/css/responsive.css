@@ -189,6 +189,10 @@
         margin-bottom: 5px;
     }
 
+    .sidebar-main-menu a {
+        text-transform: uppercase;
+    }
+
     .arrow-container {
         padding: 0 10px;
         border-left: 1px solid #e0e0e0;
@@ -1251,7 +1255,22 @@
         text-align: center;
     }
 
-    
+    .about-us h3,
+    .contact h3 {
+        font-size: 20px;
+    }
+
+    .about-sub-title {
+        font-size: 18px;
+    }
+
+    .about-us p {
+        font-size: 14px;
+    }
+
+    .contact p {
+        font-size: 14px;
+    }
 
     
 
@@ -1307,6 +1326,10 @@
 
     .sort-container {
         text-align: left;
+    }
+
+    .sidebar-main-menu a {
+        font-size: 14px;
     }
 }
 
