@@ -12,6 +12,21 @@ let filterTagArr = []
 const tagContainer = document.querySelector(".tags")
 const selectSortBtn = document.getElementById("sort")
 
+// query brand
+// lấy id trên url
+let params = new URLSearchParams(window.location.search)
+let brand = params.get("brand")
+
+if (brand) {
+    let firstChar = brand.charAt(0)
+    let capitalizedBrand = firstChar.toUpperCase() + brand.slice(1)
+    filterTagArr = [{key: 'brand', value: capitalizedBrand, displayTag: capitalizedBrand}]
+    filterProduct(products, filterTagArr, "smartphone", phoneCategoryBox)
+    $(`#${brand}`).prop("checked", true)
+    updateTag()
+    $(".search-quantity").text(filterResults.length)
+}
+
 
 function updateTag() {
     tagContainer.innerHTML = ""
@@ -115,6 +130,7 @@ const filterBtn = document.querySelector(".filter-btn")
 
 
 filterBtn.addEventListener("click", () => {
+    // console.log(filterTagArr)
     filterProduct(products, filterTagArr, "smartphone", phoneCategoryBox)
     $(".search-quantity").text(filterResults.length)
     selectSortBtn.value = ""
