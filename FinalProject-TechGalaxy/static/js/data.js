@@ -9,8 +9,8 @@ let products = [
             "Màn 6.7 inch",
             "Chip Apple 15 Bionic",
             "RAM 6GB",
-            "Camera sau: 3 camera 12 MP",
-            "Camera trước: 12 MP",
+            "Camera sau: 3 camera 12MP",
+            "Camera trước: 12MP",
             "Pin 4352 mAh, Sạc 20 W"
         ],
         alterOptions: ["128GB", "256GB", "512GB", "1TB"],
@@ -29,7 +29,7 @@ let products = [
             "Màn hình": 'OLED, 6.7", Super Retina XDR',
             "Chip": "Apple 15 Bionic",
             "Hệ điều hành": '	iOS 15',
-            "Camera sau": '3 camera 12 MP',
+            "Camera sau": '3 camera 12MP',
             "Camera trước": '12MP',
             "RAM": '6 GB',
             "Bộ nhớ trong": '128 GB',
@@ -91,8 +91,8 @@ let products = [
             "Màn 6.1 inch",
             "Chip Apple 15 Bionic",
             "RAM 6GB",
-            "Camera sau: 3 camera 12 MP",
-            "Camera trước: 12 MP",
+            "Camera sau: 3 camera 12MP",
+            "Camera trước: 12MP",
             "Pin 3095 mAh, Sạc 20 W"
         ],
         alterOptions: ["128GB", "256GB", "512GB", "1TB"],
@@ -111,7 +111,7 @@ let products = [
             "Màn hình": 'OLED, 6.1", Super Retina XDR',
             "Chip": "Apple 15 Bionic",
             "Hệ điều hành": '	iOS 15',
-            "Camera sau": '3 camera 12 MP',
+            "Camera sau": '3 camera 12MP',
             "Camera trước": '12MP',
             "RAM": '6 GB',
             "Bộ nhớ trong": '128 GB',
@@ -174,8 +174,8 @@ let products = [
             "Màn 6.1 inch",
             "Chip Apple 15 Bionic",
             "RAM 4GB",
-            "Camera sau: 2 camera 12 MP",
-            "Camera trước: 12 MP",
+            "Camera sau: 2 camera 12MP",
+            "Camera trước: 12MP",
             "Pin 3240 mAh, Sạc 20 W"
         ],
         alterOptions: ["128GB", "256GB", "512GB"],
@@ -194,7 +194,7 @@ let products = [
             "Màn hình": 'OLED, 6.1", Super Retina XDR',
             "Chip": "Apple 15 Bionic",
             "Hệ điều hành": '	iOS 15',
-            "Camera sau": '2 camera 12 MP',
+            "Camera sau": '2 camera 12MP',
             "Camera trước": '12MP',
             "RAM": '4 GB',
             "Bộ nhớ trong": '128 GB',
@@ -255,8 +255,8 @@ let products = [
             "Màn 6.1 inch",
             "Chip Apple A13 Bionic",
             "RAM 4GB",
-            "Camera sau: 2 camera 12 MP",
-            "Camera trước: 12 MP",
+            "Camera sau: 2 camera 12MP",
+            "Camera trước: 12MP",
             "Pin 3110 mAh, Sạc 18 W"
         ],
         alterOptions: ["64GB", "128GB"],
@@ -275,7 +275,7 @@ let products = [
             "Màn hình": 'IPS LCD, 6.1", Liquid Retina',
             "Chip": "Apple 13 Bionic",
             "Hệ điều hành": 'iOS 15',
-            "Camera sau": '2 camera 12 MP',
+            "Camera sau": '2 camera 12MP',
             "Camera trước": '12MP',
             "RAM": '4 GB',
             "Bộ nhớ trong": '64 GB',
@@ -336,8 +336,8 @@ let products = [
             "Màn 5.4 inch",
             "Chip Apple A13 Bionic",
             "RAM 4GB",
-            "Camera sau: 2 camera 12 MP",
-            "Camera trước: 12 MP",
+            "Camera sau: 2 camera 12MP",
+            "Camera trước: 12MP",
             "Pin 2438 mAh, Sạc 18 W"
         ],
         alterOptions: ["128GB", "256GB", "512GB"],
@@ -356,7 +356,7 @@ let products = [
             "Màn hình": 'OLED, 5.4", Super Retina XDR',
             "Chip": "Apple 15 Bionic",
             "Hệ điều hành": 'iOS 15',
-            "Camera sau": '2 camera 12 MP',
+            "Camera sau": '2 camera 12MP',
             "Camera trước": '12MP',
             "RAM": '4 GB',
             "Bộ nhớ trong": '128 GB',
@@ -373,8 +373,8 @@ let products = [
             "Màn 6.1 inch",
             "Chip Apple A14 Bionic",
             "RAM 4GB",
-            "Camera sau: 2 camera 12 MP",
-            "Camera trước: 12 MP",
+            "Camera sau: 2 camera 12MP",
+            "Camera trước: 12MP",
             "Pin 3110 mAh, Sạc 18 W"
         ],
         alterOptions: ["64GB", "128GB", "256GB"],
@@ -394,7 +394,7 @@ let products = [
             "Màn hình": 'OLED, 6.1", Super Retina XDR',
             "Chip": "Apple 15 Bionic",
             "Hệ điều hành": 'iOS 15',
-            "Camera sau": '2 camera 12 MP',
+            "Camera sau": '2 camera 12MP',
             "Camera trước": '12MP',
             "RAM": '4 GB',
             "Bộ nhớ trong": '64 GB',
@@ -420,8 +420,8 @@ let products = [
             "Màn 5.4 inch",
             "Chip Apple A14 Bionic",
             "RAM 4GB",
-            "Camera sau: 2 camera 12 MP",
-            "Camera trước: 12 MP",
+            "Camera sau: 2 camera 12MP",
+            "Camera trước: 12MP",
             "Pin 2227 mAh, Sạc 20 W"
         ],
         alterOptions: ["128GB", "256GB", "512GB"],
@@ -441,7 +441,7 @@ let products = [
             "Màn hình": 'OLED, 5.4", Super Retina XDR',
             "Chip": "Apple 14 Bionic",
             "Hệ điều hành": 'iOS 15',
-            "Camera sau": '2 camera 12 MP',
+            "Camera sau": '2 camera 12MP',
             "Camera trước": '12MP',
             "RAM": '4 GB',
             "Bộ nhớ trong": '64 GB',
@@ -467,8 +467,8 @@ let products = [
             "Màn 4.7 inch",
             "Chip Apple A15 Bionic",
             "RAM 4GB",
-            "Camera sau: 12 MP",
-            "Camera trước: 7 MP",
+            "Camera sau: 12MP",
+            "Camera trước: 7MP",
             "Pin 2018 mAh, Sạc 20 W"
         ],
         alterOptions: ["64GB", "128GB"],
@@ -488,7 +488,7 @@ let products = [
             "Màn hình": 'IPS LCD, 4.7", Retina HD',
             "Chip": "Apple 15 Bionic",
             "Hệ điều hành": 'iOS 15',
-            "Camera sau": '12 MP',
+            "Camera sau": '12MP',
             "Camera trước": '7MP',
             "RAM": '4 GB',
             "Bộ nhớ trong": '64 GB',
@@ -514,8 +514,8 @@ let products = [
             "Màn 6.8 inch, Quad HD+",
             "Chip Snapdragon 8 Gen 1",
             "RAM 8GB/12GB",
-            "Camera sau: Chính 108 MP & Phụ 12 MP, 10 MP, 10 MP",
-            "Camera trước: 40 MP",
+            "Camera sau: Chính 108MP & Phụ 12MP, 10MP, 10MP",
+            "Camera trước: 40MP",
             "Pin 5000 mAh, Sạc 45 W"
         ],
         alterOptions: ["128GB", "256GB"],
@@ -535,8 +535,8 @@ let products = [
             "Màn hình": 'Dynamic AMOLED 2X, 6.8", Quad HD+ (2K+)',
             "Chip": "Snapdragon 8 Gen 1",
             "Hệ điều hành": 'Android 12',
-            "Camera sau": 'Chính 108 MP & Phụ 12 MP, 10 MP, 10 MP',
-            "Camera trước": '40 MP',
+            "Camera sau": 'Chính 108MP & Phụ 12MP, 10MP, 10MP',
+            "Camera trước": '40MP',
             "RAM": '8 GB',
             "Bộ nhớ trong": '128 GB',
             "Pin, Sạc": '5000 mAh, 45 W',
@@ -561,8 +561,8 @@ let products = [
             "Màn 6.1 inch, Full HD+",
             "Chip Snapdragon 8 Gen 1",
             "RAM 8GB",
-            "Camera sau: Chính 50 MP & Phụ 12 MP, 10 MP",
-            "Camera trước: 10 MP",
+            "Camera sau: Chính 50MP & Phụ 12MP, 10MP",
+            "Camera trước: 10MP",
             "Pin 3700 mAh, Sạc 25 W"
         ],
         alterOptions: ["128GB", "256GB"],
@@ -582,11 +582,11 @@ let products = [
             "Màn hình": 'Dynamic AMOLED 2X, 6.1", Full HD+',
             "Chip": "Snapdragon 8 Gen 1",
             "Hệ điều hành": 'Android 12',
-            "Camera sau": 'Chính 50 MP & Phụ 12 MP, 10 MP',
-            "Camera trước": '10 MP',
-            "RAM": '8 GB',
-            "Bộ nhớ trong": '128 GB',
-            "Pin, Sạc": '3700 mAh, 45 W',
+            "Camera sau": 'Chính 50MP & Phụ 12MP, 10MP',
+            "Camera trước": '10MP',
+            "RAM": '8GB',
+            "Bộ nhớ trong": '128GB',
+            "Pin, Sạc": '3700mAh, 45W',
         },
         reviews: [
             {
@@ -608,9 +608,9 @@ let products = [
             "Màn 6.67 inch, Full HD+",
             "Chip Snapdragon 888",
             "RAM 8GB/12GB, ROM 256GB",
-            "Camera sau: Chính 108 MP & Phụ 8 MP, 5 MP",
-            "Camera trước: 16 MP",
-            "Pin 5000 mAh, Sạc 120 W"
+            "Camera sau: Chính 108MP & Phụ 8MP, 5MP",
+            "Camera trước: 16MP",
+            "Pin 5000mAh, Sạc 120W"
         ],
         alterOptions: ["8GB", "12GB"],
         ram: ["8GB", "12GB"],
@@ -629,11 +629,11 @@ let products = [
             "Màn hình": 'AMOLED, 6.67", Full HD+',
             "Chip": "Snapdragon 888",
             "Hệ điều hành": 'Android 11',
-            "Camera sau": 'Chính 108 MP & Phụ 8 MP, 5 MP',
-            "Camera trước": '16 MP',
-            "RAM": '8 GB',
-            "Bộ nhớ trong": '256 GB',
-            "Pin, Sạc": '5000 mAh, 120 W',
+            "Camera sau": 'Chính 108MP & Phụ 8MP, 5MP',
+            "Camera trước": '16MP',
+            "RAM": '8GB',
+            "Bộ nhớ trong": '256GB',
+            "Pin, Sạc": '5000mAh, 120W',
         },
         reviews: [
             {
@@ -647,6 +647,231 @@ let products = [
     },
 
     {
+        id: 40,
+        category: "smartphone",
+        name: "Xiaomi Redmi 9C",
+        indexProductImgURL: "xiaomi-redmi-9c-3gb-xam-600x600.jpg",
+        features: [
+            'Màn hình IPS LCD, 6.53", HD+',
+            "Chip MediaTek Helio G35",
+            "Hệ điều hành Android 10",
+            "Camera sau Chính 13MP & Phụ 2MP, 2MP",
+            "Camera trước 5MP",
+            "Pin, Sạc 5000mAh, 10W",
+        ],
+        alterOptions: ["64GB", "128GB"],
+        ram: ["3GB", "4GB"],
+        rom: ["64GB", "128GB"],
+        oldPrices: [3590000, 3490000],
+        currentPrices: [2999000, 3350000],
+        ratings: 3,
+        soldQuantity: 130,
+        brand: "xiaomi",
+
+        mainCarouselImages: ["xiaomi-11t-pro-1-3.jpg", "xiaomi-redmi-9c-3gb-cam-4-org.jpg"],
+        dotCarouselImages: ["xiaomi-redmi-9c-3gb-xam-200x200.jpg", "xiaomi-redmi-9c-3gb-cam-200x200.jpg"],
+        colors: ["Xám", "Cam"],
+        detailImgURL: "xiaomi-11t-pro-note-2.jpg",
+        specAttributes: {
+            "Màn hình": 'IPS LCD, 6.53", HD+',
+            "Chip": "MediaTek Helio G35",
+            "Hệ điều hành": 'Android 10',
+            "Camera sau": 'Chính 13MP & Phụ 2MP, 2MP',
+            "Camera trước": '5MP',
+            "RAM": '3 GB',
+            "Bộ nhớ trong": '64GB',
+            "Pin, Sạc": '5000mAh, 10W',
+        },
+        reviews: [
+            {
+                reviewer: "Trương Tam Phong",
+                date: "24-7-2022",
+                time: "5:52PM",
+                rating: 4,  //[1,5]
+                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
+            },
+        ],
+    },
+
+    {
+        id: 41,
+        category: "smartphone",
+        name: "Xiaomi 12",
+        indexProductImgURL: "Xiaomi-12-xam-thumb-mau-600x600.jpg",
+        features: [
+            'Màn hình AMOLED, 6.28", Full HD+',
+            "Chip Snapdragon 8 Gen 1",
+            "Hệ điều hành Android 12",
+            "Camera sau Chính 50MP & Phụ 13MP, 5MP",
+            "Camera trước 32MP",
+            "RAM 8GB",
+            "Pin, Sạc 4500mAh, 67W",
+        ],
+        alterOptions: ["128GB", "256GB"],
+        ram: ["8GB"],
+        rom: ["64GB", "128GB"],
+        oldPrices: [19990000, 21390000],
+        currentPrices: [15990000, 19990000],
+        ratings: 4,
+        soldQuantity: 125,
+        brand: "xiaomi",
+
+        mainCarouselImages: ["xiaomi-mi-12-1-1.jpg", "xiaomi-12-xanhduong.jpg", "xiaomi-mi-12-tim.jpg"],
+        dotCarouselImages: ["Xiaomi-12-xam-thumb-mau-200x200.jpg", "Xiaomi-12-xanh-duong-thumb-mau-200x200.jpg", "Xiaomi-12-tim-thumb-mau-200x200.jpg"],
+        colors: ["Xám", "Xanh dương", "Tím"],
+        detailImgURL: "xiaomi-mi-12-note.jpg",
+        specAttributes: {
+            "Màn hình": 'AMOLED, 6.28", Full HD+',
+            "Chip": "Snapdragon 8 Gen 1",
+            "Hệ điều hành": 'Android 12',
+            "Camera sau": 'Chính 50MP & Phụ 13MP, 5MP',
+            "Camera trước": '32MP',
+            "RAM": '8GB',
+            "Bộ nhớ trong": '256GB',
+            "Pin, Sạc": '4500mAh, 67W',
+        },
+        reviews: [
+            {
+                reviewer: "Trương Tam Phong",
+                date: "24-7-2022",
+                time: "5:52PM",
+                rating: 4,  //[1,5]
+                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
+            },
+        ],
+    },
+
+    {
+        id: 42,
+        category: "smartphone",
+        name: "Galaxy Z Fold3",
+        indexProductImgURL: "samsung-galaxy-z-fold-3-silver-1-600x600.jpg",
+        features: [
+            'Màn hình Dynamic AMOLED 2X, Chính 7.6" & Phụ 6.2", Full HD+',
+            "Chip Snapdragon 8888",
+            "Hệ điều hành Android 11",
+            "Camera sau 3 camera 12MP",
+            "Camera trước 10MP & 4MP",
+            "RAM 12GB",
+            "Bộ nhớ trong 256GB",
+            "Pin, Sạc 4400mAh, 25 W",
+        ],
+        alterOptions: ["256GB", "512GB"],
+        ram: ["12GB"],
+        rom: ["256GB", "512GB"],
+        oldPrices: [41990000, 44990000],
+        currentPrices: [31990000, 34990000],
+        ratings: 5,
+        soldQuantity: 263,
+        brand: "samsung",
+
+        mainCarouselImages: ["samsung-galaxy-z-fold-3-1-3.jpg", "samsung-galaxy-z-fold-3-den-2.jpg", "samsung-galaxy-z-fold3-5g-xanh-reu-5.jpg"],
+        dotCarouselImages: ["samsung-galaxy-z-fold-3-silver-1-200x200.jpg", "samsung-galaxy-z-fold-3-black-1-200x200.jpg", "samsung-galaxy-z-fold-3-green-1-200x200.jpg"],
+        colors: ["Bạc", "Đen", "Xanh rêu"],
+        detailImgURL: "samsung-galaxy-z-fold-3-n-2.jpg",
+        specAttributes: {
+            "Màn hình": 'Dynamic AMOLED 2X, Chính 7.6" & Phụ 6.2", Full HD+',
+            "Chip": "Snapdragon 888",
+            "Hệ điều hành": 'Android 11',
+            "Camera sau": '3 camera 12MP',
+            "Camera trước": '10MP & 4MP',
+            "RAM": '12GB',
+            "Bộ nhớ trong": '256GB',
+            "Pin, Sạc": '4400mAh, 25 W',
+        },
+        reviews: [
+            {
+                reviewer: "Trương Tam Phong",
+                date: "24-7-2022",
+                time: "5:52PM",
+                rating: 4,  //[1,5]
+                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
+            },
+        ],
+    },
+
+    {
+        id: 43,
+        category: "smartphone",
+        name: "Galaxy Z Flip3",
+        indexProductImgURL: "samsung-galaxy-z-flip-3-cream-1-600x600.jpg",
+        features: [
+            'Màn hình Dynamic AMOLED 2X, Chính 6.7" & Phụ 1.9", Full HD+',
+            "Chip Snapdragon 8888",
+            "Hệ điều hành Android 11",
+            "Camera sau 2 camera 12MP",
+            "Camera trước 10MP",
+            "RAM 8GB",
+            "Bộ nhớ trong 128GB",
+            "Pin, Sạc 3300mAh, 15 W",
+        ],
+        alterOptions: ["128GB","256GB"],
+        ram: ["8GB"],
+        rom: ["128GB","256GB"],
+        oldPrices: [24990000, 26990000],
+        currentPrices: [14990000, 16990000],
+        ratings: 5,
+        soldQuantity: 486,
+        brand: "samsung",
+
+        mainCarouselImages: ["samsung-galaxy-z-flip-3-kem-1-org.jpg", "samsung-galaxy-z-flip-3-1-2.jpg", "samsung-galaxy-z-flip-3-2-3.jpg", "samsung-galaxy-s22-ultra-xanh-reu-1-1.jpg"],
+        dotCarouselImages: ["samsung-galaxy-z-flip-3-cream-1-200x200.jpg", "samsung-galaxy-z-flip-3-black-1-200x200.jpg", "samsung-galaxy-z-flip-3-violet-1-200x200.jpg" , "samsung-galaxy-z-flip-3-green-1-200x200.jpg"],
+        colors: ["Kem", "Đen", "Tím", "Xanh lá"],
+        detailImgURL: "samsung-galaxy-z-flip-3-kem-note.jpg",
+        specAttributes: {
+            "Màn hình": 'Dynamic AMOLED 2X, Chính 6.7" & Phụ 1.9", Full HD+',
+            "Chip": "Snapdragon 888",
+            "Hệ điều hành": 'Android 11',
+            "Camera sau": '2 camera 12MP',
+            "Camera trước": '10MP',
+            "RAM": '8GB',
+            "Bộ nhớ trong": '256GB',
+            "Pin, Sạc": '3300mAh, 15 W',
+        },
+        reviews: [
+            {
+                reviewer: "Trương Tam Phong",
+                date: "24-7-2022",
+                time: "5:52PM",
+                rating: 4,  //[1,5]
+                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
+            },
+        ],
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
         id: 12,
         category: "tablet",
         name: "iPad Pro M1 11 inch 5G",
@@ -655,8 +880,8 @@ let products = [
             "Màn 11 inch, Liquid Retina",
             "Chip Apple M1",
             "RAM 8GB, ROM 128GB",
-            "Camera sau: Chính 12 MP & Phụ 10 MP",
-            "Camera trước: 12 MP",
+            "Camera sau: Chính 12MP & Phụ 10MP",
+            "Camera trước: 12MP",
             "Pin 28.65 Wh, Sạc 20 W"
         ],
         alterOptions: ["128GB", "256GB", "512GB"],
@@ -679,7 +904,7 @@ let products = [
             "Chip Apple M1",
             "RAM 8GB, ROM 64GB",
             "Camera sau: 12MP",
-            "Camera trước: 12 MP",
+            "Camera trước: 12MP",
             "Pin 28.65 Wh, Sạc 20 W"
         ],
         alterOptions: ["64GB", "256GB"],
@@ -702,7 +927,7 @@ let products = [
             "Chip Apple A15 Bionic",
             "RAM 4GB, ROM 64GB",
             "Camera sau: 12MP",
-            "Camera trước: 12 MP",
+            "Camera trước: 12MP",
             "Pin 19.3 Wh, Sạc 20 W"
         ],
         alterOptions: ["64GB", "256GB"],
@@ -725,7 +950,7 @@ let products = [
             "Chip Apple A13 Bionic",
             "RAM 3GB, ROM 64GB",
             "Camera sau: 12MP",
-            "Camera trước: 12 MP",
+            "Camera trước: 12MP",
             "Pin 32.4 Wh, Sạc 20 W"
         ],
         alterOptions: ["64GB", "256GB"],
@@ -748,7 +973,7 @@ let products = [
             "Chip Snapdragon 8 Gen 1",
             "RAM 8 GB, ROM 128 GB",
             "Camera sau: 13MP",
-            "Camera trước: 6 MP",
+            "Camera trước: 6MP",
             "Pin 8000 mAh, Sạc 45 W"
         ],
         alterOptions: ["128GB", "256GB"],
@@ -770,8 +995,8 @@ let products = [
             "Màn 8.7 inch, TFT LCD",
             "Chip  MediaTek MT8768T",
             "RAM 3 GB, ROM 32 GB",
-            "Camera sau: 8 MP",
-            "Camera trước: 2 MP",
+            "Camera sau: 8MP",
+            "Camera trước: 2MP",
             "Pin 5100 mAh, Sạc 15 W"
         ],
         alterOptions: ["32GB", "64GB"],
@@ -793,8 +1018,8 @@ let products = [
             "Màn 10.9 inch, IPS LCD",
             "Chip Snapdragon 865",
             "RAM 6 GB, ROM 128 GB",
-            "Camera sau: 13 MP",
-            "Camera trước: 8 MP",
+            "Camera sau: 13MP",
+            "Camera trước: 8MP",
             "Pin 7250 mAh, Sạc 18 W"
         ],
         alterOptions: ["128GB", "256GB"],
@@ -816,8 +1041,8 @@ let products = [
             "Màn 10.4 inch, IPS LCD",
             "Chip Kirin 820",
             "RAM 4 GB, ROM 128 GB",
-            "Camera sau: 8 MP",
-            "Camera trước: 8 MP",
+            "Camera sau: 8MP",
+            "Camera trước: 8MP",
             "Pin 7250 mAh, Sạc 22.5 W"
         ],
         alterOptions: ["128GB", "256GB"],
@@ -839,8 +1064,8 @@ let products = [
             "Màn 11 inch, IPS LCD",
             "Chip MediaTek Helio G90T",
             "RAM 4 GB, ROM 64 GB",
-            "Camera sau: 13 MP",
-            "Camera trước: 8 MP",
+            "Camera sau: 13MP",
+            "Camera trước: 8MP",
             "Pin 7700 mAh, Sạc 20 W"
         ],
         alterOptions: ["64GB"],
@@ -863,7 +1088,7 @@ let products = [
             "Chip Apple A14 Bionic",
             "RAM 4GB, ROM 64GB",
             "Camera sau: 12MP",
-            "Camera trước: 7 MP",
+            "Camera trước: 7MP",
             "Pin 28.7 Wh, Sạc 20 W"
         ],
         alterOptions: ["64GB"],

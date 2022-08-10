@@ -1014,9 +1014,9 @@
         margin-bottom: 10px;
     }
 
-    .product-content {
+    /* .product-content {
         min-height: 380px;
-    }
+    } */
 
     /* cart item */
     .cart-and-total {
@@ -1351,11 +1351,6 @@
     }
 }
 
-@media (max-width: 476px) {
-    .product-content {
-        min-height: 330px;
-    }
-}
 
 
 /* small phone */
@@ -1455,9 +1450,3 @@
     }
 }
 
-/* super small phone */
-@media (max-width: 360px) {
-    .product-content {
-        min-height: 460px;
-    }
-}
