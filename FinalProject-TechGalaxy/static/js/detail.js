@@ -128,6 +128,12 @@ if (id) {
     window.location.href = "./404.html"
 }
 
+$(".breadcrumb__brand").prop("href", `${product.category}.html`)
+$(".breadcrumb__brand").html("Điện thoại")
+$(".breadcrumb__product").prop("href", `${product.category}.html?brand=${product.brand}`)
+let capBrand = product.brand.charAt(0).toUpperCase() + product.brand.slice(1)
+$(".breadcrumb__product").html(capBrand)
+
 // console.log(product, productIdx)
 
 let brandTitle = ""
