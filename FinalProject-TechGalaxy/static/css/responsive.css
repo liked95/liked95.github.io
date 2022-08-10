@@ -176,6 +176,8 @@
         margin-top: 15px;
     }
 
+
+
     .side-nav-title {
         display: flex;
         justify-content: space-between;
@@ -229,7 +231,15 @@
     }
 
     #sidebar-login-logout {
-        /* display: none; */
+        border-top: 1px solid #e0e0e0;
+    }
+
+    #sidebar-login-logout .sidebar-main-menu {
+        justify-content: flex-start
+    }
+
+    #sidebar-login-logout .sidebar-main-menu a:first-child {
+        margin-right: 10px;
     }
 
     /* ẩn trên tablet */
@@ -539,6 +549,11 @@
         margin-bottom: 10px;
     }
 
+    .not-found {
+        min-height: 300px;
+        margin-top: 90px;
+    }
+
 
 
 }
@@ -737,6 +752,11 @@
         padding: 0;
         margin-top: 30px;
         width: 100%;
+    }
+
+    .not-found {
+        min-height: 100px;
+        margin-top: 70px;
     }
 }
 

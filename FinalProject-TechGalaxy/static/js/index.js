@@ -89,7 +89,8 @@ const topSoldLaptopEl = document.querySelector(".top-sold-laptops .row")
 
 
 let getProducts = getFromLocalStorage("productList")
-let smartphones = getProducts.filter(p => p.category == "smartphone")
+// lay 10 sp nhieu ng mua nhat
+let smartphones = getProducts.filter(p => p.category == "smartphone").sort((a, b) => b.soldQuantity - a.soldQuantity).slice(0, 10)
 let tablets = getProducts.filter(p => p.category == "tablet")
 let laptops = getProducts.filter(p => p.category == "laptop")
 

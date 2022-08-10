@@ -2293,3 +2293,8 @@ footer p {
 .map-container {
     min-height: 400px;
 }
+
+.not-found {
+    min-height: 500px;
+    margin-top: 30px;
+}
