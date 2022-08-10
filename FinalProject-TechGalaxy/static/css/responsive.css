@@ -461,6 +461,10 @@
         width: 100%;
     }
 
+    .review-content {
+        margin-top: 5px;
+    }
+
     .user-rating {
         width: 40%;
         font-size: 14px;
@@ -1035,7 +1039,6 @@
 
     .reviewer-name {
         width: 60%;
-        word-break: break-all;
         font-size: 14px;
     }
 

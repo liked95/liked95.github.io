@@ -157,9 +157,9 @@ function renderCardItem(containerEl, arr) {
 
     for (let p of arr) {
         // tuy chon RAM
+        console.log(arr)
         let optionEl = ""
         let optionArr = p.alterOptions
-        console.log(p)
         if (optionArr.length > 0) {
             for (const option of optionArr) {
                 optionEl += `<button onclick=chooseOption(this)>${option}</button>`

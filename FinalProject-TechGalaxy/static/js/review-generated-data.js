@@ -1,5 +1,4 @@
-let users = [];
-let products = [
+[
     {
         id: 1,
         category: "smartphone",
@@ -11849,58 +11848,3 @@ let products = [
         ]
     }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-products = products.map(obj => {
-    let discounts = []
-    for (let i = 0; i < obj.oldPrices.length; i++) {
-        let discountVal = (obj.currentPrices[i] / obj.oldPrices[i] - 1) * 100
-        discounts.push(discountVal.toFixed(2))
-    }
-    obj["discounts"] = discounts
-    return obj
-})
-
-
-let vouchers = {
-    "TECHG5": {
-        value: 0.05,
-        description: "Giảm 5% tối đa 2,000,000đ",
-        limit: 2000000
-    },
-
-    "TECHG10": {
-        value: 0.1,
-        description: "Giảm 10% tối đa 4,000,000đ",
-        limit: 4000000
-    },
-
-    "TECHG15": {
-        value: 0.15,
-        description: "Giảm 15% tối đa 1,500,000đ",
-        limit: 1500000
-    },
-}
-
-
