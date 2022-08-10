@@ -159,7 +159,7 @@ function renderCardItem(containerEl, arr) {
         // tuy chon RAM
         let optionEl = ""
         let optionArr = p.alterOptions
-
+        console.log(p)
         if (optionArr.length > 0) {
             for (const option of optionArr) {
                 optionEl += `<button onclick=chooseOption(this)>${option}</button>`
@@ -573,6 +573,10 @@ function redirectFirstRes() {
     }
     window.location.href = result.href
 }
+// focus khi nhan kinh lup
+// $(".glass-img .magnify-glass").click(() => {
+//     $(".search-input input").focus()
+// })
 // out search func khi click X
 $(".search-input .cancel-search-icon").click((e) => {
     $("#search-result").hide()
@@ -581,6 +585,8 @@ $(".search-input .cancel-search-icon").click((e) => {
     $(".glass-img .magnify-glass").show()
     $(".glass-img .cancel-search-icon").hide()
 })
+
+
 
 
 
