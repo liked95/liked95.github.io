@@ -458,20 +458,10 @@ function renderPurchaseHistory() {
 
 }
 
-renderPurchaseHistory()
+$("#orderHistory").on("show.bs.modal", () => {
+    renderPurchaseHistory()
+})
 
-// $(".expand-history-btn").click(() => {
-//     // renderPurchaseHistory()
-//     if (!$(".fade-btn-container").hasClass("active")) {
-//         $(".fade-btn-container").addClass("active")
-//         $(".expand-history-btn").html("Thu gọn")
-//         $("#payment-item-container").removeClass("shrink")
-//     } else {
-//         $(".fade-btn-container").removeClass("active")
-//         $(".expand-history-btn").html(`Xem tất cả <span id="product-type-quantity">${checkItemLen}</span> loại sản phẩm`)
-//         $("#payment-item-container").addClass("shrink")
-//     }
-// })
 
 function toggleHistoryItem(ele) {
     if (!$(ele).parent().hasClass("active")) {
@@ -603,14 +593,14 @@ $(".search-input .cancel-search-icon").click((e) => {
 function closeSideBar() {
     $("#side-nav-container").removeClass("active")
     $("#back-drop").removeClass("active")
-    // $("body").css("overflow", "auto")
+    $("body").css("overflow", "auto")
 }
 
 // click vào hamburger
 $("#sidebar-open-btn").click((e) => {
     $("#side-nav-container").addClass("active")
     $("#back-drop").addClass("active")
-    // $("body").css("overflow", "hidden")
+    $("body").css("overflow", "hidden")
 })
 
 // 2 cách đóng sidebar

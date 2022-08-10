@@ -215,6 +215,7 @@ $(window).resize(e => {
 $("#filter-btn__res").click((e) => {
     $(".filter-container").addClass("mobile-active")
     $("#back-drop").addClass("active")
+    $("body").css("overflow", "hidden")
 
 })
 
@@ -222,6 +223,7 @@ $("#filter-btn__res").click((e) => {
 function closeFilterSidebar() {
     $(".filter-container").removeClass("mobile-active")
     $("#back-drop").removeClass("active")
+    $("body").css("overflow", "auto")
 }
 
 $("#back-drop").click(() => closeFilterSidebar())

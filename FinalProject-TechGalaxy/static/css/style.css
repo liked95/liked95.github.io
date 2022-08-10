@@ -507,6 +507,10 @@ header .second-header-row {
     margin-top: 60px;
 }
 
+.banner-images img {
+    width: 100%;
+}
+
 
 /* product-card */
 .product-card {
@@ -763,7 +767,8 @@ footer p {
 .login-container {
     background-color: rgb(246, 248, 250);
     padding: 16px;
-    width: 350px;
+    width: 100%;
+    max-width: 340px;
     border-radius: 6px;
     border: 1px solid hsla(210, 18%, 87%, 1);
 }
@@ -789,7 +794,7 @@ footer p {
     height: 30px;
     border: 1px solid #d0d7de;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 16px;
     color: #24292f;
 }
 
