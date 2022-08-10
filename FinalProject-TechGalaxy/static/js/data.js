@@ -362,6 +362,16 @@ let products = [
             "Bộ nhớ trong": '128 GB',
             "Pin, Sạc": '2438 mAh, 20 W',
         },
+
+        reviews: [
+            {
+                reviewer: "Trương Tam Phong",
+                date: "24-7-2022",
+                time: "5:52PM",
+                rating: 4,  //[1,5]
+                content: "Sản phẩm chất lượng, giá cả hạp lí. Sản phẩm chất lượng, giá cả hạp lí"
+            },
+        ],
     },
 
     {
@@ -555,7 +565,7 @@ let products = [
     {
         id: 10,
         category: "smartphone",
-        name: "Samsung Galaxy S22 5G",
+        name: "Galaxy S22 5G",
         indexProductImgURL: "Galaxy-S22.jpg",
         features: [
             "Màn 6.1 inch, Full HD+",

@@ -171,8 +171,10 @@ function renderCardItem(containerEl, arr) {
         let featureArr = p.features
         if (featureArr.length > 0) {
             for (let feature of featureArr) {
-                descriptionEl += `<li>${feature}</li>`
+                descriptionEl += `<li><span>${feature}</span></li>`
             }
+
+            descriptionEl += `<li class="see-more-mb"><span>.....</span></li>`
         }
 
         // rating
@@ -214,10 +216,6 @@ function renderCardItem(containerEl, arr) {
                             <div class="qtt-sold">
                                 Đã bán: ${p.soldQuantity}
                             </div>
-                        </div>
-                        <div class="bot-second">
-                            <i class="fa-solid fa-circle-plus"></i>
-                            <p>So sánh</p>
                         </div>
                     </div>
                 </div>
@@ -533,11 +531,11 @@ function renderSearchResult() {
         }
         //ẩn glass hiện X
         $(".glass-img .magnify-glass").hide()
-        $(".glass-img .fa-xmark").show()
+        $(".glass-img .cancel-search-icon").show()
     } else {
         $(".search-input input").removeClass("typed")
         $(".glass-img .magnify-glass").show()
-        $(".glass-img .fa-xmark").hide()
+        $(".glass-img .cancel-search-icon").hide()
     }
     // console.log(res)
     if (res.length == 0 && searchVal != '') {
@@ -573,7 +571,7 @@ $(document).click((e) => {
         $("#search-result").hide()
         $(".search-input input").removeClass("typed")
         $(".glass-img .magnify-glass").show()
-        $(".glass-img .fa-xmark").hide()
+        $(".glass-img .cancel-search-icon").hide()
     }
 })
 
@@ -586,12 +584,12 @@ function redirectFirstRes() {
     window.location.href = result.href
 }
 // out search func khi click X
-$(".search-input i").click((e) => {
+$(".search-input .cancel-search-icon").click((e) => {
     $("#search-result").hide()
     $(".search-input input").removeClass("typed")
     $(".search-input input").val("")
     $(".glass-img .magnify-glass").show()
-    $(".glass-img .fa-xmark").hide()
+    $(".glass-img .cancel-search-icon").hide()
 })
 
 

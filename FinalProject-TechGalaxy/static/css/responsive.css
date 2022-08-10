@@ -471,7 +471,7 @@
         margin-bottom: 15px;
     }
 
-    
+
 
     .cart-content {
         height: auto;
@@ -532,7 +532,7 @@
     }
 
     .contact {
-        margin-top: 90px;   
+        margin-top: 90px;
     }
 
     .contact h3 {
@@ -772,6 +772,32 @@
         width: 33.33%;
     }
 
+    .product-description>li {
+        display: none;
+    }
+
+
+
+    li span {
+        position: relative;
+        left: -6px;
+    }
+
+    .product-description li:nth-child(1),
+    .product-description li:nth-child(2),
+    .product-description li:nth-child(3) {
+        display: list-item;
+        margin-left: 16px;
+    }
+
+    .product-description li.see-more-mb {
+        display: list-item;
+        font-style: italic;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+    }
+
     .alter-options button {
         padding: 0px 5px;
     }
@@ -791,7 +817,7 @@
     }
 
     .product-description li {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     /* sidebar filter */
@@ -876,6 +902,10 @@
 
     .warranty-description {
         font-size: 13px;
+    }
+
+    #thumbCarousel .owl-dot-img {
+        width: 45px;
     }
 
     #thumbCarousel .owl-dot-img .thumbnail-image {
@@ -1235,7 +1265,8 @@
         flex-direction: column;
     }
 
-    #expand-cart-btn, .expand-history-btn {
+    #expand-cart-btn,
+    .expand-history-btn {
         padding: 6px 20px;
     }
 
@@ -1251,12 +1282,12 @@
     .receiver-info p {
         font-size: 13px;
     }
-    
+
     .history-item {
         padding: 0;
     }
 
-    .history-item > .row {
+    .history-item>.row {
         flex-direction: column;
     }
 
@@ -1290,7 +1321,7 @@
         font-size: 14px;
     }
 
-    
+
 
 
 }
@@ -1329,9 +1360,6 @@
         font-size: 14px;
     }
 
-    .product-description li {
-        font-size: 11px;
-    }
 
     .product-category-container .product-card {
         width: 50%;
@@ -1365,7 +1393,7 @@
         font-size: 13px;
     }
 
-    
+
     .cart-item .cart-item-detail {
         flex: 1;
     }
@@ -1405,7 +1433,7 @@
     .mobile-count-label {
         display: inline;
         font-weight: bold;
-    } 
+    }
 
     #payment-item-container .payment-item-title .product {
         width: 100%;
@@ -1440,7 +1468,7 @@
         color: #ee4d2d;
         margin-top: 7px;
     }
-    
+
     .history-payment-item-container .payment-item-title .product {
         width: 100%;
     }
@@ -1449,4 +1477,3 @@
         width: 250px;
     }
 }
-
