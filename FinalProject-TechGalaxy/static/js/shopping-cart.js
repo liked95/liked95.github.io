@@ -195,11 +195,16 @@ function deleteItem(ele, id, alterOption, color) {
 
     const timeout = 400
     $(ele).parent().parent().hide(timeout)
-
+    
     setTimeout(() => {
         saveToLocalStorage("techCart", cart)
         renderCart()
     }, timeout);
+    
+    setTimeout(() => {
+        updateCartCount()
+    }, timeout + 10)
+    console.log("done")
 
 }
 
