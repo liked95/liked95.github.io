@@ -649,6 +649,10 @@ header .second-header-row {
     color: #FFA500;
 }
 
+.bot-first .rating span {
+    color: #333;
+}
+
 .bot-first .qtt-sold {
     font-size: 12px;
     line-height: 19px;

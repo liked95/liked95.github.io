@@ -158,8 +158,8 @@ selectSortBtn.addEventListener("change", (e) => {
     if (sortValue == "discountDesc") sortResults = filterResults.sort((p1, p2) => Math.abs(Number(p2.discounts[0])) - Math.abs(Number(p1.discounts[0])))
     if (sortValue == "quantityAsc") sortResults = filterResults.sort((p1, p2) => p1.soldQuantity - p2.soldQuantity)
     if (sortValue == "quantityDesc") sortResults = filterResults.sort((p1, p2) => p2.soldQuantity - p1.soldQuantity)
-    if (sortValue == "ratingAsc") sortResults = filterResults.sort((p1, p2) => p1.ratings - p2.ratings)
-    if (sortValue == "ratingDesc") sortResults = filterResults.sort((p1, p2) => p2.ratings - p1.ratings)
+    if (sortValue == "ratingAsc") sortResults = filterResults.sort((p1, p2) => avgRating(p1.reviews) - avgRating(p2.reviews))
+    if (sortValue == "ratingDesc") sortResults = filterResults.sort((p1, p2) => avgRating(p2.reviews)) - avgRating(p1.reviews) 
     renderCardItem(phoneCategoryBox, sortResults)
 })
 

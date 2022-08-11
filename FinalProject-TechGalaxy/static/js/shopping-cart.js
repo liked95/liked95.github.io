@@ -474,32 +474,34 @@ function renderOrderConfirmation() {
 }
 // Nhấn nút thanh toán
 $("#pay-btn").click(() => {
-    // if (totalValue == 0) {
-    //     alert("Giỏ hàng trống hoặc bạn chưa chọn sản phẩm nào")
-    //     return;
-    // }
+    if (totalValue == 0) {
+        alert("Giỏ hàng trống hoặc bạn chưa chọn sản phẩm nào")
+        return;
+    }
 
 
-    // if ($("#phone").val().trim() == "") {
-    //     alert("Bạn chưa nhập số điện thoại")
-    //     return;
-    // }
+    
 
-    // if ($("#fullName").val().trim() == "") {
-    //     alert("Bạn chưa nhập họ tên")
-    //     return;
-    // }
+    if ($("#fullName").val().trim() == "") {
+        alert("Bạn chưa nhập họ tên")
+        return;
+    }
 
-    // if ($("#address").val().trim() == "") {
-    //     alert("Bạn chưa nhập địa chỉ cụ thể")
-    //     return;
-    // }
+    if ($("#phone").val().trim() == "") {
+        alert("Bạn chưa nhập số điện thoại")
+        return;
+    }
 
-    // const paymentCheckEl = document.querySelector(".payment-method input:checked")
-    // if (!paymentCheckEl) {
-    //     alert("Bạn chưa chọn phương thức thanh toán")
-    //     return;
-    // }
+    if ($("#address").val().trim() == "") {
+        alert("Bạn chưa nhập địa chỉ cụ thể")
+        return;
+    }
+
+    const paymentCheckEl = document.querySelector(".payment-method input:checked")
+    if (!paymentCheckEl) {
+        alert("Bạn chưa chọn phương thức thanh toán")
+        return;
+    }
     renderOrderConfirmation()
     $("#paymentConfirm").modal("show")
 })

@@ -141,6 +141,14 @@ if (logoutBtns) {
     })
 }
 
+function avgRating(reviews) {
+    let sum = 0
+    for (let review of reviews) {
+        sum += review.rating
+    }
+    return (sum/reviews.length).toFixed(1)
+}
+
 
 function renderCardItem(containerEl, arr) {
     containerEl.innerHTML = ""
@@ -178,10 +186,7 @@ function renderCardItem(containerEl, arr) {
         }
 
         // rating
-        let ratingsEl = ""
-        for (let i = 0; i < p.ratings; i++) {
-            ratingsEl += `<i class="fa-solid fa-star"></i>`
-        }
+        let ratingsEl = `<i class="fa-solid fa-star"></i> <span>${avgRating(p.reviews)}</span>`
 
         containerEl.innerHTML += `
             <div class="product-card">
