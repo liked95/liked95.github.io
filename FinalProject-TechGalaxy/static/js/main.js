@@ -157,7 +157,7 @@ function renderCardItem(containerEl, arr) {
 
     for (let p of arr) {
         // tuy chon RAM
-        console.log(arr)
+
         let optionEl = ""
         let optionArr = p.alterOptions
         if (optionArr.length > 0) {

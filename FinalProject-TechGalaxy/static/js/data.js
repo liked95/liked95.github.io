@@ -2023,7 +2023,7 @@ let products = [
         soldQuantity: 412,
         brand: "apple",
         mainCarouselImages: [
-            "iphone-12-mini-den",
+            "iphone-12-mini-den.jpg",
             "iphone-12-mini-tim.jpg",
             "iphone-12-mini-xanh-duong-1-1-org.jpg",
             "iphone-12-mini-xanh-la-1-1-org.jpg"
@@ -2040,7 +2040,7 @@ let products = [
             "Xanh dương",
             "Xanh lá"
         ],
-        detailImgURL: "iphone-12-mini-note-2",
+        detailImgURL: "iphone-12-mini-note-2.jpg",
         specAttributes: {
             "Màn hình": "OLED, 5.4\", Super Retina XDR",
             "Chip": "Apple 14 Bionic",
@@ -3384,7 +3384,7 @@ let products = [
         mainCarouselImages: [
             "xiaomi-11t-pro-1-1.jpg",
             "xiaomi-11t-pro-1-2.jpg",
-            "xiaomi-11t-pro-1-3"
+            "xiaomi-11t-pro-1-3.jpg"
         ],
         dotCarouselImages: [
             "Xiaomi-11T-Pro-Blue-1-2-200x200.jpg",
