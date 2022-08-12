@@ -944,7 +944,7 @@ footer p {
 }
 
 .function-btn>div:hover {
-    font-size: 15px;
+    opacity: 0.8;
 }
 
 .filter-btn {

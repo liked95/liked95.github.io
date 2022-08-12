@@ -1,3 +1,19 @@
+$(document).ready(function () {
+    $(".banner-images").owlCarousel({
+        items: 1,
+        nav: true,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 2500,
+        dots:true,
+        
+
+    })
+})
+
+
+
+
 const topSoldPhoneEl = document.querySelector(".top-sold-phones .row")
 const topSoldTabletEl = document.querySelector(".top-sold-tablets .row")
 const topSoldLaptopEl = document.querySelector(".top-sold-laptops .row")

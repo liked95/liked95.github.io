@@ -11,6 +11,9 @@
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/responsive.css">
     <title>Tech Galaxy</title>
@@ -35,8 +38,10 @@
                 <div class="search-input">
                     <input type="text" placeholder="Tìm kiếm">
                     <div class="glass-img">
-                        <img src="../static/images/header/magnifying-glass.svg" alt="magnify-glass" class="magnify-glass filter-gray">
-                        <img src="../static/images/header/cancel.svg" alt="cancel" class="cancel-search-icon filter-gray">
+                        <img src="../static/images/header/magnifying-glass.svg" alt="magnify-glass"
+                            class="magnify-glass filter-gray">
+                        <img src="../static/images/header/cancel.svg" alt="cancel"
+                            class="cancel-search-icon filter-gray">
                     </div>
                     <div id="search-result"></div>
                 </div>
@@ -157,7 +162,7 @@
                         </a>
                     </li>
 
-                    
+
                     <li class="menu-icon">
                         <a href="about.html">
                             <div class="icon-box">
@@ -260,7 +265,7 @@
                 </div>
             </li>
 
-           
+
 
             <li class="menu-item fst-italic" id="sidebar-login-logout">
                 <div class="sidebar-main-menu d-flex">
@@ -414,8 +419,16 @@
 
     <section class="banner">
         <div class="container">
-            <div class="banner-images">
-                <img src="../static/images/banner-iphone.png" alt="banner-iphone">
+            <div class="banner-images owl-carousel">
+                <div class="banner-img">
+                    <a href="#"><img src="../static/images/ipad_banner.png" alt="ipad_banner"></a>
+                </div>
+                <div class="banner-img">
+                    <a href="#"><img src="../static/images/case-banner.png" alt="case-banner"></a>
+                </div>
+                <div class="banner-img">
+                    <a href="#"><img src="../static/images/macbook_banner.png" alt="macbook_banner"></a>
+                </div>
             </div>
         </div>
     </section>
@@ -543,6 +556,7 @@
 
 
     <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
     <script src="../static/js/bootstrap.bundle.min.js"></script>
 
     <script src="../static/js/data.js"></script>
