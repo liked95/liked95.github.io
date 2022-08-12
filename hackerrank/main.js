@@ -1,5 +1,5 @@
 // Dò mìn
-// tạo 1 ma trận mới n x n
+
 let matrix = [[0, 0, 0, 0],
 
         [1, 0, 1, 1],
@@ -9,6 +9,8 @@ let matrix = [[0, 0, 0, 0],
         [0, 1, 0, 1]]
 
 const n = matrix.length
+
+// tạo 1 ma trận mới n x n
 const ans = Array(n).fill(0).map(() => Array(n).fill(0))
 
 

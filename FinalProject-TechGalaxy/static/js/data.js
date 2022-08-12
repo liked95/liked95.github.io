@@ -4573,7 +4573,7 @@ let products = [
         indexProductImgURL: "samsung-galaxy-z-fold-3-silver-1-600x600.jpg",
         features: [
             "Màn hình Dynamic AMOLED 2X, Chính 7.6\" & Phụ 6.2\", Full HD+",
-            "Chip Snapdragon 8888",
+            "Chip Snapdragon 888",
             "Hệ điều hành Android 11",
             "Camera sau 3 camera 12MP",
             "Camera trước 10MP & 4MP",
@@ -4982,7 +4982,7 @@ let products = [
         indexProductImgURL: "samsung-galaxy-z-flip-3-cream-1-600x600.jpg",
         features: [
             "Màn hình Dynamic AMOLED 2X, Chính 6.7\" & Phụ 1.9\", Full HD+",
-            "Chip Snapdragon 8888",
+            "Chip Snapdragon 888",
             "Hệ điều hành Android 11",
             "Camera sau 2 camera 12MP",
             "Camera trước 10MP",
@@ -5227,8 +5227,623 @@ let products = [
         ]
     },
 
+    {
+        id: 44,
+        category: "smartphone",
+        name: "OPPO Find X5 Pro",
+        indexProductImgURL: "oppo-find-x5-pro-den-thumb-600x600.jpg",
+        features: [
+            "Màn hình AMOLED, 6.7\", Quad HD+ (2k)",
+            "Chip Snapdragon 8 Gen 1",
+            "Hệ điều hành Android 12",
+            "Camera sau 2 camera 50MP, 1 camera 13MP",
+            "Camera trước 32MP",
+            "RAM 12GB",
+            "Bộ nhớ trong 256GB",
+            "Pin, Sạc 5000mAh, 80W"
+        ],
+        alterOptions: [
+            "256GB",
+            "512GB"
+        ],
+        ram: [
+            "12GB"
+        ],
+        rom: [
+            "256GB",
+            "512GB"
+        ],
+        oldPrices: [
+            35990000,
+            38990000
+        ],
+        currentPrices: [
+            32990000,
+            37590000
+        ],
+        ratings: 5,
+        soldQuantity: 369,
+        brand: "oppo",
+        mainCarouselImages: [
+            "oppo-find-x5-pro-1-1.jpg",
+            "oppo-find-x5-pro-trang-1.jpg",
+           
+        ],
+        dotCarouselImages: [
+            "oppo-find-x5-pro-den-thumb-200x200.jpg",
+            "oppo-find-x5-pro-trang-thumb-1-200x200.jpg",
+           
+        ],
+        colors: [
+            "Đen",
+            "Trắng"
+        ],
+        detailImgURL: "oppo-find-x5-pro-16.jpg",
+        specAttributes: {
+            "Màn hình": "AMOLED, 6.7\", Quad HD+ (2k)",
+            "Chip": "Snapdragon 888",
+            "Hệ điều hành": "Android 12",
+            "Camera sau": "2 camera 50MP, 1 camera 13MP",
+            "Camera trước": "32MP",
+            "RAM": "12GB",
+            "Bộ nhớ trong": "256GB",
+            "Pin, Sạc": "5000mAh, 80 W"
+        },
+        reviews: [
+            {
+                reviewer: "Võ Thị Liên",
+                date: "31-12-2021",
+                time: "10:14AM",
+                rating: 5,
+                content: "Hài lòng về sản phẩm và chất lượng phục vụ"
+            },
+            {
+                reviewer: "Nông Đức Mạnh",
+                date: "28-8-2021",
+                time: "10:8PM",
+                rating: 5,
+                content: "Máy kém chất lượng hơn 3 tháng sử dụng thì máy lỗi và không được bảo hành"
+            },
+            {
+                reviewer: "Đức Thắng",
+                date: "14-6-2021",
+                time: "5:21PM",
+                rating: 3,
+                content: "Uy tín"
+            },
+            {
+                reviewer: "Nguyễn Như Thành",
+                date: "22-4-2021",
+                time: "8:25PM",
+                rating: 2,
+                content: "Hài lòng về sản phẩm và chất lượng phục vụ"
+            },
+            {
+                reviewer: "Huỳnh Phương Bình",
+                date: "6-2-2021",
+                time: "7:16PM",
+                rating: 2,
+                content: "Dùng tốt, khoảng tầm 4,5 ngày gần đây pin tụt nhanh như uống nước lã. 1p mất hết 2% pin. Mong ktv hổ trợ kiểm tra máy e ạ. Chứ kiểu này vừa hết 30 ngày đổi máy cái bị lỗi. Hơi thất vọng"
+            },
+            {
+                reviewer: "Thu",
+                date: "13-12-2020",
+                time: "5:49AM",
+                rating: 1,
+                content: "Bạn nhân viên tư vấn cài máy nhiệt tình , vui vẻ"
+            },
+            {
+                reviewer: "Nguyễn Như Thành",
+                date: "31-11-2020",
+                time: "3:27PM",
+                rating: 3,
+                content: "Mua ngay máy lô màn obe bị lỗi tần số quét LTPO, cứ coi clip facebook bị nhấp nháy rất khó chịu vì màn ko hoạt động LTPO,test thử máy khác máy bị máy ko, ra đổi máy khác thì ko dc."
+            },
+            {
+                reviewer: "Linh",
+                date: "27-11-2020",
+                time: "2:14AM",
+                rating: 2,
+                content: "Máy thiết kế cực kì tinh xảo , hệ điều hành cực mượt và đặc biệt chụp hình siêu nét"
+            },
+            {
+                reviewer: "Nguyễn Thị Nhàn",
+                date: "12-10-2020",
+                time: "4:13AM",
+                rating: 3,
+                content: "San pham nay rat tot"
+            },
+            {
+                reviewer: "Nông Đức Mạnh",
+                date: "7-10-2020",
+                time: "8:44AM",
+                rating: 3,
+                content: "Máy thiết kế rất tinh sảo,hệ điều hành mượt,chụp hình siêu nét"
+            },
+            {
+                reviewer: "Võ Thị Liên",
+                date: "19-9-2020",
+                time: "1:26PM",
+                rating: 5,
+                content: "Rất tốt"
+            },
+            {
+                reviewer: "Nguyễn Thị Nhàn",
+                date: "27-4-2020",
+                time: "7:26PM",
+                rating: 1,
+                content: "Rất tốt"
+            },
+            {
+                reviewer: "Mai Văn Thủy",
+                date: "25-3-2020",
+                time: "7:4AM",
+                rating: 5,
+                content: "Sài rất ok nhé!"
+            },
+            {
+                reviewer: "Đức Thắng",
+                date: "23-2-2020",
+                time: "2:35AM",
+                rating: 3,
+                content: "Hài lòng về sản phẩm và chất lượng phục vụ"
+            },
+            {
+                reviewer: "Linh",
+                date: "21-1-2020",
+                time: "9:35PM",
+                rating: 5,
+                content: "Sài rất ok nhé!"
+            },
+            {
+                reviewer: "Đức Thắng",
+                date: "28-11-2019",
+                time: "9:25PM",
+                rating: 1,
+                content: "Uy tín"
+            },
+            {
+                reviewer: "Huỳnh Phương Bình",
+                date: "27-11-2019",
+                time: "9:51PM",
+                rating: 5,
+                content: "Sản phẩm rất tốt màn hình sắc nét mượt mà pin trâu. Hệ điều hành ổn định không lỗi vặt gì."
+            },
+            {
+                reviewer: "Nông Đức Mạnh",
+                date: "27-11-2019",
+                time: "4:14PM",
+                rating: 1,
+                content: "Đt mua đc 2 tháng mấy, lần thứ 1 đang xài thì bị sọc màn hình gửi đi bảo hành về bị hở viền trên phần giáp với phần loa . Lần 2 gửi đi nhận về thì ko khắc phục đc lỗi . Lần 3 là hôm nay nhận máy cũng vậy vẫn ko khắc phục được lỗi. Lần thứ 4 gửi đi thì đang đợi phản hồi về tình trạng máy..."
+            },
+            {
+                reviewer: "Thanh Tuyền",
+                date: "21-10-2019",
+                time: "4:56PM",
+                rating: 3,
+                content: "Bạn nhân viên tư vấn cài máy nhiệt tình , vui vẻ"
+            },
+            {
+                reviewer: "Xuân Bắc",
+                date: "23-9-2019",
+                time: "1:52PM",
+                rating: 2,
+                content: "Iphone thì không còn gì để chê rồi, thế giới di động phục vụ rất tốt, nhân viên thân thiện, nhiệt tình, dễ thương, TechGalaxy luôn là ưu tiên hàng đầu của mình khi mua đồ công nghệ"
+            },
+            {
+                reviewer: "Hà Lợi",
+                date: "2-9-2019",
+                time: "7:45AM",
+                rating: 4,
+                content: "Máy thiết kế cực kỳ tinh xảo,hệ điều hành cực mượt và đặc biệt chụp hình rất đẹp và nét, tôi rất thích"
+            },
+            {
+                reviewer: "Lê Ngọc Huy",
+                date: "26-8-2019",
+                time: "11:23AM",
+                rating: 1,
+                content: "Hài lòng về sản phẩm và chất lượng phục vụ"
+            },
+            {
+                reviewer: "Long",
+                date: "16-8-2019",
+                time: "1:29AM",
+                rating: 2,
+                content: "Về tổng thể thì khá ok, chỉ có một điểm trừ là màn hình tai thỏ, mình thấy dù hiệu năng có tốt đến mức nào thì cái nhìn đầu tiên với màn hình tai thỏ thì đã có ấn tượng không hài hoà, không đẹp chút nào, nhìn như màn hình bị cắt xén đi bớt, cho nên nói về thiết kế thì iPhone vẫn còn 1 hạn chế là màn hình tai thỏ. Mong rằng dòng máy tiếp theo iPhone sẽ trang bị một màn hình nốt ruồi thì mới thật sự hoàn hảo, xứng đáng với biểu tượng thương hiệu dtdd cao cấp."
+            },
+            {
+                reviewer: "HUYỀN",
+                date: "12-7-2019",
+                time: "2:28AM",
+                rating: 1,
+                content: "Máy kém chất lượng hơn 3 tháng sử dụng thì máy lỗi và không được bảo hành"
+            },
+            {
+                reviewer: "Minh",
+                date: "7-3-2019",
+                time: "11:41AM",
+                rating: 5,
+                content: "Về tổng thể thì khá ok, chỉ có một điểm trừ là màn hình tai thỏ, mình thấy dù hiệu năng có tốt đến mức nào thì cái nhìn đầu tiên với màn hình tai thỏ thì đã có ấn tượng không hài hoà, không đẹp chút nào, nhìn như màn hình bị cắt xén đi bớt, cho nên nói về thiết kế thì iPhone vẫn còn 1 hạn chế là màn hình tai thỏ. Mong rằng dòng máy tiếp theo iPhone sẽ trang bị một màn hình nốt ruồi thì mới thật sự hoàn hảo, xứng đáng với biểu tượng thương hiệu dtdd cao cấp."
+            },
+            {
+                reviewer: "Hiếu",
+                date: "19-2-2019",
+                time: "2:1AM",
+                rating: 1,
+                content: "Máy thiết kế cực kì tinh xảo , hệ điều hành cực mượt và đặc biệt chụp hình siêu nét"
+            }
+        ]
+    },
 
-    
+    {
+        id: 45,
+        category: "smartphone",
+        name: "OPPO A57",
+        indexProductImgURL: "oppo-a57-xanh-thumb-1-600x600.jpg",
+        features: [
+            "Màn hình IPS LCD, 6.56\", HD+",
+            "Chip MediaTek Helio G35",
+            "Hệ điều hành Android 12",
+            "Camera sau chính 13MP & phụ 2MP",
+            "Camera trước 8MP",
+            "RAM 4GB",
+            "Bộ nhớ trong 64GB",
+            "Pin, Sạc 5000mAh, 33W"
+        ],
+        alterOptions: [
+            "64GB",
+            "128GB"
+        ],
+        ram: [
+            "4GB"
+        ],
+        rom: [
+            "64GB",
+            "128GB"
+        ],
+        oldPrices: [
+            5190000,
+            6290000
+        ],
+        currentPrices: [
+            4490000,
+            5690000
+        ],
+        ratings: 3,
+        soldQuantity: 136,
+        brand: "oppo",
+        mainCarouselImages: [
+            "oppo-a57-4g-glr-xanh-1.jpg",
+            "oppo-a57-4g-glr-den-1.jpg",
+           
+        ],
+        dotCarouselImages: [
+            "oppo-a57-xanh-thumb-1-200x200.jpg",
+            "oppo-a57-den-thumb-200x200.jpg",
+           
+        ],
+        colors: [
+            "Xanh ngọc",
+            "Đen"
+        ],
+        detailImgURL: "oppo-a57-4g-note-1-1.jpg",
+        specAttributes: {
+            "Màn hình": "IPS LCD, 6.56\", HD+",
+            "Chip": "MediaTek Helio G35",
+            "Hệ điều hành": "Android 12",
+            "Camera sau": "Chính 13MP & Phụ 2MP",
+            "Camera trước": "8MP",
+            "RAM": "4GB",
+            "Bộ nhớ trong": "54GB",
+            "Pin, Sạc": "5000mAh, 33W"
+        },
+        reviews: [
+            {
+                reviewer: "Long",
+                date: "12-12-2021",
+                time: "11:13PM",
+                rating: 2,
+                content: "Sài rất ok nhé!"
+            },
+            {
+                reviewer: "HUYỀN",
+                date: "11-12-2021",
+                time: "3:42AM",
+                rating: 1,
+                content: "Sài rất ok nhé!"
+            },
+            {
+                reviewer: "Dai Thu",
+                date: "14-11-2021",
+                time: "12:60AM",
+                rating: 4,
+                content: "Uy tín"
+            },
+            {
+                reviewer: "Bảo Vy",
+                date: "9-11-2021",
+                time: "8:6PM",
+                rating: 1,
+                content: "Mua về sài chỉ lên mạng k kung hư.. Bảo hành thì hứa hẹn 5-15 ngày mà hứa cả tháng k thấy. Gọi là hẹn"
+            },
+            {
+                reviewer: "Võ Thị Liên",
+                date: "4-10-2021",
+                time: "4:37AM",
+                rating: 3,
+                content: "Máy thiết kế cực kỳ tinh xảo, hệ điều hành cực mượt và chụp hình cực kỳ siêu nét"
+            },
+            {
+                reviewer: "Nguyễn Duy Khuôn",
+                date: "1-9-2021",
+                time: "8:41AM",
+                rating: 1,
+                content: "Sài rất ok nhé!"
+            },
+            {
+                reviewer: "Đức Thắng",
+                date: "19-8-2021",
+                time: "4:30AM",
+                rating: 4,
+                content: "Rất tốt"
+            },
+            {
+                reviewer: "CHI",
+                date: "29-5-2021",
+                time: "9:56PM",
+                rating: 3,
+                content: "Dùng tốt, khoảng tầm 4,5 ngày gần đây pin tụt nhanh như uống nước lã. 1p mất hết 2% pin. Mong ktv hổ trợ kiểm tra máy e ạ. Chứ kiểu này vừa hết 30 ngày đổi máy cái bị lỗi. Hơi thất vọng"
+            },
+            {
+                reviewer: "Bảo Vy",
+                date: "2-4-2021",
+                time: "4:43PM",
+                rating: 4,
+                content: "Quá tệ sản phẩm kém chất lượng"
+            },
+            {
+                reviewer: "THẢO",
+                date: "11-3-2021",
+                time: "5:35PM",
+                rating: 1,
+                content: "Máy rất đẹp xứng đáng với đối tiền"
+            },
+            {
+                reviewer: "Tạ Trúc Lâm",
+                date: "31-2-2021",
+                time: "3:24AM",
+                rating: 5,
+                content: "Máy kém chất lượng hơn 3 tháng sử dụng thì máy lỗi và không được bảo hành"
+            },
+            {
+                reviewer: "Nông Đức Mạnh",
+                date: "18-1-2021",
+                time: "2:25PM",
+                rating: 5,
+                content: "Máy thiết kế cực kỳ tinh xảo, hệ điều hành êm ái và chụp hình sắc nét"
+            },
+            {
+                reviewer: "Bảo Vy",
+                date: "12-1-2021",
+                time: "8:3PM",
+                rating: 4,
+                content: "Mua về sài chỉ lên mạng k kung hư.. Bảo hành thì hứa hẹn 5-15 ngày mà hứa cả tháng k thấy. Gọi là hẹn"
+            },
+            {
+                reviewer: "Nguyễn Thị Tiến",
+                date: "21-12-2020",
+                time: "2:53PM",
+                rating: 1,
+                content: "Quá tệ sản phẩm kém chất lượng"
+            },
+            {
+                reviewer: "Minh",
+                date: "7-11-2020",
+                time: "5:38PM",
+                rating: 1,
+                content: "Máy kém chất lượng hơn 3 tháng sử dụng thì máy lỗi và không được bảo hành"
+            },
+            {
+                reviewer: "Võ Thị Liên",
+                date: "4-10-2020",
+                time: "9:38AM",
+                rating: 2,
+                content: "Phải nói là pin quá trâu. Dùng 1 ngày dài onscreen 8 tiếng vẫn còn 40% pin."
+            },
+            {
+                reviewer: "Nguyễn Như Thành",
+                date: "2-9-2020",
+                time: "8:7AM",
+                rating: 2,
+                content: "Máy thì tốt . Nhưng khi bị lỗi đi bảo hành thì lại xử lý rất lâu và tốn thời gian. Nhưng kết quả là k được đổi và nhận lại máy lỗi về sử dụng tiếp. Rất không hài lòng về chế độ bảo hành. Đùn đẩy qua lại cho nhau và k có trách nhiệm. Rất cần được phản hồi. Cảm ơn ạ"
+            },
+            {
+                reviewer: "Nguyễn Anh",
+                date: "20-5-2020",
+                time: "9:41AM",
+                rating: 2,
+                content: "Đt mua đc 2 tháng mấy, lần thứ 1 đang xài thì bị sọc màn hình gửi đi bảo hành về bị hở viền trên phần giáp với phần loa . Lần 2 gửi đi nhận về thì ko khắc phục đc lỗi . Lần 3 là hôm nay nhận máy cũng vậy vẫn ko khắc phục được lỗi. Lần thứ 4 gửi đi thì đang đợi phản hồi về tình trạng máy..."
+            },
+            {
+                reviewer: "Dai Thu",
+                date: "20-4-2020",
+                time: "3:39AM",
+                rating: 5,
+                content: "Iphone thì không còn gì để chê rồi, thế giới di động phục vụ rất tốt, nhân viên thân thiện, nhiệt tình, dễ thương, TechGalaxy luôn là ưu tiên hàng đầu của mình khi mua đồ công nghệ"
+            },
+            {
+                reviewer: "Nguyen Thi Thuy An",
+                date: "18-4-2020",
+                time: "12:25PM",
+                rating: 1,
+                content: "Máy đẹp quá đi mất thôi"
+            },
+            {
+                reviewer: "Cao Văn Nghị",
+                date: "6-4-2020",
+                time: "2:19AM",
+                rating: 4,
+                content: "Máy thiết kế cực kỳ tinh xảo,hệ điều hành cực mượt và đặc biệt chụp hình rất đẹp và nét, tôi rất thích"
+            },
+            {
+                reviewer: "NgMinh",
+                date: "1-3-2020",
+                time: "7:38PM",
+                rating: 3,
+                content: "Dùng tốt, khoảng tầm 4,5 ngày gần đây pin tụt nhanh như uống nước lã. 1p mất hết 2% pin. Mong ktv hổ trợ kiểm tra máy e ạ. Chứ kiểu này vừa hết 30 ngày đổi máy cái bị lỗi. Hơi thất vọng"
+            },
+            {
+                reviewer: "Chị Trang",
+                date: "1-3-2020",
+                time: "5:1PM",
+                rating: 1,
+                content: "Máy thiết kế cực kỳ tinh xảo,hệ điều hành cực mượt và đặc biệt chụp hình rất đẹp và nét, tôi rất thích"
+            },
+            {
+                reviewer: "Thanh Tuyền",
+                date: "31-2-2020",
+                time: "8:51AM",
+                rating: 3,
+                content: "Hài lòng về sản phẩm và chất lượng phục vụ"
+            },
+            {
+                reviewer: "Nguyễn Thị Nhàn",
+                date: "29-2-2020",
+                time: "11:21AM",
+                rating: 5,
+                content: "Máy thiết kế cực kỳ tinh xảo, hệ điều hành cực mượt và chụp hình cực kỳ siêu nét"
+            },
+            {
+                reviewer: "Nguyễn Anh",
+                date: "19-2-2020",
+                time: "8:47PM",
+                rating: 2,
+                content: "Hài lòng về sản phẩm và chất lượng phục vụ"
+            },
+            {
+                reviewer: "CHI",
+                date: "16-10-2019",
+                time: "8:24PM",
+                rating: 2,
+                content: "Sản phẩm rất tốt màn hình sắc nét mượt mà pin trâu. Hệ điều hành ổn định không lỗi vặt gì."
+            },
+            {
+                reviewer: "Xuân Bắc",
+                date: "7-10-2019",
+                time: "12:32AM",
+                rating: 4,
+                content: "Máy thì tốt . Nhưng khi bị lỗi đi bảo hành thì lại xử lý rất lâu và tốn thời gian. Nhưng kết quả là k được đổi và nhận lại máy lỗi về sử dụng tiếp. Rất không hài lòng về chế độ bảo hành. Đùn đẩy qua lại cho nhau và k có trách nhiệm. Rất cần được phản hồi. Cảm ơn ạ"
+            },
+            {
+                reviewer: "Bảo Vy",
+                date: "22-9-2019",
+                time: "6:26AM",
+                rating: 5,
+                content: "May tốt"
+            },
+            {
+                reviewer: "Nguyễn Anh",
+                date: "3-9-2019",
+                time: "1:2PM",
+                rating: 1,
+                content: "Máy thì tốt . Nhưng khi bị lỗi đi bảo hành thì lại xử lý rất lâu và tốn thời gian. Nhưng kết quả là k được đổi và nhận lại máy lỗi về sử dụng tiếp. Rất không hài lòng về chế độ bảo hành. Đùn đẩy qua lại cho nhau và k có trách nhiệm. Rất cần được phản hồi. Cảm ơn ạ"
+            },
+            {
+                reviewer: "Minh",
+                date: "30-8-2019",
+                time: "9:2PM",
+                rating: 3,
+                content: "Máy đẹp quá đi mất thôi"
+            },
+            {
+                reviewer: "THẮM",
+                date: "24-8-2019",
+                time: "2:18PM",
+                rating: 1,
+                content: "San pham nay rat tot"
+            },
+            {
+                reviewer: "Nông Đức Mạnh",
+                date: "15-8-2019",
+                time: "4:38AM",
+                rating: 3,
+                content: "San pham nay rat tot"
+            },
+            {
+                reviewer: "Huỳnh Phương Bình",
+                date: "11-8-2019",
+                time: "2:15AM",
+                rating: 2,
+                content: "B cho mình hỏi giá nay bao gồm sạc voi tai nghe chưa hay mua sạc riêng vậy bạn, minh Thấy ở trong hộp chỉ co dây sạc nhanh thôi à"
+            },
+            {
+                reviewer: "Minh",
+                date: "2-8-2019",
+                time: "9:6PM",
+                rating: 3,
+                content: "Sản phẩm rất tốt màn hình sắc nét mượt mà pin trâu. Hệ điều hành ổn định không lỗi vặt gì."
+            },
+            {
+                reviewer: "Đức Thắng",
+                date: "31-7-2019",
+                time: "1:42AM",
+                rating: 2,
+                content: "Phải nói là pin quá trâu. Dùng 1 ngày dài onscreen 8 tiếng vẫn còn 40% pin."
+            },
+            {
+                reviewer: "HUYỀN",
+                date: "21-7-2019",
+                time: "4:30AM",
+                rating: 1,
+                content: "Iphone thì không còn gì để chê rồi, thế giới di động phục vụ rất tốt, nhân viên thân thiện, nhiệt tình, dễ thương, TechGalaxy luôn là ưu tiên hàng đầu của mình khi mua đồ công nghệ"
+            },
+            {
+                reviewer: "Hiếu",
+                date: "28-6-2019",
+                time: "1:39AM",
+                rating: 1,
+                content: "Máy thiết kế cực kỳ tinh xảo, hệ điều hành êm ái và chụp hình sắc nét"
+            },
+            {
+                reviewer: "Chị Trang",
+                date: "19-4-2019",
+                time: "10:49AM",
+                rating: 4,
+                content: "B cho mình hỏi giá nay bao gồm sạc voi tai nghe chưa hay mua sạc riêng vậy bạn, minh Thấy ở trong hộp chỉ co dây sạc nhanh thôi à"
+            },
+            {
+                reviewer: "Xuân Bắc",
+                date: "11-4-2019",
+                time: "7:31PM",
+                rating: 2,
+                content: "May tốt"
+            },
+            {
+                reviewer: "Chị Trang",
+                date: "12-3-2019",
+                time: "5:24PM",
+                rating: 5,
+                content: "San pham nay rat tot"
+            },
+            {
+                reviewer: "Long",
+                date: "23-1-2019",
+                time: "1:26AM",
+                rating: 1,
+                content: "Rất tốt"
+            },
+            {
+                reviewer: "Thanh Tuyền",
+                date: "9-1-2019",
+                time: "6:27PM",
+                rating: 4,
+                content: "Sài rất ok nhé!"
+            }
+        ]
+    },
+
+
+
     {
         id: 12,
         category: "tablet",
