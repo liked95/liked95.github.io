@@ -1344,6 +1344,10 @@ footer p {
     border-bottom-left-radius: 5px;
 }
 
+.value-button#decrease.disabled {
+    color: #e0e0e0;
+}
+
 .value-button#increase {
     border-left: none;
     border-top-right-radius: 5px;

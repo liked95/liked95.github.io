@@ -475,6 +475,7 @@ countEl.addEventListener("keyup", () => {
 })
 
 plusCount.addEventListener("click", () => {
+    $(".value-button#decrease").removeClass("disabled")
     count++
     countEl.value = count
 })
@@ -482,8 +483,9 @@ plusCount.addEventListener("click", () => {
 minusCount.addEventListener("click", () => {
     console.log("Hello world")
     count--
-    if (count < 1) {
+    if (count <= 1) {
         count = 1
+        $(".value-button#decrease").addClass("disabled")
     }
     countEl.value = count
 })
