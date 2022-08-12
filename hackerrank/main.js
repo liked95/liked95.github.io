@@ -20,8 +20,11 @@ for (let i = 0; i < n; i++) {
         // l tương ứng với j (l=-1, 0, 1) để di chuyển xung quanh matrix[i][j] và đếm
         for (let k = -1; k <= 1; k++) {
             for (let l = -1; l <= 1; l++) {
+                if (k == 0 && l == 0) continue;
                 if (i + k >= 0 && i + k < n && j + l >= 0 && j + l < n) {
-                    if (matrix[i + k][j + l] == 1) sum += 1
+                    if (matrix[i + k][j + l] == 1) {
+                        sum += 1
+                    }
                 }
             }
         }
