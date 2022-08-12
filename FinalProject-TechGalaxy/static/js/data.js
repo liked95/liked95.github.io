@@ -5226,6 +5226,9 @@ let products = [
             }
         ]
     },
+
+
+    
     {
         id: 12,
         category: "tablet",
