@@ -23,6 +23,9 @@ body {
     filter: invert(59%) sepia(0%) saturate(2096%) hue-rotate(32deg) brightness(97%) contrast(91%);
 }
 
+.filter-blue {
+    filter: invert(53%) sepia(44%) saturate(850%) hue-rotate(166deg) brightness(84%) contrast(100%);
+}
 img {
     max-width: 100%;
 }
@@ -2313,4 +2316,70 @@ footer p {
 .not-found {
     min-height: 500px;
     margin-top: 30px;
+}
+
+
+/* chuc nang so sanh */
+
+.compare-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 400;
+    background-color: #fff;
+    width: 100%;
+    /* height: 160px; */
+    transform: translateY(100%);
+}
+
+.compare-nav.active {
+    transform: translateY(0%);
+}
+
+.product-cp-item {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    padding: 15px 5px;
+}
+
+.product-compare-action {
+    border: 1px solid #e0e0e0;
+
+}
+
+.product-compare-action {
+    flex: 1
+}
+
+.cp-item-image {
+    width: 60px;
+    margin: 10px;
+}
+
+.close-item-btn {
+    width: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+#fixed-cp-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    bottom: 500px;
+    right: 10px;
+}
+
+.cp-icon {
+    width: 25px;
+    margin-right: 5px;
 }

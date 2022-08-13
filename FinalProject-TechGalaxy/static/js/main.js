@@ -636,3 +636,8 @@ function toggleSubMenu(ele) {
     $(ele).children().toggleClass("active")
 }
 
+
+// click để mở compare panel
+$("#fixed-cp-btn").click(() => {
+    $(".compare-nav").toggleClass("active")
+})
