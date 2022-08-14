@@ -422,22 +422,20 @@
         <div class="container">
             <div class="row">
                 <div class="product-cp-item">
-                    <div class="cp-item-image">
-                        <img src="../static/images/thumnail-carousel/Galaxy-S22-Green-200x200.jpg" alt="">
+                    <div class="add-cp-item" data-toggle="modal" data-target="#choose-compare-item">
+                        <img src="../static/images/contingency-images/plus-icon.png" alt="plus-icon">
                     </div>
-                    <a href="#" class="product-cp-name ">Samsung Galaxy A73 5G 128GB</a>
-                    <div class="close-item-btn">
-                        <img src="../static/images/contingency-images/close-btn.svg" alt="close-btn-svg" class="filter-gray">
-                    </div>
+                    <p>Thêm sản phẩm</p>
                 </div>
 
                 <div class="product-cp-item">
                     <div class="cp-item-image">
                         <img src="../static/images/thumnail-carousel/Galaxy-S22-Green-200x200.jpg" alt="">
                     </div>
-                    <a href="#" class="product-cp-name" >Samsung Galaxy A73 5G 128GB</a>
+                    <a href="#" class="product-cp-name">Samsung Galaxy A73 5G 128GB</a>
                     <div class="close-item-btn">
-                        <img src="../static/images/contingency-images/close-btn.svg" alt="close-btn-svg" class="filter-gray">
+                        <img src="../static/images/contingency-images/close-btn.svg" alt="close-btn-svg"
+                            class="filter-gray">
                     </div>
                 </div>
 
@@ -447,27 +445,81 @@
                     </div>
                     <a href="#" class="product-cp-name">Samsung Galaxy A73 5G 128GB</a>
                     <div class="close-item-btn">
-                        <img src="../static/images/contingency-images/close-btn.svg" alt="close-btn-svg" class="filter-gray">
+                        <img src="../static/images/contingency-images/close-btn.svg" alt="close-btn-svg"
+                            class="filter-gray">
                     </div>
                 </div>
+
+                <!-- <div class="product-cp-item">
+                    <div class="cp-item-image">
+                        <img src="../static/images/thumnail-carousel/Galaxy-S22-Green-200x200.jpg" alt="">
+                    </div>
+                    <a href="#" class="product-cp-name" >Samsung Galaxy A73 5G 128GB</a>
+                    <div class="close-item-btn">
+                        <img src="../static/images/contingency-images/close-btn.svg" alt="close-btn-svg" class="filter-gray">
+                    </div>
+                </div> -->
 
                 <div class="product-compare-action">
                     <div class="cp-btn-container">
                         <button id="cp-btn" class="btn btn-outline-primary">So sánh ngay</button>
-                        <button id="delete-all-cp" class="btn btn-outline-danger">Xóa tất cả sản phẩm</button>
+                        <button id="delete-all-cp" class="btn btn-outline-danger">Xóa hết</button>
+                    </div>
+                </div>
+
+                <div class="toggle-cp-nav">
+                    <p>So sánh </p>
+                    <div class="minimized-cp-nav-icon">
+                        <img src="../static/images/contingency-images/arrows-down.svg" alt="arrows-down">
                     </div>
                 </div>
 
             </div>
+
         </div>
     </div>
 
-    <!-- nut so sanh fixed -->
-    <div id="fixed-cp-btn">
-        <div class="cp-icon">
-            <img src="../static/images/contingency-images/compare_icon_.svg" alt="cp-icon" class="filter-blue">
+    <!-- modal choose compare item -->
+
+    <div class="modal fade" id="choose-compare-item" tabindex="-1" role="dialog"
+        aria-labelledby="choose-compare-itemTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="choose-compare-item-title">Thêm so sánh</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="watched-products">
+                        <div class="container">
+                            <h5>Điện thoại đã xem</h5>
+                            <div id="cp-watched-product-carousel" class="owl-carousel">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-cp-items">
+                        <h5>Hoặc nhập để tìm kiếm</h5>
+                        <div class="cp-search-input">
+                            <input type="text" placeholder="Tìm kiếm để so sánh">
+                            <div class="glass-img">
+                                <img src="../static/images/header/magnifying-glass.svg" alt="magnify-glass"
+                                    class="magnify-glass filter-gray">
+                                <img src="../static/images/header/cancel.svg" alt="cancel"
+                                    class="cancel-search-icon filter-gray">
+                            </div>
+                            <div id="cp-search-result"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
         </div>
-        <span>So sánh <span class="cp-item-count"></span></span>
     </div>
 
     <section class="banner">

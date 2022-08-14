@@ -329,7 +329,7 @@ function renderWatchedProducts() {
 
     if (!watched || !watched[sessionID]) {
         $(".watched-products").css("display", "none")
-        watchContainerEl.innerHTML = `Chưa có sp đã xem`
+        watchContainerEl.innerHTML = `Chưa có sản phẩm đã xem`
     } else {
         let watchProductArr = []
         for (let productID of watched[sessionID]) {

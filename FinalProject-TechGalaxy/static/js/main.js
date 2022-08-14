@@ -222,6 +222,11 @@ function renderCardItem(containerEl, arr) {
                                 Đã bán: ${p.soldQuantity}
                             </div>
                         </div>
+
+                        <div class="bot-second" onclick="addToCompareList(${p.id})">
+                            <i class="fa-solid fa-circle-plus"></i>
+                            <p>So sánh</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -525,12 +530,12 @@ function renderSearchResult() {
             }
         }
         //ẩn glass hiện X
-        $(".glass-img .magnify-glass").hide()
-        $(".glass-img .cancel-search-icon").show()
+        $(".search-input .glass-img .magnify-glass").hide()
+        $(".search-input .glass-img .cancel-search-icon").show()
     } else {
         $(".search-input input").removeClass("typed")
-        $(".glass-img .magnify-glass").show()
-        $(".glass-img .cancel-search-icon").hide()
+        $(".search-input .glass-img .magnify-glass").show()
+        $(".search-input .glass-img .cancel-search-icon").hide()
     }
     // console.log(res)
     if (res.length == 0 && searchVal != '') {
@@ -565,8 +570,8 @@ $(document).click((e) => {
     } else {
         $("#search-result").hide()
         $(".search-input input").removeClass("typed")
-        $(".glass-img .magnify-glass").show()
-        $(".glass-img .cancel-search-icon").hide()
+        $(".search-input .glass-img .magnify-glass").show()
+        $(".search-input .glass-img .cancel-search-icon").hide()
     }
 })
 
@@ -587,8 +592,8 @@ $(".search-input .cancel-search-icon").click((e) => {
     $("#search-result").hide()
     $(".search-input input").removeClass("typed")
     $(".search-input input").val("")
-    $(".glass-img .magnify-glass").show()
-    $(".glass-img .cancel-search-icon").hide()
+    $(".search-input .glass-img .magnify-glass").show()
+    $(".search-input .glass-img .cancel-search-icon").hide()
 })
 
 
@@ -638,6 +643,175 @@ function toggleSubMenu(ele) {
 
 
 // click để mở compare panel
-$("#fixed-cp-btn").click(() => {
-    $(".compare-nav").toggleClass("active")
+
+function showCompareNav() {
+    $(".compare-nav").addClass("active")
+    $(".toggle-cp-nav p").html("Thu gọn")
+    $(".minimized-cp-nav-icon").addClass("show")
+}
+
+function hideCompareNav() {
+    $(".compare-nav").removeClass("active")
+    $(".toggle-cp-nav p").html("So sánh")
+    $(".minimized-cp-nav-icon").removeClass("show")
+}
+
+$(".toggle-cp-nav").click(() => {
+    if (!$(".compare-nav").hasClass("active")) {
+        showCompareNav()
+    } else {
+        hideCompareNav()
+    }
+    
 })
+
+// render cp-nav-bar 
+function addToCompareList(id) {
+    console.log(id)
+    let compareArr = getFromLocalStorage("compare")
+    if (!compareArr) {
+        compareArr = []
+    }
+}
+
+function renderCompareWatchedProducts() {
+    let watchContainerEl = document.querySelector("#cp-watched-product-carousel")
+    let watched = getObjectFromLocalStorage("watchedProducts")
+
+    if (!watched || !watched[sessionID]) {
+        $(".watched-products").css("display", "none")
+        watchContainerEl.innerHTML = `Chưa có sản phẩm đã xem`
+    } else {
+        let watchProductArr = []
+        for (let productID of watched[sessionID]) {
+            watchProductArr.push(products.find(p => p.id == productID))
+        }
+        renderCardItem(watchContainerEl, watchProductArr)
+    }
+}
+
+
+
+$(document).ready(function () {
+    renderCompareWatchedProducts()
+
+    $("#cp-watched-product-carousel").owlCarousel({
+        items: 4,
+        nav: true,
+        
+    })
+
+    $("#watched-product-carousel").on("drag.owl.carousel", () => {
+        $("body").css("overflow", "hidden")
+    })
+
+    $("#watched-product-carousel").on("dragged.owl.carousel", () => {
+        $("body").css("overflow", "auto")
+    })
+})
+
+// tim kiem item trong modal so sanh
+
+
+$(".cp-search-input input").keyup((e) => {
+    renderCompareSearchResult()
+
+    if (e.keyCode == 13) {
+        // 2. hiển thị khi enter
+        redirectFirstRes()
+    }
+
+    if (e.keyCode == 27) {
+        $(".cp-search-input input").val("")
+        $(".cp-search-input input").blur()
+        $(".cp-search-input input").removeClass("typed")
+        $("#cp-search-result").hide()
+    }
+})
+
+$(".cp-search-input input").focus((e) => {
+    renderCompareSearchResult()
+})
+
+function renderCompareSearchResult() {
+    let searchVal = $(".cp-search-input input").val().toLowerCase().trim()
+    const searchResEl = $("#cp-search-result")
+    // if (!searchVal) {
+    //     return;
+    // }
+
+    let res = []
+    if (searchVal) {
+        // them class cho input
+        $(".cp-search-input input").addClass("typed")
+        for (let product of products) {
+            if (product.name.toLowerCase().includes(searchVal)) {
+                res.push({ name: product.name, id: product.id })
+            }
+        }
+        //ẩn glass hiện X
+        $(".cp-search-input .glass-img .magnify-glass").hide()
+        $(".cp-search-input .glass-img .cancel-search-icon").show()
+    } else {
+        $(".cp-search-input input").removeClass("typed")
+        $(".cp-search-input .glass-img .magnify-glass").show()
+        $(".cp-search-input .glass-img .cancel-search-icon").hide()
+    }
+    // console.log(res)
+    if (res.length == 0 && searchVal != '') {
+        searchResEl.html(
+            `<p class="search-not-found mb-2">Không tìm thấy sản phẩm nào</p>
+        `)
+    } else {
+        let searchHTML = ``
+        for (let p of res) {
+            searchHTML += `
+                <a href="./detail.html?id=${p.id}" class="search-item">
+                    <p>${p.name}</p>
+                </a>
+            `
+        }
+
+        searchResEl.html(searchHTML)
+    }
+}
+
+
+// click outside to close the search result
+$(document).click((e) => {
+    let searchInput = document.querySelector(".cp-search-input input")
+    let searchResEl = document.getElementById("cp-search-result")
+
+    if (searchInput.contains(e.target) || searchResEl.contains(e.target)) {
+        $("#cp-search-result").show()
+    } else {
+        $("#cp-search-result").hide()
+        $(".cp-search-input input").removeClass("typed")
+        $(".cp-search-input .glass-img .magnify-glass").show()
+        $(".cp-search-input .glass-img .cancel-search-icon").hide()
+    }
+})
+
+// hiển thị kết quả tìm kiếm đầu tiên
+function redirectFirstRes() {
+    const result = document.querySelector("#cp-search-result > a:first-child")
+    if (!result) {
+        return;
+    }
+    window.location.href = result.href
+}
+// focus khi nhan kinh lup
+// $(".glass-img .magnify-glass").click(() => {
+//     $(".cp-search-input input").focus()
+// })
+// out search func khi click X
+$(".cp-search-input .cancel-search-icon").click((e) => {
+    $("#cp-search-result").hide()
+    $(".cp-search-input input").removeClass("typed")
+    $(".cp-search-input input").val("")
+    $(".cp-search-input .glass-img .magnify-glass").show()
+    $(".cp-search-input .glass-img .cancel-search-icon").hide()
+})
+
+
+
