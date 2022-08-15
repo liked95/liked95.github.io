@@ -531,7 +531,6 @@ header .second-header-row {
     width: 20%;
     border: 1px solid #e0e0e0;
     border-collapse: collapse;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-self: stretch;
@@ -686,6 +685,7 @@ header .second-header-row {
     font-size: 12px;
     line-height: 19px;
     color: #2F80ED;
+    cursor: pointer;
 }
 
 .bot-second p {
@@ -1664,7 +1664,7 @@ footer p {
     width: 100%;
 }
 
-.watched-products {
+#watched-products {
     margin-bottom: 80px;
 }
 

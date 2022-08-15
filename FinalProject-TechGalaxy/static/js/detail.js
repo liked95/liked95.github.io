@@ -341,7 +341,7 @@ function renderWatchedProducts() {
     let watched = getObjectFromLocalStorage("watchedProducts")
 
     if (!watched || !watched[sessionID]) {
-        $(".watched-products").css("display", "none")
+        $("#watched-products").css("display", "none")
         watchContainerEl.innerHTML = `Chưa có sản phẩm đã xem`
     } else {
         let watchProductArr = []
