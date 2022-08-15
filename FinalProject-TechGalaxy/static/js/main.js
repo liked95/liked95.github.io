@@ -849,7 +849,15 @@ function addToCompareList(id, category) {
     saveToLocalStorage("compare", compare)
     renderCompareNav()
     showCompareNav()
+    $('#choose-compare-item').modal('hide')
+
 }
+
+// xoa input value khi dong modal choose cp item
+$('#choose-compare-item').on('hide.bs.modal', () => {
+    console.log("Hello WOrldddd")
+    $(".cp-search-input input").val("")
+})
 
 function deleteCompareItem(id) {
     let compareObj = getObjectFromLocalStorage("compare")
@@ -890,7 +898,7 @@ function renderCompareNav() {
                 <img src="../static/images/product-card-images/${p.indexProductImgURL}" alt="${p.indexProductImgURL}">
             </div>
 
-            <a href="#" class="product-cp-name">${p.name}</a>
+            <p class="product-cp-name">${p.name}</p>
 
             <div class="close-item-btn" onclick=deleteCompareItem(${p.id})>
                 <img src="../static/images/contingency-images/close-btn.svg" alt="close-btn-svg"
@@ -904,7 +912,7 @@ function renderCompareNav() {
             <div class="add-cp-item" data-toggle="modal" data-target="#choose-compare-item">
                 <img src="../static/images/contingency-images/plus-icon.png" alt="plus-icon">
             </div>
-            <p>Thêm sản phẩm</p>
+            <p>Thêm</p>
         `)
     }
 

@@ -20,7 +20,7 @@ body {
 }
 
 .filter-gray {
-    filter: invert(59%) sepia(0%) saturate(2096%) hue-rotate(32deg) brightness(97%) contrast(91%);
+    filter: invert(97%) sepia(0%) saturate(152%) hue-rotate(38deg) brightness(112%) contrast(76%);
 }
 
 .filter-blue {
@@ -574,6 +574,15 @@ header .second-header-row {
     line-height: 20px;
     margin-bottom: 12px;
     font-weight: 700;
+
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cart-and-total .product-name {
+    white-space: unset;
 }
 
 .alter-options {
@@ -1624,9 +1633,9 @@ footer p {
 
 
 .related-products h4,
-.watched-products h4 {
+#watched-products h4 {
     margin-bottom: 15px;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.3;
     font-weight: 700;
 }
@@ -1743,6 +1752,7 @@ footer p {
 .cart-item .cart-item-image {
     width: 48px;
     margin-right: 6px;
+    flex-shrink: 0;
 }
 
 .cart-item .cart-item-detail {
@@ -1800,7 +1810,9 @@ footer p {
 
 .cart-content p {
     font-style: italic;
-    margin-top: 20px
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 0 10px;
 }
 
 .cart-content .new-price {
@@ -2382,6 +2394,14 @@ footer p {
     margin: 10px;
 }
 
+.product-cp-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: center;
+}
+
 .close-item-btn {
     width: 20px;
     position: absolute;
@@ -2475,6 +2495,22 @@ footer p {
     display: none;
 }
 
+#cp-watched-product-carousel .bot-first {
+    margin-top: 5px;
+}
+
+#cp-watched-product-carousel .product-name {
+    margin-bottom: 5px;
+}
+
+#cp-watched-product-carousel .old-price-container {
+    margin-top: 10px;
+}
+
+#cp-watched-product-carousel .product-card-bottom {
+    margin-top: 10px;
+}
+
 #choose-compare-item .watched-products {
     margin-bottom: 15px;
 }
@@ -2487,6 +2523,7 @@ footer p {
     position: relative;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
+    margin-top: 10px;
 }
 
 .cp-search-input input {
@@ -2552,6 +2589,11 @@ div.search-item {
     margin-top: 10px;
 }
 
+#compareResult .bot-first .rating,
+#compareResult .bot-first .qtt-sold {
+    font-size: 14px;
+}
+
 .attribute-key  {
     font-style: italic;
     font-size: 14px;
@@ -2564,3 +2606,6 @@ div.search-item {
     visibility: hidden;
 }
 
+tbody p {
+    font-size: 16px;
+}

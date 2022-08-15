@@ -11,6 +11,9 @@
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">F
+
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/responsive.css">
     <title>Liên hệ</title>
@@ -35,8 +38,10 @@
                 <div class="search-input">
                     <input type="text" placeholder="Tìm kiếm">
                     <div class="glass-img">
-                        <img src="../static/images/header/magnifying-glass.svg" alt="magnify-glass" class="magnify-glass filter-gray">
-                        <img src="../static/images/header/cancel.svg" alt="cancel" class="cancel-search-icon filter-gray">
+                        <img src="../static/images/header/magnifying-glass.svg" alt="magnify-glass"
+                            class="magnify-glass filter-gray">
+                        <img src="../static/images/header/cancel.svg" alt="cancel"
+                            class="cancel-search-icon filter-gray">
                     </div>
                     <div id="search-result"></div>
                 </div>
@@ -157,7 +162,7 @@
                         </a>
                     </li>
 
-                    
+
                     <li class="menu-icon">
                         <a href="about.html">
                             <div class="icon-box">
@@ -206,15 +211,15 @@
                 <ul class="sub-menu">
                     <li class="sub-menu-item"><a href="smartphone.html?brand=apple">Apple</a></li>
                     <li class="sub-menu-item"><a href="smartphone.html?brand=samsung">Samsung</a></li>
+                    <li class="sub-menu-item"><a href="smartphone.html?brand=xiaomi">Xiaomi</a></li>
                     <li class="sub-menu-item"><a href="smartphone.html?brand=oppo">Oppo</a></li>
-                    <li class="sub-menu-item"><a href="smartphone.html?brand=huawei">Huawei</a></li>
                 </ul>
             </li>
 
 
             <li class="menu-item">
                 <div class="sidebar-main-menu">
-                    <a href="tablet.html">Máy tính bảng</a>
+                    <a href="#">Máy tính bảng</a>
                     <span class="arrow-container" onclick="toggleSubMenu(this)">
                         <i class="fa-solid fa-chevron-right"></i>
                     </span>
@@ -229,7 +234,7 @@
 
             <li class="menu-item">
                 <div class="sidebar-main-menu">
-                    <a href="laptop.html">Laptop</a>
+                    <a href="#">Laptop</a>
                     <span class="arrow-container" onclick="toggleSubMenu(this)">
                         <i class="fa-solid fa-chevron-right"></i>
                     </span>
@@ -260,7 +265,7 @@
                 </div>
             </li>
 
-           
+
 
             <li class="menu-item fst-italic" id="sidebar-login-logout">
                 <div class="sidebar-main-menu d-flex">
@@ -271,28 +276,6 @@
             </li>
         </ul>
     </div>
-
-
-
-
-
-
-    <!-- <div class="credential-container">
-        <div class="avatar-image">
-            <img src="../static/images/contingency-images/default-avatar.png" alt="ava-default">
-        </div>
-        <ul class="dropdown-container">
-            <li><a class="dropdown-menu-item" href="#">Lịch sử đặt hàng</a></li>
-            <li><a class="dropdown-menu-item" href="#">Another action</a></li>
-            <li><a class="dropdown-menu-item" href="#">Đăng xuất</a></li>
-        </ul>
-    </div> -->
-
-
-    <!-- Button trigger modal (cần xóa)-->
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#orderHistory">
-        Lịch sử giao dịch
-    </button> -->
 
     <!-- Modal lịch sử mua hàng -->
     <div class="modal fade" id="orderHistory" tabindex="-1" role="dialog" aria-labelledby="orderHistoryTitle"
@@ -414,6 +397,238 @@
         </div>
     </div>
 
+    <!-- so sanh nav panel -->
+    <div class="compare-nav">
+        <div class="container">
+            <div class="row">
+                <div class="cp-item-container col-lg-10">
+                    <div class="product-cp-item">
+                        <div class="add-cp-item" data-toggle="modal" data-target="#choose-compare-item">
+                            <img src="../static/images/contingency-images/plus-icon.png" alt="plus-icon">
+                        </div>
+                        <p>Thêm sản phẩm</p>
+                    </div>
+
+                    <div class="product-cp-item">
+                        <div class="add-cp-item" data-toggle="modal" data-target="#choose-compare-item">
+                            <img src="../static/images/contingency-images/plus-icon.png" alt="plus-icon">
+                        </div>
+                        <p>Thêm sản phẩm</p>
+                    </div>
+
+                    <div class="product-cp-item">
+                        <div class="add-cp-item" data-toggle="modal" data-target="#choose-compare-item">
+                            <img src="../static/images/contingency-images/plus-icon.png" alt="plus-icon">
+                        </div>
+                        <p>Thêm sản phẩm</p>
+                    </div>
+
+                    <!-- <div class="product-cp-item">
+                        <div class="cp-item-image">
+                            <img src="../static/images/thumnail-carousel/Galaxy-S22-Green-200x200.jpg" alt="">
+                        </div>
+                        <a href="#" class="product-cp-name">Samsung Galaxy A73 5G 128GB</a>
+                        <div class="close-item-btn">
+                            <img src="../static/images/contingency-images/close-btn.svg" alt="close-btn-svg"
+                                class="filter-gray">
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="product-compare-action col-lg-2">
+                    <div class="cp-btn-container">
+                        <button id="cp-btn" class="btn btn-outline-primary disabled" data-toggle="modal"
+                            data-target="#compareResult">So sánh ngay</button>
+                        <button id="delete-all-cp" class="btn btn-outline-danger disabled">Xóa hết</button>
+                    </div>
+                </div>
+
+                <div class="toggle-cp-nav">
+                    <p>So sánh </p>
+                    <div class="minimized-cp-nav-icon">
+                        <img src="../static/images/contingency-images/arrows-down.svg" alt="arrows-down">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- modal choose compare item -->
+    <div class="modal fade" id="choose-compare-item" tabindex="-1" role="dialog"
+        aria-labelledby="choose-compare-itemTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="choose-compare-item-title">Thêm so sánh</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="watched-products">
+                        <div>
+                            <h6>Điện thoại đã xem</h6>
+                            <div id="cp-watched-product-carousel" class="owl-carousel">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-cp-items">
+                        <h6>Hoặc nhập để tìm kiếm</h6>
+                        <div class="cp-search-input">
+                            <input type="text" placeholder="Tìm kiếm để so sánh">
+                            <div class="glass-img">
+                                <img src="../static/images/header/magnifying-glass.svg" alt="magnify-glass"
+                                    class="magnify-glass filter-gray">
+                                <img src="../static/images/header/cancel.svg" alt="cancel"
+                                    class="cancel-search-icon filter-gray">
+                            </div>
+                            <div id="cp-search-result"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal so sanh chinh -->
+    <div class="modal fade" id="compareResult" tabindex="-1" role="dialog" aria-labelledby="comapareResultTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Kết quả so sánh</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered" style="table-layout: fixed">
+                        <thead>
+                            <tr>
+                                <th class="table-heading">
+                                    <div class="product-card">
+                                        <a href="./detail.html?id=${p.id}" class="product-image">
+                                            <img src="../static/images/product-card-images/iphone-13-mini.jpg"
+                                                alt="${p.name}">
+                                        </a>
+
+                                        <div class="product-content">
+                                            <p class="product-name">iPhone 13 promax</p>
+
+
+                                            <div class="old-price-container">
+                                                <span class="old-price">19900000</span>
+                                                <span class="percent">19900000</span>
+                                            </div>
+
+                                            <p class="current-price">-18%</p>
+
+
+                                            <div class="product-card-bottom">
+                                                <div class="bot-first">
+                                                    <div class="rating">
+                                                        4.5
+                                                    </div>
+                                                    <div class="qtt-sold">
+                                                        Đã bán: 512
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+
+                                <th class="table-heading">
+                                    <div class="product-card">
+                                        <a href="./detail.html?id=${p.id}" class="product-image">
+                                            <img src="../static/images/product-card-images/iphone-13-mini.jpg"
+                                                alt="${p.name}">
+                                        </a>
+
+                                        <div class="product-content">
+                                            <p class="product-name">iPhone 13 promax</p>
+
+
+                                            <div class="old-price-container">
+                                                <span class="old-price">19900000</span>
+                                                <span class="percent">19900000</span>
+                                            </div>
+
+                                            <p class="current-price">-18%</p>
+
+
+                                            <div class="product-card-bottom">
+                                                <div class="bot-first">
+                                                    <div class="rating">
+                                                        4.5
+                                                    </div>
+                                                    <div class="qtt-sold">
+                                                        Đã bán: 512
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+
+                                <th class="table-heading">
+                                    <div class="product-card">
+                                        <a href="./detail.html?id=${p.id}" class="product-image">
+                                            <img src="../static/images/product-card-images/iphone-13-mini.jpg"
+                                                alt="${p.name}">
+                                        </a>
+
+                                        <div class="product-content">
+                                            <p class="product-name">iPhone 13 promax</p>
+
+
+                                            <div class="old-price-container">
+                                                <span class="old-price">19900000</span>
+                                                <span class="percent">19900000</span>
+                                            </div>
+
+                                            <p class="current-price">-18%</p>
+
+
+                                            <div class="product-card-bottom">
+                                                <div class="bot-first">
+                                                    <div class="rating">
+                                                        4.5
+                                                    </div>
+                                                    <div class="qtt-sold">
+                                                        Đã bán: 512
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+
+
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="contact">
         <div class="container">
@@ -514,6 +729,7 @@
 
     <script src="../static/js/jquery-3.6.0.min.js"></script>
     <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
 
     <script src="../static/js/data.js"></script>
     <script src="../static/js/main.js"></script>

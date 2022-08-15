@@ -26,7 +26,7 @@ function renderCart() {
 
     let cart = getObjectFromLocalStorage("techCart")
     if (!cart || !cart[sessionID] || cart[sessionID].length == 0) {
-        cartContentEl.innerHTML = `<p>Bạn chưa mua sản phẩm nào. Tiếp tục mua và quay lại đây nhé </p>`
+        cartContentEl.innerHTML = `<p>Bạn chưa mua sản phẩm nào. Tiếp tục mua và quay lại đây nhé</p>`
     } else {
         let items = cart[sessionID]
         // render cart detail
@@ -73,44 +73,49 @@ function renderCart() {
 
     // render tien hang va tong so tien
     // chỉ tính tổng tiền item đc check
-    let items = cart[sessionID]
-    totalValue = 0
-    for (let item of items) {
-        // console.log(item)
-        if (item.checked) totalValue += item.count * item.price
-    }
-    $(".total-value span:last-child").html(formatMoney(totalValue))
+    if (cart) {
+        let items = cart[sessionID]
+        totalValue = 0
+        if (cart && cart[sessionID]) {
+            for (let item of items) {
+                // console.log(item)
+                if (item.checked) totalValue += item.count * item.price
+            }
+        }
+        $(".total-value span:last-child").html(formatMoney(totalValue))
 
-    // update HTML shipping fee và lưu giá trị vào biến global shipmentFee
-    // Important!!! dùng await để chờ shipment fee được update từ function updateShippingFee (function request API)
-    let promise = updateShippingFee()
-    // console.log(promise)
+        // update HTML shipping fee và lưu giá trị vào biến global shipmentFee
+        // Important!!! dùng await để chờ shipment fee được update từ function updateShippingFee (function request API)
+        let promise = updateShippingFee()
+        // console.log(promise)
 
-    promise.then(shipmentFee => {
-        $(".shipment-fee span:last-child").html(formatMoney(shipmentFee))
+        promise.then(shipmentFee => {
+            $(".shipment-fee span:last-child").html(formatMoney(shipmentFee))
 
-        let discount = totalValue * discountFactor < discountLimit ? totalValue * discountFactor : discountLimit
-        let discountValue = -discount
-        $(".discount span:last-child").html(formatMoney(discountValue))
+            let discount = totalValue * discountFactor < discountLimit ? totalValue * discountFactor : discountLimit
+            let discountValue = -discount
+            $(".discount span:last-child").html(formatMoney(discountValue))
 
-        let preTaxValue = totalValue + shipmentFee + discountValue
-        $(".pretax-value span:last-child").html(formatMoney(preTaxValue))
+            let preTaxValue = totalValue + shipmentFee + discountValue
+            $(".pretax-value span:last-child").html(formatMoney(preTaxValue))
 
-        let VAT = preTaxValue * 0.08
-        $(".vat span:last-child").html(formatMoney(VAT))
+            let VAT = preTaxValue * 0.08
+            $(".vat span:last-child").html(formatMoney(VAT))
 
-        let grandTotal = preTaxValue + VAT
-        $(".grand-total span:last-child").html(formatMoney(grandTotal))
-    })
+            let grandTotal = preTaxValue + VAT
+            $(".grand-total span:last-child").html(formatMoney(grandTotal))
+        })
 
-    let voucherToolTip = ``
-    for (let voucher in vouchers) {
-        voucherToolTip += `
+        let voucherToolTip = ``
+        for (let voucher in vouchers) {
+            voucherToolTip += `
             <b>${voucher}</b>: ${vouchers[voucher].description} </br>
         `
+        }
+
+        $(".voucher-container i").attr("data-original-title", voucherToolTip)
     }
 
-    $(".voucher-container i").attr("data-original-title", voucherToolTip)
 
 }
 
@@ -195,12 +200,12 @@ function deleteItem(ele, id, alterOption, color) {
 
     const timeout = 400
     $(ele).parent().parent().hide(timeout)
-    
+
     setTimeout(() => {
         saveToLocalStorage("techCart", cart)
         renderCart()
     }, timeout);
-    
+
     setTimeout(() => {
         updateCartCount()
     }, timeout + 10)
@@ -412,69 +417,71 @@ function renderOrderConfirmation() {
             <div class="value text-end fw-bold">Số tiền</div>
         </div>
     `
-    let items = getObjectFromLocalStorage("techCart")[sessionID]
-    for (let item of items) {
-        if (item.checked) {
-            paymentItemContentEl.innerHTML += `
-            <div class="cart-item mb-2">
-                                
-                <div class="product d-flex">
-                    <div class="cart-item-image">
-                        <img src="../static/images/thumnail-carousel/${item.image}" alt="${item.image}">
+    let cart = getObjectFromLocalStorage("techCart")
+    if (cart && cart[sessionID]) {
+        let items = cart[sessionID]
+        for (let item of items) {
+            if (item.checked) {
+                paymentItemContentEl.innerHTML += `
+                <div class="cart-item mb-2">
+                                    
+                    <div class="product d-flex">
+                        <div class="cart-item-image">
+                            <img src="../static/images/thumnail-carousel/${item.image}" alt="${item.image}">
+                        </div>
+    
+                        <div class="cart-item-detail">
+                            <div class="product-name">${item.name}</div>
+                            <div class="product-attr">(${item.color}, ${item.alterOption})</div>
+                        </div>
                     </div>
-
-                    <div class="cart-item-detail">
-                        <div class="product-name">${item.name}</div>
-                        <div class="product-attr">(${item.color}, ${item.alterOption})</div>
+    
+                    <div class="prices text-end">
+                        <div class="new-price fw-bold">${formatMoney(item.price)}</div>
+                        <div class="old-price"><del>${formatMoney(item.oldPrice)}<del></div>
                     </div>
-                </div>
-
-                <div class="prices text-end">
-                    <div class="new-price fw-bold">${formatMoney(item.price)}</div>
-                    <div class="old-price"><del>${formatMoney(item.oldPrice)}<del></div>
-                </div>
-
-                <div class="quantity text-center">
-                    
-                    <span class="mobile-count-label">Số lượng: </span>
-                    <span>${item.count}</span>
-                </div>
-                    
-                <div class="value text-end">${formatMoney(item.count * item.price)}</div>
-            </div>`
+    
+                    <div class="quantity text-center">
+                        
+                        <span class="mobile-count-label">Số lượng: </span>
+                        <span>${item.count}</span>
+                    </div>
+                        
+                    <div class="value text-end">${formatMoney(item.count * item.price)}</div>
+                </div>`
+            }
         }
+
+
+        // xem them btn
+        checkItemLen = items.filter(item => item.checked).length
+        $("#product-type-quantity").html(checkItemLen)
+
+        if (checkItemLen <= 2) {
+            $(".fade-btn-container").addClass("d-none")
+            $("#payment-item-container").removeClass("shrink")
+        } else {
+            $(".fade-btn-container").removeClass("d-none")
+            $("#payment-item-container").addClass("shrink")
+        }
+
+        // render full name
+        $("#order-name").text($("#fullName").val())
+        // render phone
+        $("#order-phone").text($("#phone").val())
+        // render address
+        let firstAddress = $("#address").val()
+        let ward = $("#ward option:selected").text()
+        let district = $("#district option:selected").text()
+        let province = $("#province option:selected").text()
+        let fullAddress = `${firstAddress}, ${ward}, ${district}, ${province}`
+        $("#order-address").html(fullAddress)
+        // render payment method
+        let paymentMethod = $(".payment-method input:checked").parent().find("label").text()
+        $("#order-payment-method").html(paymentMethod)
     }
+    
 
-
-    // xem them btn
-    checkItemLen = items.filter(item => item.checked).length
-    $("#product-type-quantity").html(checkItemLen)
-
-    if (checkItemLen <= 2) {
-        $(".fade-btn-container").addClass("d-none")
-        $("#payment-item-container").removeClass("shrink")
-    } else {
-        $(".fade-btn-container").removeClass("d-none")
-        $("#payment-item-container").addClass("shrink")
-    }
-
-
-
-
-    // render full name
-    $("#order-name").text($("#fullName").val())
-    // render phone
-    $("#order-phone").text($("#phone").val())
-    // render address
-    let firstAddress = $("#address").val()
-    let ward = $("#ward option:selected").text()
-    let district = $("#district option:selected").text()
-    let province = $("#province option:selected").text()
-    let fullAddress = `${firstAddress}, ${ward}, ${district}, ${province}`
-    $("#order-address").html(fullAddress)
-    // render payment method
-    let paymentMethod = $(".payment-method input:checked").parent().find("label").text()
-    $("#order-payment-method").html(paymentMethod)
 
 }
 // Nhấn nút thanh toán
@@ -485,7 +492,7 @@ $("#pay-btn").click(() => {
     }
 
 
-    
+
 
     if ($("#fullName").val().trim() == "") {
         alert("Bạn chưa nhập họ tên")
@@ -576,17 +583,17 @@ $("#confirm-btn").click((e) => {
         hour: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     }
 
-    
+
     let purchaseObj = {
         purchasedItems: purchasedItems,
         financialVals: financialVals,
-        userInfo: userInfo, 
+        userInfo: userInfo,
         purchaseTime: purchaseTime,
     }
 
     addToPurchaseHistory(sessionID, purchaseObj)
 
-    
+
 
     // xóa item được check và render giỏ hàng
     items = items.filter(item => item.checked == false)
@@ -615,7 +622,7 @@ function addToPurchaseHistory(sessionID, obj) {
 
 // quay lai mua hang
 $(".go-back-btn").click(() => {
-    history.back();  
+    history.back();
 })
 
 
