@@ -690,6 +690,18 @@ $(document).ready(function () {
     $("#cp-watched-product-carousel").owlCarousel({
         items: 4,
         nav: true,
+        responsive: {
+            0: {
+                items: 2
+            },
+            576: {
+                items: 3
+            },
+            992: {
+                items: 4
+            },
+            
+        }
 
     })
 
@@ -850,7 +862,6 @@ function deleteCompareItem(id) {
         return;
     }
 
-    console.log(id)
     let newCompare = compare.filter(ele => ele != id)
     compareObj[sessionID] = newCompare
 
@@ -883,7 +894,7 @@ function renderCompareNav() {
 
             <div class="close-item-btn" onclick=deleteCompareItem(${p.id})>
                 <img src="../static/images/contingency-images/close-btn.svg" alt="close-btn-svg"
-                    class="filter-gray">
+                    class="filter-red">
             </div>
         `)
     }
@@ -938,13 +949,13 @@ function renderCompareResult() {
     }
     let products = getFromLocalStorage("productList")
     let len = compare.length
-    console.log(len)
+
     let theadHTML = ""
     for (let id of compare) {
         let p = products.find(p => p.id == id)
         let ratingsEl = `<i class="fa-solid fa-star"></i> <span>${avgRating(p.reviews)}</span>`
         theadHTML += `
-            <th class="table-heading">
+            <th class="table-heading" style="width: ${100/len}%">
                 <div class="product-card">
                     <a href="./detail.html?id=${p.id}" class="product-image">
                         <img src="../static/images/product-card-images/${p.indexProductImgURL}" alt="${p.name}">
@@ -978,21 +989,18 @@ function renderCompareResult() {
     }
     $("#compareResult thead tr").html(theadHTML)
 
-    let modelProduct = products.find(p => p.id == compare[0])
-    console.log(modelProduct)
-    
+    let modelProduct = products.find(p => p.id == compare[0])    
     
     let tbodyHTML = ""
     for (let [key, value] of Object.entries(modelProduct.specAttributes)) {
-        let compareRow = $("<tr></tr>")
         let compareRowHTML = ""
-        console.log(key, value)
 
         compare.forEach((id, arrayIdx) => {
             let p = products.find(p => p.id == id)
             compareRowHTML += `
                 <td>
-                    ${p.specAttributes[key]}
+                    <p class="attribute-key ${arrayIdx == 0 ? "" : "hidden"}">${key}</p>
+                    <p>${p.specAttributes[key]}</p>
                 </td>
             `
         })

@@ -26,6 +26,11 @@ body {
 .filter-blue {
     filter: invert(53%) sepia(44%) saturate(850%) hue-rotate(166deg) brightness(84%) contrast(100%);
 }
+
+.filter-red {
+    filter: invert(8%) sepia(100%) saturate(7040%) hue-rotate(356deg) brightness(117%) contrast(79%);
+}
+
 img {
     max-width: 100%;
 }
@@ -2334,9 +2339,10 @@ footer p {
     background-color: #fff;
     width: 100%;
     /* height: 160px; */
-    /* transform: translateY(100%); */
+    transform: translateY(100%);
     transition: all 250ms;
     box-shadow: 0 -10px 10px rgba(0,0,0,.12);
+    opacity: 0.95;
 }
 
 .compare-nav.active {
@@ -2356,6 +2362,7 @@ footer p {
     border-right: 1px solid #e0e0e0;
     position: relative;
     padding: 15px 5px;
+    min-height: 140px;
 }
 
 .product-cp-item:first-child {
@@ -2513,6 +2520,10 @@ div.search-item {
 
 /* ket qua so sanh */
 
+/* #compareResult .modal-dialog {
+    max-width: 800px;
+} */
+
 .table-heading {
     padding: 0 !important;
 }
@@ -2539,5 +2550,17 @@ div.search-item {
 
 #compareResult .product-card-bottom {
     margin-top: 10px;
+}
+
+.attribute-key  {
+    font-style: italic;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #01a7e8;
+}
+
+.attribute-key.hidden {
+    visibility: hidden;
 }
 

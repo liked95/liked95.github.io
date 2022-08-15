@@ -561,6 +561,30 @@
         margin-top: 90px;
     }
 
+    .cp-btn-container {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .cp-btn-container button {
+        width: 150px;
+    }
+
+    #cp-btn {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+
+    .product-cp-item {
+        padding: 5px;
+        min-height: auto;
+    }
+
+    .cp-item-image {
+        width: 50px;
+        margin: 7px;
+    }
+
 
 
 }
