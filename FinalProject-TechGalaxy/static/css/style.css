@@ -1075,8 +1075,21 @@ footer p {
     font-size: 18px;
     line-height: 32px;
     margin-top: 15px;
+    margin-bottom: 0;
+}
+.product-detail-compare-btn {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.product-detail-compare-btn div {
+    display: flex;
+    align-items: center;
+    color: #2F80ED;
 }
 
+.product-detail-compare-btn p {
+    margin-left: 8px;
+}
 /* .box-main {
     display: flex;
     justify-content: space-between;
@@ -2437,8 +2450,8 @@ footer p {
     background-color: #fff;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px -2px 4px 0px, rgba(14, 30, 37, 0.32) 0px -2px 16px 0px;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) -1.95px -1.95px 2.6px;
 }
 
 .minimized-cp-nav-icon {
@@ -2608,4 +2621,24 @@ div.search-item {
 
 tbody p {
     font-size: 16px;
+}
+
+
+/* promotion */
+.promotion {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.promotion p {
+    margin: 16px 0;
+}
+
+.promotion-image {
+    width: 100%;
+}
+
+.promotion-image img {
+    width: 100%;
+    object-fit: cover;
 }

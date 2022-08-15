@@ -38,7 +38,7 @@ $(document).ready(function () {
     $("#related-product-carousel").on("drag.owl.carousel", () => {
         $("body").css("overflow", "hidden")
     })
-    
+
     $("#related-product-carousel").on("dragged.owl.carousel", () => {
         $("body").css("overflow", "auto")
     })
@@ -147,9 +147,22 @@ function renderProductName() {
 }
 renderProductName()
 
+document.title = product.name
+
+let compareBtnHTML = `
+    <div onclick="addToCompareList(${product.id}, '${product.category}')">
+        <i class="fa-solid fa-circle-plus"></i>
+        <p>So sánh</p>
+    </div>
+`
+
+$(".product-detail-compare-btn").html(compareBtnHTML)
+
+
 // product detail
 const mainCarouselEl = document.querySelector("#mainCarousel")
 const thumbCarouselEl = document.querySelector("#thumbCarousel")
+
 
 
 
