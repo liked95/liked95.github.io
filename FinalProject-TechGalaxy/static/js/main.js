@@ -146,7 +146,7 @@ function avgRating(reviews) {
     for (let review of reviews) {
         sum += review.rating
     }
-    return (sum/reviews.length).toFixed(1)
+    return (sum / reviews.length).toFixed(1)
 }
 
 
@@ -223,7 +223,7 @@ function renderCardItem(containerEl, arr) {
                             </div>
                         </div>
 
-                        <div class="bot-second" onclick="addToCompareList(${p.id})">
+                        <div class="bot-second" onclick="addToCompareList(${p.id}, '${p.category}')">
                             <i class="fa-solid fa-circle-plus"></i>
                             <p>So sánh</p>
                         </div>
@@ -662,17 +662,9 @@ $(".toggle-cp-nav").click(() => {
     } else {
         hideCompareNav()
     }
-    
+
 })
 
-// render cp-nav-bar 
-function addToCompareList(id) {
-    console.log(id)
-    let compareArr = getFromLocalStorage("compare")
-    if (!compareArr) {
-        compareArr = []
-    }
-}
 
 function renderCompareWatchedProducts() {
     let watchContainerEl = document.querySelector("#cp-watched-product-carousel")
@@ -698,7 +690,7 @@ $(document).ready(function () {
     $("#cp-watched-product-carousel").owlCarousel({
         items: 4,
         nav: true,
-        
+
     })
 
     $("#watched-product-carousel").on("drag.owl.carousel", () => {
@@ -746,7 +738,7 @@ function renderCompareSearchResult() {
         $(".cp-search-input input").addClass("typed")
         for (let product of products) {
             if (product.name.toLowerCase().includes(searchVal)) {
-                res.push({ name: product.name, id: product.id })
+                res.push({ name: product.name, id: product.id, category: product.category })
             }
         }
         //ẩn glass hiện X
@@ -766,9 +758,9 @@ function renderCompareSearchResult() {
         let searchHTML = ``
         for (let p of res) {
             searchHTML += `
-                <a href="./detail.html?id=${p.id}" class="search-item">
+                <div class="search-item" onclick="addToCompareList(${p.id}, '${p.category}')">
                     <p>${p.name}</p>
-                </a>
+                </div>
             `
         }
 
@@ -815,3 +807,199 @@ $(".cp-search-input .cancel-search-icon").click((e) => {
 
 
 
+
+// render cp-nav-bar 
+function addToCompareList(id, category) {
+
+    if (category != "smartphone") {
+        alert("Chỉ có thể so sánh mặt hàng điện thoại!")
+        return;
+    }
+
+    let compare = getObjectFromLocalStorage("compare")
+
+    if (!compare) {
+        compare = {}
+        compare[sessionID] = [id]
+    } else if (!compare[sessionID]) {
+        compare[sessionID] = [id]
+    } else {
+        if (compare[sessionID].includes(id)) {
+            alert("Mặt hàng này đã được thêm vào so sánh")
+            return;
+        }
+        compare[sessionID].push(id)
+        if (compare[sessionID].length > 3) {
+            compare[sessionID].shift()
+        }
+    }
+
+    saveToLocalStorage("compare", compare)
+    renderCompareNav()
+    showCompareNav()
+}
+
+function deleteCompareItem(id) {
+    let compareObj = getObjectFromLocalStorage("compare")
+    if (!compareObj) {
+        return;
+    }
+
+    let compare = compareObj[sessionID]
+    if (!compare) {
+        return;
+    }
+
+    console.log(id)
+    let newCompare = compare.filter(ele => ele != id)
+    compareObj[sessionID] = newCompare
+
+    saveToLocalStorage("compare", compareObj)
+    renderCompareNav()
+}
+
+function renderCompareNav() {
+    let compareObj = getObjectFromLocalStorage("compare")
+    if (!compareObj) {
+        return;
+    }
+
+    let compare = compareObj[sessionID]
+    if (!compare) {
+        return;
+    }
+
+    let products = getFromLocalStorage("productList")
+
+    for (let i = 0; i < compare.length; i++) {
+        let id = compare[i]
+        let p = products.find(p => p.id == id)
+        $(`.product-cp-item:nth-child(${i + 1})`).html(`
+            <div class="cp-item-image">
+                <img src="../static/images/product-card-images/${p.indexProductImgURL}" alt="${p.indexProductImgURL}">
+            </div>
+
+            <a href="#" class="product-cp-name">${p.name}</a>
+
+            <div class="close-item-btn" onclick=deleteCompareItem(${p.id})>
+                <img src="../static/images/contingency-images/close-btn.svg" alt="close-btn-svg"
+                    class="filter-gray">
+            </div>
+        `)
+    }
+
+    for (let i = compare.length; i <= 3; i++) {
+        $(`.product-cp-item:nth-child(${i + 1})`).html(`
+            <div class="add-cp-item" data-toggle="modal" data-target="#choose-compare-item">
+                <img src="../static/images/contingency-images/plus-icon.png" alt="plus-icon">
+            </div>
+            <p>Thêm sản phẩm</p>
+        `)
+    }
+
+    if (compare.length >= 2) {
+        $("#cp-btn").removeClass("disabled")
+    } else {
+        $("#cp-btn").addClass("disabled")
+    }
+
+    if (compare.length >= 1) {
+        $("#delete-all-cp").removeClass("disabled")
+    } else {
+        $("#delete-all-cp").addClass("disabled")
+    }
+
+
+}
+
+renderCompareNav()
+
+//click xoa het cp item
+$("#delete-all-cp").click(() => {
+    let compareObj = getObjectFromLocalStorage("compare")
+    compareObj[sessionID] = []
+    saveToLocalStorage("compare", compareObj)
+    renderCompareNav()
+})
+
+$("#cp-btn").click(() => {
+    renderCompareResult()
+})
+
+function renderCompareResult() {
+    let compareObj = getObjectFromLocalStorage("compare")
+    if (!compareObj) {
+        return;
+    }
+
+    let compare = compareObj[sessionID]
+    if (!compare) {
+        return;
+    }
+    let products = getFromLocalStorage("productList")
+    let len = compare.length
+    console.log(len)
+    let theadHTML = ""
+    for (let id of compare) {
+        let p = products.find(p => p.id == id)
+        let ratingsEl = `<i class="fa-solid fa-star"></i> <span>${avgRating(p.reviews)}</span>`
+        theadHTML += `
+            <th class="table-heading">
+                <div class="product-card">
+                    <a href="./detail.html?id=${p.id}" class="product-image">
+                        <img src="../static/images/product-card-images/${p.indexProductImgURL}" alt="${p.name}">
+                    </a>
+
+                    <div class="product-content">
+                        <p class="product-name">${p.name}</p>
+
+
+                        <div class="old-price-container">
+                            <span class="old-price">${formatMoney(p.oldPrices[0])}</span>  
+                            <span class="percent">${Number(p.discounts[0]).toFixed(0)}%</span>
+                        </div>
+
+                        <p class="current-price">${formatMoney(p.currentPrices[0])}</p>
+
+
+                        <div class="product-card-bottom">
+                            <div class="bot-first">
+                                <div class="rating">
+                                ${ratingsEl}
+                                </div>
+                                <div class="qtt-sold">
+                                    Đã bán: ${p.soldQuantity}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </th>`
+    }
+    $("#compareResult thead tr").html(theadHTML)
+
+    let modelProduct = products.find(p => p.id == compare[0])
+    console.log(modelProduct)
+    
+    
+    let tbodyHTML = ""
+    for (let [key, value] of Object.entries(modelProduct.specAttributes)) {
+        let compareRow = $("<tr></tr>")
+        let compareRowHTML = ""
+        console.log(key, value)
+
+        compare.forEach((id, arrayIdx) => {
+            let p = products.find(p => p.id == id)
+            compareRowHTML += `
+                <td>
+                    ${p.specAttributes[key]}
+                </td>
+            `
+        })
+
+        tbodyHTML += `<tr>${compareRowHTML}</tr>`
+    }
+
+    $("#compareResult tbody").html(`${tbodyHTML}`)
+
+}
