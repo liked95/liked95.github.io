@@ -73,7 +73,6 @@ if (userID) {
         <ul class="dropdown-container">
             <li>Xin chào <b>${userID.username}</b></li>
             <li data-toggle="modal" data-target="#orderHistory">Lịch sử đặt hàng</li>
-            <li><a class="dropdown-menu-item" href="#">Another action</a></li>
             <li class="logout-btn">Đăng xuất</li>
         </ul>
     `)
@@ -705,11 +704,11 @@ $(document).ready(function () {
 
     })
 
-    $("#watched-product-carousel").on("drag.owl.carousel", () => {
+    $("#cp-watched-product-carousel").on("drag.owl.carousel", () => {
         $("body").css("overflow", "hidden")
     })
 
-    $("#watched-product-carousel").on("dragged.owl.carousel", () => {
+    $("#cp-watched-product-carousel").on("dragged.owl.carousel", () => {
         $("body").css("overflow", "auto")
     })
 })

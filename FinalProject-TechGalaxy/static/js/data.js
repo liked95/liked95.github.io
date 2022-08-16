@@ -2513,7 +2513,7 @@ let products = [
     {
         id: 9,
         category: "smartphone",
-        name: "Samsung Galaxy S22 Ultra 5G",
+        name: "Galaxy S22 Ultra 5G",
         indexProductImgURL: "Galaxy-S22-Ultra.jpg",
         features: [
             "Màn 6.8 inch, Quad HD+",
@@ -2861,7 +2861,7 @@ let products = [
     {
         id: 10,
         category: "smartphone",
-        name: "Samsung Galaxy S22 5G",
+        name: "Galaxy S22 5G",
         indexProductImgURL: "Galaxy-S22.jpg",
         features: [
             "Màn 6.1 inch, Full HD+",
@@ -4569,7 +4569,7 @@ let products = [
     {
         id: 42,
         category: "smartphone",
-        name: "Samsung Galaxy Z Fold3",
+        name: "Galaxy Z Fold3",
         indexProductImgURL: "samsung-galaxy-z-fold-3-silver-1-600x600.jpg",
         features: [
             "Màn hình Dynamic AMOLED 2X, Chính 7.6\" & Phụ 6.2\", Full HD+",
@@ -4978,7 +4978,7 @@ let products = [
     {
         id: 43,
         category: "smartphone",
-        name: "Samsung Galaxy Z Flip3",
+        name: "Galaxy Z Flip3",
         indexProductImgURL: "samsung-galaxy-z-flip-3-cream-1-600x600.jpg",
         features: [
             "Màn hình Dynamic AMOLED 2X, Chính 6.7\" & Phụ 1.9\", Full HD+",
