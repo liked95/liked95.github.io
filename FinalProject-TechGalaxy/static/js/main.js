@@ -836,7 +836,7 @@ function addToCompareList(id, category) {
         compare[sessionID] = [id]
     } else {
         if (compare[sessionID].includes(id)) {
-            alert("Mặt hàng này đã được thêm vào so sánh")
+            alert("Sản phẩm này đã được thêm vào so sánh. Hãy chọn sản phẩm khác!")
             return;
         }
         compare[sessionID].push(id)
