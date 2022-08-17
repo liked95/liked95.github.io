@@ -2524,9 +2524,6 @@ footer p {
     margin-top: 10px;
 }
 
-#choose-compare-item .watched-products {
-    margin-bottom: 15px;
-}
 
 .search-cp-items {
     min-height: 200px;
@@ -2560,6 +2557,7 @@ footer p {
     display: flex;
     flex-direction: column;
     border-radius: 0 0 6px 6px;
+    border-top: 1px solid #e0e0e0;
     overflow: auto;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
