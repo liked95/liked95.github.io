@@ -775,6 +775,18 @@ footer h2 {
     text-transform: uppercase;
 }
 
+footer a {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+footer a:hover {
+    color: #e5e5e5;
+}
+
 footer p {
     font-weight: 400;
     font-size: 14px;
