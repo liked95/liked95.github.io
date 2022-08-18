@@ -2,6 +2,31 @@
 const GHNToken = "6b47d361-0f52-11ed-8636-7617f3863de9"
 const GHNShopID = 3136159
 
+// let mainParam = window.location.pathname
+// if (mainParam.includes("index.html")) {
+//     $('a[href="index.html"]').css("color", "orange")
+//     $('a[href="index.html"] .icon-box img').removeClass("filter-white").addClass("filter-orange")
+// }
+
+function renderExistingNavIcon(pathname) {
+    let mainParam = window.location.pathname
+    if (mainParam.includes(pathname)) {
+        $(`.menu-icon a[href="${pathname}"]`).css("color", "orange")
+        $(`.menu-icon a[href="${pathname}"] .icon-box img`).removeClass("filter-white").addClass("filter-orange")
+    }
+
+    if (mainParam.includes("detail.html")) {
+        $(".menu-icon a[href='smartphone.html']").css("color", "orange")
+        $(".menu-icon a[href='smartphone.html'] .icon-box img").removeClass("filter-white").addClass("filter-orange")
+    }
+}
+
+renderExistingNavIcon("index.html")
+renderExistingNavIcon("smartphone.html")
+renderExistingNavIcon("promotion.html")
+renderExistingNavIcon("about.html")
+renderExistingNavIcon("contact.html")
+
 const alertDuration = 1200
 function createAlert(message, duration = alertDuration) {
     let messageEl = document.createElement("div")
@@ -699,7 +724,7 @@ $(document).ready(function () {
             992: {
                 items: 4
             },
-            
+
         }
 
     })
@@ -962,7 +987,7 @@ function renderCompareResult() {
         let p = products.find(p => p.id == id)
         let ratingsEl = `<i class="fa-solid fa-star"></i> <span>${avgRating(p.reviews)}</span>`
         theadHTML += `
-            <th class="table-heading" style="width: ${100/len}%">
+            <th class="table-heading" style="width: ${100 / len}%">
                 <div class="product-card">
                     <a href="./detail.html?id=${p.id}" class="product-image">
                         <img src="../static/images/product-card-images/${p.indexProductImgURL}" alt="${p.name}">
@@ -996,8 +1021,8 @@ function renderCompareResult() {
     }
     $("#compareResult thead tr").html(theadHTML)
 
-    let modelProduct = products.find(p => p.id == compare[0])    
-    
+    let modelProduct = products.find(p => p.id == compare[0])
+
     let tbodyHTML = ""
     for (let [key, value] of Object.entries(modelProduct.specAttributes)) {
         let compareRowHTML = ""

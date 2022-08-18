@@ -31,6 +31,10 @@ body {
     filter: invert(8%) sepia(100%) saturate(7040%) hue-rotate(356deg) brightness(117%) contrast(79%);
 }
 
+.filter-orange {
+    filter: invert(57%) sepia(77%) saturate(686%) hue-rotate(360deg) brightness(102%) contrast(104%);
+}
+
 img {
     max-width: 100%;
 }
