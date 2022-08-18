@@ -955,6 +955,8 @@ function renderCompareNav() {
 
 }
 
+
+
 renderCompareNav()
 
 //click xoa het cp item
