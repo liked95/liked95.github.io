@@ -480,7 +480,7 @@ function renderOrderConfirmation() {
         let paymentMethod = $(".payment-method input:checked").parent().find("label").text()
         $("#order-payment-method").html(paymentMethod)
     }
-    
+
 
 
 }
