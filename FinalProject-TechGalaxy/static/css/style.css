@@ -785,10 +785,11 @@ footer a {
     line-height: 19px;
     margin-bottom: 15px;
     color: #fff;
+    display: block;
 }
 
 footer a:hover {
-    color: #e5e5e5;
+    color: #d6d6d6;
 }
 
 footer p {
