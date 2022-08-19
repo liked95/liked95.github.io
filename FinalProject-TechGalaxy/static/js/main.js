@@ -467,7 +467,7 @@ function renderPurchaseHistory() {
 
                     <div class="vat">
                         <span>VAT (8%)</span>
-                        <span>.....</span>
+                        <span>${purchase.financialVals.tax}</span>
                     </div>
 
                     <div class="grand-total fw-bold">

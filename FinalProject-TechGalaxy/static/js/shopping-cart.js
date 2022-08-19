@@ -568,8 +568,10 @@ $("#confirm-btn").click((e) => {
         shipmentFee: $("#payment-shipment-info .shipment-fee span:last-child").text(),
         discount: $("#payment-shipment-info .discount span:last-child").text(),
         pretaxValue: $("#payment-shipment-info .pretax-value span:last-child").text(),
+        tax: $("#payment-shipment-info .vat span:last-child").text(),
         grandTotal: $("#payment-shipment-info .grand-total span:last-child").text(),
     }
+
 
     const userInfo = {
         name: $("#order-name").text(),
