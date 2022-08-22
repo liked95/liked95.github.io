@@ -8,24 +8,24 @@ const GHNShopID = 3136159
 //     $('a[href="index.html"] .icon-box img').removeClass("filter-white").addClass("filter-orange")
 // }
 
-function renderExistingNavIcon(pathname) {
-    let mainParam = window.location.pathname
-    if (mainParam.includes(pathname)) {
-        $(`.menu-icon a[href="${pathname}"]`).css("color", "orange")
-        $(`.menu-icon a[href="${pathname}"] .icon-box img`).removeClass("filter-white").addClass("filter-orange")
-    }
+// function renderExistingNavIcon(pathname) {
+//     let mainParam = window.location.pathname
+//     if (mainParam.includes(pathname)) {
+//         $(`.menu-icon a[href="${pathname}"]`).css("color", "orange")
+//         $(`.menu-icon a[href="${pathname}"] .icon-box img`).removeClass("filter-white").addClass("filter-orange")
+//     }
 
-    if (mainParam.includes("detail.html")) {
-        $(".menu-icon a[href='smartphone.html']").css("color", "orange")
-        $(".menu-icon a[href='smartphone.html'] .icon-box img").removeClass("filter-white").addClass("filter-orange")
-    }
-}
+//     if (mainParam.includes("detail.html")) {
+//         $(".menu-icon a[href='smartphone.html']").css("color", "orange")
+//         $(".menu-icon a[href='smartphone.html'] .icon-box img").removeClass("filter-white").addClass("filter-orange")
+//     }
+// }
 
-renderExistingNavIcon("index.html")
-renderExistingNavIcon("smartphone.html")
-renderExistingNavIcon("promotion.html")
-renderExistingNavIcon("about.html")
-renderExistingNavIcon("contact.html")
+// renderExistingNavIcon("index.html")
+// renderExistingNavIcon("smartphone.html")
+// renderExistingNavIcon("promotion.html")
+// renderExistingNavIcon("about.html")
+// renderExistingNavIcon("contact.html")
 
 const alertDuration = 1200
 function createAlert(message, duration = alertDuration) {
