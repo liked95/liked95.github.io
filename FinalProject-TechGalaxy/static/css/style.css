@@ -170,6 +170,11 @@ input:focus {
     z-index: -1;
 }
 
+
+.mobile-logo-img {
+    display: none;
+}
+
 #sidebar-open-btn {
     display: none;
     position: absolute;
@@ -262,7 +267,9 @@ header .first-header-row {
     font-size: 14px;
     height: 40px;
     padding-left: 20px;
+    padding-right: 10px;
     color: #333;
+    
 }
 
 .search-item:hover {
@@ -577,7 +584,7 @@ header .second-header-row {
     line-height: 20px;
     margin-bottom: 12px;
     font-weight: 700;
-
+    color: #333;
     
     white-space: nowrap;
     overflow: hidden;

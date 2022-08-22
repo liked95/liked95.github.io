@@ -219,7 +219,7 @@ function renderCardItem(containerEl, arr) {
                 </a>
 
                 <div class="product-content">
-                    <p class="product-name">${p.name}</p>
+                <a href="./detail.html?id=${p.id}" class="product-name">${p.name}</a>
                     <p class="product-id" style = "display:none">${p.id}</p>
 
                     <div class="alter-options no-scrollbar">
