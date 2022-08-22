@@ -245,7 +245,7 @@ header .first-header-row {
 
 #search-result {
     width: 100%;
-    max-height: 80vh;
+    max-height: 50vh;
     background-color: #fff;
     /* display: none; */
     position: absolute;
@@ -269,7 +269,12 @@ header .first-header-row {
     padding-left: 20px;
     padding-right: 10px;
     color: #333;
-    
+}
+
+.search-item p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .search-item:hover {
