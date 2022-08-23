@@ -572,7 +572,11 @@ header .second-header-row {
     transform: translateY(-5%);
 }
 
-.product-card:hover .product-name {
+/* .product-card:hover .product-name {
+    color: #2F80ED
+} */
+
+.product-card .product-name:hover {
     color: #2F80ED
 }
 
