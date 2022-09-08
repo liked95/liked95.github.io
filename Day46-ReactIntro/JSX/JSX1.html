@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSX</title>
+</head>
+
+<body>
+
+    <div id="root">
+
+    </div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        const menus = [
+            { path: "/", label: "Trang chủ" },
+            { path: "/shop", label: "Cửa hàng" },
+            { path: "/about", label: "Về chúng tôi" },
+            { path: "/contact", label: "Liên hệ" },
+        ];
+
+        const App = ({menus}) => {
+            return (
+                <div className="menu-list">
+                    {menus.map((menu, index) => <a key={index} href={menu.path}>{menu.label}</a>)}
+                </div>
+            )
+
+        }
+
+
+        // Tạo root DOm để render dữ liệu
+        const root = ReactDOM.createRoot(document.getElementById("root"))
+
+
+        // Render dữ liệu
+        root.render(<App menus={menus} />)
+           // <MenuList menus = menus> ...   </MenuList>
+    </script>
+
+</body>
+
+</html>

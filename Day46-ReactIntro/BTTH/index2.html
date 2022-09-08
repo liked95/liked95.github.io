@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactJS-TH2</title>
+</head>
+
+<body>
+
+    <div id="root">
+
+    </div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- reactjs here -->
+    <script>
+        const menus = [
+                        { path: "/", label: "Trang chủ" },
+                        { path: "/shop", label: "Cửa hàng" },
+                        { path: "/about", label: "Về chúng tôi" },
+                        { path: "/contact", label: "Liên hệ" },
+                    ];
+        // tao phan tu react
+        const MenuList = ({menus}) => {
+            
+            return React.createElement(
+                "div",
+                {className: "menu-list"},
+                menus.map((menu, index) => {
+                    const {path, label} = menu
+                    return React.createElement(
+                        MenuItem,
+                        {path: path, label: label, key: index},
+                        null,
+                    )
+                }))
+        }
+        
+
+        const MenuItem = ({path, label}) => {
+            return React.createElement(
+                "a",
+                {href: path, className: "menu-item"},
+                label,
+            )
+        }
+
+        // Tạo root DOm để render dữ liệu
+        const root = ReactDOM.createRoot(document.getElementById("root"))
+       
+
+        // Render dữ liệu
+        root.render(React.createElement(MenuList, {menus}, null))
+            // <MenuList menus = menus> ...   </MenuList>
+        
+
+    </script>
+</body>
+
+</html>

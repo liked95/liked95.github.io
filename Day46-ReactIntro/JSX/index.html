@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSX</title>
+</head>
+
+<body>
+
+    <div id="root">
+
+    </div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        const names = ["Bùi Hiên", "Thu Hằng", "Minh Duy"];
+        const otherNames = ["Son", "Huyen", "Tuan"];
+
+        const Greeting = ({ name, status }) => {
+            if (status) {
+                return (
+                    <div className="greeting" style={{ color: "red" }}>
+                        <h1>Hello {name}</h1>
+                        <p>Are you ok?</p>
+                    </div>
+                )
+            }
+
+            return <h1>Good Bye {name}</h1>
+        }
+
+
+        const ListName = ({ names }) => {
+            return (
+                <ul className="name">
+                    {names.map((name, index) => <li key={index}>{name}</li>)}
+                </ul>
+            )
+        }
+
+        const App = () => {
+            return (
+                <React.Fragment>
+                    <Greeting name="H SOn" status={true} />
+                    <Greeting name="H " status={true} />
+                    <Greeting name="H Q" status={false} />
+                    <Greeting name="H Le thu" status={true} />
+                    <ListName names={[...otherNames, ...names]} />
+                </React.Fragment>
+            )
+        }
+
+
+
+        // Tạo root DOm để render dữ liệu
+        const root = ReactDOM.createRoot(document.getElementById("root"))
+
+
+        // Render dữ liệu
+        root.render(<App/>)
+           // <MenuList menus = menus> ...   </MenuList>
+    </script>
+
+</body>
+
+</html>
