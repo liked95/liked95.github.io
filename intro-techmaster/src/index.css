@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.header {
+  width: 100%;
+  display: flex;
+  list-style-type: none;
+  background-color: #e6e6e6;
+  text-transform: uppercase;
+  color: white;
+}
+
+.nav-item {
+  margin-right: 20px;
+  min-height: 50px;
+  line-height: 50px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.nav-item:hover {
+  color: #e0e0e0;
+}
+
+.nav-link.active {
+  color: green
+}
+
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+/* Trang danh sách */
+.course-item-image {
+  height: 190px;
+}
+
+.course-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.course-item-info h2 {
+  height: 48px;
+}
