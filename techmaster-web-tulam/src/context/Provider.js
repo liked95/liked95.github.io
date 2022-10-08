@@ -1,23 +1,30 @@
-import Context from "./Context";
-import { useReducer } from "react";
-import { topics, courses } from "../data/course-data";
-import { supporters } from "../data/user-data";
-import reducer from "../store/reducer";
+import React, { useReducer } from 'react'
+import Context from './Context'
+import cartReducer, { initCart } from '../store/cartReducer';
+import { courses, topics } from '../data/course-data';
+import authReducer, { initAuth } from 'store/authReducer';
+import userReducer, {initUsers} from 'store/userReducer';
+import orderReducer, {initOrders} from 'store/orderReducer';
 
-
-
-const Provider = ({ children }) => {
-    // Giỏ hàng ban đầu phải trống
-    const initState = []
-
-    const [cartItems, dispatch] = useReducer(reducer, initState)
+function Provider({ children }) {
+    const [products, dispatchCart] = useReducer(cartReducer, initCart);
+    const [auth, dispatchAuth] = useReducer(authReducer, initAuth);
+    const [users, dispatchUsers] = useReducer(userReducer, initUsers);
+    const [orders, dispatchOrders] = useReducer(orderReducer, initOrders);
 
     const value = {
-        topics,
         courses,
-        supporters,
-        cartItems,
-        dispatch
+        topics,
+        users,
+        products,
+        dispatchCart,
+        auth,
+        dispatchAuth, 
+        dispatchUsers,
+        orders,
+        dispatchOrders,
+
+
     }
 
     return (
@@ -28,4 +35,3 @@ const Provider = ({ children }) => {
 }
 
 export default Provider
-

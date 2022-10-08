@@ -1,11 +1,8 @@
-import "./ShoppingCart.css";
-import ProductList from "./components/ProductList";
 import BillInformation from "./components/BillInformation";
-
-
+import ProductList from "./components/ProductList";
+import "./ShoppingCart.css";
 
 function ShoppingCart() {
-    
     return (
         <>
             <div className="shopping-cart-container mt-5">

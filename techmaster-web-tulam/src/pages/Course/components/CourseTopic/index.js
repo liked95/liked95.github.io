@@ -1,19 +1,20 @@
 import React, { useContext, useState } from "react";
-import Context from "../../../../context/Context";
-import {useLocation} from 'react-router-dom'
-import queryString from "query-string";
+import Context from "context/Context";
 
-function CourseTopic({ onChangeTopic }) {
-    const { topics } = useContext(Context)
-    const location = useLocation()
+function CourseTopic(props) {
+    const { filter, onChangeTopic } = props
+    const { topics } = useContext(Context);
+    const [checked, setChecked] = useState();
 
-    const [checked, setChecked] = useState(() => {
-        const paramsObj = queryString.parse(location.search)
-        return paramsObj.topic
-    })
+    // Xử lý khi thay đổi topic
+    const handleChangeTopic = (e) => {
+        // Lấy giá trị topic đã chọn
+        let topic = e.target.value;
 
-    const handleChangeTopicButton = topic => {
+        // Set lại state
         setChecked(topic)
+
+        // Gửi giá trị vừa chọn => component cha (Course)
         onChangeTopic(topic)
     }
 
@@ -22,13 +23,17 @@ function CourseTopic({ onChangeTopic }) {
             <h2 className="fs-5 mb-4">Chủ đề</h2>
             <div className="topic-container">
                 {topics.map((topic, index) => (
-                    <div className="topic-item input-group d-flex align-items-center mb-1" key={index}>
-                        <input type="radio"
+                    <div key={index} className="topic-item input-group d-flex align-items-center mb-1">
+                        <input
+                            type="radio"
                             value={topic.value}
                             id={topic.value}
-                            checked={checked == topic.value}
-                            onChange={e => handleChangeTopicButton(e.target.value)} />
-                        <label htmlFor={topic.value} className="ms-2 fs-5">{topic.name}</label>
+                            onChange={e => handleChangeTopic(e)}
+                            checked={topic.value === filter.topic}
+                        />
+                        <label htmlFor={topic.value} className="ms-2 fs-5">
+                            {topic.name}
+                        </label>
                     </div>
                 ))}
             </div>

@@ -1,5 +1,5 @@
 // Danh sách tư vấn viên
-export const supporters = [
+export const users = [
     {
         id: 1,
         name: "Phạm Thị Mẫn",

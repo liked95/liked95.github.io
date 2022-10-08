@@ -1,18 +1,27 @@
-import React, {useContext} from 'react'
-import {NavLink, Link} from 'react-router-dom'
-import Context from '../../context/Context'
-
+import React, { useContext } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import Context from 'context/Context'
+import "./Header.css"
+import { logout } from 'store/actions'
+import {useNavigate} from 'react-router-dom'
 
 function Header() {
-    const {cartItems} = useContext(Context)
+    const { products, auth, dispatchAuth } = useContext(Context)
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+        dispatchAuth(logout())
+        navigate("/")
+    }
+
     return (
         <div className="header">
             <nav className="navbar navbar-expand-lg navbar-dark">
                 <div className="container-fluid">
-                    <NavLink className="navbar-brand" to="/">
+                    <Link className="navbar-brand" to="/">
                         <img src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
                             alt="logo-techmaster" />
-                    </NavLink>
+                    </Link>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false"
@@ -32,10 +41,10 @@ function Header() {
                                 <NavLink className="nav-link text-white" to="/san-pham-hoc-vien">SẢN PHẨM HỌC VIÊN</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link text-white" to="/blog">BLOG</NavLink>
+                                <NavLink className="nav-link text-white" to="/bai-viet">BLOG</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link text-white" to="/about">VỀ CHÚNG TÔI</NavLink>
+                                <NavLink className="nav-link text-white" to="/trung-tam">VỀ CHÚNG TÔI</NavLink>
                             </li>
                         </ul>
 
@@ -43,14 +52,62 @@ function Header() {
                             <div className="cart">
                                 <Link to="/gio-hang" className="text-white position-relative">
                                     <span className="fs-5"><i className="fa-solid fa-cart-shopping"></i></span>
-                                    <span className="cart-count bg-info px-1 rounded-2 position-absolute">{cartItems.length}</span>
+                                    <span className="cart-count bg-info px-1 rounded-2 position-absolute">{products.length}</span>
                                 </Link>
                             </div>
                             <div className="user ms-4">
-                                <button type="button" className="bg-transparent border-0 text-white" data-bs-toggle="modal"
-                                    data-bs-target="#modal-login">
-                                    <span className="fs-5"><i className="fa-solid fa-user"></i></span>
-                                </button>
+                                {!auth.id &&
+                                    (<Link to="/login" className='bg-transparent border-0 text-white'>
+                                        <span className="fs-5"><i className="fa-solid fa-user"></i></span>
+                                    </Link>
+                                    )}
+
+                                {auth.id && (
+                                    <div className="dropdown">
+                                        <img
+                                            id="dropdownMenu"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false"
+                                            src={auth.avatar}
+                                            alt={auth.name}
+                                        />
+                                        <ul
+                                            className="dropdown-menu"
+                                            aria-labelledby="dropdownMenu"
+                                        >
+                                            <li>
+                                                <Link
+                                                    className="dropdown-item"
+                                                    to="/ho-so-ca-nhan"
+                                                >
+                                                    Hồ sơ cá nhân
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link
+                                                    className="dropdown-item"
+                                                    to="/lich-su-mua-hang"
+                                                >
+                                                    Lịch sử mua hàng
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link
+                                                    className="dropdown-item"
+                                                    to="/bao-mat-tai-khoan"
+                                                >
+                                                    Bảo mật tài khoản
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <button className="dropdown-item"
+                                                    onClick={handleLogout}>
+                                                    Đăng xuất
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>

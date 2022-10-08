@@ -7,21 +7,21 @@ import { addCount, deleteItem, subtractCount } from '../../../store/actions';
 function ProductItem({ item }) {
     const { id, title, image, price, count } = item
 
-    const { dispatch } = useContext(Context)
-    const { cartItems } = useContext(Context)
+    const { dispatchCart } = useContext(Context)
+    const { products } = useContext(Context)
 
     const handleAddCount = id => {
-        dispatch(addCount(id))
+        dispatchCart(addCount(id))
     }
 
     const handleSubtractCount = id => {
-        let item = cartItems.find(item => item.id == id)
+        let item = products.find(item => item.id == id)
         if (item.count <= 1) return
-        dispatch(subtractCount(id))
+        dispatchCart(subtractCount(id))
     }
 
     const handleDeleteItem = id => {
-        dispatch(deleteItem(id))
+        dispatchCart(deleteItem(id))
     }
     
     return (

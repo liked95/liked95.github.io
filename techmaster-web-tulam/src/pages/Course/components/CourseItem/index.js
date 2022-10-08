@@ -1,9 +1,9 @@
 import React from 'react'
-import { formatMoney } from '../../../../utils/utils'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { formatMoney } from 'utils/utils'
 
-function CourseItem({ course }) {
-    const { id, image, price, rating, title, description, type } = course
+function CourseItem(props) {
+    const { id, title, image, type, rating, price } = props.course
     return (
         <div className="col-md-4">
             <Link to={`/khoa-hoc/${id}`}>

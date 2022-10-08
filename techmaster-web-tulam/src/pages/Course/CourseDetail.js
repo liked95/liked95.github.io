@@ -1,42 +1,42 @@
 import React, { useContext } from 'react'
-import { useParams , Link } from 'react-router-dom'
-import Context from '../../context/Context'
-import { addProduct } from '../../store/actions'
-import { formatMoney } from '../../utils/utils'
-
-
+import { useParams, Link } from 'react-router-dom';
+import Context from 'context/Context'
+import { addProduct } from 'store/actions';
+import { formatMoney } from 'utils/utils';
 
 function CourseDetail() {
-    const { courseId } = useParams()
-    const { courses, cartItems, dispatch } = useContext(Context)
-    
+    // Lấy id trên URL
+    const { courseId } = useParams();
 
-    // Course
-    let course = courses.find(course => course.id === Number(courseId))
-    const { id, title, description, type, image, price, supporterId } = course
+    // Lấy ds khóa học, user từ trong context
+    const { courses, users, products, dispatchCart } = useContext(Context);
 
+    // Lấy thông tin khóa học
+    const course = courses.find(course => course.id === +courseId);
 
-    // Supporter
-    const { supporters } = useContext(Context)
-    const supporter = supporters.find(sup => sup.id == supporterId)
-    
-    const handleAddProduct = id => {
-        let isExist = cartItems.find(item => item.id == id)
+    // Lấy thông tin tư vấn viên
+    const supporter = users.find(user => user.id === course.supporterId);
+
+    // Xử lý thêm sản phẩm vào giỏ hàng
+    const handleAddProduct = () => {
+        // Kiểm tra sản phẩm đã có trong giỏ hàng hay chưa
+        const isExist = products.some(product => product.id === +courseId);
         if (isExist) {
-            alert("Đã có trong cart")
+            alert("Sản phẩm đã có trong giỏ hàng");
             return;
         }
 
-        let newCartItem = {
-            id, 
-            title,
-            image,
-            price, 
+        // Thêm sản phẩm vào giỏ
+        const newCartItem = {
+            id: course.id,
+            title: course.title,
+            image: course.image,
+            price: course.price,
             count: 1
         }
 
-        dispatch(addProduct(newCartItem))
-        alert("Thêm vào giỏ hàng thành công!!!")
+        dispatchCart(addProduct(newCartItem));
+        alert("Thêm sản phẩm vào giỏ hàng thành công");
     }
 
     return (
@@ -49,7 +49,7 @@ function CourseDetail() {
                                 <Link to='/khoa-hoc'>Khóa học</Link>
                             </li>
                             <li className="breadcrumb-item active" aria-current="page">
-                                {title}
+                                {course.title}
                             </li>
                         </ol>
                     </nav>
@@ -58,17 +58,15 @@ function CourseDetail() {
                     <div className="col-md-8">
                         <div className="main p-4 shadow-sm">
                             <h2 className="course-title fs-5">
-                                {title}
+                                {course.title}
                             </h2>
 
                             <hr />
 
                             <div className="supporter d-flex align-items-center">
                                 <div className="supporter-image">
-                                    <img
-                                        src={supporter.avatar}
-                                        alt="tư vấn viên"
-                                        className="rounded-circle" />
+                                    <img src={supporter.avatar}
+                                        alt="tư vấn viên" className="rounded-circle" />
                                 </div>
                                 <div className="ms-4 supporter-info">
                                     <p>
@@ -94,7 +92,7 @@ function CourseDetail() {
 
                             <div className="course-description">
                                 <p>
-                                    {description}
+                                    {course.description}
                                 </p>
                             </div>
                         </div>
@@ -103,19 +101,17 @@ function CourseDetail() {
                     <div className="col-md-4">
                         <div className="p-4 shadow-sm">
                             <div className="course-image mb-4">
-                                <img src={image} alt={title} />
+                                <img src={course.image} alt={course.title} />
                             </div>
                             <p>
                                 Học phí :
-                                <span className="fw-bold course-price">
-                                    {formatMoney(price)}
-                                </span>
+                                <span className="fw-bold course-price">{formatMoney(course.price)}</span>
                             </p>
                             <p>
                                 Hình thức học :
-                                <span className="fw-bold course-type">{type}</span>
+                                <span className="fw-bold course-type">{course.type}</span>
                             </p>
-                            <button className="btn btn-success" onClick={() => handleAddProduct(id)}>
+                            <button className="btn btn-success" onClick={handleAddProduct}>
                                 Thêm vào giỏ hàng
                             </button>
                         </div>
