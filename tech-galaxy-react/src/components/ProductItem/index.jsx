@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { formatMoney } from 'utils/index';
 
 
 function ProductItem({ props }) {
   const { id, name, indexProductImgURL, features, currentPrices, oldPrices, alterOptions, discounts, soldQuantity, reviews } = props
-  console.log(props);
+  const [option, setOption] = useState(0)
 
 
 
@@ -16,7 +16,6 @@ function ProductItem({ props }) {
     }
     return (sum / reviews.length).toFixed(1)
   }
-
 
   return (
     <div className="product-card">
@@ -29,24 +28,29 @@ function ProductItem({ props }) {
         <p className="product-id" style={{ display: 'none' }}></p>
 
         <div className="alter-options no-scrollbar">
-          {alterOptions.map((option, index) => <button key={index}>{option}</button>)}
+          {alterOptions.map((optionContent, index) => <button
+            key={index}
+            className={index == option ? 'active' : ''}
+            onClick={() => setOption(index)}>
+            {optionContent}
+          </button>)}
         </div>
 
         <div className="old-price-container">
-          <span className="old-price">{formatMoney(oldPrices[0])}</span>
-          <span className="percent">{formatMoney(discounts[0])}%</span>
+          <span className="old-price">{formatMoney(oldPrices[option])}</span>
+          <span className="percent">{formatMoney(discounts[option])}%</span>
         </div>
 
-        <p className="current-price">{formatMoney(currentPrices[0])}</p>
+        <p className="current-price">{formatMoney(currentPrices[option])}</p>
 
         <ul className="product-description">
-          {features.map((feature, index) => <li><span>{feature}</span></li>)}
+          {features.map((feature, index) => <li key={index}><span>{feature}</span></li>)}
         </ul>
 
         <div className="product-card-bottom">
           <div className="bot-first">
             <div className="rating">
-              <i class="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star"></i>
               <span>{avgRating(reviews)}</span>
             </div>
             <div className="qtt-sold">

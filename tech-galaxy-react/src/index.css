@@ -1049,6 +1049,11 @@ footer p {
     cursor: pointer;
 }
 
+.price-range-indicator {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
 
 /* tag item */
 .tag-item {

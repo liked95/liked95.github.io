@@ -68,7 +68,7 @@ function Header() {
         <div className="container">
           <ul className="main-menu">
             <li className="menu-icon">
-              <NavLink to="/">
+              <NavLink to="/" end>
                 <div className="icon-box">
                   <img src={homePage} alt="homepage" className="filter-white" />
                 </div>
