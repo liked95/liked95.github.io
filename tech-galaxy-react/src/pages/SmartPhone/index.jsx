@@ -9,20 +9,41 @@ import FilterByBrand from './FilterByBrand'
 import FilterByRam from './FilterByRam'
 import FilterByRom from './FilterByRom'
 import FilterByPriceRange from './FilterByPriceRange'
+import Sort from './Sort';
+import { avgRating } from 'components/ProductItem/index';
 
 function SmartPhone() {
   const location = useLocation()
   const navigate = useNavigate()
 
-  const { products } = useContext(Context)
+  let { products } = useContext(Context)
+  products = products.filter(product => product.category == 'smartphone')
 
   const [filters, setFilters] = useState(() => {
-    const params = queryString.parse(location.search, { arrayFormat: 'bracket'})
+    const params = queryString.parse(location.search, { arrayFormat: 'bracket' })
 
     return {
-      brands: params.brands || []
+      brands: params.brands || [],
+      rams: params.rams || [],
+      roms: params.roms || [],
+      maxPrice: params.maxPrice || [50000000],
+      sort: params.sort || [],
     }
   })
+
+
+  useEffect(() => {
+    const params = queryString.parse(location.search,
+      { arrayFormat: 'bracket' })
+    
+    setFilters({
+      brands: params.brands || [],
+      rams: params.rams || [],
+      roms: params.roms || [],
+      maxPrice: params.maxPrice || [50000000],
+      sort: params.sort || [],
+    })
+  }, [location.search])
 
 
   // Thay doi brand
@@ -31,23 +52,10 @@ function SmartPhone() {
 
     navigate({
       pathname: location.pathname,
-      search: queryString.stringify(queryParams, { arrayFormat: 'bracket'})
+      search: queryString.stringify(queryParams, { arrayFormat: 'bracket' })
     })
   }
 
-  useEffect(() => {
-    const params = queryString.parse(location.search,
-      { arrayFormat: 'bracket'})
-    console.log(params)
-
-    setFilters({
-      brands: params.brands || [],
-      rams: params.rams || [],
-      roms: params.roms || [],
-    })
-  }, [location.search])
-
-  console.log('filter la', filters)
 
   // Thay doi ram
   const handleChangeRams = (rams) => {
@@ -55,21 +63,10 @@ function SmartPhone() {
 
     navigate({
       pathname: location.pathname,
-      search: queryString.stringify(queryParams, { arrayFormat: 'bracket'})
+      search: queryString.stringify(queryParams, { arrayFormat: 'bracket' })
     })
   }
 
-  useEffect(() => {
-    const params = queryString.parse(location.search,
-      { arrayFormat: 'bracket' })
-    console.log(params)
-
-    setFilters({
-      brands: params.brands || [],
-      rams: params.rams || [],
-      roms: params.roms || [],
-    })
-  }, [location.search])
 
   // Thay doi rom
   const handleChangeRoms = (roms) => {
@@ -77,51 +74,87 @@ function SmartPhone() {
 
     navigate({
       pathname: location.pathname,
-      search: queryString.stringify(queryParams, { arrayFormat: 'bracket'})
+      search: queryString.stringify(queryParams, { arrayFormat: 'bracket' })
     })
   }
 
-  useEffect(() => {
-    const params = queryString.parse(location.search,
-      { arrayFormat: 'bracket'})
-    console.log(params)
+  // Thay doi gia max
+  const handleChangeMaxPrice = (maxPrice) => {
+    const queryParams = { ...filters, maxPrice }
 
-    setFilters({
-      brands: params.brands || [],
-      rams: params.rams || [],
-      roms: params.roms || [],
+    navigate({
+      pathname: location.pathname,
+      search: queryString.stringify(queryParams, { arrayFormat: 'bracket' })
     })
-  }, [location.search])
+  }
+
+  // thay doi sort
+  const handleChangeSelectedSort = sort => {
+    const queryParams = { ...filters, sort }
+
+    navigate({
+      pathname: location.pathname,
+      search: queryString.stringify(queryParams, { arrayFormat: 'bracket' })
+    })
+  }
+
+  // reset filter
+  const handleResetFilter = () => {
+    navigate({
+      pathname: location.pathname,
+      search: ''
+    })
+  }
 
 
-    // Bat dau loc theo tieu chi
+
+
+
+  // Bat dau loc theo tieu chi
   const startFilter = () => {
     let updatedProducts = [...products]
 
-    if (filters.roms && filters.roms.length > 0) {
-      
-      updatedProducts = updatedProducts.filter(product => {
-        // console.log(filters.roms)
-        // return filters.roms.some(r => product.rom.includes(r))
-      })
-    }
-
-    if (filters.brands) {
+    if (filters.brands && filters.brands.length > 0) {
       updatedProducts = updatedProducts.filter(product => filters.brands.includes(product.brand))
     }
 
     if (filters.rams && filters.rams.length > 0) {
       updatedProducts = updatedProducts.filter(product => {
-        
+
         return filters.rams.includes(product.ram[0].slice(0, -2))
       })
     }
 
+    if (filters.roms && filters.roms.length > 0) {
 
+      updatedProducts = updatedProducts.filter(product => {
+        // console.log(filters.roms)
+        return filters.roms.some(r => {
+          console.log(r);
+          return product.rom.includes(r+'GB')
+        })
+      })
+    }
 
+    if (filters.maxPrice != 100000000) {
+      updatedProducts = updatedProducts.filter(product => product.currentPrices[0] < filters.maxPrice)
+    }
+
+    if (filters.sort) {
+      if (filters.sort == "priceAsc") updatedProducts = updatedProducts.sort((p1, p2) => p1.currentPrices[0] - p2.currentPrices[0])
+      if (filters.sort == "priceDesc") updatedProducts = updatedProducts.sort((p1, p2) => p2.currentPrices[0] - p1.currentPrices[0])
+      if (filters.sort == "discountAsc") updatedProducts = updatedProducts.sort((p1, p2) => Math.abs(Number(p1.discounts[0])) - Math.abs(Number(p2.discounts[0])))
+      if (filters.sort == "discountDesc") updatedProducts = updatedProducts.sort((p1, p2) => Math.abs(Number(p2.discounts[0])) - Math.abs(Number(p1.discounts[0])))
+      if (filters.sort == "quantityAsc") updatedProducts = updatedProducts.sort((p1, p2) => p1.soldQuantity - p2.soldQuantity)
+      if (filters.sort == "quantityDesc") updatedProducts = updatedProducts.sort((p1, p2) => p2.soldQuantity - p1.soldQuantity)
+      if (filters.sort == "ratingAsc") updatedProducts = updatedProducts.sort((p1, p2) => avgRating(p1.reviews) - avgRating(p2.reviews))
+      if (filters.sort == "ratingDesc") updatedProducts = updatedProducts.sort((p1, p2) => avgRating(p2.reviews) - avgRating(p1.reviews))
+    }
 
     return updatedProducts
   }
+
+  console.log('filter la', filters)
 
   const renderedProducts = startFilter()
 
@@ -147,15 +180,15 @@ function SmartPhone() {
                   <i class="fa-solid fa-filter"></i>
                   lọc
                 </div> */}
-                <div class="erase-tag-btn">
+                <div class="erase-tag-btn" onClick={handleResetFilter} >
                   <i class="fa-solid fa-eraser"></i>
-                  xóa hết
+                  Đặt lại bộ lọc
                 </div>
               </div>
             </div>
 
             <div class="filter-category-container">
-              <FilterByPriceRange />
+              <FilterByPriceRange onChangeMaxPrice={handleChangeMaxPrice} filters={filters}/>
               <FilterByBrand onChangeBrands={handleChangeBrands} filters={filters} />
               <FilterByRam onChangeRams={handleChangeRams} filters={filters} />
               <FilterByRom onChangeRoms={handleChangeRoms} filters={filters} />
@@ -166,25 +199,13 @@ function SmartPhone() {
           <div class="panel-right">
             <div class="product-length-sort">
               <div class="product-length">
-                <p>Tìm thấy <b class="search-quantity"></b> sản phẩm </p>
+                <p>Tìm thấy <b class="search-quantity">{renderedProducts.length}</b> sản phẩm </p>
               </div>
-              <div class="sort-container">
-                <label htmlFor="sort">Sắp xếp theo:</label>
-                <select name="sort" id="sort">
-                  <option value="" selected disabled hidden class="disabled">Tiêu chí...</option>
-                  <option value="priceAsc">Giá tăng dần</option>
-                  <option value="priceDesc">Giá giảm dần</option>
-                  <option value="discountAsc">Chiết khấu tăng dần</option>
-                  <option value="discountDesc">Chiết khấu giảm dần</option>
-                  <option value="quantityAsc">Đã bán tăng dần</option>
-                  <option value="quantityDesc">Đã bán giảm dần</option>
-                  <option value="ratingAsc">Xếp hạng tăng dần</option>
-                  <option value="ratingDesc">Xếp hạng giảm dần</option>
-                </select>
-              </div>
+             <Sort onChangeSort = {handleChangeSelectedSort} filters={filters}/>
             </div>
             <div class="row product-category-container">
-              {renderedProducts.map((item, index) => <ProductItem key={index} props={item} />)}
+              {renderedProducts.length > 0 && renderedProducts.map((item, index) => <ProductItem key={index} props={item} />)}
+              {renderedProducts.length == 0 && <p>Không tìm thấy sản phẩm</p>}
             </div>
           </div>
         </div>

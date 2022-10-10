@@ -4,9 +4,16 @@ import { formatMoney } from 'utils/index';
 
 
 
-function FilterByPriceRange() {
-    const [value, setValue] = useState([50000000])
-    console.log(value)
+function FilterByPriceRange(props) {
+    const [maxPrice, setMaxPrice] = useState([50000000])
+    const {onChangeMaxPrice, filters} = props
+
+    const handleChangeMaxPrice = price => {
+        setMaxPrice([price])
+        onChangeMaxPrice(maxPrice)
+    }
+
+    console.log(filters);
     return (
         <>
             <h4 class="filter-title">
@@ -16,9 +23,9 @@ function FilterByPriceRange() {
             <Range
                 step={500000}
                 min={0}
-                max={100000000}
-                values={value}
-                onChange={(values) => setValue(values)}
+                max={50000000}
+                values={[+filters.maxPrice]}
+                onChange={price => handleChangeMaxPrice(price)}
                 renderTrack={({ props, children }) => (
                     <div
                         {...props}
@@ -46,7 +53,7 @@ function FilterByPriceRange() {
                 )}
             />
 
-            <p className='price-range-indicator'>0-{formatMoney(value)}</p>
+            <p className='price-range-indicator'>0-{formatMoney(+filters.maxPrice)}</p>
         </>
     );
 

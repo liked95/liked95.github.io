@@ -2,6 +2,14 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { formatMoney } from 'utils/index';
 
+export function avgRating(reviews) {
+  let sum = 0
+  for (let review of reviews) {
+    sum += review.rating
+  }
+  return (sum / reviews.length).toFixed(1)
+}
+
 
 function ProductItem({ props }) {
   const { id, name, indexProductImgURL, features, currentPrices, oldPrices, alterOptions, discounts, soldQuantity, reviews } = props
@@ -9,13 +17,7 @@ function ProductItem({ props }) {
 
 
 
-  function avgRating(reviews) {
-    let sum = 0
-    for (let review of reviews) {
-      sum += review.rating
-    }
-    return (sum / reviews.length).toFixed(1)
-  }
+
 
   return (
     <div className="product-card">

@@ -40,7 +40,7 @@ function FilterByBrand(props) {
                             onChange={e => handleChangeBrands(e.target.value)}
                             checked = {filters.brands.includes(brand)}
                         />
-                        <label htmlFor={brand}>{brand}</label>
+                        <label htmlFor={brand}>{brand.toUpperCase()}</label>
                     </div>
                 ))}
             </form>
