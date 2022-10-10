@@ -17,7 +17,7 @@ function SmartPhone() {
   const { products } = useContext(Context)
 
   const [filters, setFilters] = useState(() => {
-    const params = queryString.parse(location.search, { arrayFormat: 'separator', arrayFormatSeparator: '|' })
+    const params = queryString.parse(location.search, { arrayFormat: 'bracket'})
 
     return {
       brands: params.brands || []
@@ -31,30 +31,94 @@ function SmartPhone() {
 
     navigate({
       pathname: location.pathname,
-      search: queryString.stringify(queryParams, { arrayFormat: 'separator', arrayFormatSeparator: ',' })
+      search: queryString.stringify(queryParams, { arrayFormat: 'bracket'})
     })
   }
 
   useEffect(() => {
     const params = queryString.parse(location.search,
-      { arrayFormat: 'separator', arrayFormatSeparator: ',' })
-      console.log(params)
+      { arrayFormat: 'bracket'})
+    console.log(params)
 
-    setFilters({ brands: params.brands || [] })
+    setFilters({
+      brands: params.brands || [],
+      rams: params.rams || [],
+      roms: params.roms || [],
+    })
   }, [location.search])
 
   console.log('filter la', filters)
 
+  // Thay doi ram
+  const handleChangeRams = (rams) => {
+    const queryParams = { ...filters, rams }
+
+    navigate({
+      pathname: location.pathname,
+      search: queryString.stringify(queryParams, { arrayFormat: 'bracket'})
+    })
+  }
+
+  useEffect(() => {
+    const params = queryString.parse(location.search,
+      { arrayFormat: 'bracket' })
+    console.log(params)
+
+    setFilters({
+      brands: params.brands || [],
+      rams: params.rams || [],
+      roms: params.roms || [],
+    })
+  }, [location.search])
+
+  // Thay doi rom
+  const handleChangeRoms = (roms) => {
+    const queryParams = { ...filters, roms }
+
+    navigate({
+      pathname: location.pathname,
+      search: queryString.stringify(queryParams, { arrayFormat: 'bracket'})
+    })
+  }
+
+  useEffect(() => {
+    const params = queryString.parse(location.search,
+      { arrayFormat: 'bracket'})
+    console.log(params)
+
+    setFilters({
+      brands: params.brands || [],
+      rams: params.rams || [],
+      roms: params.roms || [],
+    })
+  }, [location.search])
 
 
-
-
-  // Bat dau loc theo tieu chi
+    // Bat dau loc theo tieu chi
   const startFilter = () => {
     let updatedProducts = [...products]
-    if (filters.brands) {
-      updatedProducts=updatedProducts.filter(product => filters.brands.includes(product.brand))
+
+    if (filters.roms && filters.roms.length > 0) {
+      
+      updatedProducts = updatedProducts.filter(product => {
+        // console.log(filters.roms)
+        // return filters.roms.some(r => product.rom.includes(r))
+      })
     }
+
+    if (filters.brands) {
+      updatedProducts = updatedProducts.filter(product => filters.brands.includes(product.brand))
+    }
+
+    if (filters.rams && filters.rams.length > 0) {
+      updatedProducts = updatedProducts.filter(product => {
+        
+        return filters.rams.includes(product.ram[0].slice(0, -2))
+      })
+    }
+
+
+
 
     return updatedProducts
   }
@@ -79,10 +143,10 @@ function SmartPhone() {
               <Tags />
 
               <div class="function-btn">
-                <div class="filter-btn" onClick={startFilter}>
+                {/* <div class="filter-btn" onClick={startFilter}>
                   <i class="fa-solid fa-filter"></i>
                   lọc
-                </div>
+                </div> */}
                 <div class="erase-tag-btn">
                   <i class="fa-solid fa-eraser"></i>
                   xóa hết
@@ -92,9 +156,9 @@ function SmartPhone() {
 
             <div class="filter-category-container">
               <FilterByPriceRange />
-              <FilterByBrand onChangeBrands={handleChangeBrands} filters={filters}/>
-              <FilterByRam />
-              <FilterByRom />
+              <FilterByBrand onChangeBrands={handleChangeBrands} filters={filters} />
+              <FilterByRam onChangeRams={handleChangeRams} filters={filters} />
+              <FilterByRom onChangeRoms={handleChangeRoms} filters={filters} />
             </div>
           </div>
 
