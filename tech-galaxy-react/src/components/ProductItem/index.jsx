@@ -21,12 +21,12 @@ function ProductItem({ props }) {
 
   return (
     <div className="product-card">
-      <Link to={`./detail?id=${id}`} className="product-image">
+      <Link to={`/detail?id=${id}`} className="product-image">
         <img src={process.env.PUBLIC_URL + `/publicImages/product-card-images/${indexProductImgURL}`} alt={indexProductImgURL} />
       </Link>
 
       <div className="product-content">
-        <Link to={`./detail?id=${id}`} className="product-name">{name}</Link>
+        <Link to={`/detail?id=${id}`} className="product-name">{name}</Link>
         <p className="product-id" style={{ display: 'none' }}></p>
 
         <div className="alter-options no-scrollbar">

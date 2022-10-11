@@ -1,0 +1,1 @@
+export const MODIFY_PRODUCT = 'MODIFY_PRODUCT'

@@ -84,16 +84,16 @@ function Header() {
                 </div>
                 <p>Điện thoại</p>
                 <ul className="sub-menu">
-                  <Link to="smartphone.html?brand=apple">
+                  <Link to="smartphone?brands[]=apple">
                     <li className="sub-menu-item">iPhone</li>
                   </Link>
-                  <Link to="smartphone.html?brand=samsung">
+                  <Link to="smartphone?brands[]=samsung">
                     <li className="sub-menu-item">Samsung</li>
                   </Link>
-                  <Link to="smartphone.html?brand=xiaomi">
+                  <Link to="smartphone?brands[]=xiaomi">
                     <li className="sub-menu-item">Xiaomi</li>
                   </Link>
-                  <Link to="smartphone.html?brand=oppo">
+                  <Link to="smartphone?brands[]=oppo">
                     <li className="sub-menu-item">Oppo</li>
                   </Link>
                 </ul>

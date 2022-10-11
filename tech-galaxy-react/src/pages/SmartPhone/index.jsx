@@ -1,6 +1,6 @@
 import Context from 'context/index'
 import React, { useContext, useEffect, useState } from 'react'
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import queryString from "query-string";
 
 import ProductItem from 'components/ProductItem/index'
@@ -163,7 +163,7 @@ function SmartPhone() {
   return (
     <section class="smartphone-container">
       <div class="container">
-        <div class="breadcrumb"><a href="smartphone.html">Điện thoại</a></div>
+        <div class="breadcrumb"><Link to="/smartphone">Điện thoại</Link></div>
 
         <div class="row main-page-container">
           <div class="filter-container">
