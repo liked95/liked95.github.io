@@ -12,7 +12,9 @@ const AsNavFor = props => {
     return (
         <div>
             <Slider className="mainSlickProduct"
-                asNavFor={nav2} ref={c => setNav1(c)}
+                asNavFor={nav2} 
+                ref={c => setNav1(c)}
+                dots={false}
             >
                 {mainCarouselImages.map((image, index) => (
                     <div key={index}>
@@ -29,6 +31,7 @@ const AsNavFor = props => {
                 swipeToSlide={true}
                 focusOnSelect={true}
                 arrows={false}
+                infinite={false}
             >
                 {dotCarouselImages.map((image, index) => (
                     <div key={index}>

@@ -12,6 +12,7 @@ export function avgRating(reviews) {
 
 
 function ProductItem({ props }) {
+  // console.log(props)
   const { id, name, indexProductImgURL, features, currentPrices, oldPrices, alterOptions, discounts, soldQuantity, reviews } = props
   const [option, setOption] = useState(0)
 

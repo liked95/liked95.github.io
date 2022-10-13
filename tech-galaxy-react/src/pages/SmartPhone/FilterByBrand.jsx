@@ -24,14 +24,14 @@ function FilterByBrand(props) {
 
 
     return (
-        <div class="filter-category">
-            <h4 class="filter-title">
+        <div className="filter-category">
+            <h4 className="filter-title">
                 thương hiệu
             </h4>
 
-            <form class="filter-option-container" id="brand">
+            <form className="filter-option-container" id="brand">
                 {filterData.brands.map((brand, index) => (
-                    <div class="filter-option" key={index}>
+                    <div className="filter-option" key={index}>
                         <input
                             type="checkbox"
                             name={brand}

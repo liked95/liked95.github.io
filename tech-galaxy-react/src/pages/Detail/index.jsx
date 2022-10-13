@@ -4,6 +4,8 @@ import DetailHeading from './DetailHeading/index'
 import queryString from 'query-string'
 import Context from 'context/index'
 import ProductDetail from './ProductDetail/index'
+import Review from './Review/index'
+import RelatedProducts from './RelatedProducts/index'
 
 function Detail() {
     const location = useLocation()
@@ -16,6 +18,8 @@ function Detail() {
         <>
            <DetailHeading product={product}/>
            <ProductDetail product={product} />
+           <Review product={product} />
+           <RelatedProducts product={product}  />
 
 
         </>

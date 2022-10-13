@@ -161,33 +161,33 @@ function SmartPhone() {
 
 
   return (
-    <section class="smartphone-container">
-      <div class="container">
-        <div class="breadcrumb"><Link to="/smartphone">Điện thoại</Link></div>
+    <section className="smartphone-container">
+      <div className="container">
+        <div className="breadcrumb"><Link to="/smartphone">Điện thoại</Link></div>
 
-        <div class="row main-page-container">
-          <div class="filter-container">
+        <div className="row main-page-container">
+          <div className="filter-container">
             <h4>
               <span>bộ lọc tìm kiếm</span>
-              <span class="filter-expand-btn" id="arrow"><i class="fa-solid fa-chevron-down "></i></span>
-              <span id="filter-sidebar-close"><i class="fa-solid fa-xmark"></i></span>
+              <span className="filter-expand-btn" id="arrow"><i className="fa-solid fa-chevron-down "></i></span>
+              <span id="filter-sidebar-close"><i className="fa-solid fa-xmark"></i></span>
             </h4>
-            <div class="tag-container">
+            <div className="tag-container">
               <Tags />
 
-              <div class="function-btn">
-                {/* <div class="filter-btn" onClick={startFilter}>
-                  <i class="fa-solid fa-filter"></i>
+              <div className="function-btn">
+                {/* <div className="filter-btn" onClick={startFilter}>
+                  <i className="fa-solid fa-filter"></i>
                   lọc
                 </div> */}
-                <div class="erase-tag-btn" onClick={handleResetFilter} >
-                  <i class="fa-solid fa-eraser"></i>
+                <div className="erase-tag-btn" onClick={handleResetFilter} >
+                  <i className="fa-solid fa-eraser"></i>
                   Đặt lại bộ lọc
                 </div>
               </div>
             </div>
 
-            <div class="filter-category-container">
+            <div className="filter-category-container">
               <FilterByPriceRange onChangeMaxPrice={handleChangeMaxPrice} filters={filters}/>
               <FilterByBrand onChangeBrands={handleChangeBrands} filters={filters} />
               <FilterByRam onChangeRams={handleChangeRams} filters={filters} />
@@ -196,14 +196,14 @@ function SmartPhone() {
           </div>
 
 
-          <div class="panel-right">
-            <div class="product-length-sort">
-              <div class="product-length">
-                <p>Tìm thấy <b class="search-quantity">{renderedProducts.length}</b> sản phẩm </p>
+          <div className="panel-right">
+            <div className="product-length-sort">
+              <div className="product-length">
+                <p>Tìm thấy <b className="search-quantity">{renderedProducts.length}</b> sản phẩm </p>
               </div>
              <Sort onChangeSort = {handleChangeSelectedSort} filters={filters}/>
             </div>
-            <div class="row product-category-container">
+            <div className="row product-category-container">
               {renderedProducts.length > 0 && renderedProducts.map((item, index) => <ProductItem key={index} props={item} />)}
               {renderedProducts.length == 0 && <p>Không tìm thấy sản phẩm</p>}
             </div>

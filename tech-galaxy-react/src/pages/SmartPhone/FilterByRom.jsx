@@ -22,14 +22,14 @@ function FilterByRom(props) {
 
 
     return (
-        <div class="filter-category">
-            <h4 class="filter-title">
+        <div className="filter-category">
+            <h4 className="filter-title">
                 rom
             </h4>
 
-            <form class="filter-option-container" id="rom">
+            <form className="filter-option-container" id="rom">
                 {filterData.roms.map((rom, index) => (
-                    <div class="filter-option" key={index}>
+                    <div className="filter-option" key={index}>
                         <input
                             type="checkbox"
                             name={rom}

@@ -1,5 +1,8 @@
-import React, { } from 'react'
+import React, { useState } from 'react'
+import { formatMoney } from 'utils/index';
 import MainProductSlider from './MainProductSlider'
+import PaymentPromotion from './PaymentPromotion';
+import Warranty from './Warranty';
 
 
 
@@ -11,115 +14,91 @@ import MainProductSlider from './MainProductSlider'
 function ProductDetail({ product }) {
     console.log(product);
 
-    const { mainCarouselImages, dotCarouselImages, colors } = product
+    const { name, mainCarouselImages, dotCarouselImages, colors, detailImgURL, alterOptions, currentPrices, oldPrices, discounts, specAttributes
+    } = product
+
+    const [option, setOption] = useState(alterOptions[0])
+    const [color, setColor] = useState()
+    const [count, setCount] = useState(1)
+
+    const handleCountDecrease = () => {
+        if (count > 1) setCount(prev => prev - 1)
+    }
+
+    const handleCountIncrease = () => {
+        setCount(prev => prev + 1)
+    }
+
+
+
+
     return (
         <div className="product-detail">
             <div className="container box-main">
                 <div className="row">
                     <div className="left-side col-lg-7">
                         <div className="feature-image">
-                            {/* {mainCarouselImages.map((image, index) => (
-                                    <div key={index}>
-                                        {console.log(image)}
-                                        <img src={process.env.PUBLIC_URL + `/publicImages/main-carousel-images/${image}`} alt={image}/>
-                                        <p className="legend">Legend 1</p>
-                                    </div>
-                                ))} */}
-
                             <MainProductSlider
                                 mainCarouselImages={mainCarouselImages}
                                 dotCarouselImages={dotCarouselImages}
-                                colors = {colors}
+                                colors={colors}
                             />
                         </div>
 
-                        <div className="warranty">
-                            <div className="warranty-claim">
-                                <span className="warranty-icon"><i className="fa-solid fa-money-bill"></i></span>
-                                <span className="warranty-description">Hư gì đổi nấy 12 tháng tại 999 siêu thị toàn quốc (miễn
-                                    phí
-                                    tháng đầu)</span>
-                            </div>
-
-                            <div className="warranty-claim">
-                                <span className="warranty-icon"><i className="fa-solid fa-calendar-check"></i></span>
-                                <span className="warranty-description">Bảo hành chính hãng 1 năm tại các trung tâm bảo hành hãng
-                                </span>
-                            </div>
-
-                            <div className="warranty-claim">
-                                <span className="warranty-icon"><i className="fa-solid fa-box"></i></span>
-                                <span className="warranty-description">Sản phẩm nguyên seal, đầy đủ phụ kiện</span>
-                            </div>
-                        </div>
+                        <Warranty />
 
                         <div className="product-detail-image">
-
+                            <img src={process.env.PUBLIC_URL + `/publicImages/product-detail-img/${detailImgURL
+                                }`} alt={detailImgURL
+                                } />
                         </div>
                     </div>
 
                     <div className="right-side col-lg-5">
                         <div className="option-container no-scrollbar">
-
+                            {alterOptions.map((alterOption, index) => <button
+                                key={index}
+                                className={alterOption == option ? 'active' : ''}
+                                onClick={e => setOption(e.target.innerHTML)}
+                            >
+                                {alterOption}
+                            </button>)}
                         </div>
                         <div className="color-container no-scrollbar">
-
+                            {colors.map((alterColor, index) => <button
+                                key={index}
+                                className={alterColor == color ? 'active' : ''}
+                                onClick={e => setColor(e.target.innerHTML)}
+                            >
+                                {alterColor}
+                            </button>)}
                         </div>
 
                         <div className="price-container">
                             <div className="price-caller">Giá giảm cực sốc</div>
                             <div className="price-main">
                                 <div className="price-info">
-                                    <span className="new-price"></span>
-                                    <span className="old-price"></span>
-                                    <span className="discount">(-20%)</span>
+                                    <span className="new-price">
+                                        {formatMoney(currentPrices[alterOptions.indexOf(option)])}
+                                    </span>
+                                    <span className="old-price">
+                                        {formatMoney(oldPrices[alterOptions.indexOf(option)])}
+                                    </span>
+                                    <span className="discount">({formatMoney(discounts[alterOptions.indexOf(option)])}%)</span>
                                 </div>
 
-                                <p>Kết thúc 31/8 (Số lượng có hạn)</p>
+                                <p>Kết thúc 31/11 (Số lượng có hạn)</p>
                             </div>
 
                         </div>
 
-                        <div className="payment-box">
-                            <h4>Ưu đãi thanh toán</h4>
-                            <div className="payment-promotion no-scrollbar">
-                                <div className="payment-company">
-                                    <div className="payment-logo">
-
-                                    </div>
-                                    <p className="payment-discount">
-                                        Giảm <b>500.000đ</b>
-                                    </p>
-                                    <p className="discount-item">Đối với iPhone</p>
-                                </div>
-
-                                <div className="payment-company">
-                                    <div className="payment-logo">
-
-                                    </div>
-                                    <p className="payment-discount">
-                                        Giảm <b>300.000đ</b>
-                                    </p>
-                                    <p className="discount-item">Sản phẩm từ 8tr</p>
-                                </div>
-
-                                <div className="payment-company">
-                                    <div className="payment-logo">
-
-                                    </div>
-                                    <p className="payment-discount">
-                                        Giảm <b>200.000đ</b>
-                                    </p>
-                                    <p className="discount-item">Sản phẩm từ 3tr</p>
-                                </div>
-                            </div>
-                        </div>
+                        <PaymentPromotion />
 
                         <div className="quantity-and-cart">
                             <div className="change-quantity">
-                                <div className="value-button disabled" id="decrease" value="Decrease Value">-</div>
-                                <input type="number" id="number" />
-                                <div className="value-button" id="increase" value="Increase Value">+</div>
+                                <div className="value-button disabled" id="decrease" value="Decrease Value" onClick={handleCountDecrease}>-</div>
+                                <input type="number" id="number" value={count} />
+                                <div className="value-button" id="increase" value="Increase Value" onClick={handleCountIncrease}>+</div>
                             </div>
 
                             <button className="add-to-cart">thêm vào giỏ hàng</button>
@@ -127,12 +106,17 @@ function ProductDetail({ product }) {
 
                         <div className="item-spec">
                             <div className="title">
-                                Cấu hình <span className="brand">điện thoại</span> <span className="product">iPhone 13 Pro</span>
+                                Cấu hình <span className="brand">điện thoại</span> <span className="product">{name}</span>
                             </div>
 
                             <table className="spec-table">
                                 <tbody>
-
+                                    {Object.keys(specAttributes).map(key => (
+                                        <tr key={key}>
+                                            <td className="spec-key"><span>{key}</span>:</td>
+                                            <td className="spec-attribute">{specAttributes[key]}</td>
+                                        </tr>
+                                    ))}
 
                                 </tbody>
                             </table>

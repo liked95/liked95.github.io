@@ -11,9 +11,19 @@ import tablet from "../../assets/images/header/tablet.svg";
 import promotion from "../../assets/images/header/promotion.svg";
 import contact from "../../assets/images/header/contact.svg";
 import aboutUs from "../../assets/images/header/about-us.svg";
+import DefaultAvatar from '../../assets/images/contingency-images/default-avatar.png'
 import { FontAwesomeIcon } from "../../../node_modules/@fortawesome/react-fontawesome/index";
+import { useContext } from "react";
+import Context from "context/index";
+import { logout } from "store/actions";
 
 function Header() {
+  const { auth, dispatchAuth } = useContext(Context)
+
+  const handleLogout = () => {
+    dispatchAuth(logout())
+  }
+
   return (
     <header>
       <div className="first-header-row">
@@ -47,7 +57,7 @@ function Header() {
             <div id="search-result"></div>
           </div>
 
-          <div className="login-logout">
+          {!auth.id && (<div className="login-logout">
             <Link className="login-btn" to="/login">
               Đăng nhập
             </Link>
@@ -55,12 +65,26 @@ function Header() {
             <Link className="register-btn" to="/register">
               Đăng kí
             </Link>
-          </div>
+          </div>)}
 
-          <NavLink className="cart-icon" to="shopping-cart.html">
+          {auth.id && (
+            <div className='credential-container'>
+              <div className="avatar-image">
+                <img src={DefaultAvatar} alt="ava-default" />
+              </div>
+              <div className="arrow-up"></div>
+              <ul className="dropdown-container">
+                <li>Xin chào <b>{auth.username}</b></li>
+                <li data-toggle="modal" data-target="#orderHistory">Lịch sử đặt hàng</li>
+                <li className="logout-btn" onClick={handleLogout}>Đăng xuất</li>
+              </ul>
+            </div>
+          )}
+
+          <Link className="cart-icon" to="/cart">
             <i className="fa-solid fa-cart-shopping"></i>
             <span className="cart-length"></span>
-          </NavLink>
+          </Link>
         </div>
       </div>
 

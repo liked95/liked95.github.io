@@ -21,14 +21,14 @@ function FilterByRam(props) {
     }, [rams]);
 
     return (
-        <div class="filter-category">
-            <h4 class="filter-title">
+        <div className="filter-category">
+            <h4 className="filter-title">
                 ram
             </h4>
 
-            <form class="filter-option-container" id="ram">
+            <form className="filter-option-container" id="ram">
                 {filterData.rams.map((ram, index) => (
-                    <div class="filter-option" key={index}>
+                    <div className="filter-option" key={index}>
                         <input type="checkbox"
                             name={ram}
                             id={ram}
