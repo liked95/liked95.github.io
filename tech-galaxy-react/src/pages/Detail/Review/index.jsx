@@ -6,7 +6,7 @@ import UserComment from './UserComment';
 
 function Review(props) {
     const { reviews } = props.product
-    console.log(reviews);
+    // console.log(reviews);
 
     function ratingCount(reviews, star) {
         return reviews.filter(review => review.rating == star).length
@@ -32,7 +32,7 @@ function Review(props) {
                             {[5, 4, 3, 2, 1].map(i => {
                                 const percent = reviews.length != 0 ? ((ratingCount(reviews, i) / reviews.length) * 100).toFixed(0) : 0
                                 return (
-                                    <div className="component">
+                                    <div className="component" key={i}>
                                         <p className="rating-label">{i} <span><i className="fa-solid fa-star"></i></span></p>
                                         <div className="rating-bar">
                                             <div className="rating-bar-percent" style={{width: `${percent}%`}}></div>
@@ -47,7 +47,7 @@ function Review(props) {
 
                     <div className="review-right">
                         <div className="user-review-container">
-                            {reviews.map((review, index) => <UserComment review={review} />)}
+                            {reviews.map((review, index) => <UserComment key={index} review={review} />)}
                         </div>
 
                         <div className="review-actions">

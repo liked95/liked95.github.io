@@ -3,7 +3,7 @@ import React, { useState, } from 'react';
 import Slider from 'react-slick';
 
 function ProductSlider({products}) {
-    console.log(products);
+    // console.log(products);
     const settings = {
         dots: false,
         infinite: products.length > 5,

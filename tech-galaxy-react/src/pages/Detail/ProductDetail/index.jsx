@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import Context from 'context/index';
+import React, { useContext, useState } from 'react'
+import { addToCart } from 'store/actions';
 import { formatMoney } from 'utils/index';
 import MainProductSlider from './MainProductSlider'
 import PaymentPromotion from './PaymentPromotion';
@@ -12,7 +14,8 @@ import Warranty from './Warranty';
 
 
 function ProductDetail({ product }) {
-    console.log(product);
+    // console.log(product);
+    const {cart, dispatchCart, auth} = useContext(Context)
 
     const { name, mainCarouselImages, dotCarouselImages, colors, detailImgURL, alterOptions, currentPrices, oldPrices, discounts, specAttributes
     } = product
@@ -27,6 +30,31 @@ function ProductDetail({ product }) {
 
     const handleCountIncrease = () => {
         setCount(prev => prev + 1)
+    }
+    
+
+    const handleAddToCart = () => {
+        if (!color) {
+            alert("Bạn cần chọn 1 màu!")
+            return
+        }
+        const optionIdx = alterOptions.indexOf(option)
+        const colorIdx = colors.indexOf(color)
+        const cartItem = {
+            productID: product.id,
+            userId: auth.id || -1,
+            alterOption: option,
+            color,
+            count,
+            name,
+            price: currentPrices[optionIdx],
+            oldPrice: oldPrices[optionIdx],
+            image: dotCarouselImages[colorIdx],
+            checked: true,
+        }
+        dispatchCart(addToCart(cartItem))
+        alert("Thêm vào giỏ hàng thành công!")
+        
     }
 
 
@@ -101,7 +129,7 @@ function ProductDetail({ product }) {
                                 <div className="value-button" id="increase" value="Increase Value" onClick={handleCountIncrease}>+</div>
                             </div>
 
-                            <button className="add-to-cart">thêm vào giỏ hàng</button>
+                            <button className="add-to-cart" onClick={handleAddToCart}>thêm vào giỏ hàng</button>
                         </div>
 
                         <div className="item-spec">

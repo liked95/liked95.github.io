@@ -18,7 +18,10 @@ import Context from "context/index";
 import { logout } from "store/actions";
 
 function Header() {
-  const { auth, dispatchAuth } = useContext(Context)
+  const { auth, dispatchAuth, cart } = useContext(Context)
+
+  let userId = auth.id || -1
+  const renderedCart = cart.filter(item => item.userId == userId)
 
   const handleLogout = () => {
     dispatchAuth(logout())
@@ -83,7 +86,7 @@ function Header() {
 
           <Link className="cart-icon" to="/cart">
             <i className="fa-solid fa-cart-shopping"></i>
-            <span className="cart-length"></span>
+            <span className="cart-length">{renderedCart.length}</span>
           </Link>
         </div>
       </div>

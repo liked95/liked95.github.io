@@ -1,8 +1,13 @@
 import React from 'react'
+import CartAndTotal from './CartAndTotal/index'
+import Payment from './Payment/index'
 
 function Cart() {
   return (
-    <div>Cart</div>
+    <>
+      <CartAndTotal/>
+      {/* <Payment/> */}
+    </>
   )
 }
 
