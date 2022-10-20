@@ -16,7 +16,7 @@ function FilterByPriceRange(props) {
     console.log(filters);
     return (
         <>
-            <h4 class="filter-title">
+            <h4 className="filter-title">
                 giá
             </h4>
 

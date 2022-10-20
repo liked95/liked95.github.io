@@ -1,17 +1,77 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
+import { editUser } from '../../redux/actions/userActions'
 
 function EditUser() {
     const { userId } = useParams()
+    const dispatch = useDispatch()
     const users = useSelector(state => state.users)
-    const user = users.find(user=>user.id==userId)
-    const [name, setName]=useState(user.name)
-    const [email, setEmail]=useState(user.email)
-    const [phone, setPhone]=useState(user.phone)
-    const [address, setAddress]=useState(user.address)
-  
+    const user = users.find(user => user.id == userId)
+    const [name, setName] = useState(user.name)
+    const [email, setEmail] = useState(user.email)
+    const [phone, setPhone] = useState(user.phone)
+    const [address, setAddress] = useState(user.address)
+    const [oldPassword, setOldPassWord] = useState('')
+    const [newPassword, setNewPassWord] = useState('')
+
+    const handleUpdateUser = () => {
+        if (!name) {
+            alert("Tên không được để trống")
+            return
+        }
+
+        if (!email) {
+            alert("Email không được để trống")
+            return
+        }
+
+        if (!phone) {
+            alert("Sdt không được để trống")
+            return
+        }
+
+        if (!address) {
+            alert("Dia chi không được để trống")
+            return
+        }
+        const obj = {
+            id: userId,
+            name,
+            email,
+            phone,
+            address,
+            password: user.password,
+        }
+        dispatch(editUser(obj))
+        alert("Update user thanh cong")
+    }
+
+    const handleUpdatePassword = () => {
+        if (!oldPassword || !newPassword) {
+            alert('ca hai truong k dc de trong')
+            return
+        }
+
+        if (oldPassword != user.password) {
+            alert('mk cu ko dung')
+            return
+        }
+
+        const obj = {
+            id: userId,
+            name,
+            email,
+            phone,
+            address,
+            password: newPassword,
+        }
+        dispatch(editUser(obj))
+        alert("Doi mat khau thanh cong")
+
+    }
+
 
     return (
         <div className="container mt-5 mb-5">
@@ -22,29 +82,30 @@ function EditUser() {
                     <div className="bg-light p-4">
                         <div className="mb-3">
                             <label className="col-form-label">Name</label>
-                            <input type="text" id="name" className="form-control" 
+                            <input type="text" id="name" className="form-control"
                                 value={name}
-                                onChange={e=>setName(e.target.value)}
+                                onChange={e => setName(e.target.value)}
                             />
                         </div>
                         <div className="mb-3">
                             <label className="col-form-label">Email</label>
-                            <input type="text" id="email" className="form-control" 
-                             value={email}
-                             onChange={e=>setEmail(e.target.value)}/>
+                            <input type="text" id="email" className="form-control"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)} />
                         </div>
                         <div className="mb-3">
                             <label className="col-form-label">Phone</label>
-                            <input type="text" id="phone" className="form-control" 
-                            value={phone}
-                            onChange={e=>setPhone(e.target.value)}
+                            <input type="text" id="phone" className="form-control"
+                                value={phone}
+                                onChange={e => setPhone(e.target.value)}
                             />
                         </div>
                         <div className="mb-3">
                             <label className="col-form-label">Address</label>
-                            <select className="form-select" id="address">
-
-                            </select>
+                            <input type="text" id="address" className="form-control"
+                                value={address}
+                                onChange={e => setAddress(e.target.value)}
+                            />
                         </div>
 
                         <div className="mb-3">
@@ -62,7 +123,7 @@ function EditUser() {
                     </div>
                     <div className="text-center mt-3">
                         <button className="btn btn-secondary btn-back">Quay lại</button>
-                        <button className="btn btn-success" id="btn-save">Cập nhật</button>
+                        <button className="btn btn-success" id="btn-save" onClick={handleUpdateUser}>Cập nhật</button>
                     </div>
                 </div>
             </div>
@@ -79,16 +140,24 @@ function EditUser() {
                         <div className="modal-body">
                             <div className="mb-3">
                                 <label className="col-form-label">Mật khẩu cũ</label>
-                                <input type="text" id="old-password" className="form-control" />
+                                <input type="text" id="old-password" className="form-control"
+                                    value={oldPassword}
+                                    onChange={e => setOldPassWord(e.target.value)}
+                                />
                             </div>
                             <div className="mb-3">
                                 <label className="col-form-label">Mật khẩu mới</label>
-                                <input type="text" id="new-password" className="form-control" />
+                                <input type="text" id="new-password" className="form-control"
+                                    value={newPassword}
+                                    onChange={e => setNewPassWord(e.target.value)}
+                                />
                             </div>
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                            <button type="button" className="btn btn-primary" id="btn-change-password">Xác nhận</button>
+                            <button type="button" className="btn btn-primary" id="btn-change-password"
+                                onClick={handleUpdatePassword}
+                            >Xác nhận</button>
                         </div>
                     </div>
                 </div>

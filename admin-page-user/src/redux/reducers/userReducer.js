@@ -28,14 +28,21 @@ const initUsers = [
 const userReducer = (state = initUsers, action) => {
     switch (action.type) {
         case "addUser": {
-            return state
+            
+            return [...state, action.payload]
         }
-        case "updateUser": {
-            return state
+        case "editUser": {
+            console.log(state, action);
+            return state.map(user => {
+                if (user.id==action.payload.id) {
+                    return action.payload
+                }
+                return user
+            })
         }
         case "deleteUser": {
             const id = action.payload
-            console.log(id, state)
+            // console.log(id, state)
             return state.filter(user => user.id != id)
         }
         default:

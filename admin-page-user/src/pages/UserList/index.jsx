@@ -3,24 +3,21 @@ import { useSyncExternalStore } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
-import {useDispatch} from 'react-redux'
-import {deleteUser} from '../../redux/actions/userActions'
+import { useDispatch } from 'react-redux'
+import { deleteUser } from '../../redux/actions/userActions'
 
 function UserList() {
     const dispatch = useDispatch()
-    const users = useSelector(state => state.users)
-    console.log(users);
-
-    const [search, setSearch] = useState("")
     
-    // useEffect(() => {
-    //     let updateUsers = users.filter(user => user.name.toLowerCase().includes(search.toLowerCase()))
-    //     setRenderedUsers(updateUsers)
-    // }, [search]);
+    const [search, setSearch] = useState("")
+    const users = useSelector(state => state.users).filter(user => user.name.toLowerCase().includes(search.toLowerCase()))
+    
+
+    
 
 
     const handleDeleteUser = id => {
-        
+
         dispatch(deleteUser(id))
     }
 
@@ -71,11 +68,11 @@ function UserList() {
                                     )
                                 })}
 
-                                {users.length == 0 && <p>Không tìm thấy users</p>}
                             </tbody>
                         </table>
 
-                        <p className="message d-none"></p>
+                        {users.length == 0 && <p className="message">Không tìm thấy users</p>}
+                       
                     </div>
                 </div>
             </div>
