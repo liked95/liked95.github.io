@@ -13,7 +13,7 @@ function FilterByPriceRange(props) {
         onChangeMaxPrice(maxPrice)
     }
 
-    console.log(filters);
+    // console.log(filters);
     return (
         <>
             <h4 className="filter-title">

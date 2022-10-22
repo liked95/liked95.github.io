@@ -1,6 +1,7 @@
 import Context from 'context/index';
-import React, { useContext, useState } from 'react'
-import { addToCart } from 'store/actions';
+import { useAddToCartMutation, useGetCartQuery, useUpdateCartItemMutation } from 'features/Cart/cart.service';
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 import { formatMoney } from 'utils/index';
 import MainProductSlider from './MainProductSlider'
 import PaymentPromotion from './PaymentPromotion';
@@ -15,12 +16,18 @@ import Warranty from './Warranty';
 
 function ProductDetail({ product }) {
     // console.log(product);
-    const {cart, dispatchCart, auth} = useContext(Context)
+    const auth = useSelector(state => state.userList.auth) || -1
+    const [addToCart] = useAddToCartMutation()
+    const [updateCartItemCount] = useUpdateCartItemMutation()
+    useGetCartQuery()
+    const cartItems = useSelector(state => state.cartList.items)
+    
 
-    const { name, mainCarouselImages, dotCarouselImages, colors, detailImgURL, alterOptions, currentPrices, oldPrices, discounts, specAttributes
+
+    const { name, mainCarouselImages, dotCarouselImages, colors, detailImgURL, alterOptions, currentPrices, oldPrices, specAttributes
     } = product
 
-    const [option, setOption] = useState(alterOptions[0])
+    const [option, setOption] = useState(0)
     const [color, setColor] = useState()
     const [count, setCount] = useState(1)
 
@@ -31,30 +38,41 @@ function ProductDetail({ product }) {
     const handleCountIncrease = () => {
         setCount(prev => prev + 1)
     }
-    
+
 
     const handleAddToCart = () => {
         if (!color) {
             alert("Bạn cần chọn 1 màu!")
             return
         }
-        const optionIdx = alterOptions.indexOf(option)
+
         const colorIdx = colors.indexOf(color)
-        const cartItem = {
+        const newCartItem = {
             productID: product.id,
             userId: auth.id || -1,
             alterOption: option,
             color,
             count,
             name,
-            price: currentPrices[optionIdx],
-            oldPrice: oldPrices[optionIdx],
+            price: currentPrices[option],
+            oldPrice: oldPrices[option],
             image: dotCarouselImages[colorIdx],
             checked: true,
         }
-        dispatchCart(addToCart(cartItem))
+        const isExist = cartItems.find(p =>
+            p.userId == newCartItem.userId
+            && p.productID == newCartItem.productID
+            && p.alterOption == newCartItem.alterOption
+            && p.color == newCartItem.color)
+
+        if (!isExist) {
+            // nếu chưa tồn tại thì add mới vào cart
+            addToCart(newCartItem)
+        } else {
+            // nếu tồn tại trong cart rồi thì update count
+        }
+
         alert("Thêm vào giỏ hàng thành công!")
-        
     }
 
 
@@ -86,8 +104,8 @@ function ProductDetail({ product }) {
                         <div className="option-container no-scrollbar">
                             {alterOptions.map((alterOption, index) => <button
                                 key={index}
-                                className={alterOption == option ? 'active' : ''}
-                                onClick={e => setOption(e.target.innerHTML)}
+                                className={alterOption == alterOptions[option] ? 'active' : ''}
+                                onClick={e => setOption(alterOptions.indexOf(e.target.innerHTML))}
                             >
                                 {alterOption}
                             </button>)}
@@ -107,12 +125,12 @@ function ProductDetail({ product }) {
                             <div className="price-main">
                                 <div className="price-info">
                                     <span className="new-price">
-                                        {formatMoney(currentPrices[alterOptions.indexOf(option)])}
+                                        {formatMoney(currentPrices[option])}
                                     </span>
                                     <span className="old-price">
-                                        {formatMoney(oldPrices[alterOptions.indexOf(option)])}
+                                        {formatMoney(oldPrices[option])}
                                     </span>
-                                    <span className="discount">({formatMoney(discounts[alterOptions.indexOf(option)])}%)</span>
+                                    <span className="discount">({(((oldPrices[option] / currentPrices[option]) - 1) * 100).toFixed(0) + '%'})</span>
                                 </div>
 
                                 <p>Kết thúc 31/11 (Số lượng có hạn)</p>
@@ -125,7 +143,7 @@ function ProductDetail({ product }) {
                         <div className="quantity-and-cart">
                             <div className="change-quantity">
                                 <div className="value-button disabled" id="decrease" value="Decrease Value" onClick={handleCountDecrease}>-</div>
-                                <input type="number" id="number" value={count} />
+                                <input type="number" id="number" value={count} onChange={e => setCount(e.target.value)} />
                                 <div className="value-button" id="increase" value="Increase Value" onClick={handleCountIncrease}>+</div>
                             </div>
 

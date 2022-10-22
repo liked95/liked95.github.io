@@ -1,10 +1,13 @@
 import Context from 'context/index'
-import React, { useContext } from 'react'
+import { useGetProductsQuery } from 'features/Products/products.service'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import ProductSlider from '../ProductSlider'
 
 
 function RelatedProducts({ product }) {
-  let { products } = useContext(Context)
+  useGetProductsQuery()
+  let products = useSelector(state=>state.productList.products)
   products = products.filter(p => p.brand == product.brand && p.category == 'smartphone')
 
   return (

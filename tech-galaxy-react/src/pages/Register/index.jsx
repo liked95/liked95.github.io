@@ -1,10 +1,16 @@
 import Context from 'context/index'
-import React, { useContext, useState } from 'react'
+import { useCreateUserMutation, useGetUsersQuery } from 'features/Users/users.service'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { createUser } from '../../store/actions'
+
 
 function Register() {
-    const { dispatchUsers, users } = useContext(Context)
+    //rtk
+    useGetUsersQuery()
+    const users = useSelector(state=>state.userList.users)
+    const [createUser] = useCreateUserMutation()
+
     const [phone, setPhone] = useState('')
     const [phoneAlert, setPhoneAlert] = useState('')
 
@@ -41,12 +47,13 @@ function Register() {
             setPasswordAlert('')
             setPassword('')
             
-            dispatchUsers(createUser({
-                id: users.length + 1,
+            const newUser = {
                 name: userName,
                 phone,
                 password,
-            }))
+            }
+
+            createUser(newUser)
         }
     }
 

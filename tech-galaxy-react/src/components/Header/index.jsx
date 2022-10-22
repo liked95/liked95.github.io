@@ -13,18 +13,21 @@ import contact from "../../assets/images/header/contact.svg";
 import aboutUs from "../../assets/images/header/about-us.svg";
 import DefaultAvatar from '../../assets/images/contingency-images/default-avatar.png'
 import { FontAwesomeIcon } from "../../../node_modules/@fortawesome/react-fontawesome/index";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Context from "context/index";
-import { logout } from "store/actions";
+import { logout } from "features/Users/user.slice"
+import { useDispatch, useSelector } from "react-redux";
 
 function Header() {
-  const { auth, dispatchAuth, cart } = useContext(Context)
-
-  let userId = auth.id || -1
-  const renderedCart = cart.filter(item => item.userId == userId)
+  // const { auth, dispatchAuth, cart } = useContext(Context)
+  const auth = useSelector(state=>state.userList.auth)
+  const dispatch = useDispatch()
+    
+  // const renderedCart = cart.filter(item => item.userId == userId)
 
   const handleLogout = () => {
-    dispatchAuth(logout())
+    localStorage.setItem('auth', null)
+    dispatch(logout())
   }
 
   return (
@@ -60,7 +63,7 @@ function Header() {
             <div id="search-result"></div>
           </div>
 
-          {!auth.id && (<div className="login-logout">
+          {!auth && (<div className="login-logout">
             <Link className="login-btn" to="/login">
               Đăng nhập
             </Link>
@@ -70,7 +73,7 @@ function Header() {
             </Link>
           </div>)}
 
-          {auth.id && (
+          {auth && (
             <div className='credential-container'>
               <div className="avatar-image">
                 <img src={DefaultAvatar} alt="ava-default" />
@@ -86,7 +89,7 @@ function Header() {
 
           <Link className="cart-icon" to="/cart">
             <i className="fa-solid fa-cart-shopping"></i>
-            <span className="cart-length">{renderedCart.length}</span>
+            <span className="cart-length">{}</span>
           </Link>
         </div>
       </div>

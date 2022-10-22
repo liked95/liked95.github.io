@@ -1,12 +1,17 @@
-import Context from 'context/index'
-import React, { useContext, useState, useEffect } from 'react'
+import { useGetUsersQuery } from 'features/Users/users.service'
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { LOGIN } from 'store/constants'
-import { login } from '../../store/actions'
+import {login} from 'features/Users/user.slice'
 
 function Login() {
-    const navigate = useNavigate
-    const { users, dispatchAuth } = useContext(Context)
+    
+    useGetUsersQuery()
+    const users = useSelector(state => state.userList.users)
+
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
     const [userName, setUserName] = useState('')
     const [userNameAlert, setUserNameAlert] = useState('')
 
@@ -36,10 +41,9 @@ function Login() {
             setUserNameAlert('Tên đăng nhập / mật khẩu không đúng')
             setPasswordAlert('Tên đăng nhập / mật khẩu không đúng')
         } else {
-            dispatchAuth(login(
-                { username: user.name, id: user.id }
-            ))
+            dispatch(login({username: user.name, id: user.id}))
             alert('Đăng nhập thành công')
+            navigate("/")
         }
     }
 

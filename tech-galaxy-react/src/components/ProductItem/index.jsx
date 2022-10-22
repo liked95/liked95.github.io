@@ -12,12 +12,8 @@ export function avgRating(reviews) {
 
 
 function ProductItem({ props }) {
-  // console.log(props)
   const { id, name, indexProductImgURL, features, currentPrices, oldPrices, alterOptions, discounts, soldQuantity, reviews } = props
   const [option, setOption] = useState(0)
-
-
-
 
 
   return (
@@ -41,7 +37,7 @@ function ProductItem({ props }) {
 
         <div className="old-price-container">
           <span className="old-price">{formatMoney(oldPrices[option])}</span>
-          <span className="percent">{formatMoney(discounts[option])}%</span>
+          <span className="percent">{(((oldPrices[option] / currentPrices[option])-1)*100).toFixed(0)+'%'}</span>
         </div>
 
         <p className="current-price">{formatMoney(currentPrices[option])}</p>

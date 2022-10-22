@@ -11,12 +11,15 @@ import FilterByRom from './FilterByRom'
 import FilterByPriceRange from './FilterByPriceRange'
 import Sort from './Sort';
 import { avgRating } from 'components/ProductItem/index';
+import { useSelector } from 'react-redux';
+import { useGetProductsQuery } from 'features/Products/products.service';
 
 function SmartPhone() {
   const location = useLocation()
   const navigate = useNavigate()
+  useGetProductsQuery()
 
-  let { products } = useContext(Context)
+  let products = useSelector(state=>state.productList.products)
   products = products.filter(product => product.category == 'smartphone')
 
   const [filters, setFilters] = useState(() => {
@@ -30,6 +33,8 @@ function SmartPhone() {
       sort: params.sort || [],
     }
   })
+
+  // console.log('filter  1 la', filters)
 
 
   useEffect(() => {
@@ -113,7 +118,8 @@ function SmartPhone() {
   // Bat dau loc theo tieu chi
   const startFilter = () => {
     let updatedProducts = [...products]
-
+    
+    
     if (filters.brands && filters.brands.length > 0) {
       updatedProducts = updatedProducts.filter(product => filters.brands.includes(product.brand))
     }
@@ -150,11 +156,10 @@ function SmartPhone() {
       if (filters.sort == "ratingAsc") updatedProducts = updatedProducts.sort((p1, p2) => avgRating(p1.reviews) - avgRating(p2.reviews))
       if (filters.sort == "ratingDesc") updatedProducts = updatedProducts.sort((p1, p2) => avgRating(p2.reviews) - avgRating(p1.reviews))
     }
-
     return updatedProducts
   }
 
-  console.log('filter la', filters)
+  // console.log('filter  2 la', filters)
 
   const renderedProducts = startFilter()
 
