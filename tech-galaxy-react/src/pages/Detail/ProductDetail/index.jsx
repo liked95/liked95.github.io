@@ -1,5 +1,5 @@
 import Context from 'context/index';
-import { useAddToCartMutation, useGetCartQuery, useUpdateCartItemMutation } from 'features/Cart/cart.service';
+import { useAddToCartMutation, useGetCartQuery, useUpdateCartItemCountMutation } from 'features/Cart/cart.service';
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { formatMoney } from 'utils/index';
@@ -18,10 +18,10 @@ function ProductDetail({ product }) {
     // console.log(product);
     const auth = useSelector(state => state.userList.auth) || -1
     const [addToCart] = useAddToCartMutation()
-    const [updateCartItemCount] = useUpdateCartItemMutation()
+    const [updateCartItemCount] = useUpdateCartItemCountMutation()
     useGetCartQuery()
     const cartItems = useSelector(state => state.cartList.items)
-    
+
 
 
     const { name, mainCarouselImages, dotCarouselImages, colors, detailImgURL, alterOptions, currentPrices, oldPrices, specAttributes
@@ -70,6 +70,10 @@ function ProductDetail({ product }) {
             addToCart(newCartItem)
         } else {
             // nếu tồn tại trong cart rồi thì update count
+            updateCartItemCount({
+                id: isExist.id,
+                count
+            })
         }
 
         alert("Thêm vào giỏ hàng thành công!")

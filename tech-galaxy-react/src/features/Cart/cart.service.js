@@ -18,7 +18,7 @@ export const cartApi = createApi({
         
         updateCartItemCount: builder.mutation({
             query: (data) =>({
-                url: "/cart",
+                url: `/cart/${data.id}`,
                 method: "PUT",
                 body: data
             })
@@ -28,4 +28,4 @@ export const cartApi = createApi({
 });
 
 
-export const {useGetCartQuery, useAddToCartMutation, useUpdateCartItemMutation} = cartApi
+export const {useGetCartQuery, useAddToCartMutation, useUpdateCartItemCountMutation} = cartApi

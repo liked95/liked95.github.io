@@ -12492,69 +12492,21 @@
   ],
   "cart": [
     {
-      "productID": 9,
+      "productID": 1,
       "userId": 1,
-      "alterOption": 1,
-      "color": "Trắng",
-      "count": 3,
-      "name": "Galaxy S22 Ultra 5G",
-      "price": 30990000,
-      "oldPrice": 33990000,
-      "image": "Galaxy-S22-Ultra-White-200x200.jpg",
+      "alterOption": 0,
+      "color": "Vàng đồng",
+      "count": 1,
+      "name": "iPhone 13 Pro Max",
+      "price": 28290000,
+      "oldPrice": 33900000,
+      "image": "iphone-13-pro-gold-1-200x200.jpg",
       "checked": true,
       "id": 1
     },
     {
-      "productID": 9,
-      "userId": 1,
-      "alterOption": 0,
-      "color": "Xanh lá",
-      "count": 4,
-      "name": "Galaxy S22 Ultra 5G",
-      "price": 27990000,
-      "oldPrice": 30990000,
-      "image": "Galaxy-S22-Ultra-Green-200x200.jpg",
-      "checked": true,
-      "id": 2
-    },
-    {
-      "productID": 9,
-      "userId": 1,
-      "alterOption": 0,
-      "color": "Xanh lá",
-      "count": 1,
-      "name": "Galaxy S22 Ultra 5G",
-      "price": 27990000,
-      "oldPrice": 30990000,
-      "image": "Galaxy-S22-Ultra-Green-200x200.jpg",
-      "checked": true,
-      "id": 3
-    },
-    {
-      "productID": 9,
-      "userId": 1,
-      "alterOption": 0,
-      "color": "Trắng",
-      "count": 1,
-      "name": "Galaxy S22 Ultra 5G",
-      "price": 27990000,
-      "oldPrice": 30990000,
-      "image": "Galaxy-S22-Ultra-White-200x200.jpg",
-      "checked": true,
-      "id": 4
-    },
-    {
-      "productID": 9,
-      "userId": 1,
-      "alterOption": 0,
-      "color": "Trắng",
-      "count": 1,
-      "name": "Galaxy S22 Ultra 5G",
-      "price": 27990000,
-      "oldPrice": 30990000,
-      "image": "Galaxy-S22-Ultra-White-200x200.jpg",
-      "checked": true,
-      "id": 5
+      "id": 2,
+      "count": 5
     }
   ]
 }

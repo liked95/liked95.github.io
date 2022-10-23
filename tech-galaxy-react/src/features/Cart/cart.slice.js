@@ -23,6 +23,9 @@ const cartSlice = createSlice({
 
     builder.addMatcher(cartApi.endpoints.updateCartItemCount.matchFulfilled, (state, action) => {
       console.log(state, action);
+
+      let idx = state.items.findIndex(item => item.id == action.payload.id)
+      state.items[idx].count += action.payload.count
     });
   }
 });
