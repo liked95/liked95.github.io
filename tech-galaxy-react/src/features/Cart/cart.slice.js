@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, current } from '@reduxjs/toolkit'
 import { cartApi } from './cart.service';
 
 
@@ -22,10 +22,32 @@ const cartSlice = createSlice({
     });
 
     builder.addMatcher(cartApi.endpoints.updateCartItemCount.matchFulfilled, (state, action) => {
-      console.log(state, action);
-
+      // console.log(state, action);
+      // console.log(state.items)
       let idx = state.items.findIndex(item => item.id == action.payload.id)
-      state.items[idx].count += action.payload.count
+      state.items[idx] = action.payload
+    });
+
+    builder.addMatcher(cartApi.endpoints.toggleCheck.matchFulfilled, (state, action) => {
+      let item = state.items.find(item => item.id == action.payload.id)
+      item.checked = !item.checked
+
+    });
+
+    builder.addMatcher(cartApi.endpoints.increaseItemCount.matchFulfilled, (state, action) => {
+      let item = state.items.find(item => item.id == action.payload.id)
+      item.count++
+
+    });
+
+    builder.addMatcher(cartApi.endpoints.decreaseItemCount.matchFulfilled, (state, action) => {
+      let item = state.items.find(item => item.id == action.payload.id)
+      item.count--
+    });
+
+    builder.addMatcher(cartApi.endpoints.deleteItem.matchFulfilled, (state, action) => {
+      let idx = state.items.findIndex(item => item.id == action.payload)
+      state.items.splice(idx, 1)
     });
   }
 });

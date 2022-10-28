@@ -7,7 +7,7 @@ function CartTotalCalucation({ renderedCart }) {
     for (let item of renderedCart) {
         if (item.checked) total += item.price * item.count
     }
-    console.log(total);
+    // console.log(total);
 
     return (
         <div className="col-lg-4 total-cart-container">

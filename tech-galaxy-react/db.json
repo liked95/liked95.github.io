@@ -12488,25 +12488,105 @@
       "phone": "213213",
       "password": "kaze",
       "id": 5
+    },
+    {
+      "name": "ton",
+      "phone": "sdfsdf",
+      "password": "ton",
+      "id": 6
     }
   ],
   "cart": [
     {
-      "productID": 1,
+      "productID": 9,
       "userId": 1,
       "alterOption": 0,
-      "color": "Vàng đồng",
+      "color": "Đỏ",
       "count": 1,
-      "name": "iPhone 13 Pro Max",
-      "price": 28290000,
-      "oldPrice": 33900000,
-      "image": "iphone-13-pro-gold-1-200x200.jpg",
+      "name": "Galaxy S22 Ultra 5G",
+      "price": 27990000,
+      "oldPrice": 30990000,
+      "image": "Galaxy-S22-Ultra-Burgundy-200x200.jpg",
       "checked": true,
       "id": 1
     },
     {
-      "id": 2,
-      "count": 5
+      "productID": 9,
+      "userId": 1,
+      "alterOption": 1,
+      "color": "Đen",
+      "count": 1,
+      "name": "Galaxy S22 Ultra 5G",
+      "price": 30990000,
+      "oldPrice": 33990000,
+      "image": "Galaxy-S22-Ultra-Black-200x200.jpg",
+      "checked": true,
+      "id": 2
+    },
+    {
+      "productID": 9,
+      "userId": 1,
+      "alterOption": 0,
+      "color": "Trắng",
+      "count": 1,
+      "name": "Galaxy S22 Ultra 5G",
+      "price": 27990000,
+      "oldPrice": 30990000,
+      "image": "Galaxy-S22-Ultra-White-200x200.jpg",
+      "checked": true,
+      "id": 3
+    },
+    {
+      "productID": 9,
+      "userId": 999,
+      "alterOption": 0,
+      "color": "Đỏ",
+      "count": 7,
+      "name": "Galaxy S22 Ultra 5G",
+      "price": 27990000,
+      "oldPrice": 30990000,
+      "image": "Galaxy-S22-Ultra-Burgundy-200x200.jpg",
+      "checked": true,
+      "id": 4
+    },
+    {
+      "productID": 7,
+      "userId": 999,
+      "alterOption": 0,
+      "color": "Xanh dương",
+      "count": 4,
+      "name": "iPhone 12 mini",
+      "price": 16490000,
+      "oldPrice": 20990000,
+      "image": "iphone-12-mini-xanh-duong-15-200x200.jpg",
+      "checked": true,
+      "id": 5
+    },
+    {
+      "productID": 7,
+      "userId": 999,
+      "alterOption": 2,
+      "color": "Đen",
+      "count": 2,
+      "name": "iPhone 12 mini",
+      "price": 16990000,
+      "oldPrice": 21990000,
+      "image": "iphone-12-mini-den-15-200x200.jpg",
+      "checked": true,
+      "id": 6
+    },
+    {
+      "productID": 7,
+      "userId": 999,
+      "alterOption": 1,
+      "color": "Tím",
+      "count": 2,
+      "name": "iPhone 12 mini",
+      "price": 14990000,
+      "oldPrice": 18990000,
+      "image": "iphone-12-mini-mau-tim-3-200x200.jpg",
+      "checked": false,
+      "id": 7
     }
   ]
 }

@@ -16,9 +16,10 @@ import Warranty from './Warranty';
 
 function ProductDetail({ product }) {
     // console.log(product);
-    const auth = useSelector(state => state.userList.auth) || -1
+    const auth = useSelector(state => state.userList.auth)
     const [addToCart] = useAddToCartMutation()
     const [updateCartItemCount] = useUpdateCartItemCountMutation()
+
     useGetCartQuery()
     const cartItems = useSelector(state => state.cartList.items)
 
@@ -47,9 +48,10 @@ function ProductDetail({ product }) {
         }
 
         const colorIdx = colors.indexOf(color)
+
         const newCartItem = {
             productID: product.id,
-            userId: auth.id || -1,
+            userId: auth ? auth.id : 999,
             alterOption: option,
             color,
             count,
@@ -59,11 +61,17 @@ function ProductDetail({ product }) {
             image: dotCarouselImages[colorIdx],
             checked: true,
         }
+
+
         const isExist = cartItems.find(p =>
             p.userId == newCartItem.userId
             && p.productID == newCartItem.productID
             && p.alterOption == newCartItem.alterOption
             && p.color == newCartItem.color)
+
+
+        console.log(cartItems);
+        console.log('exist la', isExist);
 
         if (!isExist) {
             // nếu chưa tồn tại thì add mới vào cart
@@ -71,8 +79,17 @@ function ProductDetail({ product }) {
         } else {
             // nếu tồn tại trong cart rồi thì update count
             updateCartItemCount({
+                productID: product.id,
+                userId: auth ? auth.id : 999,
+                alterOption: option,
+                color,
+                count: count + isExist.count,
+                name,
+                price: currentPrices[option],
+                oldPrice: oldPrices[option],
+                image: dotCarouselImages[colorIdx],
+                checked: true,
                 id: isExist.id,
-                count
             })
         }
 
@@ -147,7 +164,7 @@ function ProductDetail({ product }) {
                         <div className="quantity-and-cart">
                             <div className="change-quantity">
                                 <div className="value-button disabled" id="decrease" value="Decrease Value" onClick={handleCountDecrease}>-</div>
-                                <input type="number" id="number" value={count} onChange={e => setCount(e.target.value)} />
+                                <input type="number" id="number" value={count} onChange={e => setCount(e.target.valueAsNumber)} />
                                 <div className="value-button" id="increase" value="Increase Value" onClick={handleCountIncrease}>+</div>
                             </div>
 

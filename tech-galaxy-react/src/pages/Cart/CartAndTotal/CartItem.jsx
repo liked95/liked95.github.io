@@ -1,35 +1,87 @@
 import Context from 'context/index'
+import { useDecreaseItemCountMutation, useDeleteItemMutation, useIncreaseItemCountMutation, useToggleCheckMutation } from 'features/Cart/cart.service'
+import { useGetUsersQuery } from 'features/Users/users.service'
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { decreaseCount, deleteCartItem, increaseCount, toggleChecked } from 'store/actions'
 import { formatMoney } from 'utils/index'
+import { useSelector } from '../../../../node_modules/react-redux/es/exports'
 
 function CartItem({ item }) {
-    const { dispatchCart } = useContext(Context)
-    const { name, color, count, alterOption, image, price, oldPrice, checked, productID, userId } = item
+    // console.log(item);
+    const { name, color, count, alterOption, image, price, oldPrice, checked, productID, userId, id } = item
+    const [toggleCheck] = useToggleCheckMutation()
+    const [increaseItemCount] = useIncreaseItemCountMutation()
+    const [decreaseItemCount] = useDecreaseItemCountMutation()
+    const [deleteItem] = useDeleteItemMutation()
+
+    useGetUsersQuery()
+    const auth = useSelector(state => state.userList.auth)
 
 
-    const handleToggleChecked = (userId, productID, alterOption, color) => {
-        dispatchCart(toggleChecked({ userId, productID, alterOption, color }))
+    const handleToggleChecked = (id) => {
+        const updatedItem = {
+            productID,
+            userId: auth ? auth.id : 999,
+            alterOption,
+            color,
+            count,
+            name,
+            price,
+            oldPrice,
+            image,
+            checked: !checked,
+            id
+        }
+        toggleCheck(updatedItem)
     }
 
-    const handleDecreaseCount = (userId, productID, alterOption, color) => {
+    const handleDecreaseCount = (id) => {
         if (count <= 1) return;
-        dispatchCart(decreaseCount({ userId, productID, alterOption, color }))
+
+        const updatedItem = {
+            productID,
+            userId: auth ? auth.id : 999,
+            alterOption,
+            color,
+            count: count - 1,
+            name,
+            price,
+            oldPrice,
+            image,
+            checked,
+            id
+        }
+        decreaseItemCount(updatedItem)
+
     }
 
-    const handleIncreaseCount = (userId, productID, alterOption, color) => {
-        dispatchCart(increaseCount({ userId, productID, alterOption, color }))
+    const handleIncreaseCount = (id) => {
+        const updatedItem = {
+            productID,
+            userId: auth ? auth.id : 999,
+            alterOption,
+            color,
+            count: count + 1,
+            name,
+            price,
+            oldPrice,
+            image,
+            checked,
+            id
+        }
+        increaseItemCount(updatedItem)
     }
 
-    const handleDeleteCartItem = (userId, productID, alterOption, color) => {
-        dispatchCart(deleteCartItem({ userId, productID, alterOption, color }))
+    const handleDeleteCartItem = (id) => {
+        // console.log(id);
+        deleteItem(id)
     }
 
     return (
         <div className="cart-item">
 
-            <input type="checkbox" className="choose-item" checked={checked} onChange={e => handleToggleChecked(userId, productID, alterOption, color)} />
+            <input type="checkbox" className="choose-item" checked={checked} onChange={e => handleToggleChecked(id)} />
 
             <Link to={`/detail?id=${productID}`} className="product">
                 <div className="cart-item-image">
@@ -52,7 +104,7 @@ function CartItem({ item }) {
                     className="value-button"
                     id="decrease"
                     value="Decrease Value"
-                    onClick={e => handleDecreaseCount(userId, productID, alterOption, color)}
+                    onClick={e => handleDecreaseCount(id)}
                 >
                     -
                 </div>
@@ -61,7 +113,7 @@ function CartItem({ item }) {
                     className="value-button"
                     id="increase"
                     value="Increase Value"
-                    onClick={e => handleIncreaseCount(userId, productID, alterOption, color)}
+                    onClick={e => handleIncreaseCount(id)}
                 >
                     +
                 </div>
@@ -69,7 +121,7 @@ function CartItem({ item }) {
 
             <div className="value">{formatMoney(price * count)}</div>
 
-            <div className="delete-item" onClick={e=>handleDeleteCartItem(userId, productID, alterOption, color)}>
+            <div className="delete-item" onClick={() => handleDeleteCartItem(id)}>
                 <i className="fa-solid fa-circle-minus"></i>
             </div>
         </div>

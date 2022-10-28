@@ -9,23 +9,67 @@ export const cartApi = createApi({
         }),
 
         addToCart: builder.mutation({
-            query: (data) =>({
+            query: (data) => ({
                 url: "/cart",
                 method: "POST",
                 body: data
             })
         }),
-        
+
         updateCartItemCount: builder.mutation({
-            query: (data) =>({
+            query: (data) => ({
                 url: `/cart/${data.id}`,
                 method: "PUT",
-                body: data
+                body: data,
             })
         }),
-       
+
+        toggleCheck: builder.mutation({
+            query: (data) => ({
+                url: `/cart/${data.id}`,
+                method: "PUT",
+                body: data,
+            })
+        }),
+
+        increaseItemCount: builder.mutation({
+            query: (data) => ({
+                url: `/cart/${data.id}`,
+                method: "PUT",
+                body: data,
+            })
+        }),
+
+        decreaseItemCount: builder.mutation({
+            query: (data) => ({
+                url: `/cart/${data.id}`,
+                method: "PUT",
+                body: data,
+            })
+        }),
+
+        deleteItem: builder.mutation({
+            query: (id) => ({
+                url: `/cart/${id}`,
+                method: "DELETE",
+            }),
+            transformResponse: (response, meta, arg) => {
+                // console.log(response, meta, arg);
+                return arg;
+            }
+        }),
+
+
     }),
 });
 
 
-export const {useGetCartQuery, useAddToCartMutation, useUpdateCartItemCountMutation} = cartApi
+export const {
+    useGetCartQuery,
+    useAddToCartMutation,
+    useUpdateCartItemCountMutation,
+    useToggleCheckMutation,
+    useIncreaseItemCountMutation, 
+    useDecreaseItemCountMutation,
+    useDeleteItemMutation,
+} = cartApi
