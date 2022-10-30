@@ -1,8 +1,8 @@
-import Context from 'context/index';
 import { useAddToCartMutation, useGetCartQuery, useUpdateCartItemCountMutation } from 'features/Cart/cart.service';
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { formatMoney } from 'utils/index';
+import { useNavigate } from 'react-router-dom';
 import MainProductSlider from './MainProductSlider'
 import PaymentPromotion from './PaymentPromotion';
 import Warranty from './Warranty';
@@ -16,7 +16,10 @@ import Warranty from './Warranty';
 
 function ProductDetail({ product }) {
     // console.log(product);
+    const navigate = useNavigate()
     const auth = useSelector(state => state.userList.auth)
+    
+
     const [addToCart] = useAddToCartMutation()
     const [updateCartItemCount] = useUpdateCartItemCountMutation()
 
@@ -42,17 +45,24 @@ function ProductDetail({ product }) {
 
 
     const handleAddToCart = () => {
+        
+        if (!auth) {
+            navigate('/login')
+            return;
+        }
+        
         if (!color) {
             alert("Bạn cần chọn 1 màu!")
             return
         }
 
+
         const colorIdx = colors.indexOf(color)
 
         const newCartItem = {
             productID: product.id,
-            userId: auth ? auth.id : 999,
-            alterOption: option,
+            userId: auth.id,
+            alterOption: alterOptions[option],
             color,
             count,
             name,
@@ -80,7 +90,7 @@ function ProductDetail({ product }) {
             // nếu tồn tại trong cart rồi thì update count
             updateCartItemCount({
                 productID: product.id,
-                userId: auth ? auth.id : 999,
+                userId: auth.id,
                 alterOption: option,
                 color,
                 count: count + isExist.count,

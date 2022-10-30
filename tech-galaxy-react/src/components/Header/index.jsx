@@ -22,12 +22,14 @@ import { useGetCartQuery } from "features/Cart/cart.service";
 function Header() {
   // const { auth, dispatchAuth, cart } = useContext(Context)
   const auth = useSelector(state=>state.userList.auth)
+  const guestId = useSelector(state => state.userList.guestId)
+
   const dispatch = useDispatch()
 
   useGetCartQuery()
   const cart = useSelector(state=>state.cartList.items)
 
-  let userId = auth ? auth.id : 999
+  let userId = auth ? auth.id : guestId
   const renderedCart = cart.filter(item => item.userId == userId)
     
   // const renderedCart = cart.filter(item => item.userId == userId)
@@ -96,7 +98,7 @@ function Header() {
 
           <Link className="cart-icon" to="/cart">
             <i className="fa-solid fa-cart-shopping"></i>
-            <span className="cart-length">{renderedCart.length}</span>
+            <span className="cart-length">{auth ? renderedCart.length : ""}</span>
           </Link>
         </div>
       </div>

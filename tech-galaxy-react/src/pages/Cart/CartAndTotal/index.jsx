@@ -7,11 +7,12 @@ import CartTotalCalucation from './CartTotalCalucation'
 
 function CartAndTotal() {
   const auth = useSelector(state => state.userList.auth)
+ 
 
   useGetCartQuery()
   const cart = useSelector(state => state.cartList.items)
 
-  let userId = auth ? auth.id : 999
+  let userId = auth.id
   const renderedCart = cart.filter(item => item.userId == userId)
 
 

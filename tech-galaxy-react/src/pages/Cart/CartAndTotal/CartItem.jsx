@@ -17,12 +17,13 @@ function CartItem({ item }) {
 
     useGetUsersQuery()
     const auth = useSelector(state => state.userList.auth)
+    
 
 
     const handleToggleChecked = (id) => {
         const updatedItem = {
             productID,
-            userId: auth ? auth.id : 999,
+            userId: auth.id,
             alterOption,
             color,
             count,
@@ -41,7 +42,7 @@ function CartItem({ item }) {
 
         const updatedItem = {
             productID,
-            userId: auth ? auth.id : 999,
+            userId: auth.id,
             alterOption,
             color,
             count: count - 1,
@@ -59,7 +60,7 @@ function CartItem({ item }) {
     const handleIncreaseCount = (id) => {
         const updatedItem = {
             productID,
-            userId: auth ? auth.id : 999,
+            userId: auth.id,
             alterOption,
             color,
             count: count + 1,

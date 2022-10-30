@@ -8,14 +8,19 @@ import Review from './Review/index'
 import RelatedProducts from './RelatedProducts/index'
 import { useSelector } from 'react-redux'
 import { useGetProductsQuery } from 'features/Products/products.service'
+import { scrollToTop } from 'utils/index'
 
 function Detail() {
+
+    
     const {status} = useGetProductsQuery()
     let products = useSelector(state => state.productList.products)
     
     const location = useLocation()
     const params = queryString.parse(location.search)
     const id = +params.id
+
+    scrollToTop()
     
     
     const product = products.find(p => p.id == id)

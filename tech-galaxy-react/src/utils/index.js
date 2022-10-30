@@ -6,3 +6,12 @@ export function formatMoney(num) {
     }
     return num
 }
+
+
+
+export const scrollToTop = () =>{
+    window.scrollTo({
+      top: 0, 
+      behavior: 'auto'
+    });
+  };

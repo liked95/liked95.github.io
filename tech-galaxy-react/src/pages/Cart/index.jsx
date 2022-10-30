@@ -8,7 +8,7 @@ function Cart() {
   return (
     <>
       <CartAndTotal />
-      {/* <Payment/> */}
+      <Payment/>
       
 
 
