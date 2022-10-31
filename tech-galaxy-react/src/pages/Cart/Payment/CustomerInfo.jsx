@@ -1,6 +1,30 @@
 import React from 'react'
+import { GHNToken } from 'utils/index'
+import axios from 'axios'
+
 
 function CustomerInfo() {
+
+    async function renderProvince() {
+
+        try {
+         
+            let provinceURI = "https://online-gateway.ghn.vn/shiip/public-api/master-data/province"
+            let provinceHeader = { headers: { token: GHNToken } }
+            let res = await axios.get(provinceURI, provinceHeader)
+            let data = res.data.data
+            console.log(data)
+            // if (data.length) {
+            //     console.log(data)
+            // }
+    
+        } catch (error) {
+            console.log(error)
+        }
+        
+    }
+
+    renderProvince()
     return (
         <div className="col-lg-4 col-md-6 customer-info">
             <h4>Thông tin khách hàng</h4>
@@ -8,7 +32,7 @@ function CustomerInfo() {
 
 
                 <div className="form-floating mb-3">
-                    <input type="fullName" className="form-control" id="fullName" placeholder="fullName" />
+                    <input type="text" className="form-control" id="fullName" placeholder="fullName" />
                     <label htmlFor="fullName">Tên đầy đủ</label>
                 </div>
 
