@@ -5,12 +5,17 @@ import { cartApi } from './cart.service';
 const initialState = {
   status: "",
   items: [],
+  shippingFee: 0
 }
 
 const cartSlice = createSlice({
   name: "cartList",
   initialState,
-  reducers: {},
+  reducers: {
+    updateFee(state, action) {
+      state.shippingFee = action.payload
+    }
+  },
   extraReducers: (builder) => {
     builder.addMatcher(cartApi.endpoints.getCart.matchFulfilled, (state, action) => {
       // console.log(action);
@@ -52,6 +57,7 @@ const cartSlice = createSlice({
   }
 });
 
-export const { } = cartSlice.actions
+export const { updateFee} = cartSlice.actions
+export const getShippingFee = store => store.cartList.shippingFee
 
 export default cartSlice.reducer

@@ -1,5 +1,6 @@
 import React from 'react'
 import { formatMoney } from 'utils/index';
+import { useSelector } from 'react-redux';
 
 
 function CartTotalCalucation({ renderedCart }) {
@@ -7,7 +8,8 @@ function CartTotalCalucation({ renderedCart }) {
     for (let item of renderedCart) {
         if (item.checked) total += item.price * item.count
     }
-    // console.log(total);
+    
+    const shippingFee = useSelector(state=>state.cartList.shippingFee)
 
     return (
         <div className="col-lg-4 total-cart-container">
@@ -22,7 +24,7 @@ function CartTotalCalucation({ renderedCart }) {
                     <i data-toggle="tooltip" data-placement="top" data-trigger="click"
                         title="Chọn địa chỉ để hiện phí ship" className="fa-solid fa-circle-question"></i>
                 </span>
-                <span>0</span>
+                <span>{formatMoney(shippingFee)}</span>
             </div>
 
             <div className="discount">

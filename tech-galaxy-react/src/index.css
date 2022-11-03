@@ -2110,6 +2110,7 @@ footer p {
     padding: 0;
     height: auto;
     color: #1a73e8;
+    width: fit-content;
 }
 
 .form-floating>.form-control:focus,

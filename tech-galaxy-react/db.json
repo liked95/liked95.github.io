@@ -12515,7 +12515,7 @@
       "userId": 1,
       "alterOption": "128GB",
       "color": "Kem",
-      "count": 1,
+      "count": 9,
       "name": "Galaxy Z Flip3",
       "price": 14990000,
       "oldPrice": 24990000,
@@ -12524,17 +12524,30 @@
       "id": 7
     },
     {
-      "productID": 43,
+      "productID": 11,
       "userId": 1,
-      "alterOption": "256GB",
-      "color": "Tím",
-      "count": 1,
-      "name": "Galaxy Z Flip3",
-      "price": 16990000,
-      "oldPrice": 26990000,
-      "image": "samsung-galaxy-z-flip-3-violet-1-200x200.jpg",
+      "alterOption": "8GB",
+      "color": "Xanh dương",
+      "count": 5,
+      "name": "Xiaomi 11T Pro 5G",
+      "price": 13990000,
+      "oldPrice": 15690000,
+      "image": "Xiaomi-11T-Pro-Blue-1-2-200x200.jpg",
       "checked": true,
       "id": 8
+    },
+    {
+      "productID": 11,
+      "userId": 1,
+      "alterOption": "12GB",
+      "color": "Trắng",
+      "count": 4,
+      "name": "Xiaomi 11T Pro 5G",
+      "price": 14990000,
+      "oldPrice": 16990000,
+      "image": "Xiaomi-11T-Pro-White-200x200.jpg",
+      "checked": true,
+      "id": 9
     }
   ]
 }
