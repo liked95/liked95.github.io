@@ -12474,7 +12474,7 @@
     {
       "name": "liked95",
       "phone": "0386639002",
-      "password": "Dkm1995",
+      "password": "liked95",
       "id": 3
     },
     {
@@ -12494,6 +12494,12 @@
       "phone": "sdfsdf",
       "password": "ton",
       "id": 6
+    },
+    {
+      "name": "kun",
+      "phone": "2321312",
+      "password": "kun",
+      "id": 7
     }
   ],
   "cart": [
@@ -12511,6 +12517,19 @@
       "id": 6
     },
     {
+      "productID": 43,
+      "userId": 1,
+      "alterOption": "128GB",
+      "color": "Kem",
+      "count": 3,
+      "name": "Galaxy Z Flip3",
+      "price": 14990000,
+      "oldPrice": 24990000,
+      "image": "samsung-galaxy-z-flip-3-cream-1-200x200.jpg",
+      "checked": true,
+      "id": 7
+    },
+    {
       "productID": 2,
       "userId": 1,
       "alterOption": "128GB",
@@ -12520,8 +12539,47 @@
       "price": 26390000,
       "oldPrice": 30990000,
       "image": "xanh-la-iphone.jpg",
-      "checked": false,
+      "checked": true,
       "id": 8
+    },
+    {
+      "productID": 2,
+      "userId": 1,
+      "alterOption": "1TB",
+      "color": "Xanh dương",
+      "count": 1,
+      "name": "iPhone 13 Pro",
+      "price": 36990000,
+      "oldPrice": 43990000,
+      "image": "iphone-13-pro-sierra-blue-200x200.jpg",
+      "checked": false,
+      "id": 9
+    },
+    {
+      "productID": 11,
+      "userId": 7,
+      "alterOption": 0,
+      "color": "Xám",
+      "count": 5,
+      "name": "Xiaomi 11T Pro 5G",
+      "price": 13990000,
+      "oldPrice": 15690000,
+      "image": "Xiaomi-11T-Pro-Grey-200x200.jpg",
+      "checked": false,
+      "id": 12
+    },
+    {
+      "productID": 7,
+      "userId": 7,
+      "alterOption": "512GB",
+      "color": "Xanh dương",
+      "count": 1,
+      "name": "iPhone 12 mini",
+      "price": 16990000,
+      "oldPrice": 21990000,
+      "image": "iphone-12-mini-xanh-duong-15-200x200.jpg",
+      "checked": false,
+      "id": 13
     }
   ],
   "history": [
@@ -12627,44 +12685,70 @@
     {
       "items": [
         {
-          "productID": 43,
-          "userId": 1,
-          "alterOption": "128GB",
-          "color": "Kem",
-          "count": 3,
-          "name": "Galaxy Z Flip3",
-          "price": 14990000,
-          "oldPrice": 24990000,
-          "image": "samsung-galaxy-z-flip-3-cream-1-200x200.jpg",
-          "checked": true,
-          "id": 7
-        },
-        {
-          "productID": 2,
-          "userId": 1,
-          "alterOption": "1TB",
+          "productID": 11,
+          "userId": 7,
+          "alterOption": "8GB",
           "color": "Xanh dương",
           "count": 1,
-          "name": "iPhone 13 Pro",
-          "price": 36990000,
-          "oldPrice": 43990000,
-          "image": "iphone-13-pro-sierra-blue-200x200.jpg",
+          "name": "Xiaomi 11T Pro 5G",
+          "price": 13990000,
+          "oldPrice": 15690000,
+          "image": "Xiaomi-11T-Pro-Blue-1-2-200x200.jpg",
           "checked": true,
-          "id": 9
+          "id": 10
+        },
+        {
+          "productID": 11,
+          "userId": 7,
+          "alterOption": "12GB",
+          "color": "Trắng",
+          "count": 1,
+          "name": "Xiaomi 11T Pro 5G",
+          "price": 14990000,
+          "oldPrice": 16990000,
+          "image": "Xiaomi-11T-Pro-White-200x200.jpg",
+          "checked": true,
+          "id": 11
+        },
+        {
+          "productID": 7,
+          "userId": 7,
+          "alterOption": "256GB",
+          "color": "Tím",
+          "count": 1,
+          "name": "iPhone 12 mini",
+          "price": 14990000,
+          "oldPrice": 18990000,
+          "image": "iphone-12-mini-mau-tim-3-200x200.jpg",
+          "checked": true,
+          "id": 14
+        },
+        {
+          "productID": 7,
+          "userId": 7,
+          "alterOption": "128GB",
+          "color": "Xanh lá",
+          "count": 4,
+          "name": "iPhone 12 mini",
+          "price": 16490000,
+          "oldPrice": 20990000,
+          "image": "iphone-12-mini-xanh-la-15-200x200.jpg",
+          "checked": true,
+          "id": 15
         }
       ],
-      "userId": 1,
+      "userId": 7,
       "customerName": "",
       "customerPhone": "",
       "customerAddress": "",
-      "totalValue": 81960000,
+      "totalValue": 109930000,
       "shippingFee": 0,
       "discount": 0,
-      "pretaxValue": 81960000,
-      "tax": 6556800,
-      "grandTotal": 88516800,
+      "pretaxValue": 109930000,
+      "tax": 8794400,
+      "grandTotal": 118724400.00000001,
       "date": "4/11/2022",
-      "hour": "08:20 PM",
+      "hour": "08:30 PM",
       "id": 3
     }
   ]
