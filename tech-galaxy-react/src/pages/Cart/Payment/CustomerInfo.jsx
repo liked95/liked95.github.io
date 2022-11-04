@@ -3,7 +3,7 @@ import { GHNShopID, GHNToken } from 'utils/index'
 import axios from 'axios'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { updateCustomerAddress, updateCustomerName, updateCustomerPhone, updateFee } from 'features/Cart/cart.slice'
+import { updateCustomerAddress, updateCustomerName, updateCustomerPhone, updateDistrict, updateFee, updateProvince, updateWard } from 'features/Cart/cart.slice'
 
 async function renderProvince() {
 
@@ -33,11 +33,11 @@ function CustomerInfo() {
     const [wards, setWards] = useState([])
     const [wardId, setWardId] = useState(0)
 
-    const [name, setName] = useState(useSelector(state=>state.cartList.customerName))
-    const [phone, setPhone] = useState(useSelector(state=>state.cartList.customerPhone))
+    const [name, setName] = useState(useSelector(state => state.cartList.customerName))
+    const [phone, setPhone] = useState(useSelector(state => state.cartList.customerPhone))
 
     const [address, setAddress] = useState("")
-    
+
 
     async function renderProvince() {
 
@@ -95,15 +95,21 @@ function CustomerInfo() {
 
 
     const handleChangeProvince = e => {
-        setProvinceId(+e.target.value)
+        const [id, title] = e.target.value.split(",")
+        setProvinceId(+id)
+        dispatch(updateProvince(title))
     }
 
     const handleChangeDistrict = e => {
-        setDistrictId(+e.target.value)
+        const [id, title] = e.target.value.split(",")
+        setDistrictId(+id)
+        dispatch(updateDistrict(title))
     }
 
     const handleChangeWard = e => {
-        setWardId(+e.target.value)
+        const [id, title] = e.target.value.split(",")
+        setWardId(+id)
+        dispatch(updateWard(title))
     }
 
     const cart = useSelector(state => state.cartList.items)
@@ -194,7 +200,7 @@ function CustomerInfo() {
                         id="province"
                         onChange={e => handleChangeProvince(e)}>
                         <option value="null" selected disabled hidden="" className="disabled">Tỉnh/Thành phố</option>
-                        {provinces.map(ele => <option key={ele.ProvinceID} value={ele.ProvinceID}>{ele.ProvinceName}</option>)}
+                        {provinces.map(ele => <option key={ele.ProvinceID}  value={[ele.ProvinceID,ele.ProvinceName]}>{ele.ProvinceName}</option>)}
                     </select>
                     <label htmlFor="province">Tỉnh/Thành phố</label>
                 </div>
@@ -206,7 +212,7 @@ function CustomerInfo() {
                         onChange={e => handleChangeDistrict(e)}
                     >
                         <option value="" selected={districtId == 0} disabled hidden="" className="disabled">Quận/Huyện</option>
-                        {provinceId != 0 && districts.map(ele => <option key={ele.DistrictID} value={ele.DistrictID}>{ele.DistrictName}</option>)}
+                        {provinceId != 0 && districts.map(ele => <option key={ele.DistrictID} value={[ele.DistrictID, ele.DistrictName]}>{ele.DistrictName}</option>)}
                     </select>
                     <label htmlFor="district">Quận/Huyện</label>
                 </div>
@@ -217,7 +223,7 @@ function CustomerInfo() {
                         id="ward"
                         onChange={e => handleChangeWard(e)}>
                         <option value="" selected={wardId == 0} disabled hidden="" className="disabled">Phường/Xã</option>
-                        {districtId != 0 && wards.map(ele => <option key={ele.WardCode} value={ele.WardCode}>{ele.WardName}</option>)}
+                        {districtId != 0 && wards.map(ele => <option key={ele.WardCode} value={[ele.WardCode, ele.WardName]}>{ele.WardName}</option>)}
                     </select>
                     <label htmlFor="ward">Phường/Xã</label>
                 </div>

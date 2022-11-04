@@ -5,6 +5,8 @@ import { userApi } from "features/Users/users.service";
 import usersReducer from "features/Users/user.slice";
 import cartReducer from "features/Cart/cart.slice";
 import { cartApi } from "features/Cart/cart.service";
+import { historyApi } from "features/History/history.service";
+import historyReducer from "features/History/history.slice";
 
 const store = configureStore({
     reducer: {
@@ -16,10 +18,13 @@ const store = configureStore({
 
         [cartApi.reducerPath]: cartApi.reducer,
         cartList: cartReducer,
+
+        [historyApi.reducerPath]: historyApi.reducer,
+        history: historyReducer,
     },
 
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(productApi.middleware, userApi.middleware, cartApi.middleware)
+        getDefaultMiddleware().concat(productApi.middleware, userApi.middleware, cartApi.middleware, historyApi.middleware)
 })
 
 

@@ -59,6 +59,14 @@ export const cartApi = createApi({
             }
         }),
 
+        // deleteAll: builder.mutation({
+        //     query: () => ({
+        //         url: `/cart`,
+        //         method: "DELETE",
+        //     }),
+        // }),
+
+
 
     }),
 });
@@ -72,4 +80,5 @@ export const {
     useIncreaseItemCountMutation, 
     useDecreaseItemCountMutation,
     useDeleteItemMutation,
+    useDeleteAllMutation
 } = cartApi

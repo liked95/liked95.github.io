@@ -11,6 +11,10 @@ const initialState = {
   paymentMethod: "",
   voucherCode: "",
 
+  province: "",
+  district: "",
+  ward: "",
+
   totalValue: 0,
   shippingFee: 0,
   discount: 0,
@@ -41,6 +45,20 @@ const cartSlice = createSlice({
     updateVoucherCode(state, action) {
       state.voucherCode = action.payload
     },
+
+    updateProvince(state, action) {
+      state.province = action.payload
+    },
+
+    updateDistrict(state, action) {
+      state.district = action.payload
+    },
+
+    updateWard(state, action) {
+      state.ward = action.payload
+    },
+
+
 
     updateTotalValue(state, action) {
       state.totalValue = action.payload
@@ -94,9 +112,12 @@ const cartSlice = createSlice({
     });
 
     builder.addMatcher(cartApi.endpoints.deleteItem.matchFulfilled, (state, action) => {
-      let idx = state.items.findIndex(item => item.id == action.payload)
-      state.items.splice(idx, 1)
+      // let idx = state.items.findIndex(item => item.id == action.payload)
+      // state.items.splice(idx, 1)
+      state.items = state.items.filter(item => item.id != action.payload)
     });
+
+   
   }
 });
 
@@ -106,7 +127,11 @@ export const { updateFee,
   updateCustomerAddress,
   updatePaymentMethod,
   updateVoucherCode,
-  
+
+  updateProvince,
+  updateDistrict,
+  updateWard,
+
   updateTotalValue,
   updateDiscount,
   updatePretaxValue,
