@@ -12515,12 +12515,12 @@
       "userId": 1,
       "alterOption": "128GB",
       "color": "Kem",
-      "count": 9,
+      "count": 3,
       "name": "Galaxy Z Flip3",
       "price": 14990000,
       "oldPrice": 24990000,
       "image": "samsung-galaxy-z-flip-3-cream-1-200x200.jpg",
-      "checked": true,
+      "checked": false,
       "id": 7
     },
     {
@@ -12528,7 +12528,7 @@
       "userId": 1,
       "alterOption": "8GB",
       "color": "Xanh dương",
-      "count": 5,
+      "count": 2,
       "name": "Xiaomi 11T Pro 5G",
       "price": 13990000,
       "oldPrice": 15690000,
@@ -12541,13 +12541,26 @@
       "userId": 1,
       "alterOption": "12GB",
       "color": "Trắng",
-      "count": 4,
+      "count": 3,
       "name": "Xiaomi 11T Pro 5G",
       "price": 14990000,
       "oldPrice": 16990000,
       "image": "Xiaomi-11T-Pro-White-200x200.jpg",
       "checked": true,
       "id": 9
+    },
+    {
+      "productID": 40,
+      "userId": 1,
+      "alterOption": "64GB",
+      "color": "Xám",
+      "count": 1,
+      "name": "Xiaomi Redmi 9C",
+      "price": 2999000,
+      "oldPrice": 3590000,
+      "image": "xiaomi-redmi-9c-3gb-xam-200x200.jpg",
+      "checked": true,
+      "id": 10
     }
   ]
 }

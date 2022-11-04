@@ -5,7 +5,18 @@ import { cartApi } from './cart.service';
 const initialState = {
   status: "",
   items: [],
-  shippingFee: 0
+  customerName: "",
+  customerPhone: "",
+  customerAddress: "",
+  paymentMethod: "",
+  voucherCode: "",
+
+  totalValue: 0,
+  shippingFee: 0,
+  discount: 0,
+  pretaxValue: 0,
+  tax: 0,
+  grandTotal: 0,
 }
 
 const cartSlice = createSlice({
@@ -14,7 +25,39 @@ const cartSlice = createSlice({
   reducers: {
     updateFee(state, action) {
       state.shippingFee = action.payload
-    }
+    },
+    updateCustomerName(state, action) {
+      state.customerName = action.payload
+    },
+    updateCustomerPhone(state, action) {
+      state.customerPhone = action.payload
+    },
+    updateCustomerAddress(state, action) {
+      state.customerAddress = action.payload
+    },
+    updatePaymentMethod(state, action) {
+      state.paymentMethod = action.payload
+    },
+    updateVoucherCode(state, action) {
+      state.voucherCode = action.payload
+    },
+
+    updateTotalValue(state, action) {
+      state.totalValue = action.payload
+    },
+
+    updateDiscount(state, action) {
+      state.discount = action.payload
+    },
+    updatePretaxValue(state, action) {
+      state.pretaxValue = action.payload
+    },
+    updateTax(state, action) {
+      state.tax = action.payload
+    },
+    updateGrandTotal(state, action) {
+      state.grandTotal = action.payload
+    },
   },
   extraReducers: (builder) => {
     builder.addMatcher(cartApi.endpoints.getCart.matchFulfilled, (state, action) => {
@@ -57,7 +100,19 @@ const cartSlice = createSlice({
   }
 });
 
-export const { updateFee} = cartSlice.actions
+export const { updateFee,
+  updateCustomerName,
+  updateCustomerPhone,
+  updateCustomerAddress,
+  updatePaymentMethod,
+  updateVoucherCode,
+  
+  updateTotalValue,
+  updateDiscount,
+  updatePretaxValue,
+  updateTax,
+  updateGrandTotal,
+} = cartSlice.actions
 export const getShippingFee = store => store.cartList.shippingFee
 
 export default cartSlice.reducer

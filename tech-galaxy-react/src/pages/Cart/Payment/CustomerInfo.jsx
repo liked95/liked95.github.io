@@ -3,7 +3,7 @@ import { GHNShopID, GHNToken } from 'utils/index'
 import axios from 'axios'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { updateFee } from 'features/Cart/cart.slice'
+import { updateCustomerAddress, updateCustomerName, updateCustomerPhone, updateFee } from 'features/Cart/cart.slice'
 
 async function renderProvince() {
 
@@ -32,6 +32,12 @@ function CustomerInfo() {
 
     const [wards, setWards] = useState([])
     const [wardId, setWardId] = useState(0)
+
+    const [name, setName] = useState(useSelector(state=>state.cartList.customerName))
+    const [phone, setPhone] = useState(useSelector(state=>state.cartList.customerPhone))
+
+    const [address, setAddress] = useState("")
+    
 
     async function renderProvince() {
 
@@ -71,6 +77,7 @@ function CustomerInfo() {
 
     useEffect(() => {
         renderProvince()
+        dispatch(updateCustomerAddress(""))
     }, [])
 
 
@@ -144,6 +151,22 @@ function CustomerInfo() {
     }, [wardId, cart])
 
 
+    const handleChangeName = e => {
+        setName(e.target.value)
+        dispatch(updateCustomerName(e.target.value))
+    }
+
+    const handleChangePhone = e => {
+        setPhone(e.target.value)
+        dispatch(updateCustomerPhone(e.target.value))
+    }
+
+    const handleChangeAddress = e => {
+        setAddress(e.target.value)
+        dispatch(updateCustomerAddress(e.target.value))
+    }
+
+
 
 
 
@@ -154,12 +177,14 @@ function CustomerInfo() {
 
 
                 <div className="form-floating mb-3">
-                    <input type="text" className="form-control" id="fullName" placeholder="fullName" />
+                    <input type="text" className="form-control" id="fullName" placeholder="fullName"
+                        value={name} onChange={e => handleChangeName(e)} />
                     <label htmlFor="fullName">Tên đầy đủ</label>
                 </div>
 
                 <div className="form-floating mb-3">
-                    <input type="number" className="form-control" id="phone" placeholder="name@example.com" />
+                    <input type="number" className="form-control" id="phone" placeholder="name@example.com"
+                        value={phone} onChange={e => handleChangePhone(e)} />
                     <label htmlFor="phone">Số điện thoại</label>
                 </div>
 
@@ -199,7 +224,8 @@ function CustomerInfo() {
 
                 <div className="form-floating mb-3">
                     <input type="text" className="form-control" disabled={wardId == 0} id="address"
-                        placeholder="Số nhà, đường phố" />
+                        placeholder="Số nhà, đường phố"
+                        value={address} onChange={e => handleChangeAddress(e)} />
                     <label htmlFor="address">Số nhà, đường phố</label>
                 </div>
             </div>
