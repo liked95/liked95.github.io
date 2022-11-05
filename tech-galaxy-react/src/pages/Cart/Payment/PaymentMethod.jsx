@@ -4,8 +4,10 @@ import React from 'react'
 import { useState } from 'react'
 import { Modal } from "react-bootstrap";
 import { formatMoney } from 'utils/index';
-import { useSelector } from '../../../../node_modules/react-redux/es/exports';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateDiscount, updateVoucherCode } from 'features/Cart/cart.slice';
 function PaymentMethod() {
+    const dispatch = useDispatch()
     const [addToHistory] = useAddToHistoryMutation()
     const [deleteItem] = useDeleteItemMutation()
 
@@ -33,6 +35,10 @@ function PaymentMethod() {
     const customerPhone = useSelector(state => state.cartList.customerPhone)
     const customerAddress = useSelector(state => state.cartList.customerAddress)
 
+    const province = useSelector(state => state.cartList.province)
+    const district = useSelector(state => state.cartList.district)
+    const ward = useSelector(state => state.cartList.ward)
+
     const totalValue = useSelector(state => state.cartList.totalValue)
     const shippingFee = useSelector(state => state.cartList.shippingFee)
     const discount = useSelector(state => state.cartList.discount)
@@ -41,28 +47,28 @@ function PaymentMethod() {
     const grandTotal = useSelector(state => state.cartList.grandTotal)
 
     const handleProceedPayment = () => {
-        // if (totalValue == 0) {
-        //     alert("Ít nhất 1 sản phẩm phải được chọn!")
-        //     return
-        // }
-        // if (!customerName) {
-        //     alert("Tên không được để trống")
-        //     return
-        // }
-        // if (!customerPhone) {
-        //     alert("Số điện thoại không được để trống")
-        //     return
-        // }
+        if (totalValue == 0) {
+            alert("Ít nhất 1 sản phẩm phải được chọn!")
+            return
+        }
+        if (!customerName) {
+            alert("Tên không được để trống")
+            return
+        }
+        if (!customerPhone) {
+            alert("Số điện thoại không được để trống")
+            return
+        }
 
-        // if (!customerAddress) {
-        //     alert("Địa chỉ cụ thể không được để trống")
-        //     return
-        // }
+        if (!customerAddress) {
+            alert("Địa chỉ cụ thể không được để trống")
+            return
+        }
 
-        // if (!payment) {
-        //     alert("Phương thức thanh toán không được để trống!")
-        //     return
-        // }
+        if (!payment) {
+            alert("Phương thức thanh toán không được để trống!")
+            return
+        }
 
         setShow(true)
     };
@@ -79,12 +85,16 @@ function PaymentMethod() {
             customerName,
             customerPhone,
             customerAddress,
+            province,
+            district,
+            ward,
             totalValue,
             shippingFee,
             discount,
             pretaxValue,
             tax,
             grandTotal,
+            paymentValue,
             date: new Date().toLocaleDateString("vi-VN"),
             hour: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         }
@@ -100,8 +110,8 @@ function PaymentMethod() {
 
         setShow(false)
         alert("Mua thanh cong")
-
-
+        dispatch(updateDiscount(0))
+        dispatch(updateVoucherCode(""))
     }
 
     return (

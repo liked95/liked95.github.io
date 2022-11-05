@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "components/Footer/index";
 import Compare from "components/Compare/index";
 
+
 function Layout() {
   return (
     <>

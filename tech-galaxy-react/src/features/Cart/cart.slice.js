@@ -45,6 +45,7 @@ const cartSlice = createSlice({
     updateVoucherCode(state, action) {
       state.voucherCode = action.payload
     },
+    
 
     updateProvince(state, action) {
       state.province = action.payload

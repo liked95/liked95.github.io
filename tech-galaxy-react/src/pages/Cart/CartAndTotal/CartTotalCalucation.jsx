@@ -16,7 +16,7 @@ function CartTotalCalucation({ renderedCart }) {
     }
 
     const [voucher, setVoucher] = useState(useSelector(state=>state.cartList.voucherCode))
-    const [discount, setDiscount] = useState(0)
+    const [discount, setDiscount] = useState(useSelector(state=>state.cartList.discount))
 
     const shippingFee = useSelector(state => state.cartList.shippingFee)
     const cart = useSelector(state => state.cartList.items)

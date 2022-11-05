@@ -17,7 +17,7 @@ const historySlice = createSlice({
     });
 
     builder.addMatcher(historyApi.endpoints.addToHistory.matchFulfilled, (state, action) => {
-      state.purchases.push(action.payload)
+      state.purchases.unshift(action.payload)
     });
   }
 });
