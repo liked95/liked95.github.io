@@ -1,21 +1,26 @@
 import React from 'react'
-import {Link, NavLink} from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import techLogo from "../../assets/images/header/TECH GALAXY.png"
+import SmartphoneMenu from './MenuItem/SmartphoneMenu'
+import { useSelector, useDispatch } from 'react-redux'
+import TabletMenu from './MenuItem/TabletMenu'
 import { closeSideNav } from './sideNav.slice'
+import LaptopMenu from './MenuItem/LaptopMenu'
+
 
 
 function SideNav() {
     const dispatch = useDispatch()
-    const isActive = useSelector(state=>state.sideNav.isActive)
+    const isActive = useSelector(state => state.sideNav.isActive)
 
     const handleCloseSideNav = () => {
         dispatch(closeSideNav())
     }
+
     return (
-        <div id="side-nav-container" class={isActive ? "active" : ""}>
+        <div id="side-nav-container" className={isActive ? "active" : ""}>
             <div className="side-nav-title">
-                <Link href="index.html" className="sidebar-logo">
+                <Link to="/" className="sidebar-logo">
                     <img src={techLogo} alt={techLogo} />
                 </Link>
 
@@ -26,36 +31,10 @@ function SideNav() {
 
             <ul className="side-menu">
 
-                <li className="menu-item">
-                    <div className="sidebar-main-menu">
-                        <Link href="smartphone.html">Điện thoại</Link>
-                        <span className="arrow-container" onclick="toggleSubMenu(this)">
-                            <i className="fa-solid fa-chevron-right"></i>
-                        </span>
-                    </div>
-                    <ul className="sub-menu">
-                        <li className="sub-menu-item"><a href="smartphone.html?brand=apple">Apple</a></li>
-                        <li className="sub-menu-item"><a href="smartphone.html?brand=samsung">Samsung</a></li>
-                        <li className="sub-menu-item"><a href="smartphone.html?brand=xiaomi">Xiaomi</a></li>
-                        <li className="sub-menu-item"><a href="smartphone.html?brand=oppo">Oppo</a></li>
-                    </ul>
-                </li>
-
-
-                <li className="menu-item">
-                    <div className="sidebar-main-menu">
-                        <Link href="smartphone.html">Máy tính bảng</Link>
-                        <span className="arrow-container" onclick="toggleSubMenu(this)">
-                            <i className="fa-solid fa-chevron-right"></i>
-                        </span>
-                    </div>
-                    <ul className="sub-menu">
-                        <li className="sub-menu-item"><a href="smartphone.html?brand=apple">iPad</a></li>
-                        <li className="sub-menu-item"><a href="smartphone.html?brand=samsung">Samsung</a></li>
-                        <li className="sub-menu-item"><a href="smartphone.html?brand=xiaomi">Xiaomi</a></li>
-                        <li className="sub-menu-item"><a href="smartphone.html?brand=oppo">Oppo</a></li>
-                    </ul>
-                </li>
+                <SmartphoneMenu />
+                <TabletMenu />
+                <LaptopMenu />
+                {/* 
 
                 <li className="menu-item">
                     <div className="sidebar-main-menu">
@@ -82,7 +61,7 @@ function SideNav() {
                     <div className="sidebar-main-menu">
                         <Link href="about.html">Về chúng tôi</Link>
                     </div>
-                </li>
+                </li> */}
 
                 <li className="menu-item">
                     <div className="sidebar-main-menu">

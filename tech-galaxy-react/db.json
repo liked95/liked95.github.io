@@ -12528,6 +12528,45 @@
       "image": "samsung-galaxy-z-fold-3-green-1-200x200.jpg",
       "checked": false,
       "id": 18
+    },
+    {
+      "productID": 3,
+      "userId": 1,
+      "alterOption": "256GB",
+      "color": "Xanh dương",
+      "count": 1,
+      "name": "iPhone 13",
+      "price": 23890000,
+      "oldPrice": 27990000,
+      "image": "iphone-13-blue-1-200x200.jpg",
+      "checked": true,
+      "id": 19
+    },
+    {
+      "productID": 42,
+      "userId": 1,
+      "alterOption": "256GB",
+      "color": "Đen",
+      "count": 2,
+      "name": "Galaxy Z Fold3",
+      "price": 31990000,
+      "oldPrice": 41990000,
+      "image": "samsung-galaxy-z-fold-3-black-1-200x200.jpg",
+      "checked": true,
+      "id": 20
+    },
+    {
+      "productID": 1,
+      "userId": 1,
+      "alterOption": "128GB",
+      "color": "Vàng đồng",
+      "count": 2,
+      "name": "iPhone 13 Pro Max",
+      "price": 28290000,
+      "oldPrice": 33900000,
+      "image": "iphone-13-pro-gold-1-200x200.jpg",
+      "checked": true,
+      "id": 21
     }
   ],
   "history": [
@@ -12956,6 +12995,40 @@
       "date": "7/11/2022",
       "hour": "10:05 AM",
       "id": 11
+    },
+    {
+      "items": [
+        {
+          "productID": 9,
+          "userId": 1,
+          "alterOption": "128GB",
+          "color": "Trắng",
+          "count": 2,
+          "name": "Galaxy S22 Ultra 5G",
+          "price": 27990000,
+          "oldPrice": 30990000,
+          "image": "Galaxy-S22-Ultra-White-200x200.jpg",
+          "checked": true,
+          "id": 19
+        }
+      ],
+      "userId": 1,
+      "customerName": "Vũ Hoài Sơn",
+      "customerPhone": "0386639002",
+      "customerAddress": "40/4/4 Vạn Xuân, phường Tân Thành",
+      "province": "Sơn La",
+      "district": "Huyện Vân Hồ",
+      "ward": "Xã Tô Múa",
+      "totalValue": 55980000,
+      "shippingFee": 68000,
+      "discount": -4000000,
+      "pretaxValue": 52048000,
+      "tax": 4163840,
+      "grandTotal": 56211840,
+      "paymentValue": "Trả góp qua thẻ tín dụng",
+      "date": "7/11/2022",
+      "hour": "03:33 PM",
+      "id": 12
     }
   ]
 }

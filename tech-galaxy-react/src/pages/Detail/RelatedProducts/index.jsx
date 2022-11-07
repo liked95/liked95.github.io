@@ -7,7 +7,7 @@ import ProductSlider from '../ProductSlider'
 
 function RelatedProducts({ product }) {
   useGetProductsQuery()
-  let products = useSelector(state=>state.productList.products)
+  let products = useSelector(state => state.productList.products)
   products = products.filter(p => p.brand == product.brand && p.category == 'smartphone')
 
   return (
