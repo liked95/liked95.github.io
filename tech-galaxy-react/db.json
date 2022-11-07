@@ -12504,19 +12504,6 @@
   ],
   "cart": [
     {
-      "productID": 2,
-      "userId": 1,
-      "alterOption": "1TB",
-      "color": "Xanh dương",
-      "count": 1,
-      "name": "iPhone 13 Pro",
-      "price": 36990000,
-      "oldPrice": 43990000,
-      "image": "iphone-13-pro-sierra-blue-200x200.jpg",
-      "checked": false,
-      "id": 9
-    },
-    {
       "productID": 10,
       "userId": 7,
       "alterOption": "256GB",
@@ -12922,6 +12909,53 @@
       "date": "5/11/2022",
       "hour": "09:57 AM",
       "id": 10
+    },
+    {
+      "items": [
+        {
+          "productID": 2,
+          "userId": 1,
+          "alterOption": 3,
+          "color": "Xanh dương",
+          "count": 1,
+          "name": "iPhone 13 Pro",
+          "price": 36990000,
+          "oldPrice": 43990000,
+          "image": "iphone-13-pro-sierra-blue-200x200.jpg",
+          "checked": true,
+          "id": 9
+        },
+        {
+          "productID": 2,
+          "userId": 1,
+          "alterOption": "512GB",
+          "color": "Vàng đồng",
+          "count": 2,
+          "name": "iPhone 13 Pro",
+          "price": 31990000,
+          "oldPrice": 38990000,
+          "image": "iphone-13-pro-gold-1-200x200.jpg",
+          "checked": true,
+          "id": 19
+        }
+      ],
+      "userId": 1,
+      "customerName": "Vu Hoai Son",
+      "customerPhone": "0386639002",
+      "customerAddress": "12 AABBSSZZZ",
+      "province": "Bạc Liêu",
+      "district": "Thị xã Kỳ Anh",
+      "ward": "Phường Sông Trí",
+      "totalValue": 100970000,
+      "shippingFee": 102000,
+      "discount": -1500000,
+      "pretaxValue": 99572000,
+      "tax": 7965760,
+      "grandTotal": 107537760,
+      "paymentValue": "Trả góp qua thẻ tín dụng",
+      "date": "7/11/2022",
+      "hour": "10:05 AM",
+      "id": 11
     }
   ]
 }

@@ -178,7 +178,7 @@ function SmartPhone() {
               <span id="filter-sidebar-close"><i className="fa-solid fa-xmark"></i></span>
             </h4>
             <div className="tag-container">
-              <Tags />
+              {/* <Tags /> */}
 
               <div className="function-btn">
                 {/* <div className="filter-btn" onClick={startFilter}>

@@ -22,6 +22,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useGetCartQuery } from "features/Cart/cart.service";
 import { useGetHistoryQuery } from "features/History/history.service";
 import { formatMoney } from "utils/index";
+import {openSideNav} from "../SideNav/sideNav.slice"
 
 function Header() {
   const dispatch = useDispatch()
@@ -63,10 +64,16 @@ function Header() {
     dispatch(logout())
   }
 
+  const handleOpenSideNav = () => {
+    dispatch(openSideNav())
+    console.log("click");
+
+  }
+
   return (
     <header>
       <div className="first-header-row">
-        <span id="sidebar-open-btn">
+        <span id="sidebar-open-btn" onClick={handleOpenSideNav}>
           <i className="fa-solid fa-bars"></i>
         </span>
 
@@ -102,7 +109,7 @@ function Header() {
             </Link>
             <p>|</p>
             <Link className="register-btn" to="/register">
-              Đăng kí
+              Đăng ký
             </Link>
           </div>)}
 

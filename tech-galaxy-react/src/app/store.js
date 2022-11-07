@@ -7,6 +7,7 @@ import cartReducer from "features/Cart/cart.slice";
 import { cartApi } from "features/Cart/cart.service";
 import { historyApi } from "features/History/history.service";
 import historyReducer from "features/History/history.slice";
+import sideNavReducer from "components/SideNav/sideNav.slice";
 
 const store = configureStore({
     reducer: {
@@ -21,6 +22,8 @@ const store = configureStore({
 
         [historyApi.reducerPath]: historyApi.reducer,
         history: historyReducer,
+
+        sideNav: sideNavReducer
     },
 
     middleware: (getDefaultMiddleware) =>
