@@ -12528,45 +12528,6 @@
       "image": "samsung-galaxy-z-fold-3-green-1-200x200.jpg",
       "checked": false,
       "id": 18
-    },
-    {
-      "productID": 3,
-      "userId": 1,
-      "alterOption": "256GB",
-      "color": "Xanh dương",
-      "count": 1,
-      "name": "iPhone 13",
-      "price": 23890000,
-      "oldPrice": 27990000,
-      "image": "iphone-13-blue-1-200x200.jpg",
-      "checked": true,
-      "id": 19
-    },
-    {
-      "productID": 42,
-      "userId": 1,
-      "alterOption": "256GB",
-      "color": "Đen",
-      "count": 2,
-      "name": "Galaxy Z Fold3",
-      "price": 31990000,
-      "oldPrice": 41990000,
-      "image": "samsung-galaxy-z-fold-3-black-1-200x200.jpg",
-      "checked": true,
-      "id": 20
-    },
-    {
-      "productID": 1,
-      "userId": 1,
-      "alterOption": "128GB",
-      "color": "Vàng đồng",
-      "count": 2,
-      "name": "iPhone 13 Pro Max",
-      "price": 28290000,
-      "oldPrice": 33900000,
-      "image": "iphone-13-pro-gold-1-200x200.jpg",
-      "checked": true,
-      "id": 21
     }
   ],
   "history": [
@@ -13029,6 +12990,66 @@
       "date": "7/11/2022",
       "hour": "03:33 PM",
       "id": 12
+    },
+    {
+      "items": [
+        {
+          "productID": 3,
+          "userId": 1,
+          "alterOption": "256GB",
+          "color": "Xanh dương",
+          "count": 1,
+          "name": "iPhone 13",
+          "price": 23890000,
+          "oldPrice": 27990000,
+          "image": "iphone-13-blue-1-200x200.jpg",
+          "checked": true,
+          "id": 19
+        },
+        {
+          "productID": 42,
+          "userId": 1,
+          "alterOption": "256GB",
+          "color": "Đen",
+          "count": 2,
+          "name": "Galaxy Z Fold3",
+          "price": 31990000,
+          "oldPrice": 41990000,
+          "image": "samsung-galaxy-z-fold-3-black-1-200x200.jpg",
+          "checked": true,
+          "id": 20
+        },
+        {
+          "productID": 1,
+          "userId": 1,
+          "alterOption": "128GB",
+          "color": "Vàng đồng",
+          "count": 2,
+          "name": "iPhone 13 Pro Max",
+          "price": 28290000,
+          "oldPrice": 33900000,
+          "image": "iphone-13-pro-gold-1-200x200.jpg",
+          "checked": true,
+          "id": 21
+        }
+      ],
+      "userId": 1,
+      "customerName": "Hoai Son Vu",
+      "customerPhone": "0386639002",
+      "customerAddress": "32/262 Khương Đình, Thanh Xuân",
+      "province": "Sơn La",
+      "district": "Huyện Yên Châu",
+      "ward": "Xã Phiêng Khoài",
+      "totalValue": 144450000,
+      "shippingFee": 170000,
+      "discount": -4000000,
+      "pretaxValue": 140620000,
+      "tax": 11249600,
+      "grandTotal": 151869600,
+      "paymentValue": "Trả góp qua thẻ tín dụng",
+      "date": "8/11/2022",
+      "hour": "02:42 PM",
+      "id": 13
     }
   ]
 }
