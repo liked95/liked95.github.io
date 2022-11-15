@@ -12,6 +12,15 @@ body {
 
 }
 
+img {
+    max-width: 100%;
+}
+
+.menu-button,
+.close-button {
+    display: none;
+}
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -49,7 +58,7 @@ body {
 .description {
     background-color: #EFEFEF;
     text-align: center;
-    padding: 38px 0 ;
+    padding: 38px 0;
     /* margin-bottom: 20px; */
 }
 
@@ -69,6 +78,8 @@ body {
     margin-top: 20px;
     padding: 20px 0;
     display: flex;
+    /* flex-wrap: wrap; */
+    flex-basis: 30%;
     gap: 50px
 }
 
@@ -99,4 +110,98 @@ body {
     border-top: 1px solid #dedede;
     display: flex;
     align-items: center;
+}
+
+@media only screen and (max-width: 1397px) {
+    .description p {
+        width: 600px;
+    }
+
+    .article {
+        gap: 40px
+    }
+}
+
+@media only screen and (max-width: 1018px) {
+    .content {
+        padding: 0 60px;
+    }
+
+    .description p {
+        width: 400px;
+    }
+
+    .article {
+        /* gap: 25px; */
+        flex-basis: 50%;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 701px) {
+    .description p {
+        width: 95%;
+    }
+
+    .sidebar {
+        transform: translateX(-150px);
+        transition: all 300ms;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+        z-index: 200;
+    }
+
+    #backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: black;
+        z-index: -1;
+    }
+
+    #backdrop.active {
+        background-color: #000;
+        height: 100%;
+        width: 100%;
+        opacity: .5;
+        z-index: 100;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .menu-button {
+        display: block;
+        width: 20px;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        cursor: pointer;
+    }
+
+    .close-button {
+        display: block;
+        width: 35px;
+        margin-left: auto;
+        padding-top: 5px;
+        padding-right: 5px;
+        cursor: pointer;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 550px) {
+    .content {
+        padding: 0 4%;
+    }
+
+    .logo {
+        margin-top: 40px;
+    }
+
 }
