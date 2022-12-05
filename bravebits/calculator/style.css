@@ -17,7 +17,7 @@ body {
     height: 650px;
     background-color: #000;
     margin: 30px auto;
-    padding: 10px;
+    padding: 15px;
     border-radius: 20px;
 }
 
@@ -54,6 +54,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    user-select: none;
 }
 
 #key_0 {
@@ -68,4 +70,9 @@ body {
 
 #divide, #multiply, #subtract, #add, #calc_action {
     background-color: orange;
+}
+
+#divide.active, #multiply.active, #subtract.active, #add.active {
+    background-color: #f2f2f2;
+    color: orange;
 }
