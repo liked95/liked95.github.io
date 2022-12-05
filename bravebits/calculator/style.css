@@ -33,6 +33,7 @@ body {
     display: flex;
     flex-direction: column;
     font-size: 44px;
+    overflow: hidden;
 }
 
 .key__container {
